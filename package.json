@@ -1,0 +1,22 @@
+{
+  "name": "fortesrh",
+  "version": "1.0.0",
+  "description": "Testes Funcionais Fortes RH (CYPRESS)",
+  "main": "index.js",
+  "scripts": {
+    "cy:browser": "npx cypress open"
+  },
+  "author": "Georgem Arruda",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^5.3.0",
+    "cypress-capybara": "0.0.2",
+    "cypress-file-upload": "^4.1.1",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-xpath": "^1.6.0"
+  },
+  "dependencies": {
+    "capybara": "^0.1.2",
+    "pg": "^8.3.3"
+  }
+}

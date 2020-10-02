@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
+    "baseUrl": "http://localhost:8080/fortesrh",
+    "video": false,
+    "watchForFileChanges": false,
+    "screenshotOnRunFailure": false,
+    "env": {
+        "db": {
+            "username": "fortesrh",
+            "database": "fortesrh",
+            "hostname": "localhost",
+            "port": 55432
+        }
+    }
+}
