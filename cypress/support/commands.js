@@ -47,8 +47,14 @@ Cypress.Commands.add("inserirSolicitacaoPessoal", () => {
     cy.exec_sql("insert into cargo values (nextval('cargo_sequence'), 'Cargo Teste', 'Cargo Teste', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)")
     cy.exec_sql("insert into faixasalarial values (nextval('faixasalarial_sequence'), 'Faixa_Nome', null, (select id from cargo where nome = 'Cargo Teste'), null, '252510')")
     cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), 'Área Teste', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
-    cy.exec_sql("insert into motivosolicitacao values (nextval('motivosolicitacao_sequence'), 'Motivo Solicitação', false, false)")
-    cy.exec_sql("insert into solicitacao values (nextval('solicitacao_sequence'), '01/01/2020', null, 10, 'E', '02', 1000, null, null, 'I', null, false, false, null, (select id from motivosolicitacao where descricao = 'Motivo Solicitação'), (select id from areaorganizacional where nome = 'Área Teste'), 1, 1, null, (select id from empresa where nome = 'Empresa Padrão'), 1, 'Solicitação', 1, 'Horário', 'A', null, null, null, null, '01/01/2020', false, null, null)")
+    cy.exec_sql("insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Cargo Teste'), (select id from areaorganizacional where nome = 'Área Teste'))")
+    cy.exec_sql("insert into motivosolicitacao values (nextval('motivosolicitacao_sequence'), 'Aumento de Quadro', false, false)")
+    cy.exec_sql("insert into solicitacao values (nextval('solicitacao_sequence'), '01/01/2020', null, 10, 'E', '02', 1000, null, null, 'I', null, false, false, null, (select id from motivosolicitacao where descricao = 'Aumento de Quadro'), (select id from areaorganizacional where nome = 'Área Teste'), 1, 1, null, (select id from empresa where nome = 'Empresa Padrão'), 1, 'Solicitação', 1, 'Horário', 'A', null, null, null, null, '01/01/2020', false, null, null)")
+})
+
+Cypress.Commands.add("insereSolicitacaoEmAnalise", () => {
+    cy.exec_sql("delete from solicitacao")
+    cy.exec_sql("insert into solicitacao values (nextval('solicitacao_sequence'), '01/02/2020', null, 1, 'E', '02', 1000, null, null, 'I', null, false, false, null, (select id from motivosolicitacao where descricao = 'Aumento de Quadro'), (select id from areaorganizacional where nome = 'Área Teste'), 1, 1, null, (select id from empresa where nome = 'Empresa Padrão'), 1, 'Vaga para DEV', 1, 'Horário', 'I', null, null, null, null, '01/01/2020', false, null, null)")
 })
 
 Cypress.Commands.add("insereAreaInteresse", () => {
@@ -70,6 +76,11 @@ Cypress.Commands.add("inserecandidato", (candidato_nome) => {
 
 Cypress.Commands.add("insereCandidato", (candidato_nome) => {
     cy.exec_sql("insert into candidato values (nextval('candidato_sequence'), '" + candidato_nome + "', 'MTIzNA==', null, null, null, null, 'Rua Ciro Monteiro', '222', null, 'Cambeba', '60822285', null, null, null, null, '92621219110', null, null, 'Fortaleza', null, null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '01', '03', false, 0, 0, false, null, null, null, null, null, 'E', 1000, true, false, false, null, null, null, '01/09/2020', 'C', null, 1, 946, null, '0', null, null, null, null,null, null, null, null, null, null, null, null, null, null, 1, null, null, '01/09/2020', null, null, null, null, null, null, null, 'NAO VERIFICADO', null)")
+})
+
+Cypress.Commands.add("insereCandidatoExterno", (candidato_nome) => {
+    cy.exec_sql("insert into candidato values (nextval('candidato_sequence'), '" + candidato_nome + "', 'MTIzNA==', null, null, null, null, 'Rua Ciro Monteiro', '222', null, 'Cambeba', '60822285', null, null, null, null, '92621219110', null, null, 'Fortaleza', null, null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '01', '03', false, 0, 0, false, null, null, null, null, null, 'E', 1000, true, false, false, null, null, null, '01/09/2020', 'E', null, 1, 946, null, '0', null, null, null, null,null, null, null, null, null, null, null, null, null, null, 1, null, null, '01/09/2020', null, null, null, null, null, null, null, 'NAO VERIFICADO', null)")
+    cy.exec_sql("insert into candidatosolicitacao values (nextval('candidatosolicitacao_sequence'), true, (select id from candidato where nome = '" + candidato_nome + "'), 1, 'I', null, null, null, null)")
 })
 
 Cypress.Commands.add("inseremodeloAvaliacaoCandidato", (avaliacao_nome) => {

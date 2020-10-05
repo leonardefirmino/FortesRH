@@ -1,10 +1,9 @@
 import '../../../../../cypress.json'
+import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
-import { MessagePage } from '../../pages/messagePage'
 
 describe('Tentativas de Login', () => {
     const loginPage = new LoginPage()
-    const messagePage = new MessagePage()
 
     beforeEach('', () => {
         cy.reload_db()
@@ -15,13 +14,13 @@ describe('Tentativas de Login', () => {
 
         it('Válido', () => {
             loginPage.with('SOS', '1234')
-            messagePage.welcomeMessage('Bem-vindo(a)')
+            util.welcomeMessage('Bem-vindo(a)')
         })
 
         it('Valida Remprot', () => {
             cy.exec_sql("update parametrosdosistema set proximaversao = '2014-01-01'")
             loginPage.with('SOS', '1234')
-            messagePage.welcomeMessage('Bem-vindo(a)')
+            util.welcomeMessage('Bem-vindo(a)')
         })
 
         it('Captcha Ativo', () => {
@@ -29,7 +28,7 @@ describe('Tentativas de Login', () => {
             cy.reload()
             cy.get('iframe').should('be.visible')
             loginPage.with('SOS', '1234')
-            messagePage.welcomeMessage('Bem-vindo(a)')
+            util.welcomeMessage('Bem-vindo(a)')
         })
     })
 
@@ -37,18 +36,18 @@ describe('Tentativas de Login', () => {
 
         it('Senha inválida', () => {
             loginPage.with('SOS', '12534')
-            messagePage.errorMessageLogin('Máquina sem autorização de acesso')
+            util.errorMessageLogin('Máquina sem autorização de acesso')
         })
 
         it('Usuário inválido', () => {
             loginPage.with('---', '12534')
-            messagePage.errorMessageLogin('Usuário sem permissão de acesso')
+            util.errorMessageLogin('Usuário sem permissão de acesso')
         })
 
         it('Captcha Ativo', () => {
             cy.exec_sql('update parametrosdosistema set utilizarcaptchanologin = true;')
             loginPage.with('usuarioteste', '1234')
-            messagePage.errorMessageLogin('Usuário sem permissão de acesso')
+            util.errorMessageLogin('Usuário sem permissão de acesso')
         })
 
     })
@@ -57,20 +56,20 @@ describe('Tentativas de Login', () => {
         it('Usuario Expirado', () => {
             cy.exec_sql("update usuario set expiracao = '01/01/2000' where login = 'homolog'")
             loginPage.with('homolog', '1234')
-            messagePage.errorMessageLogin('Usuário sem permissão de acesso')
+            util.errorMessageLogin('Usuário sem permissão de acesso')
         })
 
         it('Sessão Expirada', () => {
             cy.exec_sql("update parametrosdosistema set sessiontimeout = 1")
             loginPage.with('homolog', '1234')
-            messagePage.popUpMessage('Sua sessão expirou.')
+            util.popUpMessage('Sua sessão expirou.')
         })
 
         it('Primeiro Acesso', () => {
             cy.exec_sql("update parametrosdosistema set exibiralteracaoprimeiroacesso = true")
             loginPage.with('homolog', '1234')
             loginPage.changePassword('123456')
-            messagePage.successMsg('A senha foi alterada com sucesso!')
+            util.successMsg('A senha foi alterada com sucesso!')
         })
     })
 })

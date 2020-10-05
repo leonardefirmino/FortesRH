@@ -1,13 +1,12 @@
 import '../../../../../cypress.json'
+import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
 import { ColaboradorCandidatoPage } from '../../pages/ColaboradorCandidatoPage'
-import { MessagePage } from '../../pages/messagePage'
 import { ModuloExternoPage } from '../../pages/moduloExternoPage'
 
 describe('Gerenciamento de Candidatos', () => {
     const candidatoPage = new ColaboradorCandidatoPage()
     const loginPage = new LoginPage()
-    const messagePage = new MessagePage()
     const externoPage = new ModuloExternoPage()
 
     describe('Cadastros de Candidato no Módulo Externo', () => {
@@ -20,7 +19,7 @@ describe('Gerenciamento de Candidatos', () => {
 
         it('Inserção de Candidatos Módulo Externo', () => {
             candidatoPage.inserirCandidatoColaboradorModuloExterno()
-            messagePage.popUpMessage('Dados cadastrados com sucesso.')
+            util.popUpMessage('Dados cadastrados com sucesso.')
         })
 
         it('Inserção de Candidatos Módulo Externo - Exige Aceite LGPD', () => {
@@ -28,10 +27,10 @@ describe('Gerenciamento de Candidatos', () => {
             cy.exec_sql("update parametrosdosistema set politicaseguranca = 'Teste'")
             cy.reload()
             candidatoPage.inserirCandidatoColaboradorModuloExterno()
-            messagePage.popUpMessage('Você precisa aceitar o Termo de Privacidade e Política de Segurança.')
+            util.popUpMessage('Você precisa aceitar o Termo de Privacidade e Política de Segurança.')
             candidatoPage.aceitaLGPD()
             candidatoPage.clicaAbaCurriculoGrava()
-            messagePage.popUpMessage('Dados cadastrados com sucesso.')
+            util.popUpMessage('Dados cadastrados com sucesso.')
         })
     });
 
@@ -50,14 +49,14 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.exec_sql("update parametrosdosistema set exigiraceitepsi = true")
                 cy.exec_sql("update parametrosdosistema set politicaseguranca = 'Teste'")
                 candidatoPage.inserirCandidatoColaborador()
-                messagePage.successMsg('Operação efetuada com sucesso')
+                util.successMsg('Operação efetuada com sucesso')
             })
 
             it('Valida Parentesco', () => {
                 cy.exec_sql("update empresa set verificaparentesco = 'T'")
                 candidatoPage.clicaInserir()
                 candidatoPage.preencheNomePai()
-                messagePage.dialogMessage('Verificação de Parentesco')
+                util.dialogMessage('Verificação de Parentesco')
             });
 
             it('Valida Obrigatoriedade do preenchimento do Certficado Militar para sexo Masculino', () => {
@@ -65,7 +64,7 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.reload()
 
                 candidatoPage.inserirCandidatoColaborador('Masculino')
-                messagePage.popUpMessage('Preencha os campos indicados:')
+                util.popUpMessage('Preencha os campos indicados:')
             });
 
             it('Valida Não Obrigatoriedade do preenchimento do Certficado Militar para sexo Feminino', () => {
@@ -73,7 +72,7 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.reload()
 
                 candidatoPage.inserirCandidatoColaborador('Feminino')
-                messagePage.successMsg('Operação efetuada com sucesso')
+                util.successMsg('Operação efetuada com sucesso')
             });
 
             it('Valida Homonimos', () => {
@@ -85,7 +84,7 @@ describe('Gerenciamento de Candidatos', () => {
             it('Candidato Já Cadastrado', () => {
                 cy.insereCandidato("Amy Winehouse")
                 candidatoPage.insereColaboradorCpfExistente()
-                messagePage.dialogMessage('CPF já cadastrado')
+                util.dialogMessage('CPF já cadastrado')
             })
         })
 
@@ -100,8 +99,8 @@ describe('Gerenciamento de Candidatos', () => {
             it('Exclusão de Cadastro de Candidatos', () => {
                 cy.reload()
                 candidatoPage.excluirCandidatoColaborador('Candidato 01')
-                messagePage.popUpMessage('Deseja realmente excluir o candidato Candidato 01?')
-                messagePage.successMsg('Candidato excluído com sucesso.')
+                util.popUpMessage('Deseja realmente excluir o candidato Candidato 01?')
+                util.successMsg('Candidato excluído com sucesso.')
             });
 
             it('Exclusão de Cadastro de Candidatos em Lote', () => {
@@ -112,8 +111,8 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.inserecandidato("Candidato 05")
                 cy.reload()
                 candidatoPage.excluirCandidatoColaboradorLote()
-                messagePage.popUpMessage('Deseja realmente excluir os candidatos?')
-                messagePage.infoMsg('Não existem candidatos a serem listados')
+                util.popUpMessage('Deseja realmente excluir os candidatos?')
+                util.infoMsg('Não existem candidatos a serem listados')
             });
         })
     })
@@ -134,9 +133,9 @@ describe('Gerenciamento de Candidatos', () => {
 
         it('Contratar Candidato', () => {
             candidatoPage.contrataCandidato("Candidato 01")
-            messagePage.dialogMessage('Contratar candidato')
-            messagePage.confirmarDialogMessage()
-            messagePage.validaTitulo('Inserir Talento')
+            util.dialogMessage('Contratar candidato')
+            util.confirmarDialogMessage()
+            util.validaTitulo('Inserir Talento')
         })
 
         it('Curriculo Escaneado - Usando o cadastro do candidato', () => {
@@ -149,17 +148,17 @@ describe('Gerenciamento de Candidatos', () => {
 
         it('Inserir Candidato em Solicitação de Pessoal', () => {
             candidatoPage.inserirEmSolicitacao("Candidato 01")
-            messagePage.validaTitulo('Candidatos da Seleção')
+            util.validaTitulo('Candidatos da Seleção')
         })       
 
         it('Triagem de Candidatos', () => {
             candidatoPage.triagemCandidato()
-            messagePage.validaTitulo('Triagem de Currículos')
+            util.validaTitulo('Triagem de Currículos')
         })       
 
         it('Incluir Curriculo Digitado', () => {
             candidatoPage.inserirCurriculoDigitado()
-            messagePage.infoMsg('Currículo (Curriculo Digitado) cadastrado com sucesso.')
+            util.infoMsg('Currículo (Curriculo Digitado) cadastrado com sucesso.')
         })
 
 

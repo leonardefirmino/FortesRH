@@ -1,11 +1,10 @@
 import '../../../../../cypress.json'
+import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
-import { MessagePage } from '../../pages/messagePage'
 import { ModeloAvaliacaoCandidatoPage } from '../../pages/modeloAvaliacaoCandidatoPage'
 
 describe('Funcionalidade Modelo Avaliação Candidatos', () => {
     const loginPage = new LoginPage()
-    const messagePage = new MessagePage()
     const modeloAvaliacaoCandidatoPage = new ModeloAvaliacaoCandidatoPage()
 
     beforeEach('', () => {
@@ -17,18 +16,18 @@ describe('Funcionalidade Modelo Avaliação Candidatos', () => {
     
     it('Inserção de Modelo Avaliação Candidatos', () => {
         modeloAvaliacaoCandidatoPage.insereModeloAvaliacao()
-        messagePage.successMsg('Pergunta gravada com sucesso')
+        util.successMsg('Pergunta gravada com sucesso')
     })
 
     it('Edição de Modelo Avaliação Candidatos', () => {
         modeloAvaliacaoCandidatoPage.editarMotivo('Editar', 'Avaliação Teste')
-        messagePage.validaTitulo('Modelos de Avaliação do Candidato')
+        util.validaTitulo('Modelos de Avaliação do Candidato')
     })
 
     it('Exclusão de Modelo Avaliação Candidatos', () => {
         modeloAvaliacaoCandidatoPage.excluirMotivo('Excluir', 'Avaliação Teste')
-        messagePage.popUpMessage('Confirma exclusão?')
-        messagePage.successMsg('Modelo de avaliação excluído com sucesso.')
+        util.popUpMessage('Confirma exclusão?')
+        util.successMsg('Modelo de avaliação excluído com sucesso.')
     })
 
     it('Visualizar Perguntas de Modelo Avaliação Candidatos', () => {
@@ -43,7 +42,7 @@ describe('Funcionalidade Modelo Avaliação Candidatos', () => {
 
     it('Visualizar a GRID de Perguntas de Modelo Avaliação Candidatos', () => {
         modeloAvaliacaoCandidatoPage.acao('Aspectos', 'Avaliação Teste')
-        messagePage.validaTitulo('Aspectos da Avaliação')
+        util.validaTitulo('Aspectos da Avaliação')
     })
 
     it('Clonar Modelo Avaliação Candidatos', () => {
