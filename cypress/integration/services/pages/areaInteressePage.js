@@ -1,40 +1,32 @@
-import '../../../support/util'
 import * as util from '../../../support/util'
+
+const url = '/geral/areaInteresse/list.action'
+const inserir = '#btnInserir'
+const gravar = '#btnGravar'
+const descricao = '#nome'
+const marcaAreasOrgan = '#mt'
 
 export class AreaInteressePage {
 
     navigate() {
-        cy.visit('/geral/areaInteresse/list.action')
+        cy.visit(url)
     }
 
-    clicaInserir() {
-        cy.get('#btnInserir').click()
-    }
-
-    preencheAreaInteresse() {
-        cy.get('#nome').should('be.empty')
-        cy.get('#nome').focus().clear().type('Área de Interesse')
-        cy.get('#mt').click()
-    }
-
-    clicaGravar() {
-        cy.get('#btnGravar').click()
-    }
-
-    insereAreaInteresse() {
-        this.clicaInserir()
-        this.preencheAreaInteresse()
-        this.clicaGravar()
+    inserir(areaInteresse) {
+        cy.get(inserir).click()
+        cy.get(descricao).focus().clear().type(areaInteresse.Area)
+        cy.get(marcaAreasOrgan).click()
+        cy.get(gravar).click()
     }
  
-    editarAreaInteresse(acao, etapa) {
-        util.acao(acao, etapa)
-        this.preencheAreaInteresse()
-        this.clicaGravar()
+    editar(areaInteresse) {
+        util.acao('Editar', areaInteresse.Nome)
+        cy.get(marcaAreasOrgan).click()
+        cy.get(gravar).click()
     }
 
-    excluirAreaInteresse(acao, etapa) {
-        util.acao(acao, etapa)
+    excluir(areaInteresse) {
+        util.acao('Excluir', areaInteresse.Nome)
     }
 
 

@@ -1,4 +1,3 @@
-
 import * as util from '../../../support/util'
 
 export class EtapaSeletivaPage {

@@ -1,5 +1,7 @@
 import 'cypress-capybara/add-commands'
 
+const entendi = '.done'
+
 
 function acao_old(acao, text) {
     cy.xpath(`//td[contains(text(), "${text}")]/../td/a/img[@title="${acao}"]`).click()
@@ -10,12 +12,11 @@ function acao(acao, text) {
 }
 
 function entendiButton() {
-    switch (cy.get('.done').click({ multiple: true, force: true })) {
+    switch (cy.get(entendi).click({ multiple: true, force: true })) {
         case 0:
-            cy.get('.done').should('be.visible')
+            cy.get(entendi).should('be.visible')
             break;
     }
-
 }
 
 function popUpMessage(text) {
@@ -30,9 +31,9 @@ function popUpMessage(text) {
 
 function dialogMessage(text) {
     cy.get('.ui-dialog-title').should('contain', text)
-}  
+}
 
-function confirmarDialogMessage(text) {    
+function confirmarDialogMessage(text) {
     if (text == null) {
         cy.get(':nth-child(1) > .ui-button-text').should('contain', 'Confirmar').click()
     } else {
@@ -42,11 +43,11 @@ function confirmarDialogMessage(text) {
 
 function dialogMessageLGPD(text) {
     cy.get('#ui-dialog-title-termo-privacidade-politica-seguranca').should('contain', text)
-}    
+}
 
 function continuarButton() {
     cy.get('.ui-button-text').click()
-} 
+}
 
 function validaTitulo(text) {
     cy.get('#waDivTitulo').should('contain', text)
@@ -88,6 +89,8 @@ function welcomeExterno() {
     cy.get('#topDiv').should('be.visible')
 }
 
-export { acao_old, acao, entendiButton, popUpMessage, dialogMessage, confirmarDialogMessage, dialogMessageLGPD, continuarButton, validaTitulo, welcomeMessage, 
-    errorMessageLogin, successMsg, warningMsg, infoMsg, errorMsg, warningMsgExterno, infoMsgExterno, welcomeExterno }
+export {
+    acao_old, acao, entendiButton, popUpMessage, dialogMessage, confirmarDialogMessage, dialogMessageLGPD, continuarButton, validaTitulo, welcomeMessage,
+    errorMessageLogin, successMsg, warningMsg, infoMsg, errorMsg, warningMsgExterno, infoMsgExterno, welcomeExterno
+}
 

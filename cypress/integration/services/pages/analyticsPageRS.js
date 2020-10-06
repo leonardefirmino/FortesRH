@@ -1,31 +1,24 @@
-
-import * as util from '../../../support/util'
+const url = '/indicador/duracaoPreenchimentoVaga/painel.action'
+const abaInfoGerais = '#aba1'
+const exibirFiltro = '#labelLink'
+const dataInicial = '#dataDe'
+const pesquisar = '#btnPesquisar'
+const quadroVagasDisponiveis = '#vagasDisponiveis'
 
 export class AnalyticsPage {
 
     navigateAnalyticsReS() {
-        cy.visit('/indicador/duracaoPreenchimentoVaga/painel.action')
+        cy.visit(url)
     }
 
-    acessaAbaInfoGerais() {
-        cy.get('#aba1').click()
-        cy.get('#labelLink').click()
-        cy.get('#dataDe').clear().type('01/01/2020')
-        cy.get('#btnPesquisar').click()
-    }
-
-    validaCargoSolicitacao() {
-        cy.get('#faixa').within(($form) => {
-            cy.contains('Cargo Teste Faixa_Nome')
+    validaQuadroVagasDisponiveis(dados) {
+        cy.get(abaInfoGerais).click()
+        cy.get(exibirFiltro).click()
+        cy.get(dataInicial).clear().type(dados.DataInicial)
+        cy.get(pesquisar).click()
+        cy.get(exibirFiltro).click()
+        cy.get(quadroVagasDisponiveis).within(($form) => {
+            cy.contains(dados.CargoNome)
         })
     }
-
-    validaVagas(){
-        this.acessaAbaInfoGerais()
-        cy.get('.cell-title').should('contain', 'Vagas Disponíveis (total: 10)')
-        this.validaCargoSolicitacao()
-    }
-
-
-
 }

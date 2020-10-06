@@ -1,4 +1,3 @@
-import '../../../support/util'
 import * as util from '../../../support/util'
 
 export class ColaboradorCandidatoPage {
@@ -115,7 +114,7 @@ export class ColaboradorCandidatoPage {
     }
 
     aceitaLGPD() {
-        cy.get('#termo-privacidade-politica-seguranca-input').check()
+        cy.get('#termo-privacidade-politica-seguranca-input').check().and('be.checked')
     }
 
     inserirCandidatoColaborador(sexo) {

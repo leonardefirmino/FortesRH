@@ -7,26 +7,28 @@ describe('Funcionalidade Area de Interesse', () => {
     const loginPage = new LoginPage()
     const areaInteressePage = new AreaInteressePage()
 
+    const areaInteresse = { Nome: "Desenvolvimento de Software", Area: 'Área Administrativa' }
+
     beforeEach('', () => {
         cy.reload_db()
-        cy.insereAreaInteresse()
+        cy.insereAreaInteresse(areaInteresse.Nome)
         cy.inserirSolicitacaoPessoal()
         areaInteressePage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })
     
     it('Inserção de Area de Interesse', () => {
-        areaInteressePage.insereAreaInteresse()
+        areaInteressePage.inserir(areaInteresse)
         util.validaTitulo('Áreas de Interesse')
     })
 
     it('Edição de Area de Interesse', () => {
-        areaInteressePage.editarAreaInteresse('Editar', 'Área de Interesse Teste')
+        areaInteressePage.editar(areaInteresse)
         util.validaTitulo('Áreas de Interesse')
     })
 
-    it('Exclusão de Area de Interesse', () => {
-        areaInteressePage.excluirAreaInteresse('Excluir', 'Área de Interesse Teste')
+    it.only('Exclusão de Area de Interesse', () => {
+        areaInteressePage.excluir(areaInteresse)
         util.popUpMessage('Confirma exclusão?')
         util.successMsg('Área de Interesse excluída com sucesso.')
     })

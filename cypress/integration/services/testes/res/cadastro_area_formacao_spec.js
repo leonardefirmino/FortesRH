@@ -7,25 +7,27 @@ describe('Funcionalidade Area de Formação', () => {
     const loginPage = new LoginPage()
     const areaformacaoPage = new AreaFormacaoPage()
 
+    const area = { Nome: "Desenvolvimento de Software", Area: 'Área Administrativa' }
+
     beforeEach('', () => {
         cy.reload_db()
-        cy.insereAreaFormacao()
+        cy.insereAreaFormacao(area.Area)
         areaformacaoPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })
     
-    it('Inserção de Area de Formação', () => {
-        areaformacaoPage.insereAreaFormacao()
+    it.only('Inserção de Area de Formação', () => {
+        areaformacaoPage.inserir(area)
         util.validaTitulo('Áreas de Formação')
     })
 
     it('Edição de Area de Formação', () => {
-        areaformacaoPage.editarAreaFormacao('Editar', 'Área de Formacao Teste')
+        areaformacaoPage.editar(area.Area)
         util.validaTitulo('Áreas de Formação')
     })
 
     it('Exclusão de Area de Formação', () => {
-        areaformacaoPage.excluirAreaFormacao('Excluir', 'Área de Formacao Teste')
+        areaformacaoPage.excluir(area.Area)
         util.popUpMessage('Confirma exclusão?')
         util.successMsg('Área de Formação excluída com sucesso.')
     })

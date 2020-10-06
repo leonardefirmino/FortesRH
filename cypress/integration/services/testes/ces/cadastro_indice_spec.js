@@ -7,31 +7,39 @@ describe('Funcionalidade Indices', () => {
     const loginPage = new LoginPage()
     const indicePage = new IndicePage()
 
+    const indice = { Descricao: "Indice Salario Maternidade", Descricao2: "Indice Teste", Descricao3: "Indice com Histórico", Data: "01/10/2020", Valor: "2500,00" }
+
     beforeEach('', () => {
         cy.reload_db()
-        cy.insereIndices()
-        cy.insereIndicesComHistorico()
+        cy.insereIndices(indice.Descricao2)
+        cy.insereIndicesComHistorico(indice.Descricao3)
         indicePage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })
-    
+ 
     it('Inserção de Índice', () => {
-        indicePage.preencheIndice()
+        indicePage.insereIndice(indice)
         util.successMsg('Índice Gravado com Sucesso!')
     })
 
     it('Edição de de Índice', () => {
-        indicePage.editarIndice('Editar', 'Indice Teste')
+        indicePage.editar(indice)
         util.successMsg('Índice Atualizado com Sucesso!')
     })
 
     it('Insere Histórico de Índice', () => {
-        indicePage.preencheHistoricoIndice()
+        indicePage.preencheHistoricoIndice(indice)
         util.successMsg('Índice Atualizado com Sucesso!')
     })
 
-    it('Exclusão de Area Organizacional', () => {
-        indicePage.excluirIndice('Excluir', 'Indice Teste')
+    it('Exclusão de Índice', () => {
+        indicePage.excluir(indice.Descricao2)
+        util.popUpMessage('Confirma exclusão?')
+        util.infoMsg('Índice excluído com sucesso.')
+    })
+
+    it.only('Exclusão de Índice - com Histórico', () => {
+        indicePage.excluir(indice.Descricao3)
         util.popUpMessage('Confirma exclusão?')
         util.infoMsg('Índice excluído com sucesso.')
     })

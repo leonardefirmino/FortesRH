@@ -1,67 +1,43 @@
-
 import * as util from '../../../support/util'
+
+//MAPEAMENTO DOS ELEMENTOS DA TELA
+const url = '/cargosalario/indice/list.action'
+const inserir = '#btnInserir'
+const gravar = '#btnGravar'
+const descricao = '#nome'
+const dataHistorico = '#dataHist'
+const valorIndice = '#valor'
 
 export class IndicePage {
 
     navigate() {
-        cy.visit('/cargosalario/indice/list.action')
+        cy.visit(url)
+    }
+    
+    insereIndice(indice) {
+        cy.get(inserir).click()
+        cy.get(descricao).clear().type(indice.Descricao)
+        cy.get(dataHistorico).clear().type(indice.Data)
+        cy.get(valorIndice).clear().type(indice.Valor)
+        cy.get(gravar).click()
     }
 
-    clicaInserir() {
-        cy.get('#btnInserir').click()
-    }
-
-    clicaGravar() {
-        cy.get('#btnGravar').click()
-    }
-
-    nomeIndice() {
-        cy.get('#nome').clear().type('Índice Salário Família')
-    }
-
-    dataHistorico(text) {
-        cy.get('#dataHist').clear().type('01/01/2020')
-    }
-
-    valorIndice() {
-        cy.get('#valor').clear().type('1000')
-    }
-
-    preencheIndice(text) {
-        this.clicaInserir()
-
-        if (text == null) {
-            this.nomeIndice()
-            this.dataHistorico()
-            this.valorIndice()
-        } else {
-        }
-        this.clicaGravar()
-    }
-
-    preencheHistoricoIndice(text) {        
+    preencheHistoricoIndice(indice) {
         util.acao('Editar', 'Indice Teste')
-        this.clicaInserir()
-
-        if (text == null) {
-            this.dataHistorico()
-            this.valorIndice()
-        } else {
-        }
-        this.clicaGravar()
-        this.clicaGravar()
+        cy.get(inserir).click()
+        cy.get(dataHistorico).clear().type(indice.Data)
+        cy.get(valorIndice).clear().type(indice.Valor)
+        cy.get(gravar).click()
+        cy.get(gravar).click()
     }
 
-    editarIndice(acao, area_nome) {
-        util.acao(acao, area_nome)
-        this.nomeIndice()
-        this.clicaGravar()
+    editar(indice) {
+        util.acao('Editar', 'Indice Teste')
+        cy.get(descricao).clear().type(indice.Descricao)
+        cy.get(gravar).click()
     }
-
-    excluirIndice(acao, area_nome) {
-        util.acao(acao, area_nome)
+    
+    excluir(indice) {
+        util.acao('Excluir', indice)
     }
-
-
-
 }

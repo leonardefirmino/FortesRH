@@ -1,37 +1,30 @@
-import '../../../support/util'
 import * as util from '../../../support/util'
+
+const url = '/geral/areaFormacao/list.action'
+const inserir = '#btnInserir'
+const gravar = '#btnGravar'
+const descricao = '#nome'
 
 export class AreaFormacaoPage {
 
     navigate() {
-        cy.visit('/geral/areaFormacao/list.action')
+        cy.visit(url)
     }
 
-    clicaInserir() {
-        cy.get('#btnInserir').click()
+    inserir(area) {
+        cy.get(inserir).click()
+        cy.get(descricao).clear().type(area.Nome)
+        cy.get(gravar).click()
     }
 
-    clicaGravar() {
-        cy.get('#btnGravar').click()
+    editar(area){
+        util.acao('Editar', area)
+        cy.get(descricao).clear().type(area)
+        cy.get(gravar).click()
     }
 
-    preencheAreaFormacao() {
-        cy.get('#nome').clear().type('Área de Formação Teste')
-        this.clicaGravar()
-    }
-
-    insereAreaFormacao() {
-        this.clicaInserir()
-        this.preencheAreaFormacao()
-    }
- 
-    editarAreaFormacao(acao, etapa) {
-        util.acao(acao, etapa)
-        this.preencheAreaFormacao()
-    }
-
-    excluirAreaFormacao(acao, etapa) {
-        util.acao(acao, etapa)
+    excluir(area) {
+        util.acao('Excluir', area)
     }
 
 

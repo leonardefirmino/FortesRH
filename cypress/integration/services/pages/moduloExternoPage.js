@@ -20,7 +20,7 @@ export class ModuloExternoPage {
     }
 
     checkLGPD(){
-        cy.get('#termo-privacidade-politica-seguranca-input').check()
+        cy.get('#termo-privacidade-politica-seguranca-input').check().and('be.checked')
     }
 }
 

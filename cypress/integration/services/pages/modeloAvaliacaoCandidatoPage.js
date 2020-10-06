@@ -1,5 +1,5 @@
-
 import * as util from '../../../support/util'
+
 export class ModeloAvaliacaoCandidatoPage {
 
     navigate() {
