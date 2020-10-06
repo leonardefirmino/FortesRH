@@ -33,6 +33,7 @@ Cypress.Commands.add("insereUsuarioSemSenhaComEmpregado", (usuario) => {
 
 Cypress.Commands.add("insereColaborador", () => {
     cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, 'colaborador teste', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
+    cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = 'colaborador teste'), (select id from areaorganizacional where id = 1), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, null, null, 1, null, null)")
 })
 
 Cypress.Commands.add("insereEtapaSeletiva", () => {
@@ -50,6 +51,10 @@ Cypress.Commands.add("inserirSolicitacaoPessoal", () => {
     cy.exec_sql("insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Cargo Teste'), (select id from areaorganizacional where nome = 'Área Teste'))")
     cy.exec_sql("insert into motivosolicitacao values (nextval('motivosolicitacao_sequence'), 'Aumento de Quadro', false, false)")
     cy.exec_sql("insert into solicitacao values (nextval('solicitacao_sequence'), '01/01/2020', null, 10, 'E', '02', 1000, null, null, 'I', null, false, false, null, (select id from motivosolicitacao where descricao = 'Aumento de Quadro'), (select id from areaorganizacional where nome = 'Área Teste'), 1, 1, null, (select id from empresa where nome = 'Empresa Padrão'), 1, 'Solicitação', 1, 'Horário', 'A', null, null, null, null, '01/01/2020', false, null, null)")
+})
+Cypress.Commands.add("inserirAreaOrganizacional", () => {
+    cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), 'Desenvolvimento', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
+    
 })
 
 Cypress.Commands.add("insereSolicitacaoEmAnalise", () => {

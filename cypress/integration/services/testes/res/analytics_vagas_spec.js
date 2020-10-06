@@ -1,9 +1,9 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
-import { AnalyticsPage } from '../../pages/analyticsPage'
+import { AnalyticsPage } from '../../pages/analyticsPageRS'
 
-describe('Funcionalidade Solicitação de Pessoal', () => {
+describe('Analitics Recrutamento e Seleção', () => {
     const loginPage = new LoginPage()
     const analyticsPage = new AnalyticsPage()
 
@@ -14,7 +14,7 @@ describe('Funcionalidade Solicitação de Pessoal', () => {
         loginPage.with('homolog', '1234')
     })
     
-    it('Inserção de Solicitação de Pessoal', () => {
+    it('Vagas Disponíveis', () => {
         util.entendiButton()
         analyticsPage.validaVagas()
     })
