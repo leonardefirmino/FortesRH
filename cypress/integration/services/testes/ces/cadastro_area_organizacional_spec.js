@@ -21,7 +21,7 @@ describe('Funcionalidade Area de Formação', () => {
         util.successMsg('Área organizacional inserido com sucesso')
     })
     
-    it('Inserção de Area Organizacional - Com Area Mãe', () => {
+    it.only('Inserção de Area Organizacional - Com Area Mãe', () => {
         areaOrganizacionalPage.preencheAreaOrganizacional('Área Teste')
         util.successMsg('Área organizacional inserido com sucesso')
     })
