@@ -61,7 +61,7 @@ function errorMessageLogin(text) {
 }
 
 function successMsg(text) {
-    cy.get('#successMsg').should('contain', text)
+    cy.get('#successMsg').should('include.text', text)
 }
 
 function warningMsg(text) {

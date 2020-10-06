@@ -33,7 +33,7 @@ Cypress.Commands.add("insereUsuarioSemSenhaComEmpregado", (usuario) => {
 
 Cypress.Commands.add("insereColaborador", () => {
     cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, 'colaborador teste', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
-    cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = 'colaborador teste'), (select id from areaorganizacional where id = 1), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, null, null, 1, null, null)")
+    cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = 'colaborador teste'), (select id from areaorganizacional where id = 2), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, null, null, 1, null, null)")
 })
 
 Cypress.Commands.add("insereEtapaSeletiva", () => {
@@ -91,6 +91,19 @@ Cypress.Commands.add("insereCandidatoExterno", (candidato_nome) => {
 Cypress.Commands.add("inseremodeloAvaliacaoCandidato", (avaliacao_nome) => {
     cy.exec_sql("insert into avaliacao values (nextval('avaliacao_sequence'), '" + avaliacao_nome + "', '', true, (select id from empresa where nome = 'Empresa Padrão'), 'S', null, false, false, null, false)")
     cy.exec_sql("insert into pergunta values (nextval('pergunta_sequence'), 1, 'Pergunta 01', false, 'null', 4, null, null, 1, 10, 1, (select id from avaliacao where titulo = '" + avaliacao_nome + "'), false)")
+})
+
+Cypress.Commands.add("integraFortesPessoal", () => {
+    cy.exec_sql("update empresa set acintegra = true")
+})
+
+Cypress.Commands.add("insereIndices", () => {
+    cy.exec_sql("insert into indice values (nextval('indice_sequence'), 'Indice Teste', null, null)")
+})
+
+Cypress.Commands.add("insereIndicesComHistorico", () => {
+    cy.exec_sql("insert into indice values (nextval('indice_sequence'), 'Indice Com Historico', null, null)")
+    cy.exec_sql("insert into indicehistorico values (nextval('indicehistorico_sequence'), '01/10/2020', 2000, (select id from indice where nome = 'Indice Com Historico'), null)")
 })
 
 Cypress.Commands.add('excluirTodos', () => {

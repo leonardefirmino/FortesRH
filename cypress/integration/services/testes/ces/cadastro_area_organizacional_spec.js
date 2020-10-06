@@ -3,7 +3,7 @@ import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
 import { AreaOrganizacionalPage } from '../../pages/areaOrganizacionalPage'
 
-describe('Funcionalidade Area de Formação', () => {
+describe('Funcionalidade Area Organizacional', () => {
     const loginPage = new LoginPage()
     const areaOrganizacionalPage = new AreaOrganizacionalPage()
 
@@ -16,18 +16,18 @@ describe('Funcionalidade Area de Formação', () => {
         loginPage.loggedIn('homolog', '1234')
     })
     
-    it.only('Inserção de Area Organizacional', () => {
+    it('Inserção de Area Organizacional', () => {
         areaOrganizacionalPage.preencheAreaOrganizacional()
-        util.successMsg('Área organizacional inserido com sucesso')
+        util.successMsg('inserido com sucesso')
     })
     
-    it.only('Inserção de Area Organizacional - Com Area Mãe', () => {
-        areaOrganizacionalPage.preencheAreaOrganizacional('Área Teste')
-        util.successMsg('Área organizacional inserido com sucesso')
+    it('Inserção de Area Organizacional - Com Area Mãe', () => {
+        areaOrganizacionalPage.preencheAreaOrganizacional('Desenvolvimento')
+        util.successMsg('inserido com sucesso')
     })
     
     it('Inserção de Area Organizacional - Com Area Mãe vinculada a um talento', () => {
-        areaOrganizacionalPage.preencheAreaOrganizacional('Desenvolvimento')
+        areaOrganizacionalPage.preencheAreaOrganizacional('Área Teste')
         areaOrganizacionalPage.validaAreaMaeComVinculo()
     })
 
