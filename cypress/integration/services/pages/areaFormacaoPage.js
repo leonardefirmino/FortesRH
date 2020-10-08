@@ -26,7 +26,4 @@ export class AreaFormacaoPage {
     excluir(area) {
         util.acao('Excluir', area)
     }
-
-
-
 }

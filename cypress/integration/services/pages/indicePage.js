@@ -40,4 +40,4 @@ export class IndicePage {
     excluir(indice) {
         util.acao('Excluir', indice)
     }
-}
+} 

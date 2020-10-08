@@ -13,7 +13,7 @@ def popula_db conn
     elsif linha =~ /( cid | codigoCBO | cidade | areaformacao )/i
       if linha =~ /^insert into cidade.*Fortaleza/i
         sql << linha
-      elsif linha =~ /^insert into/i and i <= 6
+      elsif linha =~ /^insert into/i and i <= 4
         i+=1
         sql << linha
       elsif linha =~ /^alter table/i

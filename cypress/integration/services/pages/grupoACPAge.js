@@ -16,7 +16,7 @@ export class GrupoAcPage {
     navigate() {
         cy.visit(url)
     }
-
+ 
     insereGrupoAC(grupoAc) {
         cy.get(inserir).click()
         cy.get(descricao).clear().type(grupoAc.Descricao)

@@ -26,7 +26,7 @@ describe('Tentativas de Login', () => {
         it('Captcha Ativo', () => {
             cy.exec_sql('update parametrosdosistema set utilizarcaptchanologin = true')
             cy.reload()
-            cy.get('iframe').should('be.visible')
+            util.validaCaptchaSistemaVisivel()
             loginPage.with('SOS', '1234')
             util.welcomeMessage('Bem-vindo(a)')
         })

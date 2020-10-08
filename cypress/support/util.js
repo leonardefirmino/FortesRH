@@ -50,7 +50,7 @@ function continuarButton() {
 }
 
 function validaTitulo(text) {
-    cy.get('#waDivTitulo').should('contain', text)
+    cy.get('#waDivTitulo').should('include.text', text)
 }
 
 function welcomeMessage(text) {
@@ -85,12 +85,16 @@ function infoMsgExterno() {
     cy.get('#infoMsg').should('be.visible')
 }
 
-function welcomeExterno() {
-    cy.get('#topDiv').should('be.visible')
+function welcomeExterno(text) {
+    cy.get('#topDiv').should('be.visible').and('contain.text', text)
+}
+
+function validaCaptchaSistemaVisivel() {
+    cy.get('iframe').should('be.visible')
 }
 
 export {
     acao_old, acao, entendiButton, popUpMessage, dialogMessage, confirmarDialogMessage, dialogMessageLGPD, continuarButton, validaTitulo, welcomeMessage,
-    errorMessageLogin, successMsg, warningMsg, infoMsg, errorMsg, warningMsgExterno, infoMsgExterno, welcomeExterno
+    errorMessageLogin, successMsg, warningMsg, infoMsg, errorMsg, warningMsgExterno, infoMsgExterno, welcomeExterno, validaCaptchaSistemaVisivel
 }
 

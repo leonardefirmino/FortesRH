@@ -1,53 +1,41 @@
 import * as util from '../../../support/util'
 
+const url = '/geral/areaOrganizacional/list.action'
+const inserir = '#btnInserir'
+const gravar = '#btnGravar'
+const nomeArea = '#nome'
+const nomeAreaMae = '#areaMaeId'
+
 export class AreaOrganizacionalPage {
 
     navigate() {
-        cy.visit('/geral/areaOrganizacional/list.action')
+        cy.visit(url)
     }
 
-    clicaInserir() {
-        cy.get('#btnInserir').click()
+    inserir(area) {
+        cy.get(inserir).click()
+        cy.get(nomeArea).clear().type(area.NomeArea)
+        cy.get(gravar).click()
     }
 
-    clicaGravar() {
-        cy.get('#btnGravar').click()
+    inserirComAreaMae(area) {
+        cy.get(inserir).click()
+        cy.get(nomeArea).clear().type(area.NomeArea)
+        cy.get(nomeAreaMae).select(area.AreaOrg)
+        cy.get(gravar).click()
     }
 
-    nomeArea() {
-        cy.get('#nome').clear().type('Area Organizacional Teste')
+    editar(area) {
+        util.acao('Editar', area.NomeArea)        
+        cy.get(nomeArea).clear().type(area.AreaOrg)
+        cy.get(gravar).click()
+    }  
+
+    excluir(area) {
+        util.acao('Excluir', area.NomeArea) 
     }
 
-    nomeAreaMae(text) {
-        cy.get('#areaMaeId').select(text)
+    validaPopUpVinculoAreaMae(text) {
+        cy.get('#areaSemColaboradores').should('contain.text', text)
     }
-
-    validaAreaMaeComVinculo() {
-        cy.get('#areaSemColaboradores').should('contain', 'A área organizacional mãe selecionada, possui talentos vinculados.') 
-    }
-
-    preencheAreaOrganizacional(text) {
-        this.clicaInserir()
-
-        if (text == null) {
-            this.nomeArea()
-        } else {
-            this.nomeArea()
-            this.nomeAreaMae(text)
-        }
-        this.clicaGravar()
-    }
-
-    editarAreaOrganizacional(acao, area_nome) {
-        util.acao(acao, area_nome)
-        this.nomeArea()
-        this.clicaGravar()
-    }
-
-    excluirAreaOrganizacional(acao, area_nome) {
-        util.acao(acao, area_nome)
-    }
-
-
-
 }

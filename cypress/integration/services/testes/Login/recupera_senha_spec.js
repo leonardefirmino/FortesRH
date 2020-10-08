@@ -13,8 +13,8 @@ describe('Recuperação de Senha', () => {
     context('Fortes RH', () => {
 
         beforeEach('', () => {
-            loginPage.navigate()
             cy.reload_db()
+            loginPage.navigate()
         })
 
         it('Colaborador com usuário sem senha', () => {
@@ -48,8 +48,8 @@ describe('Recuperação de Senha', () => {
             cy.reload_db()
             cy.inserecandidato("Candidato 01")
             externoPage.navigate()
-            alteraSenhaPage.forgotPasswordExterno('06060722334')
-            util.infoMsgExterno()
+            alteraSenhaPage.forgotPasswordExterno('39210359372')
+            util.infoMsgExterno('Candidato não possui email cadastrado! Por favor entre em contato com a empresa.')
         })
     })
 })

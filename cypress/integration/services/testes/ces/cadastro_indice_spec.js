@@ -15,7 +15,7 @@ describe('Funcionalidade Indices', () => {
         cy.insereIndicesComHistorico(indice.Descricao3)
         indicePage.navigate()
         loginPage.loggedIn('homolog', '1234')
-    })
+    }) 
  
     it('Inserção de Índice', () => {
         indicePage.insereIndice(indice)
@@ -38,7 +38,7 @@ describe('Funcionalidade Indices', () => {
         util.infoMsg('Índice excluído com sucesso.')
     })
 
-    it.only('Exclusão de Índice - com Histórico', () => {
+    it('Exclusão de Índice - com Histórico', () => {
         indicePage.excluir(indice.Descricao3)
         util.popUpMessage('Confirma exclusão?')
         util.infoMsg('Índice excluído com sucesso.')

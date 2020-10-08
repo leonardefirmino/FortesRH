@@ -16,10 +16,10 @@ describe('Funcionalidade Area de Formação', () => {
         loginPage.loggedIn('homolog', '1234')
     })
     
-    it.only('Inserção de Area de Formação', () => {
+    it('Inserção de Area de Formação', () => {
         areaformacaoPage.inserir(area)
         util.validaTitulo('Áreas de Formação')
-    })
+    }) 
 
     it('Edição de Area de Formação', () => {
         areaformacaoPage.editar(area.Area)

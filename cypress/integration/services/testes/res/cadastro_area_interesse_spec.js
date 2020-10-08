@@ -16,7 +16,7 @@ describe('Funcionalidade Area de Interesse', () => {
         areaInteressePage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })
-    
+     
     it('Inserção de Area de Interesse', () => {
         areaInteressePage.inserir(areaInteresse)
         util.validaTitulo('Áreas de Interesse')
@@ -27,7 +27,7 @@ describe('Funcionalidade Area de Interesse', () => {
         util.validaTitulo('Áreas de Interesse')
     })
 
-    it.only('Exclusão de Area de Interesse', () => {
+    it('Exclusão de Area de Interesse', () => {
         areaInteressePage.excluir(areaInteresse)
         util.popUpMessage('Confirma exclusão?')
         util.successMsg('Área de Interesse excluída com sucesso.')

@@ -7,9 +7,11 @@ describe('Funcionalidade Area Organizacional', () => {
     const loginPage = new LoginPage()
     const areaOrganizacionalPage = new AreaOrganizacionalPage()
 
+    const areaOrganizacional = { NomeArea: "Desenvolvimento", AreaOrg: 'Gestao de Pessoas'}
+
     beforeEach('', () => {
         cy.reload_db()
-        cy.inserirAreaOrganizacional()
+        cy.inserirAreaOrganizacional(areaOrganizacional.NomeArea)
         cy.inserirSolicitacaoPessoal()
         cy.insereColaborador()
         areaOrganizacionalPage.navigate()
@@ -17,33 +19,35 @@ describe('Funcionalidade Area Organizacional', () => {
     })
     
     it('Inserção de Area Organizacional', () => {
-        areaOrganizacionalPage.preencheAreaOrganizacional()
+        areaOrganizacionalPage.inserir(areaOrganizacional)
         util.successMsg('inserido com sucesso')
     })
     
     it('Inserção de Area Organizacional - Com Area Mãe', () => {
-        areaOrganizacionalPage.preencheAreaOrganizacional('Desenvolvimento')
+        const areaOrganizacional = { NomeArea: "Desenvolvimento", AreaOrg: 'Desenvolvimento'}
+        areaOrganizacionalPage.inserirComAreaMae(areaOrganizacional)
         util.successMsg('inserido com sucesso')
     })
     
     it('Inserção de Area Organizacional - Com Area Mãe vinculada a um talento', () => {
-        areaOrganizacionalPage.preencheAreaOrganizacional('Área Teste')
-        areaOrganizacionalPage.validaAreaMaeComVinculo()
+        areaOrganizacionalPage.inserirComAreaMae(areaOrganizacional)
+        areaOrganizacionalPage.validaPopUpVinculoAreaMae('A área organizacional mãe selecionada, possui talentos vinculados.')
     })
 
     it('Edição de Area Organizacional', () => {
-        areaOrganizacionalPage.editarAreaOrganizacional('Editar', 'Desenvolvimento')
+        areaOrganizacionalPage.editar(areaOrganizacional)
         util.successMsg('Área organizacional atualizado com sucesso')
     })
 
     it('Exclusão de Area Organizacional', () => {
-        areaOrganizacionalPage.excluirAreaOrganizacional('Excluir', 'Desenvolvimento')
+        areaOrganizacionalPage.excluir(areaOrganizacional)
         util.popUpMessage('Confirma exclusão?')
         util.successMsg('Área organizacional excluída com sucesso.')
     })
 
     it('Exclusão de Area Organizacional - Associada a movimentações', () => {
-        areaOrganizacionalPage.excluirAreaOrganizacional('Excluir', 'Área Teste')
+        const areaOrganizacional = { NomeArea: "Área Teste"}
+        areaOrganizacionalPage.excluir(areaOrganizacional)
         util.popUpMessage('Confirma exclusão?')
         util.warningMsg('Não foi possível excluir a Área Organizacional.')
     })

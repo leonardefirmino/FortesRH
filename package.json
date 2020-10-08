@@ -4,7 +4,8 @@
   "description": "Testes Funcionais Fortes RH (CYPRESS)",
   "main": "index.js",
   "scripts": {
-    "cy:browser": "npx cypress open"
+    "cy:browser": "npx cypress open",
+    "cy:run": "npx cypress run"
   },
   "author": "Georgem Arruda",
   "license": "ISC",

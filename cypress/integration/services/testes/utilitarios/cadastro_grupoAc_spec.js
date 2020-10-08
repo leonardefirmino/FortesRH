@@ -44,6 +44,4 @@ describe('Funcionalidade Grupo AC', () => {
         util.popUpMessage('Confirma exclusão?')
         util.errorMsg('Não foi possível excluir este Grupo AC.')
     })
-
-
 })

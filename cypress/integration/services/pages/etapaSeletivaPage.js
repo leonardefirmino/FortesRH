@@ -1,44 +1,34 @@
 import * as util from '../../../support/util'
 
+//MAPEAMENTO DOS ELEMENTOS DA TELA
+const url = '/captacao/etapaSeletiva/list.action'
+const inserir = '#btnInserir'
+const gravar = '#btnGravar'
+const ordem = '#ordem'
+const descricao = '#nome'
+const dataHistorico = '#dataHist'
+const valorIndice = '#valor'
+
 export class EtapaSeletivaPage {
 
     navigate() {
-        cy.visit('/captacao/etapaSeletiva/list.action')
+        cy.visit(url)
     }
 
-    clicaInserir() {
-        cy.get('#btnInserir').click()
+    inserir(etapaSeletiva) {
+        cy.get(inserir).click()
+        cy.get(ordem).should('not.be.null')
+        cy.get(descricao).focus().clear().type(etapaSeletiva.Descricao2)
+        cy.get(gravar).click()
     }
 
-    acao(acao, etapa) {
-        cy.acao_new(acao, etapa)
+    editar(etapaSeletiva) {
+        util.acao('Editar', etapaSeletiva.Descricao)
+        cy.get(descricao).focus().clear().type(etapaSeletiva.Descricao2)
+        cy.get(gravar).click()
     }
 
-    preencheEtapaSeletiva() {
-        cy.get('#ordem').should('not.be.null')
-        cy.get('#nome').focus().clear().type('Etapa de Recrutamento')
+    excluir(etapaSeletiva) {
+        util.acao('Excluir', etapaSeletiva.Descricao)
     }
-
-    clicaGravar() {
-        cy.get('#btnGravar').click()
-    }
-
-    insereEtapaSeletiva() {
-        this.clicaInserir()
-        this.preencheEtapaSeletiva()
-        this.clicaGravar()
-    }
-
-    editarEtapaSeletiva(acao, etapa) {
-        util.acao(acao, etapa)
-        this.preencheEtapaSeletiva()
-        this.clicaGravar()
-    }
-
-    excluirEtapaSeletiva(acao, etapa) {
-        util.acao(acao, etapa)
-    }
-
-    
-
 }

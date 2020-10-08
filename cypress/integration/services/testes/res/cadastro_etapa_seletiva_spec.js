@@ -8,26 +8,27 @@ describe('Funcionalidade Etapas Seletivas', () => {
     const loginPage = new LoginPage()
     const etapaPage = new EtapaSeletivaPage()
 
+    const etapaSeletiva = { Descricao: "Entrevista com Gestor", Descricao2: "Dinamica de Grupo" }
+
     beforeEach('', () => {
         cy.reload_db()
-        cy.insereEtapaSeletiva()
+        cy.insereEtapaSeletiva(etapaSeletiva.Descricao)
         etapaPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserção de Etapa Seletiva', () => {
-        etapaPage.insereEtapaSeletiva()
+        etapaPage.inserir(etapaSeletiva)
         util.validaTitulo('Etapas Seletivas')
     })
 
     it('Edição de Etapa Seletiva', () => {
-        etapaPage.editarEtapaSeletiva('Editar', 'Entrevista Com Gestor')
+        etapaPage.editar(etapaSeletiva)
         util.validaTitulo('Etapas Seletivas')
     })
 
     it('Exclusão de Etapa Seletiva', () => {
-        cy.inserirSolicitacaoPessoal()
-        etapaPage.excluirEtapaSeletiva('Excluir', 'Entrevista Com Gestor')
+        etapaPage.excluir(etapaSeletiva)
         util.popUpMessage('Confirma exclusão?')
         util.successMsg('Etapa Seletiva excluída com sucesso.')
     })

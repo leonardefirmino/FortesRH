@@ -28,7 +28,4 @@ export class AreaInteressePage {
     excluir(areaInteresse) {
         util.acao('Excluir', areaInteresse.Nome)
     }
-
-
-
 }

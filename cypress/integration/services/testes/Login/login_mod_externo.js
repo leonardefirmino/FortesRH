@@ -21,7 +21,7 @@ describe('Tentativas de Login no Módulo Externo', () => {
         cy.inserecandidato('Candidato 01')
         cy.inserecandidato('Candidato 02')
         externoPage.loggedIn('39210359372', '1234')
-        util.welcomeExterno()
+        util.welcomeExterno('Bem vindo(a)')
     })
 
     it('Acessar modulo externo - Senha Inválida', () => {

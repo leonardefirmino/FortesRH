@@ -4,6 +4,7 @@ const exibirFiltro = '#labelLink'
 const dataInicial = '#dataDe'
 const pesquisar = '#btnPesquisar'
 const quadroVagasDisponiveis = '#vagasDisponiveis'
+const quantidadeVagasDisponiveis = '.qtdVagaCargo'
 
 export class AnalyticsPage {
 
@@ -17,8 +18,9 @@ export class AnalyticsPage {
         cy.get(dataInicial).clear().type(dados.DataInicial)
         cy.get(pesquisar).click()
         cy.get(exibirFiltro).click()
-        cy.get(quadroVagasDisponiveis).within(($form) => {
+        cy.get(quadroVagasDisponiveis).within(() => {
             cy.contains(dados.CargoNome)
+            cy.get(quantidadeVagasDisponiveis).should('contain.text', dados.QtdVagas)
         })
     }
 }
