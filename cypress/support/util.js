@@ -73,6 +73,10 @@ function infoMsg(text) {
     cy.get('#infoMsg').should('contain', text)
 }
 
+function infomsg(text) {
+    cy.get('.info').should('contain.text', text)
+}
+
 function errorMsg(text) {
     cy.get('#errorMsg').should('contain', text)
 }
@@ -95,6 +99,6 @@ function validaCaptchaSistemaVisivel() {
 
 export {
     acao_old, acao, entendiButton, popUpMessage, dialogMessage, confirmarDialogMessage, dialogMessageLGPD, continuarButton, validaTitulo, welcomeMessage,
-    errorMessageLogin, successMsg, warningMsg, infoMsg, errorMsg, warningMsgExterno, infoMsgExterno, welcomeExterno, validaCaptchaSistemaVisivel
+    errorMessageLogin, successMsg, warningMsg, infoMsg, errorMsg, warningMsgExterno, infoMsgExterno, welcomeExterno, validaCaptchaSistemaVisivel, infomsg
 }
 

@@ -1,7 +1,13 @@
 require 'rubygems'
 require 'pg'
 
-$db_name = "fortesrh"
+$db_name = "homologrh"
+$db_user = "postgres"
+$host = "10.1.3.48"
+$port = 5432
+
+
+
 
 def popula_db conn
   puts "Populando banco de dados com dados iniciais..."
@@ -41,7 +47,7 @@ def reload_db
   puts "Limpando banco de dados, apagando todos os registros."
   conn = nil
   begin
-    conn = PG::Connection.open( :dbname => $db_name, :user => 'fortesrh', :host => 'localhost', :port => 55432 )
+    conn = PG::Connection.open( :dbname => $db_name, :user => $db_user, :host => $host, :port => $port )
     conn.exec("select alter_trigger(table_name, 'DISABLE') FROM information_schema.constraint_column_usage  where table_schema='public'  and table_catalog='#{$db_name}' group by table_name;")
     
     tables = conn.exec("SELECT table_name FROM information_schema.tables WHERE table_type = 'BASE TABLE' AND table_schema NOT IN ('pg_catalog', 'information_schema');")
@@ -65,8 +71,8 @@ def reload_db
     
     exec_sql "update parametrosdosistema set proximaversao = '2030-01-01'"
     exec_sql "update parametrosdosistema set servidorremprot = 'FORTESAG'"    
-    exec_sql "update parametrosdosistema set appurl = 'http://localhost:8080/fortesrh'"
-    exec_sql "update parametrosdosistema set appcontext = '/fortesrh'"
+    exec_sql "update parametrosdosistema set appurl = 'http://10.1.3.48:8080/fortesrhhomologrh'"
+    exec_sql "update parametrosdosistema set appcontext = '/fortesrhhomologrh'"
 
     exec_sql "insert into usuario values (nextval('usuario_sequence'),'homolog', 'homolog', 'MTIzNA==', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)"
     exec_sql "insert into usuarioempresa values (nextval('usuarioempresa_sequence'), (select id from usuario where nome = 'homolog'), 1, 1)"
@@ -77,7 +83,7 @@ end
 
 def exec_sql sql
   begin
-    conn = PG::Connection.open( :dbname => $db_name, :user => 'fortesrh', :host => 'localhost', :port => 55432)
+    conn = PG::Connection.open( :dbname => $db_name, :user => $db_user, :host => $host, :port => $port )
     conn.exec(sql)
   ensure
     conn.finish if conn

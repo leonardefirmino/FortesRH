@@ -1,7 +1,7 @@
 import 'cypress-capybara/add-commands'
 
 Cypress.Commands.add("exec_sql", (sql) => {
-    cy.task('query', sql)
+    return cy.task('query', sql)
 })
 
 //INFORMAÇÕES QUE RODAM ANTES DO INICIO DOS TESTES
@@ -154,9 +154,18 @@ Cypress.Commands.add("insere_X_Colaborador", (qtd_colaborador) => {
     } while (i < num);
 })
 
-
-
-
+Cypress.Commands.add("insereColaboradorComCompetencias", (colaborador_nome) => {
+    cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), 'Suporte', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
+    cy.exec_sql("insert into conhecimento (id, nome, empresa_id) values (nextval('conhecimento_sequence'), 'Java', (select id from empresa where nome = 'Empresa Padrão'))")
+    cy.exec_sql("insert into conhecimento_areaorganizacional  values ((select id from conhecimento where nome = 'Java'), (select id from areaorganizacional where nome = 'Suporte'))")    
+    cy.exec_sql("insert into cargo values (nextval('cargo_sequence'), 'Encarregado Departamento Pessoal', 'Cargo Teste', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)")
+    cy.exec_sql("insert into faixasalarial values (nextval('faixasalarial_sequence'), 'Júnior', null, (select id from cargo where nome = 'Encarregado Departamento Pessoal'), null, '252510')")
+    cy.exec_sql("insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from areaorganizacional where nome = 'Suporte'))")
+    cy.exec_sql("insert into cargo_conhecimento  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from conhecimento where nome = 'Java'))")
+    cy.exec_sql("insert into nivelcompetencia values (nextval('nivelcompetencia_sequence'), 'Básico', (select id from empresa where nome = 'Empresa Padrão'))")
+    cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, '" + colaborador_nome + "', '" + colaborador_nome + "', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
+    cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = '" + colaborador_nome + "'), (select id from areaorganizacional where nome = 'Suporte'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where cargo_id = (select id from cargo where nome = 'Encarregado Departamento Pessoal')), null, 1, null, null)")
+})
 
 
 // ***********************************************
