@@ -13,7 +13,7 @@ describe('Funcionalidade Area Organizacional', () => {
         cy.reload_db()
         cy.inserirAreaOrganizacional(areaOrganizacional.NomeArea)
         cy.inserirSolicitacaoPessoal()
-        cy.insereColaborador()
+        cy.insereColaborador('Helena de Troia')
         areaOrganizacionalPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })

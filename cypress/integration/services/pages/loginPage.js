@@ -1,10 +1,10 @@
 import * as util from '../../../support/util'
 
-const url = '/login.action'
+const url = '/login.action'                
 const usuario = '#username'
-const senha = '#password'
+const senha = '#password'                 
 const entrar = '#entrar'
-const alteraSenha = '#senha'
+const alteraSenha = '#senha'               
 const confirmaSenha = '#confNovaSenha'
 const alteraSenhaButton = '#alterarSenha'
 

@@ -3,7 +3,7 @@
     "baseUrl": "http://localhost:8080/fortesrh",
     "video": false,
     "watchForFileChanges": false,
-    "screenshotOnRunFailure": false,
+    "screenshotOnRunFailure": true,
     "env": {
         "db": {
             "username": "fortesrh",

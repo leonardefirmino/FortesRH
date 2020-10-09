@@ -3,11 +3,11 @@ import * as util from '../../../support/util'
 //MAPEAMENTO DOS ELEMENTOS DA TELA
 const url = '/pesquisa/entrevista/list.action'
 const inserir = '.btnInserir'
-const titulo = '#titulo'
+const titulo = '#titulo'                    
 const avancar = '.btnAvancar'
-const textoPerguunta = '#texto'
+const textoPerguunta = '#texto'               
 const tipo = '#tipo'
-const gravar = '.btnGravar'
+const gravar = '.btnGravar'                 
 const voltar = '.btnVoltar'
 const cancelar = '.btnCancelar'
 
@@ -30,17 +30,4 @@ export class ModeloEntrevistaDesligamentoPage {
         cy.get(voltar).click()  
         cy.get(cancelar).click() 
     }
-
-    // editar(grupoAc) {
-    //     util.acao_old('Editar', 'Grupo AC Teste')
-    //     cy.get(usuarioac).clear().type(grupoAc.Usuario)
-    //     cy.get(senhaac).clear().type(grupoAc.Senha)
-    //     cy.get(soap).clear().type(grupoAc.Soap)
-    //     cy.get(wdsl).clear().type(grupoAc.Wdsl)
-    //     cy.get(gravar).click()
-    // }
-
-    // excluir(grupoAc) {
-    //     util.acao_old('Excluir', grupoAc)
-    // }
 }

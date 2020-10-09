@@ -16,20 +16,20 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         talentoPage.navigate_talentoPage()
         loginPage.loggedIn('homolog', '1234')
     })
-    it.only('Responder Entrevista de Desligamento', () => {
+    it('Responder Entrevista de Desligamento', () => {
         cy.insereEntrevistaDesligamento(dados.EntrevistaDesligamento)
         talentoPage.pesquisaTalento()
         talentoPage.respondeEntrevistaDesligamento(dados)
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
-    it.only('Tentativa de criar acesso ao sistema com empregado demitido', () => {
+    it('Tentativa de criar acesso ao sistema com empregado demitido', () => {
         talentoPage.pesquisaTalento()
         talentoPage.criaAcessoSistema(dados)
         cy.contains('* O usuário tem referência com o talento Helena de Troia, que está desligado(a).')
     })
 
-    it.only('Excluir Colaborador', () => {
+    it('Excluir Colaborador', () => {
         cy.insereColaborador(dados.ColaboradorAtivo)
         cy.reload()
         talentoPage.excluir(dados)
@@ -37,20 +37,20 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         util.successMsg('Talento excluído com sucesso.')
     })
 
-    it.only('Editar Colaborador', () => {
+    it('Editar Colaborador', () => {
         cy.insereColaborador(dados.ColaboradorAtivo)
         cy.reload()
         talentoPage.editar(dados)
         util.successMsg('Talento Sophie Charlotte alterado com sucesso.')
     })
 
-    // it.only('Desligar Colaborador', () => {
-    //     cy.insereColaborador(dados.ColaboradorAtivo)
-    //     cy.reload()
-    //     talentoPage.desligarColaborador(dados)
-    // })
+    it.only('Desligar Colaborador', () => {
+        cy.insereColaborador(dados.ColaboradorAtivo)
+        cy.reload()
+        talentoPage.desligarColaborador(dados)
+    })
 
-    it.only('Progressão Colaborador', () => {
+    it('Progressão Colaborador', () => {
         cy.insereColaborador(dados.ColaboradorAtivo)
         cy.reload()
         talentoPage.visualizarProgressao(dados)

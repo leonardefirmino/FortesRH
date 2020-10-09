@@ -1,10 +1,15 @@
 import * as util from '../../../support/util'
 
-const url_talentos = '/geral/colaborador/list.action';              const exibirFiltro = '#labelLink'
-const situacao = '#situacao';                                       const inserir = '.btnInserir'
-const pesquisar = '#btnPesquisar';                                  const selecionaEntrevista = '#entrevista'
-const avancar = '.btnAvancar';                                      const resposta1 = '.opcaoResposta1'
-const gravar = '.btnGravar';                                        const gravar_new = '#gravar'
+const url_talentos = '/geral/colaborador/list.action'              
+const exibirFiltro = '#labelLink'
+const situacao = '#situacao'                                       
+const inserir = '.btnInserir'
+const pesquisar = '#btnPesquisar'                                  
+const selecionaEntrevista = '#entrevista'
+const avancar = '.btnAvancar'                                      
+const resposta1 = '.opcaoResposta1'
+const gravar = '.btnGravar'                                       
+const gravar_new = '#gravar'
 const editarHistorico = '#btnEditarHistoricos'
 
 export class TalentoCandidatoPage {
@@ -41,7 +46,13 @@ export class TalentoCandidatoPage {
     }
 
     desligarColaborador(dados) {
-        util.acao_old('Desligar talento', dados.ColaboradorAtivo)
+        let colaborador_id = cy.task("select id from colaborador where nome = '"+ dados.ColaboradorAtivo +"'")
+
+        console.log(colaborador_id)
+
+
+        // cy.visit("/geral/colaborador/prepareDesliga.action?colaborador.id='"+ colaborador_id +"'&nomeBusca=&cpfBusc=")
+        // cy.get(':nth-child(1) > .ui-button-text').click()
     }
 
     visualizarProgressao(dados) {
