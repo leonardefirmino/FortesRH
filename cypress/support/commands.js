@@ -123,7 +123,7 @@ Cypress.Commands.add("insereIndices", (indice_nome) => {
 
 Cypress.Commands.add("insereIndicesComHistorico", (indice_nome) => {
     cy.exec_sql("insert into indice values (nextval('indice_sequence'), '" + indice_nome + "', null, null)")
-    cy.exec_sql("insert into indicehistorico values (nextval('indicehistorico_sequence'), '01/10/2020', 2000, (select id from indice where nome = '" + indice_nome + "'), null)")
+    cy.exec_sql("insert into indicehistorico values (nextval('indicehistorico_sequence'), '05/10/2020', 2000, (select id from indice where nome = '" + indice_nome + "'), null)")
 })
 
 Cypress.Commands.add("insereGrupoAC", (grupoAc_nome) => {

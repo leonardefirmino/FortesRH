@@ -22,7 +22,7 @@ describe('Funcionalidade Indices', () => {
         util.successMsg('Índice Gravado com Sucesso!')
     })
 
-    it('Edição de de Índice', () => {
+    it.only('Edição de de Índice', () => {
         indicePage.editar(indice)
         util.successMsg('Índice Atualizado com Sucesso!')
     })
