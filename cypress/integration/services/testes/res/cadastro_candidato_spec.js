@@ -149,18 +149,16 @@ describe('Gerenciamento de Candidatos', () => {
         it('Inserir Candidato em Solicitação de Pessoal', () => {
             candidatoPage.inserirEmSolicitacao("Candidato 01")
             util.validaTitulo('Candidatos da Seleção')
-        })       
+        })
 
         it('Triagem de Candidatos', () => {
             candidatoPage.triagemCandidato()
             util.validaTitulo('Triagem de Currículos')
-        })       
+        })
 
         it('Incluir Curriculo Digitado', () => {
             candidatoPage.inserirCurriculoDigitado()
             util.infoMsg('Currículo (Curriculo Digitado) cadastrado com sucesso.')
         })
-
-
     })
 })

@@ -178,6 +178,15 @@ export class SolicitacaoPessoalPage {
         util.dialogMessage('Contratar')
         util.confirmarDialogMessage('Contratar')
     }
+    
+
+    historicoCandidato(nome_Solicitação) {
+        this.inserirCandidatosExternoSolicitacao(nome_Solicitação)
+        cy.get('.btnVoltar').click()
+        util.acao_old('Histórico', 'Candidato Mod Externo')
+        cy.get('#btnInserir').click()
+        
+    }
 
     clonarSolicitacao(nome_Solicitação) {
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().parent().parent().find('.icon-awesome[title="Clonar"]').click({ force: true })

@@ -19,6 +19,7 @@ export class EtapaSeletivaPage {
         cy.get(inserir).click()
         cy.get(ordem).should('not.be.null')
         cy.get(descricao).focus().clear().type(etapaSeletiva.Descricao2)
+        cy.get('#analiseComportamental').should('be.visible').click()
         cy.get(gravar).click()
     }
 

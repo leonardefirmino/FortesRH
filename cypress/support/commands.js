@@ -11,7 +11,7 @@ Cypress.Commands.add("reload_db", () => {
     // O script abaixo ajusta o perfil ADMINISTRADOR para ter acesso a todos os menus
     cy.exec_sql("CREATE OR REPLACE FUNCTION insert_papel_perfil_administrador() RETURNS integer AS $$ DECLARE     mviews RECORD; BEGIN     FOR mviews IN       select p.id as papelId from papel p where p.id not in (select papeis_id from perfil_papel where perfil_id = 1)     LOOP         INSERT INTO perfil_papel (perfil_id, papeis_id) VALUES (1, mviews.papelId);      END LOOP;     RETURN 1; END; $$ LANGUAGE plpgsql;")
     cy.exec_sql("select insert_papel_perfil_administrador();")
-    cy.exec_sql("drop function insert_papel_perfil_administrador();")
+    cy.exec_sql("drop function insert_papel_perfil_administrador();")    
 })
 
 Cypress.Commands.add("insereUsuario", (param) => {
@@ -51,7 +51,7 @@ Cypress.Commands.add("insereColaboradorDemitido", (colaborador_nome) => {
 })
 
 Cypress.Commands.add("insereEtapaSeletiva", (etapaSeletiva_nome) => {
-    cy.exec_sql("insert into etapaseletiva values (nextval('etapaseletiva_sequence'), '" + etapaSeletiva_nome + "', 1, (select id from empresa where nome = 'Empresa Padrão'))")
+    cy.exec_sql("insert into etapaseletiva values (nextval('etapaseletiva_sequence'), '" + etapaSeletiva_nome + "', 1, (select id from empresa where nome = 'Empresa Padrão'), true)")
 })
 
 Cypress.Commands.add("insereMotivoSolicitacao", () => {
@@ -72,9 +72,9 @@ Cypress.Commands.add("inserirSolicitacaoPessoal", () => {
     cy.exec_sql("insert into motivosolicitacao values (nextval('motivosolicitacao_sequence'), 'Aumento de Quadro', false, false)")
     cy.exec_sql("insert into solicitacao values (nextval('solicitacao_sequence'), '01/01/2020', null, 10, 'E', '02', 1000, null, null, 'I', null, false, false, null, (select id from motivosolicitacao where descricao = 'Aumento de Quadro'), (select id from areaorganizacional where nome = 'Área Teste'), 1, 1, null, (select id from empresa where nome = 'Empresa Padrão'), 1, 'Solicitação', 1, 'Horário', 'A', null, null, null, null, '01/01/2020', false, null, null)")
 })
+
 Cypress.Commands.add("inserirAreaOrganizacional", (areaOrganizacional_nome) => {
     cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), '" + areaOrganizacional_nome + "', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
-
 })
 
 Cypress.Commands.add("insereSolicitacaoEmAnalise", () => {
@@ -165,6 +165,11 @@ Cypress.Commands.add("insereColaboradorComCompetencias", (colaborador_nome) => {
     cy.exec_sql("insert into nivelcompetencia values (nextval('nivelcompetencia_sequence'), 'Básico', (select id from empresa where nome = 'Empresa Padrão'))")
     cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, '" + colaborador_nome + "', '" + colaborador_nome + "', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
     cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = '" + colaborador_nome + "'), (select id from areaorganizacional where nome = 'Suporte'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where cargo_id = (select id from cargo where nome = 'Encarregado Departamento Pessoal')), null, 1, null, null)")
+})
+
+Cypress.Commands.add("insereTokenSolides", () => {
+    cy.exec_sql("update parametrosdosistema set tokensolides = 'c710e935ce7fbd3fdba6d92a4cd4ee5abf14c1a94859fd3d7f9a'")
+
 })
 
 

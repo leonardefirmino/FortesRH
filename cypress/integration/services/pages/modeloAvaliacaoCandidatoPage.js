@@ -7,7 +7,7 @@ export class ModeloAvaliacaoCandidatoPage {
     }
 
     clicaInserir() {
-        cy.get('.btnInserir').click()
+        cy.get('#btnInserir').click()
     }
 
 
@@ -16,15 +16,15 @@ export class ModeloAvaliacaoCandidatoPage {
     }
 
     clicaGravar() {
-        cy.get('.btnGravar').click()
+        cy.get('#btnGravar').click()
     }
 
     clicaClonar(){
-        cy.get('.btnClonar').click()
+        cy.get('#btnClonar').click()
     }
 
     inserirPerguntas(){
-        cy.get('#pergunta').focus().clear().type('Pergunta')
+        cy.get('.note-editable').first().focus().clear().type('Pergunta')
     }
 
     selecionaTipoPergunta(tipo) {
@@ -32,13 +32,13 @@ export class ModeloAvaliacaoCandidatoPage {
     }
 
     acao(acao, text){        
-        util.acao_old(acao, text)
+        util.acao(acao, text)
     }
 
     insereModeloAvaliacao() {
         this.clicaInserir()
         this.preencheModeloAval()
-        cy.get('.btnAvancar').click()
+        cy.get('#btnAvancar').click()
         this.inserirPerguntas()
         this.selecionaTipoPergunta('Nota')
         this.clicaGravar()

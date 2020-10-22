@@ -86,5 +86,16 @@ describe('Funcionalidade Solicitação de Pessoal', () => {
         solicitacaopessoalPage.contrataCandidatoDaSolicitacao('Solicitação')
         util.validaTitulo('Inserir Talento')
         
+    })  
+    
+    it.only('Inserir HIstórico de Candidato - Valisda Solides', () => {
+        cy.insereEtapaSeletiva('Teste')
+        cy.insereTokenSolides()
+        cy.insereCandidatoExterno("Candidato Mod Externo")
+        solicitacaopessoalPage.historicoCandidato('Solicitação')
+        cy.contains('O cadastro do candidato não foi localizado na Sólides')
+
+        
+        
     })
 })

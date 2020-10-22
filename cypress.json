@@ -1,17 +1,15 @@
 {
     "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
-    "baseUrl": "http://201.49.34.182:8080/fortesrhhomologrh",
+    "baseUrl": "http://localhost:8080/fortesrh",
     "video": false,
-    "execTimeout": 480000,
-    "taskTimeout": 480000,
     "watchForFileChanges": false,
     "screenshotOnRunFailure": true,
     "env": {
         "db": {
-            "username": "postgres",
-            "database": "homologrh",
-            "hostname": "10.1.3.48",
-            "port": 5432
+            "username": "fortesrh",
+            "database": "fortesrh",
+            "hostname": "localhost",
+            "port": 55432
         }
     }
 }
