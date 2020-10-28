@@ -1,15 +1,19 @@
-const url = '/indicador/duracaoPreenchimentoVaga/painel.action'
+const url_res = '/indicador/duracaoPreenchimentoVaga/painel.action'
+const url_ces = '/cargosalario/historicoColaborador/painelIndicadoresCargoSalario.action'
 const abaInfoGerais = '#aba1'
 const exibirFiltro = '#labelLink'
 const dataInicial = '#dataDe'
 const pesquisar = '#btnPesquisar'
+const pesquisar_old = '.btnPesquisar'
 const quadroVagasDisponiveis = '#vagasDisponiveis'
 const quantidadeVagasDisponiveis = '.qtdVagaCargo'
 
 export class AnalyticsPage {
 
+
+    //R&S
     navigateAnalyticsReS() {
-        cy.visit(url)
+        cy.visit(url_res)
     }
 
     validaQuadroVagasDisponiveis(dados) {
@@ -22,5 +26,17 @@ export class AnalyticsPage {
             cy.contains(dados.CargoNome)
             cy.get(quantidadeVagasDisponiveis).should('contain.text', dados.QtdVagas)
         })
+    }
+
+    //C&S
+    navigateAnalyticsCeS() {
+        cy.visit(url_ces)
+    }
+
+    validaSalario(dados) {
+        cy.get(exibirFiltro).click()
+        cy.get('#dataBase').clear().type('25/10/2020')        
+        cy.get(pesquisar_old).click()
+        cy.get('.legendTotal').should('contain.text', dados)
     }
 }

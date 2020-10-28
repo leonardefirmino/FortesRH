@@ -23,10 +23,12 @@ function popUpMessage(text) {
     cy.get('#popup_message').then(($popup) => {
         if ($popup.text().includes(text)) {
             cy.get('#popup_ok').click()
+            cy.log(text)
         } else {
             console.log('erro')
         }
     })
+    cy.get('#popup_message').should('not.be.visible')
 }
 
 function dialogMessage(text) {

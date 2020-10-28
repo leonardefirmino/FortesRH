@@ -6,6 +6,10 @@ Cypress.Commands.add("exec_sql", (sql) => {
 
 //INFORMAÇÕES QUE RODAM ANTES DO INICIO DOS TESTES
 
+Cypress.Commands.add("teste", () => {
+    cy.log(cy.exec_sql("select acversaowebservicecompativel from parametrosdosistema "))
+})
+
 Cypress.Commands.add("reload_db", () => {
     cy.exec('node reload_db.js')
     // O script abaixo ajusta o perfil ADMINISTRADOR para ter acesso a todos os menus
@@ -128,13 +132,26 @@ Cypress.Commands.add("insereIndicesComHistorico", (indice_nome) => {
 
 Cypress.Commands.add("insereGrupoAC", (grupoAc_nome) => {
     cy.exec_sql("insert into grupoac values (nextval('grupoac_sequence'), '999', '" + grupoAc_nome + "', null, null, null, null)")
-
 })
 
-Cypress.Commands.add('excluirTodos', () => {
-    cy.get('#md').check()
-    cy.get('#btnExcluirSelecionados').click()
+Cypress.Commands.add('insereReajustePorColaborador', (nome_reajuste, status) => {
+    cy.exec_sql("insert into tabelareajustecolaborador values (nextval('tabelareajustecolaborador_sequence'), '" + nome_reajuste + "', '27/10/2020', null, "+ status +", (select id from empresa where nome = 'Empresa Padrão'), true, 'C')")
+})
 
+Cypress.Commands.add('ativaPaginacaoPesquisa', () => {
+    cy.exec_sql("update parametrosdosistema set paginacaopesquisa = true;")
+    cy.exec_sql("update parametrosdosistema set qtdperguntaporpaginapesquisa = 6;")
+})
+
+Cypress.Commands.add("PesquisaLiberadaCom50Perguntas", () => {
+    cy.exec_sql("insert into questionario values (nextval('questionario_sequence'), 'Pesquisa Clima', null, '01/10/2020', '30/10/2020', true, false, false, 2, (select id from empresa where nome = 'Empresa Padrão'), false, false)")
+    cy.exec_sql("insert into pesquisa values (nextval('pesquisa_sequence'), (select id from questionario where titulo = 'Pesquisa Clima'), false, false, false, false)")
+    var i = 0
+    var num = 50
+    do {
+        cy.exec_sql("insert into pergunta values (nextval('pergunta_sequence'), "+ i +", 'Pergunta "+ i +"', false, null, 3, null, (select id from questionario where titulo = 'Pesquisa Clima'), 1, 10, 1, null, false)")     
+        i++
+    } while (i < num);
 })
 
 Cypress.Commands.add("insere_X_Colaborador", (qtd_colaborador) => {
@@ -142,8 +159,6 @@ Cypress.Commands.add("insere_X_Colaborador", (qtd_colaborador) => {
     cy.exec_sql("insert into faixasalarial values (nextval('faixasalarial_sequence'), 'Júnior', null, (select id from cargo where nome = 'Auxiliar Departamento Pessoal'), null, '252510')")
     cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), 'Gestao de Pessoas', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
     cy.exec_sql("insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Auxiliar Departamento Pessoal'), (select id from areaorganizacional where nome = 'Gestao de Pessoas'))")
-
-
 
     var i = 0
     var num = parseInt(qtd_colaborador)
@@ -158,18 +173,44 @@ Cypress.Commands.add("insereColaboradorComCompetencias", (colaborador_nome) => {
     cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), 'Suporte', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
     cy.exec_sql("insert into conhecimento (id, nome, empresa_id) values (nextval('conhecimento_sequence'), 'Java', (select id from empresa where nome = 'Empresa Padrão'))")
     cy.exec_sql("insert into conhecimento_areaorganizacional  values ((select id from conhecimento where nome = 'Java'), (select id from areaorganizacional where nome = 'Suporte'))")    
+    cy.exec_sql("insert into habilidade (id, nome, empresa_id) values (nextval('habilidade_sequence'), 'Windows', (select id from empresa where nome = 'Empresa Padrão'))")
+    cy.exec_sql("insert into habilidade_areaorganizacional  values ((select id from habilidade where nome = 'Windows'), (select id from areaorganizacional where nome = 'Suporte'))")    
+    cy.exec_sql("insert into atitude (id, nome, empresa_id) values (nextval('atitude_sequence'), 'Organizado', (select id from empresa where nome = 'Empresa Padrão'))")
+    cy.exec_sql("insert into atitude_areaorganizacional  values ((select id from atitude where nome = 'Organizado'), (select id from areaorganizacional where nome = 'Suporte'))")    
     cy.exec_sql("insert into cargo values (nextval('cargo_sequence'), 'Encarregado Departamento Pessoal', 'Cargo Teste', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)")
     cy.exec_sql("insert into faixasalarial values (nextval('faixasalarial_sequence'), 'Júnior', null, (select id from cargo where nome = 'Encarregado Departamento Pessoal'), null, '252510')")
     cy.exec_sql("insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from areaorganizacional where nome = 'Suporte'))")
     cy.exec_sql("insert into cargo_conhecimento  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from conhecimento where nome = 'Java'))")
+    cy.exec_sql("insert into cargo_habilidade  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from habilidade where nome = 'Windows'))")
+    cy.exec_sql("insert into cargo_atitude  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from atitude where nome = 'Organizado'))")
     cy.exec_sql("insert into nivelcompetencia values (nextval('nivelcompetencia_sequence'), 'Básico', (select id from empresa where nome = 'Empresa Padrão'))")
     cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, '" + colaborador_nome + "', '" + colaborador_nome + "', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
     cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = '" + colaborador_nome + "'), (select id from areaorganizacional where nome = 'Suporte'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where cargo_id = (select id from cargo where nome = 'Encarregado Departamento Pessoal')), null, 1, null, null)")
 })
 
+Cypress.Commands.add("insereCargo", (cargo_nome) => {
+    cy.exec_sql("insert into cargo values (nextval('cargo_sequence'), '" + cargo_nome + "', 'Cargo Teste', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)")
+    cy.exec_sql("insert into faixasalarial values (nextval('faixasalarial_sequence'), 'Júnior', null, (select id from cargo where nome = '" + cargo_nome + "'), null, '252510')")
+})
+
+Cypress.Commands.add("insereConhecimento", (conhecimento_nome) => {
+    cy.exec_sql("insert into conhecimento (id, nome, empresa_id) values (nextval('conhecimento_sequence'), '" + conhecimento_nome + "', (select id from empresa where nome = 'Empresa Padrão'))")
+})
+
+Cypress.Commands.add("insereHabilidade", (nome) => {
+    cy.exec_sql("insert into habilidade (id, nome, empresa_id) values (nextval('habilidade_sequence'), '" + nome + "', (select id from empresa where nome = 'Empresa Padrão'))")
+})
+
+Cypress.Commands.add("insereAtitude", (nome) => {
+    cy.exec_sql("insert into atitude (id, nome, empresa_id) values (nextval('atitude_sequence'), '" + nome + "', (select id from empresa where nome = 'Empresa Padrão'))")
+})
+
 Cypress.Commands.add("insereTokenSolides", () => {
     cy.exec_sql("update parametrosdosistema set tokensolides = 'c710e935ce7fbd3fdba6d92a4cd4ee5abf14c1a94859fd3d7f9a'")
+})
 
+Cypress.Commands.add("insereConfiguracaoNivelCompetecia", (cargo_nome) => {
+    cy.exec_sql("insert into cargo values (nextval('cargo_sequence'), '" + cargo_nome + "', 'Cargo Teste', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)")
 })
 
 
