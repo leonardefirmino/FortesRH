@@ -1,10 +1,10 @@
 import * as util from '../../../support/util'
 
-const url = '/login.action?'                
+const url = '/login.action?'
 const usuario = '#username'
-const senha = '#password'                 
+const senha = '#password'
 const entrar = '#entrar'
-const alteraSenha = '#senha'               
+const alteraSenha = '#senha'
 const confirmaSenha = '#confNovaSenha'
 const alteraSenhaButton = '#alterarSenha'
 
@@ -18,13 +18,13 @@ export class LoginPage {
   with(user, password) {
     cy.get(usuario).clear().type(user)
     cy.get(senha).clear().type(password)
-    cy.get(entrar).click()   
+    cy.get(entrar).click()
   }
 
   loggedIn(user, password) {
-    this.with(user, password) 
+    this.with(user, password)
     util.entendiButton()
-}
+  }
 
   changePassword(password) {
     cy.get(alteraSenha).clear().type(password)
@@ -32,7 +32,7 @@ export class LoginPage {
     cy.get(alteraSenhaButton).click()
   }
 
-  logout(){
+  logout() {
     cy.visit('/logout.action')
   }
 

@@ -42,12 +42,6 @@ export class PesquisaPage {
         cy.get(gravar).click()
     }
 
-
-
-
-
-
-
     navigate() {
         cy.visit(url)
     }

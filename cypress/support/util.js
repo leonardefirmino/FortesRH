@@ -23,7 +23,6 @@ function popUpMessage(text) {
     cy.get('#popup_message').then(($popup) => {
         if ($popup.text().includes(text)) {
             cy.get('#popup_ok').click()
-            cy.log(text)
         } else {
             console.log('erro')
         }
@@ -33,6 +32,10 @@ function popUpMessage(text) {
 
 function dialogMessage(text) {
     cy.get('.ui-dialog-title').should('contain', text)
+}
+
+function dialogContentMessage(text) {
+    cy.get('.ui-dialog-content').should('contain', text)
 }
 
 function confirmarDialogMessage(text) {
@@ -100,7 +103,7 @@ function validaCaptchaSistemaVisivel() {
 }
 
 export {
-    acao_old, acao, entendiButton, popUpMessage, dialogMessage, confirmarDialogMessage, dialogMessageLGPD, continuarButton, validaTitulo, welcomeMessage,
+    acao_old, acao, entendiButton, dialogContentMessage, popUpMessage, dialogMessage, confirmarDialogMessage, dialogMessageLGPD, continuarButton, validaTitulo, welcomeMessage,
     errorMessageLogin, successMsg, warningMsg, infoMsg, errorMsg, warningMsgExterno, infoMsgExterno, welcomeExterno, validaCaptchaSistemaVisivel, infomsg
 }
 
