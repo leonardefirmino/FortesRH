@@ -27,6 +27,9 @@ const colaborador = '#colaborador'
 const resposta1 = '.opcaoResposta1'
 const resposta2 = '.opcaoResposta2'
 const imprimir = '#btnRelatorio'
+const selecionarTodos = '#md'
+const excluirRespostas = '#btnExcluirRespostas'
+const voltar = '#btnVoltar'
 
 export class PesquisaPage {
 
@@ -41,12 +44,6 @@ export class PesquisaPage {
         cy.get('.title').should('have.text', 'Parte 0 de 9')
         cy.get(gravar).click()
     }
-
-
-
-
-
-
 
     navigate() {
         cy.visit(url)
@@ -82,6 +79,12 @@ export class PesquisaPage {
         cy.get('#labelObrigatoria').should('have.value', '')
         cy.get(tipoResposta).focus().type('Subjetiva')
         cy.get(gravar).click()
+    }
+
+    excluirTodasRespostas() {
+        cy.get(voltar).click()
+        cy.get(selecionarTodos).click()
+        cy.get(excluirRespostas).click()
     }
 
     finalizaCadastro() {

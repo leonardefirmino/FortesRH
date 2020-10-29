@@ -16,12 +16,12 @@ describe('Funcionalidade Integração Elore', () => {
         loginPage.loggedIn('homolog', '1234')
     })
 
-    it.only('Integra com token válido', () => {        
+    it('Integra com token válido', () => {        
         elorePage.integraElore(token)
         util.popUpMessage('A conexão com Elore foi realizada com sucesso.')
     })
 
-    it.only('Integra com token inválido', () => {        
+    it('Integra com token inválido', () => {        
         elorePage.integraElore(tokeninvalido)
         util.popUpMessage('Não foi possível conectar ao servidor do Elore!')
     })
