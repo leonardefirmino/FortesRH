@@ -11,6 +11,7 @@ Cypress.Commands.add("teste", () => {
 })
 
 Cypress.Commands.add("reload_db", () => {
+    Cypress.Cookies.preserveOnce('processando')
     cy.exec('node reload_db.js')
     // O script abaixo ajusta o perfil ADMINISTRADOR para ter acesso a todos os menus
     cy.exec_sql("CREATE OR REPLACE FUNCTION insert_papel_perfil_administrador() RETURNS integer AS $$ DECLARE     mviews RECORD; BEGIN     FOR mviews IN       select p.id as papelId from papel p where p.id not in (select papeis_id from perfil_papel where perfil_id = 1)     LOOP         INSERT INTO perfil_papel (perfil_id, papeis_id) VALUES (1, mviews.papelId);      END LOOP;     RETURN 1; END; $$ LANGUAGE plpgsql;")
@@ -27,6 +28,7 @@ Cypress.Commands.add("insereUsuarioComEmpregado", (usuario) => {
     cy.exec_sql("insert into usuario values (nextval('usuario_sequence'),'" + usuario + "', '" + usuario + "', 'MTIzNA==', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)")
     cy.exec_sql("insert into usuarioempresa values (nextval('usuarioempresa_sequence'), (select id from usuario where nome = '" + usuario + "'), 1, 1)")
     cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, 'colaborador teste', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, null, null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, (select id from usuario where nome = '" + usuario + "'), null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
+    cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = 'colaborador teste'), (select id from areaorganizacional where nome = 'Gestao de Pessoas'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where id = 1), null, 1, null, null)")
 })
 
 Cypress.Commands.add("insereUsuarioSemSenhaComEmpregado", (usuario) => {
@@ -184,7 +186,7 @@ Cypress.Commands.add("insereColaboradorComCompetencias", (colaborador_nome) => {
     cy.exec_sql("insert into cargo_habilidade  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from habilidade where nome = 'Windows'))")
     cy.exec_sql("insert into cargo_atitude  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from atitude where nome = 'Organizado'))")
     cy.exec_sql("insert into nivelcompetencia values (nextval('nivelcompetencia_sequence'), 'Básico', (select id from empresa where nome = 'Empresa Padrão'))")
-    cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, '" + colaborador_nome + "', '" + colaborador_nome + "', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
+    cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, '" + colaborador_nome + "', '" + colaborador_nome + "', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'samuelpinheiroce@gmail.com', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
     cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = '" + colaborador_nome + "'), (select id from areaorganizacional where nome = 'Suporte'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where cargo_id = (select id from cargo where nome = 'Encarregado Departamento Pessoal')), null, 1, null, null)")
 })
 
@@ -209,8 +211,16 @@ Cypress.Commands.add("insereTokenSolides", () => {
     cy.exec_sql("update parametrosdosistema set tokensolides = 'c710e935ce7fbd3fdba6d92a4cd4ee5abf14c1a94859fd3d7f9a'")
 })
 
+Cypress.Commands.add("ativaIntegracaoElore", () => {
+    cy.exec_sql("update parametrosdosistema set tokenelore = 'eloreToken87f929d691c24a24a445a2688f3cf4ef'")
+})
+
 Cypress.Commands.add("insereConfiguracaoNivelCompetecia", (cargo_nome) => {
     cy.exec_sql("insert into cargo values (nextval('cargo_sequence'), '" + cargo_nome + "', 'Cargo Teste', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)")
+})
+
+Cypress.Commands.add("insereEmpresa", (empresa_nome) => {
+    cy.exec_sql("insert into empresa (id, nome, acintegra, maxcandidatacargo, exibirsalario, solPessoalExibirSalario, solPessoalObrigarDadosComplementares) values (nextval('empresa_sequence'), '" + empresa_nome + "', false, 10, true, true, true)")
 })
 
 

@@ -43,7 +43,7 @@ describe('Funcionalidade Cargos e Faixas', () => {
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
-    it.only('Exclusão de respostas em lote', () => {
+    it('Exclusão de respostas em lote', () => {
         cy.ativaPaginacaoPesquisa()
         cy.PesquisaLiberadaCom50Perguntas()
         cy.reload()
