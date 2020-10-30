@@ -73,7 +73,7 @@ def reload_db
     exec_sql "update parametrosdosistema set servidorremprot = 'FORTESAG'"    
     exec_sql "update parametrosdosistema set appurl = 'http://localhost:8080/fortesrh'"
     exec_sql "update parametrosdosistema set appcontext = '/fortesrh'"
-
+    exec_sql "delete from cartao"
     exec_sql "insert into usuario values (nextval('usuario_sequence'),'homolog', 'homolog', 'MTIzNA==', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)"
     exec_sql "insert into usuarioempresa values (nextval('usuarioempresa_sequence'), (select id from usuario where nome = 'homolog'), 1, 1)"
   ensure
