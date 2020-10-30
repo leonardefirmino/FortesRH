@@ -42,4 +42,13 @@ describe('Funcionalidade Cargos e Faixas', () => {
         pesquisaPage.incluirColaboradorPesquisaResponder(pesquisa)
         util.infoMsg('Respostas gravadas com sucesso.')
     })
+
+    it('Exclusão de respostas em lote', () => {
+        cy.ativaPaginacaoPesquisa()
+        cy.PesquisaLiberadaCom50Perguntas()
+        cy.reload()
+        pesquisaPage.incluirColaboradorPesquisaResponder(pesquisa)
+        pesquisaPage.excluirTodasRespostas()
+        util.infoMsg('Respostas dos talentos selecionados removidas com sucesso.')
+    });
 })

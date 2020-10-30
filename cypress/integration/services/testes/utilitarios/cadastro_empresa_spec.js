@@ -74,6 +74,6 @@ describe('Funcionalidade Cadastros de Empresas', () => {
     
     it.only('Teste', () => {  
        const empresa_id = cy.exec_sql("select id from empresa where nome = 'Empresa Padrão'")
-        cy.log(empresa_id)
+        console.log(empresa_id)
     })
 })
