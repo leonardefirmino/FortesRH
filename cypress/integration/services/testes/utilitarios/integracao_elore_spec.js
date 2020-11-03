@@ -19,7 +19,7 @@ describe('Funcionalidade Integração Elore', () => {
         loginPage.loggedIn('homolog', '1234')
     })
 
-    it('Integra com token válido', () => {        
+    it.skip('Integra com token válido', () => {        
         elorePage.integraElore(token)
         util.popUpMessage('A conexão com Elore foi realizada com sucesso.')
     })

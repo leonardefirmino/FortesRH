@@ -3,7 +3,7 @@ import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
 import { PesquisaPage } from '../../pages/pesquisaPage'
 
-describe('Funcionalidade Cargos e Faixas', () => {
+describe('Funcionalidade Cargos e Pesquisa', () => {
     const loginPage = new LoginPage()
     const pesquisaPage = new PesquisaPage()
 
@@ -43,12 +43,12 @@ describe('Funcionalidade Cargos e Faixas', () => {
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
-    it('Exclusão de respostas em lote', () => {
+    it.skip('Exclusão de respostas em lote', () => {
         cy.ativaPaginacaoPesquisa()
         cy.PesquisaLiberadaCom50Perguntas()
         cy.reload()
         pesquisaPage.incluirColaboradorPesquisaResponder(pesquisa)
         pesquisaPage.excluirTodasRespostas()
         util.infoMsg('Respostas dos talentos selecionados removidas com sucesso.')
-    });
+    })
 })

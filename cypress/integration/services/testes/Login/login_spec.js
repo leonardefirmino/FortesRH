@@ -23,7 +23,7 @@ describe('Tentativas de Login', () => {
             util.welcomeMessage('Bem-vindo(a)')
         })
 
-        it('Captcha Ativo', () => {
+        it.skip('Captcha Ativo', () => {
             cy.exec_sql('update parametrosdosistema set utilizarcaptchanologin = true')
             cy.reload()
             util.validaCaptchaSistemaVisivel()

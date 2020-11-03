@@ -6,8 +6,12 @@ const enviar = '.btnEnviar'
 const link = '.linkbranco'
 const cpfColaborador = '#cpf'
 const esquecisenha = '#cpf'
+const url = '/acesso/usuario/prepareUpdateSenhaUsuario.action'
 
 export class AlteraSenhaPage {
+    navigate() {
+        cy.visit(url)
+    }
 
     with(password, newPass, confPass) {
         cy.get(senha).clear().type(password)
