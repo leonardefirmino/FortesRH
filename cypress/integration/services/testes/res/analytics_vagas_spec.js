@@ -20,4 +20,4 @@ describe('Analitics Recrutamento e Seleção', () => {
         util.entendiButton()
         analyticsPage.validaQuadroVagasDisponiveis(dados)
     })
-})
+}) 

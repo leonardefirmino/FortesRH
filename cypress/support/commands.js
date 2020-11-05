@@ -68,6 +68,10 @@ Cypress.Commands.add("insereEtapaSeletiva", (etapaSeletiva_nome) => {
     cy.exec_sql("insert into etapaseletiva values (nextval('etapaseletiva_sequence'), '" + etapaSeletiva_nome + "', 1, (select id from empresa where nome = 'Empresa Padrão'), true)")
 })
 
+Cypress.Commands.add("insereNivelCompetencia", (nivel_nome) => {
+    cy.exec_sql("insert into nivelcompetencia values (nextval('nivelcompetencia_sequence'), '" + nivel_nome + "', (select id from empresa where nome = 'Empresa Padrão'))")
+})
+
 Cypress.Commands.add("insereMotivoSolicitacao", () => {
     cy.exec_sql("insert into motivosolicitacao values (nextval('motivosolicitacao_sequence'), 'Solicitação de Pessoal', false, false)")
 })
@@ -124,6 +128,11 @@ Cypress.Commands.add("insereCandidatoExterno", (candidato_nome) => {
 
 Cypress.Commands.add("inseremodeloAvaliacaoCandidato", (avaliacao_nome) => {
     cy.exec_sql("insert into avaliacao values (nextval('avaliacao_sequence'), '" + avaliacao_nome + "', '', true, (select id from empresa where nome = 'Empresa Padrão'), 'S', null, false, false, null, false)")
+    cy.exec_sql("insert into pergunta values (nextval('pergunta_sequence'), 1, 'Pergunta 01', false, 'null', 4, null, null, 1, 10, 1, (select id from avaliacao where titulo = '" + avaliacao_nome + "'), false)")
+})
+
+Cypress.Commands.add("inseremodeloAvaliacaoDesempenho", (avaliacao_nome) => {
+    cy.exec_sql("insert into avaliacao values (nextval('avaliacao_sequence'), '" + avaliacao_nome + "', '', true, (select id from empresa where nome = 'Empresa Padrão'), 'D', null, false, false, null, false)")
     cy.exec_sql("insert into pergunta values (nextval('pergunta_sequence'), 1, 'Pergunta 01', false, 'null', 4, null, null, 1, 10, 1, (select id from avaliacao where titulo = '" + avaliacao_nome + "'), false)")
 })
 
@@ -235,7 +244,14 @@ Cypress.Commands.add("insereEmpresa", (empresa_nome) => {
 
 Cypress.Commands.add("insereEmpresaSemEstabelecimento", (empresa_nome) => {
     cy.exec_sql("insert into empresa (id, nome, acintegra, maxcandidatacargo, exibirsalario, solPessoalExibirSalario, solPessoalObrigarDadosComplementares) values (nextval('empresa_sequence'), '" + empresa_nome + "', false, 10, true, true, true)")
+})
 
+Cypress.Commands.add("insereAvaliacaoDesempenho", () => {
+    cy.exec_sql("insert into avaliacaodesempenho (id, titulo, inicio, fim, anonima, permiteautoavaliacao, exibirnivelcompetenciaexigido, liberada, avaliacao_id, empresa_id) values (nextval('avaliacaodesempenho_sequence'), 'Avaliação de Desempenho', '01/10/2020', '31/10/2020', true, true, false, false, (select id from avaliacao where titulo = 'Avaliação Teste'), (select id from empresa where nome = 'Empresa Padrão'))")
+})
+
+Cypress.Commands.add("insereAvaliacaoDesempenho_NaoPermiteAutoAvaliacao", () => {
+    cy.exec_sql("insert into avaliacaodesempenho (id, titulo, inicio, fim, anonima, permiteautoavaliacao, exibirnivelcompetenciaexigido, liberada, avaliacao_id, empresa_id) values (nextval('avaliacaodesempenho_sequence'), 'Avaliação de Desempenho', '01/10/2020', '31/10/2020', true, false, false, false, (select id from avaliacao where titulo = 'Avaliação Teste'), (select id from empresa where nome = 'Empresa Padrão'))")
 })
 
 Cypress.Commands.add("insereCartao", () => {
