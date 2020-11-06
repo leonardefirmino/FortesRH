@@ -10,7 +10,6 @@ describe('Funcionalidade Histórico Nivel de Competencia', () => {
     const nivel = { Descricao: 'Regular' }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereNivelCompetencia('Excelente')
         historicoNivelCompetenciaPage.navigate()
         loginPage.loggedIn('homolog', '1234')
@@ -27,7 +26,7 @@ describe('Funcionalidade Histórico Nivel de Competencia', () => {
         util.successMsg('Histórico de níveis de competência salvo com sucesso.')
     })
  
-    it.only('Inserção Histórico Nível de Competencia na mesma data', () => {
+    it('Inserção Histórico Nível de Competencia na mesma data', () => {
         historicoNivelCompetenciaPage.inserir()
         historicoNivelCompetenciaPage.inserir()
         util.warningMsg('Já existe um histórico de níveis de competência cadastrado nesta data')

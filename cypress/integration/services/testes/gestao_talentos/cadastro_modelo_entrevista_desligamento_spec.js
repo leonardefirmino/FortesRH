@@ -10,7 +10,6 @@ describe('Analitics Recrutamento e Seleção', () => {
     const entrevista = { Titulo: "Entrevista Desligamento", Pergunta: "Pergunta Teste", Tipo: "Nota" }
 
     beforeEach('', () => {
-        cy.reload_db()
         modeloEntrevistaDesligamentoPage.navigate()
         loginPage.with('homolog', '1234')
     })

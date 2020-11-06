@@ -10,7 +10,6 @@ describe('Funcionalidade Area Organizacional', () => {
     const areaOrganizacional = { NomeArea: "Desenvolvimento", AreaOrg: 'Gestao de Pessoas'}
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.inserirAreaOrganizacional(areaOrganizacional.NomeArea)
         cy.inserirSolicitacaoPessoal()
         cy.insereColaborador('Helena de Troia')

@@ -11,7 +11,6 @@ describe('Funcionalidade Etapas Seletivas', () => {
     const etapaSeletiva = { Descricao: "Entrevista com Gestor", Descricao2: "Dinamica de Grupo" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereEtapaSeletiva(etapaSeletiva.Descricao)
         etapaPage.navigate()
         loginPage.loggedIn('homolog', '1234')

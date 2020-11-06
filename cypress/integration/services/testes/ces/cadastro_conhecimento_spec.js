@@ -10,7 +10,6 @@ describe('Funcionalidade Conhecimentos', () => {
     const conhecimento = { Nome: "Cypress" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereConhecimento('Ruby')
         cy.insereColaboradorComCompetencias('Helena de Troia')
         conhecimentoPage.navigate()

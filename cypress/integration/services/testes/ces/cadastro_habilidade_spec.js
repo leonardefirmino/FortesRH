@@ -10,7 +10,6 @@ describe('Funcionalidade Habilidade', () => {
     const habilidade = { Nome: "Programar" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cy.insereHabilidade('Ruby')
         loginPage.navigate()

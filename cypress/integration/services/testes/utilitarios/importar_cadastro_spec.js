@@ -11,7 +11,6 @@ describe('Funcionalidade Importação de Cadastros', () => {
     
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereEmpresa(empresa.Destino)
         importarCadastrosPage.navigate()
         loginPage.loggedIn('homolog', '1234')

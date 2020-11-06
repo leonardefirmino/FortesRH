@@ -10,7 +10,6 @@ describe('Funcionalidade Area de Interesse', () => {
     const areaInteresse = { Nome: "Desenvolvimento de Software", Area: 'Área Administrativa' }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereAreaInteresse(areaInteresse.Nome)
         cy.inserirSolicitacaoPessoal()
         areaInteressePage.navigate()

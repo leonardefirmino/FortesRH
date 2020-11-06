@@ -11,7 +11,6 @@ describe('Funcionalidade Cadastros de Empresas', () => {
     const empresa = { Nome: 'Fortes Tecnologia em Sistemas', Cnpj: '63542443', Uf: 'CE', Cidade: 'Fortaleza', Email: 'teste@gmail.com', Nome2: 'Ente Tecnologia' }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereEmpresa('Ente Tecnologia')
         cy.insereEmpresaSemEstabelecimento('Fortes Tecno')
         cy.insereGrupoAC('Grupo AC Teste')

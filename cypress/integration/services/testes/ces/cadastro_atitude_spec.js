@@ -10,7 +10,6 @@ describe('Funcionalidade Atitude', () => {
     const atitude = { Nome: "Programar" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cy.insereAtitude('Ruby')
         loginPage.navigate()

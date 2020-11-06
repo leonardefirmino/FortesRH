@@ -11,7 +11,6 @@ describe('Funcionalidade Cargos e Pesquisa', () => {
     const pesquisa = { Nome: 'Pesquisa Clima', DataIni: '01/10/2020', DataFim: '31/10/2020', Monitoramento: 'Não' }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereReajustePorColaborador('Reajuste Desenvolvimento', true)
         cy.insereReajustePorColaborador('Reajuste Suporte', false)
         cy.insereColaboradorComCompetencias('Helena de Troia')

@@ -10,7 +10,6 @@ describe('Funcionalidade Cadastros de Usuários', () => {
     
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereUsuario('usu_teste')
         usuariosPage.navigate()
         loginPage.loggedIn('homolog', '1234')

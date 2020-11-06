@@ -6,7 +6,6 @@ describe('Tentativas de Login no Módulo Externo', () => {
     const externoPage = new ModuloExternoPage()
 
     beforeEach('', () => {
-        cy.reload_db()
         externoPage.navigate()
     })
 

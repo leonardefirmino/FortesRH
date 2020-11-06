@@ -4,7 +4,6 @@ Cypress.Commands.add("exec_sql", (sql) => {
     return cy.task('query', sql)
 })
 
-//INFORMAÇÕES QUE RODAM ANTES DO INICIO DOS TESTES
 Cypress.Commands.add('clearcookies', () => {
     if (Cypress.browser.name === 'firefox') {
         cy.getCookies().then((cookies) => cookies.forEach(cookie => cy.clearCookie(cookie.name)));
@@ -14,17 +13,6 @@ Cypress.Commands.add('clearcookies', () => {
 
 Cypress.Commands.add("reload_db", (callback) => {
     cy.exec('node reload_db.js')
-    // O script abaixo ajusta o perfil ADMINISTRADOR para ter acesso a todos os menus
-    cy.exec_sql("CREATE OR REPLACE FUNCTION insert_papel_perfil_administrador() RETURNS integer AS $$ DECLARE     mviews RECORD; BEGIN     FOR mviews IN       select p.id as papelId from papel p where p.id not in (select papeis_id from perfil_papel where perfil_id = 1)     LOOP         INSERT INTO perfil_papel (perfil_id, papeis_id) VALUES (1, mviews.papelId);      END LOOP;     RETURN 1; END; $$ LANGUAGE plpgsql;")
-    cy.exec_sql("select insert_papel_perfil_administrador();")
-    cy.exec_sql("drop function insert_papel_perfil_administrador();")
-    cy.exec_sql("update parametrosdosistema set proximaversao = '2030-01-01'")
-    cy.exec_sql("update parametrosdosistema set servidorremprot = 'FORTESAG'")
-    cy.exec_sql("update parametrosdosistema set appurl = 'http://localhost:8080/fortesrh'")
-    cy.exec_sql("update parametrosdosistema set appcontext = '/fortesrh'")
-    cy.exec_sql("delete from cartao")
-    cy.exec_sql("insert into usuario values (nextval('usuario_sequence'),'homolog', 'homolog', 'MTIzNA==', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)")
-    cy.exec_sql("insert into usuarioempresa values (nextval('usuarioempresa_sequence'), (select id from usuario where nome = 'homolog'), 1, 1)")
 })
 
 Cypress.Commands.add("insereUsuario", (param) => {
@@ -165,7 +153,7 @@ Cypress.Commands.add('ativaPaginacaoPesquisa', () => {
 Cypress.Commands.add("PesquisaLiberadaCom50Perguntas", () => {
     cy.exec_sql("insert into questionario values (nextval('questionario_sequence'), 'Pesquisa Clima', null, '01/10/2020', '30/10/2020', true, false, false, 2, (select id from empresa where nome = 'Empresa Padrão'), false, false)")
     cy.exec_sql("insert into pesquisa values (nextval('pesquisa_sequence'), (select id from questionario where titulo = 'Pesquisa Clima'), false, false, false, false)")
-    var i = 0
+    var i = 1
     var num = 50
     do {
         cy.exec_sql("insert into pergunta values (nextval('pergunta_sequence'), " + i + ", 'Pergunta " + i + "', false, null, 3, null, (select id from questionario where titulo = 'Pesquisa Clima'), 1, 10, 1, null, false)")
@@ -179,7 +167,7 @@ Cypress.Commands.add("insere_X_Colaborador", (qtd_colaborador) => {
     cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), 'Gestao de Pessoas', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
     cy.exec_sql("insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Auxiliar Departamento Pessoal'), (select id from areaorganizacional where nome = 'Gestao de Pessoas'))")
 
-    var i = 0
+    var i = 1
     var num = parseInt(qtd_colaborador)
     do {
         cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, 'Colaborador Teste " + i + "', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")

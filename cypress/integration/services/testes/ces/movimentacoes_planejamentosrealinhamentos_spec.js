@@ -7,10 +7,7 @@ describe('Funcionalidade Cargos e Faixas', () => {
     const loginPage = new LoginPage()
     const realinhamentoPage = new RealinhamentoPage()
 
-    //const cargo = { Nome: "Programador", Cargo2: "Desenvolvedor", Cargo: "Encarregado Departamento Pessoal"}
-
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereReajustePorColaborador('Reajuste Desenvolvimento', true)
         cy.insereReajustePorColaborador('Reajuste Suporte', false)
         cy.insereColaboradorComCompetencias('Helena de Troia')

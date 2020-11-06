@@ -8,7 +8,6 @@ describe('Funcionalidade Solicitação de Pessoal', () => {
     const solicitacaopessoalPage = new SolicitacaoPessoalPage()
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.inserirSolicitacaoPessoal()
         cy.inserecandidato("Candidato 01")
         solicitacaopessoalPage.navigate()

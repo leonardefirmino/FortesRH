@@ -10,18 +10,17 @@ describe('Funcionalidade Menus Extras', () => {
 
 
     beforeEach('', () => {
-        cy.reload_db()
         menuExtraPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })
 
-    it('Inserir Novo Menu', () => {
+    it.only('Inserir Novo Menu', () => {
         menuExtraPage.insereNovoMenu('Redes Sociais')
         util.successMsg('Menu Extra adicionado com sucesso.')
         util.infoMsg('O usuário deverá sair e realizar novo login no sistema para refletir as alterações do Menu.')
     })
 
-    it('Inserir Novo Item Menu', () => {
+    it.only('Inserir Novo Item Menu', () => {
         menuExtraPage.insereNovoMenu('Redes Sociais')
         menuExtraPage.insereDadosMenu()
         util.successMsg('Link adicionado com sucesso.')

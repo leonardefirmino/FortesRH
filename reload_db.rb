@@ -68,6 +68,17 @@ def reload_db
     puts "Limpeza do banco de dados realizada com sucesso"
     
     popula_db conn
+    # O script abaixo ajusta o perfil ADMINISTRADOR para ter acesso a todos os menus
+    exec_sql "CREATE OR REPLACE FUNCTION insert_papel_perfil_administrador() RETURNS integer AS $$ DECLARE     mviews RECORD; BEGIN     FOR mviews IN       select p.id as papelId from papel p where p.id not in (select papeis_id from perfil_papel where perfil_id = 1)     LOOP         INSERT INTO perfil_papel (perfil_id, papeis_id) VALUES (1, mviews.papelId);      END LOOP;     RETURN 1; END; $$ LANGUAGE plpgsql;"
+    exec_sql "select insert_papel_perfil_administrador();"
+    exec_sql "drop function insert_papel_perfil_administrador();"
+    exec_sql "update parametrosdosistema set proximaversao = '2030-01-01'"
+    exec_sql "update parametrosdosistema set servidorremprot = 'FORTESAG'"
+    exec_sql "update parametrosdosistema set appurl = 'http://localhost:8080/fortesrh'"
+    exec_sql "update parametrosdosistema set appcontext = '/fortesrh'"
+    exec_sql "delete from cartao"
+    exec_sql "insert into usuario values (nextval('usuario_sequence'),'homolog', 'homolog', 'MTIzNA==', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)"
+    exec_sql "insert into usuarioempresa values (nextval('usuarioempresa_sequence'), (select id from usuario where nome = 'homolog'), 1, 1)"
   ensure
     conn.finish if conn
   end

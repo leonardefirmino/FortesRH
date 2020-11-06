@@ -10,7 +10,6 @@ describe('Funcionalidade Nivel de Competencia', () => {
     const nivel = { Descricao: 'Regular' }
 
     beforeEach('', () => {
-        cy.reload_db()
         nilvelCompetenciaPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     }) 

@@ -10,7 +10,6 @@ describe('Funcionalidade Area de Formação', () => {
     const area = { Nome: "Desenvolvimento de Software", Area: 'Área Administrativa' }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereAreaFormacao(area.Area)
         areaformacaoPage.navigate()
         loginPage.loggedIn('homolog', '1234')

@@ -10,7 +10,6 @@ describe('Funcionalidade Cargos e Faixas', () => {
     const cargo = { Nome: "Programador", Cargo2: "Desenvolvedor", Cargo: "Encarregado Departamento Pessoal"}
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereCargo('QA')
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cargosFaixaPage.navigate()

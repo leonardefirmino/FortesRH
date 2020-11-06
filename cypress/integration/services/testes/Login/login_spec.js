@@ -6,7 +6,6 @@ describe('Tentativas de Login', () => {
     const loginPage = new LoginPage()
 
     beforeEach('', () => {
-        cy.reload_db()
         loginPage.navigate()
     })
 

@@ -14,7 +14,6 @@ describe('Funcionalidade Integração Elore', () => {
     
 
     beforeEach('', () => {
-        cy.reload_db()
         elorePage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })

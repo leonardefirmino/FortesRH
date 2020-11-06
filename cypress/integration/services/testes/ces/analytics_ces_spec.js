@@ -10,7 +10,6 @@ describe('Analitics Recrutamento e Seleção', () => {
     const dados = { DataFolha: "Valor total da folha em 25/10/2020: R$ 2.000,00" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereColaboradorComCompetencias('Helena de Troia')
         analyticsPage.navigateAnalyticsCeS()
         loginPage.with('homolog', '1234')

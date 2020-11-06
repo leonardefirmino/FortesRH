@@ -10,7 +10,6 @@ describe('Funcionalidade Indices', () => {
     const indice = { Descricao: "Indice Salario Maternidade", Descricao2: "Indice Teste", Descricao3: "Indice com Histórico", Data: "01/10/2020", Valor: "2500,00" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereIndices(indice.Descricao2)
         cy.insereIndicesComHistorico(indice.Descricao3)
         indicePage.navigate()

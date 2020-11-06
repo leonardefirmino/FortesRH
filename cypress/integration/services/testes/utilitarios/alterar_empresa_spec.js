@@ -9,7 +9,6 @@ describe('Funcionalidade Troca de Empresa', () => {
     const empresas = { RazaoSocial_1: 'Ente Tecnologia', RazaoSocial_2: 'Fortes Tecno'}
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereEmpresa(empresas.RazaoSocial_1)
         cy.insereEmpresa(empresas.RazaoSocial_2)
         loginPage.navigate()

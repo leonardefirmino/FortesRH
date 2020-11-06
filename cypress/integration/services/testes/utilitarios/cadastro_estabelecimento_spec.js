@@ -8,7 +8,6 @@ describe('Funcionalidade Estabelecimento', () => {
     const estabelecimentoPage = new EstabelecimentoPage()
     
     beforeEach('', () => {
-        cy.reload_db()
         estabelecimentoPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })

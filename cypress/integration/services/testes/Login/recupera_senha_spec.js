@@ -13,7 +13,6 @@ describe('Recuperação de Senha', () => {
     context('Fortes RH', () => {
 
         beforeEach('', () => {
-            cy.reload_db()
             loginPage.navigate()
         })
 
@@ -38,14 +37,12 @@ describe('Recuperação de Senha', () => {
     context('Módulo Externo', () => {
 
         it('Candidato Inexistente', () => {
-            cy.reload_db()
             externoPage.navigate()
             alteraSenhaPage.forgotPasswordExterno('38771717960')
             util.infoMsg('Candidato não localizado!')
         })
 
         it('Colaborador com usuário válido', () => {
-            cy.reload_db()
             cy.inserecandidato("Candidato 01")
             externoPage.navigate()
             alteraSenhaPage.forgotPasswordExterno('39210359372')

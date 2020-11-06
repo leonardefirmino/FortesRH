@@ -8,7 +8,6 @@ describe('Funcionalidade Estabelecimento', () => {
     const alteraSenhaPage = new AlteraSenhaPage()
     
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereUsuarioComEmpregado('helena')
         alteraSenhaPage.navigate()
         loginPage.loggedIn('homolog', '1234')

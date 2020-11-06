@@ -8,7 +8,6 @@ describe('Improtação de Epis', () => {
     const importaEpiPage = new ImportaEpiPage()
 
     beforeEach('', () => {
-        cy.reload_db()
         loginPage.navigate()
         loginPage.loggedIn('homolog', '1234')
         importaEpiPage.navigate()

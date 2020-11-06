@@ -11,7 +11,6 @@ describe('Configuração do Sistema', () => {
 
 
     beforeEach('', () => {
-        cy.reload_db()
         configuracaoPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })

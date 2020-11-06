@@ -8,7 +8,6 @@ describe('Funcionalidade Modelo Avaliação Candidatos', () => {
     const modeloAvaliacaoCandidatoPage = new ModeloAvaliacaoCandidatoPage()
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.inseremodeloAvaliacaoCandidato('Avaliação Teste')
         modeloAvaliacaoCandidatoPage.navigate()
         loginPage.loggedIn('homolog', '1234')

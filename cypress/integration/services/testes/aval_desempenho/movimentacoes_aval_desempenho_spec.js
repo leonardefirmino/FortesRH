@@ -13,7 +13,6 @@ describe('Avaliação de Desempenho', () => {
     }
 
     beforeEach('', () => {
-        cy.reload_db()
         avalDesempenhoPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })

@@ -8,7 +8,6 @@ describe('Funcionalidade Motivo de Solicitação Pessoal', () => {
     const motivoSolicitacaoPage = new MotivoSolicitacaoPage()
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereMotivoSolicitacao()
         motivoSolicitacaoPage.navigate()
         loginPage.loggedIn('homolog', '1234')

@@ -11,7 +11,6 @@ describe('Gerenciamento de Candidatos', () => {
 
     describe('Cadastros de Candidato no Módulo Externo', () => {
         beforeEach('', () => {
-            cy.reload_db()
             externoPage.navigate()
             cy.exec_sql("update parametrosdosistema set camposcandidatoexternovisivel = 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,fone,comfirmaSenha,senha,formacao,idioma,pis'")
             externoPage.queroMeCadastrar()
@@ -36,7 +35,6 @@ describe('Gerenciamento de Candidatos', () => {
 
     describe('Cadastro de Candidato no Fortes RH', () => {
         beforeEach('', () => {
-            cy.reload_db()
             cy.insereColaborador()
             cy.inserecandidato("Candidato 01")
             candidatoPage.navigate_menu_candidatos()
@@ -120,7 +118,6 @@ describe('Gerenciamento de Candidatos', () => {
     describe('Outras Rotinas do Candidato', () => {
 
         beforeEach('', () => {
-            cy.reload_db()
             cy.inserirSolicitacaoPessoal()
             cy.inserecandidato("Candidato 01")
             candidatoPage.navigate_menu_candidatos()

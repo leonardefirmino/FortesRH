@@ -8,7 +8,6 @@ describe('Configuração de Campos Extras', () => {
     const camposExtrasPage = new CamposExtrasPage()
     
     beforeEach('', () => {
-        cy.reload_db()
         camposExtrasPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })

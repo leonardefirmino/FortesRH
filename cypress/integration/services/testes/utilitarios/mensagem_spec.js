@@ -12,7 +12,6 @@ describe('Funcionalidade de Envio de Mensagens para Usuários', () => {
 
 
     beforeEach('', () => {
-        cy.reload_db()
         loginPage.navigate()
         loginPage.loggedIn('homolog', '1234')
         mensagemPage.navigate()

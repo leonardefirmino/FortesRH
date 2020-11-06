@@ -28,6 +28,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
+beforeEach('', () => {    
+    cy.reload_db()
+})
+
 afterEach('', () => {    
     cy.clearcookies()
 })

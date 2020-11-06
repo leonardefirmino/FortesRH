@@ -10,7 +10,6 @@ describe('Analitics Recrutamento e Seleção', () => {
     const dados = { DataInicial: "01/01/2020", CargoNome: "Cargo Teste Faixa_Nome", QtdVagas: "10" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.inserirSolicitacaoPessoal()
         analyticsPage.navigateAnalyticsReS()
         loginPage.with('homolog', '1234')

@@ -10,7 +10,6 @@ describe('Funcionalidade Grupo AC', () => {
     const grupoAc = { Descricao: "Grupo AC", Codigo: "001", Usuario: "ADMIN", Senha: "1234", Soap: "http://localhost:1024/soap/IAcPessoal", Wdsl: "http://localhost:1024/wsdl/IAcPessoal" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereGrupoAC('Grupo AC Teste')
         grupoACPAge.navigate()
         loginPage.loggedIn('homolog', '1234')

@@ -11,7 +11,6 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
     const dados = { ColaboradorAtivo: "Sophie Charlotte", ColaboradorAtivo2: "Carolina Dieckman", Colaborador: "Helena de Troia", EntrevistaDesligamento: "Entrevista de Desligamento" }
 
     beforeEach('', () => {
-        cy.reload_db()
         cy.insereColaboradorDemitido(dados.Colaborador)
         cy.insereColaborador(dados.ColaboradorAtivo)
         talentoPage.navigate_talentoPage()
