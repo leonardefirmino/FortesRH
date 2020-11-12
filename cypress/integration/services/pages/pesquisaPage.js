@@ -41,7 +41,7 @@ export class PesquisaPage {
         cy.get(inserirselecionado).click()
         cy.get(avancar).click()
         cy.get(avancar).click()
-        cy.get('.title').should('have.text', 'Parte 0 de 9')
+        cy.get('.title').should('have.text', 'Parte 1 de 9')
         cy.get(gravar).click()
     }
 

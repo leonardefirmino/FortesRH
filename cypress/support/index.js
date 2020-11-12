@@ -28,7 +28,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
-beforeEach('', () => {    
+beforeEach('', () => {
     cy.reload_db()
 })
 

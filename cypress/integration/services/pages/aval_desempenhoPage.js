@@ -78,24 +78,23 @@ export class AvaliacaoDesempenhoPage {
         util.acao_old('Participantes', avaliacao.Titulo)
         //Inserir Avaliado
         cy.get(insere_avaliado).click()
-        cy.get(pesquisar).click()
+        cy.get(pesquisar).should('be.visible').click()
+        cy.wait(2000)
         cy.get('#wwgrp_colaboradorsCheck').within(($form) => {
-            cy.wait(1500)
             cy.get(marcarTodos).click()
         })
         
 
         cy.get('.buttonGroup').within(($form) => {
-            cy.get(gravar).click()
-            //cy.get(btn_cancelar).click()            
+            cy.get(gravar).click()           
             cy.get('#boxtitle').should('not.be.visible')
         })
 
         //Inserir Avaliador
         cy.get(insere_avaliador).click()
-        cy.get(pesquisar).click()
+        cy.get(pesquisar).should('be.visible').click()
+        cy.wait(2000)
         cy.get('#wwgrp_colaboradorsCheck').within(($form) => {
-            cy.wait(1500)
             cy.get(marcarTodos).click()
         })
 

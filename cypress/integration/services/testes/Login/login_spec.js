@@ -21,14 +21,6 @@ describe('Tentativas de Login', () => {
             loginPage.with('SOS', '1234')
             util.welcomeMessage('Bem-vindo(a)')
         })
-
-        it.skip('Captcha Ativo', () => {
-            cy.exec_sql('update parametrosdosistema set utilizarcaptchanologin = true')
-            cy.reload()
-            util.validaCaptchaSistemaVisivel()
-            loginPage.with('SOS', '1234')
-            util.welcomeMessage('Bem-vindo(a)')
-        })
     })
 
     context('Login Sem Sucesso', () => {

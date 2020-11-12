@@ -3,7 +3,7 @@ import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
 import { PesquisaPage } from '../../pages/pesquisaPage'
 
-describe('Funcionalidade Cargos e Pesquisa', () => {
+describe('Funcionalidade Pesquisa', () => {
     const loginPage = new LoginPage()
     const pesquisaPage = new PesquisaPage()
 

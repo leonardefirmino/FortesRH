@@ -111,7 +111,7 @@ describe('Gerenciamento de Candidatos', () => {
                 candidatoPage.excluirCandidatoColaboradorLote()
                 util.popUpMessage('Deseja realmente excluir os candidatos?')
                 util.infoMsg('Não existem candidatos a serem listados')
-            });
+            })
         })
     })
 
