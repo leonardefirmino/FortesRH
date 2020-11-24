@@ -27,7 +27,10 @@ function popUpMessage(text) {
             console.log('erro')
         }
     })
+    cy.get('#popup_message').should('not.exist')
 }
+
+
 
 function dialogMessage(text) {
     cy.get('.ui-dialog-title').should('contain', text)

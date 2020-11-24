@@ -12,6 +12,7 @@ const resposta1 = '.opcaoResposta1'
 const gravar = '.btnGravar'
 const gravar_new = '#gravar'
 const editarHistorico = '#btnEditarHistoricos'
+const dadosFuncionais = '#aba2'
 
 export class TalentoCandidatoPage {
 
@@ -39,6 +40,7 @@ export class TalentoCandidatoPage {
 
     editar(dados) {
         util.acao_old('Editar', dados.ColaboradorAtivo)
+        cy.get(dadosFuncionais).click()
         cy.get(gravar_new).click()
     }
 

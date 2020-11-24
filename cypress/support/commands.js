@@ -204,6 +204,11 @@ Cypress.Commands.add("insereCargo", (cargo_nome) => {
     cy.exec_sql("insert into faixasalarial values (nextval('faixasalarial_sequence'), 'Júnior', null, (select id from cargo where nome = '" + cargo_nome + "'), null, '252510')")
 })
 
+Cypress.Commands.add("insereCargoIntegrado", (cargo_nome) => {
+    cy.exec_sql("insert into cargo values (nextval('cargo_sequence'), '" + cargo_nome + "', 'Cargo Teste', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)")
+    cy.exec_sql("insert into faixasalarial values (nextval('faixasalarial_sequence'), 'Júnior', '073', (select id from cargo where nome = '" + cargo_nome + "'), null, '252510')")
+})
+
 Cypress.Commands.add("insereConhecimento", (conhecimento_nome) => {
     cy.exec_sql("insert into conhecimento (id, nome, empresa_id) values (nextval('conhecimento_sequence'), '" + conhecimento_nome + "', (select id from empresa where nome = 'Empresa Padrão'))")
 })

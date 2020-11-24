@@ -11,7 +11,7 @@ export class AnalyticsGestaoTalentosPage {
         cy.get('.cotaAprendiz')
             .within(($cotas) => {
                 cy.get('.cota-atingida')
-                    .should('not.be.visible')
+                    .should('not.exist')
             })
     }
 

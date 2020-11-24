@@ -56,6 +56,8 @@ export class AvaliacaoDesempenhoPage {
 
         cy.get('.buttonGroup').within(($form) => {
             cy.get(gravar).click()
+            //cy.get(btn_cancelar).click()            
+            cy.get('#boxtitle').should('not.exist')
         })
 
         //Inserir Avaliador
@@ -64,7 +66,8 @@ export class AvaliacaoDesempenhoPage {
         cy.get(colaborador).check()
 
         cy.get('.buttonGroup').within(($form) => {
-            cy.get(gravar).click()
+            cy.get(gravar).click()      
+            cy.get('#boxtitle').should('not.exist')
         })   
 
         cy.get(selecionarTodos_avaliados).click()
@@ -79,27 +82,30 @@ export class AvaliacaoDesempenhoPage {
         util.acao_old('Participantes', avaliacao.Titulo)
         //Inserir Avaliado
         cy.get(insere_avaliado).click()
-        cy.get(pesquisar).should('be.visible').click()
-        cy.wait(2000)
+        cy.get(pesquisar).click()
         cy.get('#wwgrp_colaboradorsCheck').within(($form) => {
+            cy.wait(1500)
             cy.get(marcarTodos).click()
         })
         
 
         cy.get('.buttonGroup').within(($form) => {
             cy.get(gravar).click()
+            //cy.get(btn_cancelar).click()            
+            cy.get('#boxtitle').should('not.exist')
         })
 
         //Inserir Avaliador
         cy.get(insere_avaliador).click()
-        cy.get(pesquisar).should('be.visible').click()
-        cy.wait(2000)
+        cy.get(pesquisar).click()
         cy.get('#wwgrp_colaboradorsCheck').within(($form) => {
+            cy.wait(1500)
             cy.get(marcarTodos).click()
         })
 
         cy.get('.buttonGroup').within(($form) => {
-            cy.get(gravar).click()
+            cy.get(gravar).click()      
+            cy.get('#boxtitle').should('not.exist')
         })   
 
         cy.get(selecionarTodos_avaliados).click()

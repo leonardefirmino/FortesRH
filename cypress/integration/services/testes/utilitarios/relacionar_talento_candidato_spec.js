@@ -19,7 +19,6 @@ describe('Relacionador de Candidado e Talento', () => {
         relacionarCandidatoTalentoPage.relacionar()
         util.dialogContentMessage('Caso a solicitação de pessoal não seja selecionada, não será possível informar que este candidato/talento foi contratado por esta solicitação.')
         util.confirmarDialogMessage('Confirmar')
-        cy.get('#solicitacoes0').should('not.be.visible')
     })
 
     it('Relacionar Candidato e Colaborador - Colaborador e Candidato inexistente', () => {
