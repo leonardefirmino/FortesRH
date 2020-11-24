@@ -40,5 +40,4 @@ describe('Tentativas de Login no Módulo Externo', () => {
         externoPage.checkLGPD()
         util.continuarButton()
     })
-
 })

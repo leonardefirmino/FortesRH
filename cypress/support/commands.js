@@ -176,6 +176,10 @@ Cypress.Commands.add("insere_X_Colaborador", (qtd_colaborador) => {
     } while (i < num);
 })
 
+Cypress.Commands.add("dispensaContratacaoAprendiz", () => {
+    cy.exec_sql("update empresa set dispensarcontratacaoaprendiz = true")
+})
+
 Cypress.Commands.add("insereColaboradorComCompetencias", (colaborador_nome) => {
     cy.exec_sql("insert into areaorganizacional values (nextval('areaorganizacional_sequence'), 'Suporte', null, null, (select id from empresa where nome = 'Empresa Padrão'), true, null, true)")
     cy.exec_sql("insert into conhecimento (id, nome, empresa_id) values (nextval('conhecimento_sequence'), 'Java', (select id from empresa where nome = 'Empresa Padrão'))")

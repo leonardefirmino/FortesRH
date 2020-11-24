@@ -27,7 +27,6 @@ function popUpMessage(text) {
             console.log('erro')
         }
     })
-    cy.get('#popup_message').should('not.be.visible')
 }
 
 function dialogMessage(text) {

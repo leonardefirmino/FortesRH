@@ -42,12 +42,13 @@ describe('Funcionalidade Pesquisa', () => {
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
-    it.skip('Exclusão de respostas em lote', () => {
+    it('Exclusão de respostas em lote', () => {
         cy.ativaPaginacaoPesquisa()
         cy.PesquisaLiberadaCom50Perguntas()
         cy.reload()
         pesquisaPage.incluirColaboradorPesquisaResponder(pesquisa)
         pesquisaPage.excluirTodasRespostas()
+        util.popUpMessage('Confirma remoção das respostas selecionadas?')
         util.infoMsg('Respostas dos talentos selecionados removidas com sucesso.')
     })
 })

@@ -14,6 +14,7 @@ export class EstabelecimentoPage {
 
     navigate() {
         cy.visit(url)
+        util.confirmarDialogMessage('Continuar')
     }
 
     inserir() {

@@ -24,10 +24,4 @@ describe('Improtação de Epis', () => {
         importaEpiPage.importarEpi(arquivoEpi)
         util.errorMsg('Erro ao executar a importação.')
     })
-
-    it.skip('Importa Epi Arquivo Válido', () => {
-        //Falta pegar com o DEV o modelo de arquivo válido
-        const arquivoEpi = { Arquivo: 'ArquivoValido.txt' }
-        importaEpiPage.importarEpi(arquivoEpi)
-    })
 }) 

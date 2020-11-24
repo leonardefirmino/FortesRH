@@ -18,14 +18,19 @@ describe('Funcionalidade Integração Elore', () => {
         loginPage.loggedIn('homolog', '1234')
     })
 
-    it.skip('Integra com token válido', () => {        
+    it('Integra com token válido', () => {        
         elorePage.integraElore(token)
         util.popUpMessage('A conexão com Elore foi realizada com sucesso.')
     })
 
     it('Integra com token inválido', () => {        
         elorePage.integraElore(tokeninvalido)
-        util.popUpMessage('Não foi possível conectar ao servidor do Elore!')
+        util.popUpMessage('Token Inválido.')
+    })
+
+    it('Integra com token vazio', () => {        
+        elorePage.integraElore()
+        util.popUpMessage('Preencha o campo "Token".')
     })
 
     it('Exportar Colaboradores sem Selecionar Área', () => { 

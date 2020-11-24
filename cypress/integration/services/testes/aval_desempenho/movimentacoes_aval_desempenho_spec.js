@@ -57,4 +57,14 @@ describe('Avaliação de Desempenho', () => {
         util.popUpMessage('Confirma exclusão?')
         util.successMsg('Avaliação de desempenho excluída com sucesso.')
     })
+
+    it('Liberar Avaliação de Desempenho em Lote', () => {
+        const avaliacao = { Titulo: 'Avaliação de Desempenho' }
+
+        cy.inseremodeloAvaliacaoDesempenho('Avaliação Teste')
+        cy.insereAvaliacaoDesempenho_NaoPermiteAutoAvaliacao()
+        cy.reload()
+        avalDesempenhoPage.liberarEmLote(avaliacao)
+        util.warningMsg('Existem avaliações com número insuficiente de participantes ou avaliação que não permite a autoavaliação com apenas um participante.')
+    })
 }) 

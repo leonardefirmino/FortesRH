@@ -19,7 +19,11 @@ export class IntegraElorePage {
     }
 
     integraElore(token) {
-        cy.get(tokenElore).clear().type(token)
+
+        if (token != null) {
+            cy.get(tokenElore).clear().type(token)
+        }
+        
         cy.get(conecta).click()
     }
 

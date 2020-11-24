@@ -3,6 +3,9 @@ import * as util from '../../../support/util'
 const url = '/avaliacao/desempenho/list.action'
 const inserir = '#btnInserir'
 const titulo = '#titulo'
+const liberarLote = '#btnLiberarAv'
+const liberar = 'ul > #btnLiberar'
+const pesquisarAval = '#btnPesquisarAv'
 const periodoInicial = '#inicio'
 const periodoFinal = '#fim'
 const avaliarsomentecompetencias = '#avaliarSomenteCompetencias'
@@ -21,6 +24,7 @@ const selecionarTodos_avaliados = '#selecionarTodosAvaliado'
 const relacionar = '#relacionar_selecionados'
 const relacionarTodos = '.for-all'
 const marcarTodos = '#mt'
+const marcarTodoAval = '#wwctrl_avaliacoesCheck > .listCheckBoxContainer > .listCheckBoxBarra > #mt'
 const colaborador = '#checkGroupcolaboradorsCheck1'
 
 export class AvaliacaoDesempenhoPage {
@@ -52,8 +56,6 @@ export class AvaliacaoDesempenhoPage {
 
         cy.get('.buttonGroup').within(($form) => {
             cy.get(gravar).click()
-            //cy.get(btn_cancelar).click()            
-            cy.get('#boxtitle').should('not.be.visible')
         })
 
         //Inserir Avaliador
@@ -62,8 +64,7 @@ export class AvaliacaoDesempenhoPage {
         cy.get(colaborador).check()
 
         cy.get('.buttonGroup').within(($form) => {
-            cy.get(gravar).click()      
-            cy.get('#boxtitle').should('not.be.visible')
+            cy.get(gravar).click()
         })   
 
         cy.get(selecionarTodos_avaliados).click()
@@ -86,8 +87,7 @@ export class AvaliacaoDesempenhoPage {
         
 
         cy.get('.buttonGroup').within(($form) => {
-            cy.get(gravar).click()           
-            cy.get('#boxtitle').should('not.be.visible')
+            cy.get(gravar).click()
         })
 
         //Inserir Avaliador
@@ -99,8 +99,7 @@ export class AvaliacaoDesempenhoPage {
         })
 
         cy.get('.buttonGroup').within(($form) => {
-            cy.get(gravar).click()      
-            cy.get('#boxtitle').should('not.be.visible')
+            cy.get(gravar).click()
         })   
 
         cy.get(selecionarTodos_avaliados).click()
@@ -111,5 +110,12 @@ export class AvaliacaoDesempenhoPage {
     excluir(avaliacao) {
         util.acao_old('Excluir', avaliacao.Titulo)
         
+    }
+
+    liberarEmLote() {
+        cy.get(liberarLote).click()
+        cy.get(pesquisarAval).click() 
+        cy.get(marcarTodoAval).should('be.visible').click() 
+        cy.get(liberar).click() 
     }
 }
