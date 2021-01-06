@@ -1,5 +1,17 @@
 import 'cypress-capybara/add-commands'
 
+Cypress.Commands.add('login', (user, pw) => {     
+    cy.get('#username').clear().type(user)
+    cy.get('#password').clear().type(pw)
+    cy.get('#entrar').click()
+
+    switch (cy.get('.done').click({ multiple: true, force: true })) {
+        case 0:
+            cy.get('.done').should('be.visible')
+            break;
+    }
+})
+
 Cypress.Commands.add("exec_sql", (sql) => {
     return cy.task('query', sql)
 })
@@ -23,7 +35,7 @@ Cypress.Commands.add("insereUsuario", (param) => {
 Cypress.Commands.add("insereUsuarioComEmpregado", (usuario) => {
     cy.exec_sql("insert into usuario values (nextval('usuario_sequence'),'" + usuario + "', '" + usuario + "', 'MTIzNA==', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)")
     cy.exec_sql("insert into usuarioempresa values (nextval('usuarioempresa_sequence'), (select id from usuario where nome = '" + usuario + "'), 1, 1)")
-    cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, 'colaborador teste', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, null, null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, (select id from usuario where nome = '" + usuario + "'), null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
+    cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, 'colaborador teste', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '06060722334', '12345678919', null, null, null, null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, (select id from usuario where nome = '" + usuario + "'), null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
     cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = 'colaborador teste'), (select id from areaorganizacional where nome = 'Gestao de Pessoas'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where id = 1), null, 1, null, null)")
 })
 
@@ -64,6 +76,10 @@ Cypress.Commands.add("insereMotivoSolicitacao", () => {
     cy.exec_sql("insert into motivosolicitacao values (nextval('motivosolicitacao_sequence'), 'Solicitação de Pessoal', false, false)")
 })
 
+Cypress.Commands.add("insereEstabelecimento", (estabelecimento_nome) => {
+    cy.exec_sql("insert into estabelecimento (id, nome, complementocnpj, empresa_id) values (nextval('estabelecimento_sequence'), '" + estabelecimento_nome + "', '0006', (select id from empresa where nome = 'Empresa Padrão'))")
+})
+
 Cypress.Commands.add("insereEntrevistaDesligamento", (entrevista_nome) => {
     cy.exec_sql("insert into questionario values (nextval('questionario_sequence'), '" + entrevista_nome + "', null, null, null, true, false, false, 1, (select id from empresa where nome = 'Empresa Padrão'), false, false)")
     cy.exec_sql("insert into pergunta values (nextval('pergunta_sequence'), 1, 'Pergunta 01', false, null, 3, null, (select id from questionario where titulo = '" + entrevista_nome + "'), 1, 10, null, null, false)")
@@ -102,7 +118,7 @@ Cypress.Commands.add("insereCargo", () => {
 })
 
 Cypress.Commands.add("inserecandidato", (candidato_nome) => {
-    cy.exec_sql("insert into candidato values (nextval('candidato_sequence'), '" + candidato_nome + "', 'MTIzNA==', null, null, null, null, 'Rua Ciro Monteiro', '222', null, 'Cambeba', '60822285', null, null, null, null, '34425164555', null, null, 'Fortaleza', null, null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '01', '03', false, 0, 0, false, null, null, null, null, null, 'E', 1000, true, false, false, null, null, null, '01/09/2020', 'C', null, 1, 946, null, '0', null, null, null, null,null, null, null, null, null, null, null, null, null, null, 1, null, null, '01/09/2020', null, null, null, null, null, null, null, 'NAO VERIFICADO', null)")
+    cy.exec_sql("insert into candidato values (nextval('candidato_sequence'), '" + candidato_nome + "', 'MTIzNA==', null, null, null, null, 'Rua Ciro Monteiro', '222', null, 'Cambeba', '60822285', null, null, null, null, '06060722334', null, null, 'Fortaleza', null, null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '01', '03', false, 0, 0, false, null, null, null, null, null, 'E', 1000, true, false, false, null, null, null, '01/09/2020', 'C', null, 1, 946, null, '0', null, null, null, null,null, null, null, null, null, null, null, null, null, null, 1, null, null, '01/09/2020', null, null, null, null, null, null, null, 'NAO VERIFICADO', null)")
 })
 
 Cypress.Commands.add("insereCandidato", (candidato_nome) => {

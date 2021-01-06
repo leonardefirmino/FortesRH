@@ -27,7 +27,7 @@ const colaborador = '#colaborador'
 const resposta1 = '.opcaoResposta1'
 const resposta2 = '.opcaoResposta2'
 const imprimir = '#btnRelatorio'
-const selecionarTodos = '#md'
+const selecionarTodos = '#mt'
 const excluirRespostas = '#btnExcluirRespostas'
 const voltar = '#btnVoltar'
 
@@ -83,6 +83,8 @@ export class PesquisaPage {
 
     excluirTodasRespostas() {
         cy.get(voltar).click()
+        
+        cy.get(exibirFiltro).click()
         cy.get(selecionarTodos).click()
         cy.get(excluirRespostas).click()
     }

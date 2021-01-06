@@ -12,8 +12,9 @@
   "author": "Georgem Arruda",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.0.0",
+    "cypress": "^6.2.0",
     "cypress-capybara": "0.0.2",
+    "cypress-dark": "^1.7.14",
     "cypress-file-upload": "^4.1.1",
     "cypress-plugin-tab": "^1.0.5",
     "cypress-xpath": "^1.6.0"

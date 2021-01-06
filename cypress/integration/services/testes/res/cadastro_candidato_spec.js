@@ -22,8 +22,8 @@ describe('Gerenciamento de Candidatos', () => {
         })
 
         it('Inserção de Candidatos Módulo Externo - Exige Aceite LGPD', () => {
-            cy.exec_sql("update parametrosdosistema set exigiraceitepsi = true")
-            cy.exec_sql("update parametrosdosistema set politicaseguranca = 'Teste'")
+            cy.exec_sql("update empresa set exigiraceitepsi = true")
+            cy.exec_sql("update empresa set politicaseguranca = 'Teste'")
             cy.reload()
             candidatoPage.inserirCandidatoColaboradorModuloExterno()
             util.popUpMessage('Você precisa aceitar o Termo de Privacidade e Política de Segurança.')
@@ -35,7 +35,6 @@ describe('Gerenciamento de Candidatos', () => {
 
     describe('Cadastro de Candidato no Fortes RH', () => {
         beforeEach('', () => {
-            cy.insereColaborador()
             cy.inserecandidato("Candidato 01")
             candidatoPage.navigate_menu_candidatos()
             loginPage.loggedIn('homolog', '1234')
@@ -44,13 +43,21 @@ describe('Gerenciamento de Candidatos', () => {
         context('Cadastro de Candidatos', () => {
 
             it('Inserção de Candidatos', () => {
-                cy.exec_sql("update parametrosdosistema set exigiraceitepsi = true")
-                cy.exec_sql("update parametrosdosistema set politicaseguranca = 'Teste'")
+                cy.exec_sql("update empresa set exigiraceitepsi = true")
+                cy.exec_sql("update empresa set politicaseguranca = 'Teste'")
                 candidatoPage.inserirCandidatoColaborador()
+                util.successMsg('Operação efetuada com sucesso')
+            })            
+
+            it('Inserção de Candidatos - Associar Candidato ao Colaborador Contratado', () => {
+                cy.insereColaborador('Helena de Troia')
+                candidatoPage.inserirCandidatoColaborador()
+                util.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
                 util.successMsg('Operação efetuada com sucesso')
             })
 
             it('Valida Parentesco', () => {
+                cy.insereColaborador('Helena de Troia')
                 cy.exec_sql("update empresa set verificaparentesco = 'T'")
                 candidatoPage.clicaInserir()
                 candidatoPage.preencheNomePai()
@@ -82,7 +89,7 @@ describe('Gerenciamento de Candidatos', () => {
             it('Candidato Já Cadastrado', () => {
                 cy.insereCandidato("Amy Winehouse")
                 candidatoPage.insereColaboradorCpfExistente()
-                util.dialogMessage('CPF já cadastrado')
+                util.dialogMessageMesmoCPF('Já existe um cadastro no banco de talento com esse CPF')
             })
         })
 

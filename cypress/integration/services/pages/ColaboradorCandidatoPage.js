@@ -31,8 +31,14 @@ export class ColaboradorCandidatoPage {
     }
 
     preencheCPF() {
+        cy.get('#cpf').clear().type('34425164555')
+    }
+
+    preencheCPFExistente() {
         cy.get('#cpf').clear().type('92621219110')
     }
+
+    
 
     escolheSexo(sexo) {
         if (sexo == null) {
@@ -150,7 +156,7 @@ export class ColaboradorCandidatoPage {
 
     insereColaboradorCpfExistente(cpf) {
         this.clicaInserir()
-        this.preencheCPF()
+        this.preencheCPFExistente()
         cy.get('#profPai').focus()
     }
 

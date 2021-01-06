@@ -9,11 +9,11 @@ describe('Relacionador de Candidado e Talento', () => {
 
     beforeEach('', () => {
         relacionarCandidatoTalentoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
+        cy.login('homolog', '1234')
     })
 
     it('Relacionar Candidato e Colaborador', () => {
-        cy.insereColaborador('Helena de Troia')
+        cy.insereUsuarioComEmpregado('Helena')
         cy.inserecandidato('Helena de Troia')
         cy.reload()
         relacionarCandidatoTalentoPage.relacionar()

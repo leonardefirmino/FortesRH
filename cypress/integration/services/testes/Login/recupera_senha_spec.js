@@ -24,7 +24,7 @@ describe('Recuperação de Senha', () => {
 
         it('Colaborador com usuário válido', () => {
             cy.insereUsuarioComEmpregado('usuario')
-            alteraSenhaPage.forgotPassword('34425164555')
+            alteraSenhaPage.forgotPassword('06060722334')
             util.infoMsg('Sua senha foi enviada para seu E-mail.')
         })
 

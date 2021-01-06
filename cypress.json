@@ -2,8 +2,11 @@
     "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
     "baseUrl": "http://localhost:8080/fortesrh",
     "video": false,
+    "viewportHeight": 960,
+    "viewportWidth": 1536,
     "watchForFileChanges": false,
     "screenshotOnRunFailure": false,
+    "theme": "dark",
     "env": {
         "db": {
             "username": "fortesrh",

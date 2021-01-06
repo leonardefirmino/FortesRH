@@ -11,21 +11,21 @@ describe('Tentativas de Login no Módulo Externo', () => {
 
     it('Captcha Ativo', () => {
         cy.exec_sql('update parametrosdosistema set utilizarcaptchanomoduloexterno = true')
-        cy.inserecandidato('Candidato 01')
-        externoPage.loggedIn('34425164555', '1234')
+        cy.inserecandidato('Helena de Troia')
+        externoPage.loggedIn('06060722334', '1234')
         util.warningMsgExterno()
     })
 
     it('Acessar modulo externo com login e senha com 2 candidatos com mesmo CPF', () => {
         cy.inserecandidato('Candidato 01')
         cy.inserecandidato('Candidato 02')
-        externoPage.loggedIn('34425164555', '1234')
+        externoPage.loggedIn('06060722334', '1234')
         util.welcomeExterno('Bem vindo(a)')
     })
 
     it('Acessar modulo externo - Senha Inválida', () => {
         cy.inserecandidato('Candidato 01')
-        externoPage.loggedIn('34425164555', '123456')
+        externoPage.loggedIn('06060722334', '123456')
         util.popUpMessage('Senha não confere.')
     })
 
@@ -33,7 +33,7 @@ describe('Tentativas de Login no Módulo Externo', () => {
         cy.inserecandidato('Candidato 01')
         cy.exec_sql("update parametrosdosistema set exigiraceitepsi = true")
         cy.exec_sql("update parametrosdosistema set politicaseguranca = 'Teste'")
-        externoPage.loggedIn('34425164555', '1234')
+        externoPage.loggedIn('06060722334', '1234')
         util.dialogMessageLGPD('Termo de Privacidade e Política de Segurança')
         util.continuarButton()
         util.popUpMessage('Você precisa aceitar o Termo de Privacidade e Política de Segurança.')
