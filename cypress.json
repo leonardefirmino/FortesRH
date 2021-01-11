@@ -6,7 +6,6 @@
     "viewportWidth": 1536,
     "watchForFileChanges": false,
     "screenshotOnRunFailure": false,
-    "theme": "dark",
     "env": {
         "db": {
             "username": "fortesrh",

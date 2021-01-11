@@ -18,7 +18,6 @@ import './commands'
 import 'cypress-file-upload'
 require('cypress-plugin-tab')
 require('cypress-xpath')
-require('cypress-dark')
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
