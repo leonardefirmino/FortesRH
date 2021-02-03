@@ -54,14 +54,14 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         util.infomsg('Não existem competências configuradas para Analista Dep Pessoal Senior na data informada.')
     })
 
-    it('Inserir Competência do Colaborador', () => {
+    it.only('Inserir Competência do Colaborador', () => {
         cy.insereColaboradorComCompetencias(dados.ColaboradorAtivo2)
         cy.visit('/captacao/nivelCompetenciaHistorico/list.action')
         cy.get(':nth-child(1) > .ui-button-text').click()
         cy.get('#inserir').click()
         cy.get('#peso_0').clear().type('4')
         cy.get('#percentual_0').clear().type('80')
-        cy.get('#gravar').click()
+        cy.get('#btnGravar').click()
         cy.visit('/cargosalario/cargo/list.action')
         cy.get(':nth-child(1) > .ui-button-text').click()
         util.acao('Faixa Salarial', 'Encarregado Departamento Pessoal')
@@ -72,8 +72,8 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         cy.get('#btnGravar').click()
         talentoPage.navigate_talentoPage()
         cy.get(':nth-child(1) > .ui-button-text').click()
-        util.acao_old('Competências', dados.ColaboradorAtivo2)
-        cy.get('.btnInserir').click()
+        util.acao('Competências', dados.ColaboradorAtivo2)
+        cy.get('#btnInserir').click()
         cy.get('#avaliador').select('Anônimo')
         cy.get('#checkAllCompetencia').check()
         cy.get('.checkNivel').check()

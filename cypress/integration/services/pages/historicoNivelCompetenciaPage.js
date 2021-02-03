@@ -5,7 +5,7 @@ const inserir = '#inserir'
 const checkNivel = '#configHistoricoNivel_0'
 const peso = '#peso_0'
 const percentual = '#percentual_0'
-const gravar = '#gravar'
+const gravar = '#btnGravar'
 
 export class HistoricoNivelCompetenciaPage {
 

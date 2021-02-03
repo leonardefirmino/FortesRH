@@ -15,7 +15,7 @@ export class ColaboradorCandidatoPage {
     }
 
     clicaGravar() {
-        cy.get('#gravar').click()
+        cy.get('#btnGravar').click()
     }
 
     preencheNome() {
@@ -101,17 +101,17 @@ export class ColaboradorCandidatoPage {
 
     clicaAbaCurriculoGrava() {
         cy.get('.abaCurriculo').click()
-        cy.get('.btnGravar').click()
+        cy.get('#gravarModuloExterno').click()
     }
 
     clicaAbaCurriculoGrava() {
         cy.get('.abaCurriculo').click()
-        cy.get('.btnGravar').click()
+        cy.get('#gravarModuloExterno').click()
     }
 
     anexaDocs(colaborador) {
         
-        util.acao_old('Documentos do Candidato', colaborador)
+        util.acao('Documentos do Candidato', colaborador)
         cy.get('#btnInserir').click()
         cy.get('#descricao').type('Documento Anexado')
         cy.get('#data').clear().type('29/09/2020')
@@ -137,6 +137,7 @@ export class ColaboradorCandidatoPage {
         this.insereIdiomas()
         this.insereDocumentos()
         this.clicaGravar()
+        
     }
 
     inserirCandidatoColaboradorModuloExterno() {
@@ -161,14 +162,14 @@ export class ColaboradorCandidatoPage {
     }
 
     editarCandidatoColaborador(colaborador) {
-        util.acao_old('Editar', colaborador)
+        util.acao('Editar', colaborador)
         this.preencheTelefone()
         this.insereDocumentos()
         this.clicaGravar()
     }
 
     excluirCandidatoColaborador(colaborador) {        
-        util.acao_old('Excluir', colaborador)
+        util.acao('Excluir', colaborador)
     }
 
     excluirCandidatoColaboradorLote() {
@@ -185,25 +186,26 @@ export class ColaboradorCandidatoPage {
     }
 
     contrataCandidato(candidato) {     
-        util.acao_old('Contratar Candidato', candidato)
+        util.acao('Contratar Candidato', candidato)
     }
 
     insereCurriculoEscaneado(candidato) {
         if (candidato != null) {
-            util.acao_old('Currículo Escaneado', candidato)
-            cy.get('.btnInserirEditar').click()
+            util.acao('Currículo Escaneado', candidato)
+            cy.get('#btnInserirEditar').click()
         } else {
             cy.get('#btnInserirCurriculoEscaneado').click()
             cy.get('#nome').clear().type('Candidato')
         }
-        cy.get('#mt').click()
         cy.get('#ocrTexto').attachFile('Arquivo.txt')
-        cy.get('.btnSalvarArquivos').click()
-        cy.get('.btnConcluir').click()
+        cy.get('#mt').click()
+        cy.get('#mt').click()
+        cy.get('#btnSalvarArquivos').click()
+        cy.get('#btnConcluir').click()
     }    
 
     inserirEmSolicitacao(candidato) {
-        util.acao_old('Incluir em Solicitação', candidato)
+        util.acao('Incluir em Solicitação', candidato)
         cy.get('#mt').click()
         cy.get('#btnInserir').click()
     }
@@ -216,9 +218,9 @@ export class ColaboradorCandidatoPage {
     inserirCurriculoDigitado(){
         cy.get('#btnInserirCurriculoDigitado').click()
         cy.get('#nome').clear().type('Curriculo Digitado')
-        cy.get('#mt').click()
         cy.get('#ocrTexto').type('Curriculo digitado')
-        cy.get('.btnGravar').click()
+        cy.get('#mt').click()
+        cy.get('#btnGravar').click()
     }
 
 

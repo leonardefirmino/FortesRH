@@ -54,9 +54,4 @@ describe('Funcionalidade Cargos e Faixas', () => {
         cargosFaixaPage.insereNivelCompetenciaSemCompetenciaCadastrada(cargo)
         util.popUpMessage('Não existem níveis de competência cadastrados.')
     })
-
-    it('Inclusão de Nível de COmpetencia no cargo -Sem competencia cadastrada', () => {
-        cargosFaixaPage.insereNivelCompetenciaCemCompetenciaCadastrada(cargo)
-        util.successMsg('faixa salarial salvos com sucesso.')
-    })
 })

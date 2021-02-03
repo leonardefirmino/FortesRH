@@ -89,31 +89,31 @@ export class EstabelecimentoPage {
     }
 
     inserir() {
-        cy.get(inserir_old).click()
+        cy.get(inserir).click()
         cy.get(nome).clear().type('Matriz')
         cy.get(complementoCnpj).clear().type('0002')
         cy.get(cep).clear().type('60822285')
         cy.get(num).clear().type('285')
         cy.get(complemento).clear().type('Conjunto Industrial Loja 60 ALtos')
-        cy.get(gravar_old).click()
+        cy.get(gravar).click()
     }
 
     inserirEstabelecimentoJaCadastrado() {
-        cy.get(inserir_old).click()
+        cy.get(inserir).click()
         cy.get(nome).clear().type('Matriz')
         cy.get(complementoCnpj).clear().type('0000')
     }
 
     excluir(estabelecimento) {
-        util.acao_old('Excluir', estabelecimento)
+        util.acao('Excluir', estabelecimento)
     }
 
     editar(estabelecimento) {
-        util.acao_old('Editar', estabelecimento)
+        util.acao('Editar', estabelecimento)
         cy.get(complementoCnpj).clear().type('0002')
         cy.get(cep).clear().type('60822285')
         cy.get(num).clear().type('285')
         cy.get('#update_estabelecimento_endereco_complemento').clear().type('Conjunto Industrial Loja 60 ALtos')
-        cy.get(gravar_old).click()
+        cy.get(gravar).click()
     }
 }

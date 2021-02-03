@@ -4,13 +4,14 @@ import '../../../support/commands'
 const url_talentos = '/geral/colaborador/list.action'
 const exibirFiltro = '#labelLink'
 const situacao = '#situacao'
-const inserir = '.btnInserir'
+const inserir = '#btnInserir'
 const pesquisar = '#btnPesquisar'
 const selecionaEntrevista = '#entrevista'
-const avancar = '.btnAvancar'
+const avancar = '#btnAvancar'
 const resposta1 = '.opcaoResposta1'
 const gravar = '.btnGravar'
-const gravar_new = '#gravar'
+const grava = '#gravar'
+const gravar_new = '#btnGravar'
 const editarHistorico = '#btnEditarHistoricos'
 const dadosFuncionais = '#aba2'
 
@@ -27,7 +28,7 @@ export class TalentoCandidatoPage {
     }
 
     respondeEntrevistaDesligamento(dados) {
-        util.acao_old('Entrevista de desligamento', dados.Colaborador)
+        util.acao('Entrevista de desligamento', dados.Colaborador)
         cy.get(selecionaEntrevista).select(dados.EntrevistaDesligamento)
         cy.get(avancar).click()
         cy.get(resposta1).clear().type('Resposta 1')
@@ -35,32 +36,32 @@ export class TalentoCandidatoPage {
     }
 
     criaAcessoSistema(dados) {
-        util.acao_old('Criar Acesso ao Sistema', dados.Colaborador)
+        util.acao('Criar Acesso ao Sistema', dados.Colaborador)
     }
 
     editar(dados) {
-        util.acao_old('Editar', dados.ColaboradorAtivo)
+        util.acao('Editar', dados.ColaboradorAtivo)
         cy.get(dadosFuncionais).click()
-        cy.get(gravar_new).click()
+        cy.get(grava).click()
     }
 
     excluir(dados) {
-        util.acao_old('Excluir', dados.ColaboradorAtivo)
+        util.acao('Excluir', dados.ColaboradorAtivo)
     }
 
     visualizarProgressao(dados) {
-        util.acao_old('Visualizar Progressão', dados.ColaboradorAtivo)
+        util.acao('Visualizar Progressão', dados.ColaboradorAtivo)
     }
 
     inserirCompetencia(dados) {
-        util.acao_old('Competências', dados.ColaboradorAtivo)
+        util.acao('Competências', dados.ColaboradorAtivo)
         cy.get(inserir).click()
     }
 
     inserirNovaSituação() {
         cy.get(editarHistorico).click()
         cy.get(inserir).click()
-        cy.get(gravar).click()
+        cy.get(gravar_new).click()
     }
 
 

@@ -6,7 +6,7 @@ const habilitaCampoCandidato = '#update_habilitaCampoExtraCandidato'
 const talento = ':nth-child(1) > #ativo0'
 const candidato = ':nth-child(2) > #ativo0'
 const descricao = '#titulo0'
-const gravar = '.btnGravar'
+const gravar = '#btnGravar'
 
 export class CamposExtrasPage {
 

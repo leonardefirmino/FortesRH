@@ -1,7 +1,7 @@
 import * as util from '../../../support/util'
 
 const url = '/importacao/prepareImportarEPIs.action'
-const importar = '.btnImportar'
+const importar = '#btnImportar'
 const arquivo = '#arquivo'
 
 export class ImportaEpiPage {

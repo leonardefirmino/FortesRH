@@ -42,6 +42,7 @@ describe('Funcionalidade Pesquisa', () => {
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
+<<<<<<< HEAD
     it('Responder Pesquisa Parcialmente', () => {
         cy.ativaPaginacaoPesquisa()
         cy.PesquisaLiberadaCom50Perguntas()
@@ -52,6 +53,9 @@ describe('Funcionalidade Pesquisa', () => {
     })
 
     it.skip('Exclusão de respostas em lote', () => {
+=======
+    it('Exclusão de respostas em lote', () => {
+>>>>>>> master
         cy.ativaPaginacaoPesquisa()
         cy.PesquisaLiberadaCom50Perguntas()
         cy.reload()
