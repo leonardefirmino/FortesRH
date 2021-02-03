@@ -54,7 +54,7 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         util.infomsg('Não existem competências configuradas para Analista Dep Pessoal Senior na data informada.')
     })
 
-    it.only('Inserir Competência do Colaborador', () => {
+    it('Inserir Competência do Colaborador', () => {
         cy.insereColaboradorComCompetencias(dados.ColaboradorAtivo2)
         cy.visit('/captacao/nivelCompetenciaHistorico/list.action')
         cy.get(':nth-child(1) > .ui-button-text').click()
