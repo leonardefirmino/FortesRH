@@ -79,7 +79,7 @@ export class AvaliacaoDesempenhoPage {
     }
 
     insereParticipantes(avaliacao) {
-        util.acao_old('Participantes', avaliacao.Titulo)
+        util.acao('Participantes', avaliacao.Titulo)
         //Inserir Avaliado
         cy.get(insere_avaliado).click()
         cy.get(pesquisar).click()
@@ -114,7 +114,7 @@ export class AvaliacaoDesempenhoPage {
     }
 
     excluir(avaliacao) {
-        util.acao_old('Excluir', avaliacao.Titulo)
+        util.acao('Excluir', avaliacao.Titulo)
         
     }
 

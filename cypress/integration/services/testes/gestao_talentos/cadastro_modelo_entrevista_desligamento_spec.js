@@ -3,7 +3,7 @@ import * as util from '../../../../support/util'
 import { LoginPage } from '../../pages/loginPage'
 import { ModeloEntrevistaDesligamentoPage } from '../../pages/modeloEntrevistaDesligamentoPage'
 
-describe('Analitics Recrutamento e Seleção', () => {
+describe('Modelo Ent Desligamento', () => {
     const loginPage = new LoginPage()
     const modeloEntrevistaDesligamentoPage = new ModeloEntrevistaDesligamentoPage()
 
@@ -14,7 +14,7 @@ describe('Analitics Recrutamento e Seleção', () => {
         loginPage.with('homolog', '1234')
     })
     
-    it('Teste Mooodelo', () => {
+    it('Teste Modelo', () => {
         modeloEntrevistaDesligamentoPage.inserir(entrevista)
         util.validaTitulo('Modelos de Entrevistas de Desligamento')
     })

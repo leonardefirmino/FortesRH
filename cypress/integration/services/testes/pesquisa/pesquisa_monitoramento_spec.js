@@ -42,7 +42,7 @@ describe('Funcionalidade Pesquisa', () => {
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
-    it.skip('Exclusão de respostas em lote', () => {
+    it('Exclusão de respostas em lote', () => {
         cy.ativaPaginacaoPesquisa()
         cy.PesquisaLiberadaCom50Perguntas()
         cy.reload()

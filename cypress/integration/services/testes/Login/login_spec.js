@@ -27,7 +27,7 @@ describe('Tentativas de Login', () => {
 
         it('Senha inválida', () => {
             loginPage.with('SOS', '12534')
-            util.errorMessageLogin('Máquina sem autorização de acesso')
+            util.errorMessageLogin('Usuário sem permissão de acesso')
         })
 
         it('Usuário inválido', () => {

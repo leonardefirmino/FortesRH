@@ -23,6 +23,3 @@ describe('Funcionalidade Troca de Empresa', () => {
         });
     })
 })
-
-
-

@@ -3,8 +3,8 @@ import * as util from '../../../support/util'
 const url = '/cargosalario/tabelaReajusteColaborador/list.action'
 const url_reajusteColetivo = '/cargosalario/reajusteColaborador/prepareDissidio.action'
 const url_solicitacaoRealinhamento = '/cargosalario/reajusteColaborador/prepareSolicitacaoReajuste.action'
-const inserir = '.btnInserir'
-const gravar = '.btnGravar'
+const inserir = '#btnInserir'
+const gravar = '#btnGravar'
 const descricao = '#titulo'
 const data = '#data'
 const tipoReajuste = '#tipoReajuste'
@@ -22,7 +22,7 @@ export class RealinhamentoPage {
     }
 
     cancelarReajuste(reajuste) {
-        util.acao_old('Cancelar Reajuste', reajuste)
+        util.acao('Cancelar Reajuste', reajuste)
     }    
 
     inserirReajuste(nome) {
@@ -34,11 +34,11 @@ export class RealinhamentoPage {
     }
 
     editarReajuste(reajuste) {
-        util.acao_old('Editar', reajuste)
+        util.acao('Editar', reajuste)
     } 
 
     excluirReajuste(reajuste) {
-        util.acao_old('Excluir', reajuste)
+        util.acao('Excluir', reajuste)
     }  
 
     reajusteColetivo(reajuste) {

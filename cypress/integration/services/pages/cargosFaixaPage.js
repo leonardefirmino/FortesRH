@@ -55,22 +55,4 @@ export class CargoFaixaPage {
         cy.get('#checkAllCompetenciaConhecimento').click()
         cy.get(gravar).click()
     }
-
-    insereNivelCompetenciaCemCompetenciaCadastrada(cargo) {
-        cy.visit(url_hist_nivel_comp)
-        util.confirmarDialogMessage('Continuar')
-        cy.get('#inserir').click()
-        cy.get('#peso_0').type('1')
-        cy.get('#percentual_0').type('50')
-        cy.get('#gravar').click()
-        this.navigate()
-        util.confirmarDialogMessage('Continuar')
-
-        util.acao('Faixa Salarial', cargo.Cargo)
-        util.acao('Níveis de Competência', 'Júnior')
-        cy.get(inserir).click()
-        cy.get('#checkAllCompetenciaConhecimento').click()
-        cy.get('.checkNivelConhecimento').click()
-        cy.get(gravar).click()
-    }
 }

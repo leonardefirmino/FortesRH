@@ -2,14 +2,14 @@ import * as util from '../../../support/util'
 
 //MAPEAMENTO DOS ELEMENTOS DA TELA
 const url = '/geral/grupoAC/list.action'
-const inserir = '.btnInserir'
+const inserir = '#btnInserir'
 const descricao = '#descricao'
 const codigo = '#codigo'
 const usuarioac = '#acUsuario'
 const senhaac = '#acSenha'
 const soap = '#acUrlSoap'
 const wdsl = '#acUrlWdsl'
-const gravar = '.btnGravar'
+const gravar = '#btnGravar'
 
 export class GrupoAcPage {
 
@@ -29,7 +29,7 @@ export class GrupoAcPage {
     }
 
     editar(grupoAc) {
-        util.acao_old('Editar', 'Grupo AC Teste')
+        util.acao('Editar', 'Grupo AC Teste')
         cy.get(usuarioac).clear().type(grupoAc.Usuario)
         cy.get(senhaac).clear().type(grupoAc.Senha)
         cy.get(soap).clear().type(grupoAc.Soap)
@@ -38,6 +38,6 @@ export class GrupoAcPage {
     }
 
     excluir(grupoAc) {
-        util.acao_old('Excluir', grupoAc)
+        util.acao('Excluir', grupoAc)
     }
 }

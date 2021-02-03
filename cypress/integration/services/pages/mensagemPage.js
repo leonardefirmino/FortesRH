@@ -3,7 +3,7 @@ import * as util from '../../../support/util'
 const url = '/geral/usuarioMensagem/prepareUpdate.action'
 const marcaUsuario = '#mt'
 const mensagem = '#mensagem'
-const enviarMensagem = '.btnEnviar'
+const enviarMensagem = '#btnEnviar'
 
 
 export class MessagePage {

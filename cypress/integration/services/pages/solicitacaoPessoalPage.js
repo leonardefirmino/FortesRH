@@ -7,8 +7,8 @@ export class SolicitacaoPessoalPage {
     }
 
     clicaInserir() {
-        cy.get('#btnInserir').click()
         cy.get('.done').click()
+        cy.get('#btnInserir').click()
     }
 
     dataSolicitacao() {
@@ -91,7 +91,7 @@ export class SolicitacaoPessoalPage {
         cy.get('#btnEnviarPorEmail').click()
         cy.get('#enviaEmail_anuncio_titulo').clear().type('Anuncio de Solicitação')
         cy.get('#email').clear().type('teste@teste.com.br')
-        cy.get('.btnEnviar').click()
+        cy.get('#btnEnviar').click()
     }
 
     editaSolicitação(nome_Solicitação) {
@@ -168,13 +168,13 @@ export class SolicitacaoPessoalPage {
         cy.get('.done').click({ force: true })  
         cy.get('#btnTriagemModuloExterno').click() 
         cy.get('#md').click()
-        cy.get('.btnInserirSelecionados').click()
+        cy.get('#btnInserirSelecionados').click()
     }
 
     contrataCandidatoDaSolicitacao(nome_Solicitação) {
         this.inserirCandidatosExternoSolicitacao(nome_Solicitação)
-        cy.get('.btnVoltar').click()
-        util.acao_old('Contratar', 'Candidato Mod Externo')
+        cy.get('#btnVoltar').click()
+        util.acao('Contratar', 'Candidato Mod Externo')
         util.dialogMessage('Contratar')
         util.confirmarDialogMessage('Contratar')
     }
@@ -182,8 +182,8 @@ export class SolicitacaoPessoalPage {
 
     historicoCandidato(nome_Solicitação) {
         this.inserirCandidatosExternoSolicitacao(nome_Solicitação)
-        cy.get('.btnVoltar').click()
-        util.acao_old('Histórico', 'Candidato Mod Externo')
+        cy.get('#btnVoltar').click()
+        util.acao('Histórico', 'Candidato Mod Externo')
         cy.get('#btnInserir').click()
         
     }

@@ -34,7 +34,7 @@ const voltar = '#btnVoltar'
 export class PesquisaPage {
 
     incluirColaboradorPesquisaResponder(pesquisa) {
-        util.acao_old('Talentos', pesquisa.Nome)
+        util.acao('Talentos', pesquisa.Nome)
         cy.get(inserir).click()
         cy.get(exibirFiltro).click()
         cy.get(pesquisar).click()
