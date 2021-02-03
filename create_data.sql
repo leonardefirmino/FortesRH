@@ -2,13 +2,18 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.6.17
+-- Dumped by pg_dump version 9.6.17
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Data for Name: certificado; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -5614,7 +5619,7 @@ ALTER TABLE public.modelocertificado ENABLE TRIGGER ALL;
 
 ALTER TABLE public.empresa DISABLE TRIGGER ALL;
 
-INSERT INTO public.empresa (id, nome, cnpj, razaosocial, codigoac, emailremetente, emailrespsetorpessoal, emailresprh, cnae, grauderisco, representantelegal, nitrepresentantelegal, horariotrabalho, endereco, acintegra, maxcandidatacargo, logourl, exibirsalario, uf_id, cidade_id, atividade, mensagemmoduloexterno, logocertificadourl, grupoac, campoextracolaborador, campoextracandidato, mailnaoaptos, emailresplimitecontrato, turnoverporsolicitacao, obrigarambientefuncao, verificaparentesco, controlariscopor, solpessoalexibircolabsubstituido, codigotrucurso, exibirlogoempresappraltcat, solpessoalexibirsalario, solpessoalobrigardadoscomplementares, formulaturnover, solicitarconfirmacaodesligamento, cnae2, considerarsabadonoabsenteismo, solpessoalreabrirsolicitacao, considerardomingonoabsenteismo, controlarvencimentocertificacaopor, telefone, ddd, mostrarperformanceavaldesempenho, notificarsomenteperiodosconfigurados, procedimentoemcasodeacidente, termoderesponsabilidade, criarusuarioautomaticamente, senhapadrao, campoextraatualizarmeusdados, aderiuaoesocial, dddcelularandufhabilitacaoatualizados, codigoaclayout, modelocertificado_id, mailaptosetapas, mailnaoaptosetapas, habilitanotificacaoporetapa, dataintegracaoambiente, removercandidatotriagemmoduloexterno, emailremovercandidatotriagemmoduloexterno, responderentrevistaantesconfirmacaodesligamento, cpf, exibirlogoempresappp, certificado_id, grupoemailempresa, dispensarcontratacaoaprendiz, lastupdatefreemium, desconsiderarrealizacaodaacaonopdiparacalculopercentual) VALUES (1, 'Empresa Padrão', '00000000', 'Empresa Padrão', NULL, 'rh@empresapadrao.com.br', 'sp@empresapadrao.com.br', NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 5, 'fortes.gif', true, NULL, NULL, NULL, 'Se você não é registrado, cadastre já seu currículo e tenha acesso às vagas disponíveis em nossa empresa.', NULL, '001', false, false, NULL, '', false, false, 'N', 'A', false, false, false, true, false, 1, false, NULL, false, false, false, 1, NULL, NULL, false, false, NULL, NULL, false, NULL, false, false, false, NULL, NULL, NULL, NULL, false, NULL, false, '#NOMECANDIDATO#, agradecemos o seu interesse em fazer parte da empresa, mas infelizmente você não foi selecionado.', false, NULL, false, NULL, '', false, NULL, false);
+INSERT INTO public.empresa (id, nome, cnpj, razaosocial, codigoac, emailremetente, emailrespsetorpessoal, emailresprh, cnae, grauderisco, representantelegal, nitrepresentantelegal, horariotrabalho, endereco, acintegra, maxcandidatacargo, logourl, exibirsalario, uf_id, cidade_id, atividade, mensagemmoduloexterno, logocertificadourl, grupoac, campoextracolaborador, campoextracandidato, mailnaoaptos, emailresplimitecontrato, turnoverporsolicitacao, obrigarambientefuncao, verificaparentesco, controlariscopor, solpessoalexibircolabsubstituido, codigotrucurso, exibirlogoempresappraltcat, solpessoalexibirsalario, solpessoalobrigardadoscomplementares, formulaturnover, solicitarconfirmacaodesligamento, cnae2, considerarsabadonoabsenteismo, solpessoalreabrirsolicitacao, considerardomingonoabsenteismo, controlarvencimentocertificacaopor, telefone, ddd, mostrarperformanceavaldesempenho, notificarsomenteperiodosconfigurados, procedimentoemcasodeacidente, termoderesponsabilidade, criarusuarioautomaticamente, senhapadrao, campoextraatualizarmeusdados, aderiuaoesocial, dddcelularandufhabilitacaoatualizados, codigoaclayout, modelocertificado_id, mailaptosetapas, mailnaoaptosetapas, habilitanotificacaoporetapa, dataintegracaoambiente, removercandidatotriagemmoduloexterno, emailremovercandidatotriagemmoduloexterno, responderentrevistaantesconfirmacaodesligamento, cpf, exibirlogoempresappp, certificado_id, grupoemailempresa, dispensarcontratacaoaprendiz, lastupdatefreemium, desconsiderarrealizacaodaacaonopdiparacalculopercentual, politicaseguranca, exigiraceitepsi) VALUES (1, 'Empresa Padrão', '00000000', 'Empresa Padrão', NULL, 'rh@empresapadrao.com.br', 'sp@empresapadrao.com.br', NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 5, 'fortes.gif', true, NULL, NULL, NULL, 'Se você não é registrado, cadastre já seu currículo e tenha acesso às vagas disponíveis em nossa empresa.', NULL, '001', false, false, NULL, '', false, false, 'N', 'A', false, false, false, true, false, 1, false, NULL, false, false, false, 1, NULL, NULL, false, false, NULL, NULL, false, NULL, false, false, false, NULL, NULL, NULL, NULL, false, NULL, false, '#NOMECANDIDATO#, agradecemos o seu interesse em fazer parte da empresa, mas infelizmente você não foi selecionado.', false, NULL, false, NULL, '', false, NULL, false, NULL, false);
 
 
 ALTER TABLE public.empresa ENABLE TRIGGER ALL;
@@ -32588,6 +32593,13 @@ INSERT INTO public.migrations (name) VALUES ('20201117162813');
 INSERT INTO public.migrations (name) VALUES ('20201119114916');
 INSERT INTO public.migrations (name) VALUES ('20201127081431');
 INSERT INTO public.migrations (name) VALUES ('20201130100929');
+INSERT INTO public.migrations (name) VALUES ('20201210161404');
+INSERT INTO public.migrations (name) VALUES ('20201222101625');
+INSERT INTO public.migrations (name) VALUES ('20201229145628');
+INSERT INTO public.migrations (name) VALUES ('20210111113535');
+INSERT INTO public.migrations (name) VALUES ('20210118105757');
+INSERT INTO public.migrations (name) VALUES ('20210125110349');
+INSERT INTO public.migrations (name) VALUES ('20210126145128');
 
 
 ALTER TABLE public.migrations ENABLE TRIGGER ALL;
@@ -33204,6 +33216,22 @@ INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelma
 INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (760, 'ROLE_MOV_PESQUISA_REMOVER_RESPOSTAS', 'Pode remover respostas do talento', '#', 1, false, NULL, 28, NULL);
 INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (761, 'ROLE_COLABORE', 'Enviar Mensagem para Colabore', '/geral/colaborador/prepareColabore.action', 5, true, NULL, 469, NULL);
 INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (762, 'ROLE_CAD_MENUSEXTRA', 'Menus Extras', '/geral/menuExtra/list.action', 7, true, NULL, 390, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (793, 'ROLE_PERFORMANCE_HISTORICO_CURSO', 'Histórico de Cursos de Formação Profissional', '#', 2, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (794, 'ROLE_PERFORMANCE_AV_DESEMPENHO', 'Avaliação de Desempenho', '#', 3, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (795, 'ROLE_PERFORMANCE_PESQUISA', 'Pesquisas', '#', 4, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (796, 'ROLE_PERFORMANCE_PERIODO_EXPERIENCIA', 'Acompanhamento do Período de Experiência', '#', 5, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (797, 'ROLE_PERFORMANCE_CURSO_TREINAMENTO', 'Participação em Cursos/Treinamentos', '#', 6, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (798, 'ROLE_PERFORMANCE_TRAJETORIA_PROFISSIONAL', 'Trajetória Profissional na Empresa', '#', 7, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (799, 'ROLE_PERFORMANCE_OCORRENCIA', 'Ocorrências', '#', 8, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (800, 'ROLE_PERFORMANCE_AFASTAMENTO', 'Afastamentos', '#', 9, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (801, 'ROLE_PERFORMANCE_ETAPA_SELETIVA', 'Etapas Seletivas', '#', 10, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (802, 'ROLE_PERFORMANCE_PARTICIPACAO_CIPA', 'Participações na CIPA', '#', 11, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (803, 'ROLE_PERFORMANCE_ACIDENTE_TRABALHO', 'Acidentes de Trabalho', '#', 12, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (804, 'ROLE_PERFORMANCE_DOCUMENTOS', 'Documentos', '#', 13, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (805, 'ROLE_PERFORMANCE_DESLIGAMENTO', 'Desligamento', '#', 14, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (806, 'ROLE_PERFORMANCE_EXPERIENCIA_PROFISSIONAL', 'Experiência Profissional', '#', 15, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (807, 'ROLE_PERFORMANCE_INFO_ADICIONAIS', 'Informações Adicionais', '#', 16, false, NULL, 550, NULL);
+INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelmae_id, help) VALUES (808, 'ROLE_PERFORMANCE_SOLIDES', 'Informações da Solides', '#', 17, false, NULL, 550, NULL);
 
 
 ALTER TABLE public.papel ENABLE TRIGGER ALL;
@@ -33212,7 +33240,7 @@ ALTER TABLE public.papel ENABLE TRIGGER ALL;
 -- Name: papel_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.papel_sequence', 763, false);
+SELECT pg_catalog.setval('public.papel_sequence', 809, false);
 
 
 --
@@ -33233,7 +33261,7 @@ ALTER TABLE public.perfil ENABLE TRIGGER ALL;
 
 ALTER TABLE public.parametrosdosistema DISABLE TRIGGER ALL;
 
-INSERT INTO public.parametrosdosistema (id, appurl, appcontext, appversao, emailsmtp, emailport, emailuser, emailpass, atualizadorpath, servidorremprot, enviaremail, atualizadosucesso, perfilpadrao_id, acversaowebservicecompativel, uppercase, emaildosuportetecnico, codempresasuporte, codclientesuporte, camposcandidatoexternovisivel, camposcandidatoexternoobrigatorio, camposcandidatoexternotabs, compartilharcolaboradores, compartilharcandidatos, proximaversao, autenticacao, tls, sessiontimeout, emailremetente, caminhobackup, compartilharcursos, telainicialmoduloexterno, horariosbackup, inibirgerarrelatoriopesquisaanonima, quantidadecolaboradoresrelatoriopesquisaanonima, quantidadeconstraints, tamanhomaximoupload, modulospermitidossomatorio, versaoacademica, camposcandidatovisivel, camposcandidatoobrigatorio, camposcandidatotabs, camposcolaboradorvisivel, camposcolaboradorobrigatorio, camposcolaboradortabs, autorizacaogestornasolicitacaopessoal, smtpremetente, utilizarcaptchanologin, versaoimportador, utilizarcaptchanomoduloexterno, utilizarqualificacaocadastral, exibiralteracaoprimeiroacesso, considerardatafimafastamento, novanomenclaturacha, cnpjremprot, camposcolaboradoratualizarmeusdadosvisivel, camposcolaboradoratualizarmeusdadosobrigatorio, camposcolaboradoratualizarmeusdadostabs, tokenelore, paginacaopesquisa, qtdperguntaporpaginapesquisa, exibiriconecontatos, endpointchatpro, tokenchatpro, mensagemcolaboresequence, colaboreutilizarhomologacao, exigiraceitepsi, politicaseguranca, tokensolides) VALUES (1, 'http://localhost:8080/fortesrh', '/fortesrh', '1.2.25.0', NULL, 25, NULL, NULL, NULL, '', true, NULL, 2, '1.1.77.1', false, NULL, '0002', NULL, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,cartairaHabilitacao,tituloEleitoral,certificadoMilitar,ctps', 'nome,cpf,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais,abaCurriculo', true, true, '2014-01-01', true, false, 600, NULL, NULL, false, 'L', '2', false, 1, 495, NULL, 63, false, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,comoFicouSabendoVaga,comfirmaSenha,senha,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,pis', 'nome,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais', 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', false, false, false, '1.73.2', false, false, false, false, false, NULL, 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', NULL, false, NULL, true, NULL, NULL, 0, false, false, NULL, NULL);
+INSERT INTO public.parametrosdosistema (id, appurl, appcontext, appversao, emailsmtp, emailport, emailuser, emailpass, atualizadorpath, servidorremprot, enviaremail, atualizadosucesso, perfilpadrao_id, acversaowebservicecompativel, uppercase, emaildosuportetecnico, codempresasuporte, codclientesuporte, camposcandidatoexternovisivel, camposcandidatoexternoobrigatorio, camposcandidatoexternotabs, compartilharcolaboradores, compartilharcandidatos, proximaversao, autenticacao, tls, sessiontimeout, emailremetente, caminhobackup, compartilharcursos, telainicialmoduloexterno, horariosbackup, inibirgerarrelatoriopesquisaanonima, quantidadecolaboradoresrelatoriopesquisaanonima, quantidadeconstraints, tamanhomaximoupload, modulospermitidossomatorio, versaoacademica, camposcandidatovisivel, camposcandidatoobrigatorio, camposcandidatotabs, camposcolaboradorvisivel, camposcolaboradorobrigatorio, camposcolaboradortabs, autorizacaogestornasolicitacaopessoal, smtpremetente, utilizarcaptchanologin, versaoimportador, utilizarcaptchanomoduloexterno, utilizarqualificacaocadastral, exibiralteracaoprimeiroacesso, considerardatafimafastamento, novanomenclaturacha, cnpjremprot, camposcolaboradoratualizarmeusdadosvisivel, camposcolaboradoratualizarmeusdadosobrigatorio, camposcolaboradoratualizarmeusdadostabs, tokenelore, paginacaopesquisa, qtdperguntaporpaginapesquisa, exibiriconecontatos, endpointchatpro, tokenchatpro, mensagemcolaboresequence, colaboreutilizarhomologacao, tokensolides) VALUES (1, 'http://localhost:8080/fortesrh', '/fortesrh', '1.2.27.0', NULL, 25, NULL, NULL, NULL, '', true, NULL, 2, '1.1.77.1', false, NULL, '0002', NULL, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,cartairaHabilitacao,tituloEleitoral,certificadoMilitar,ctps', 'nome,cpf,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais,abaCurriculo', true, true, '2014-01-01', true, false, 600, NULL, NULL, false, 'L', '2', false, 1, 495, NULL, 63, false, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,comoFicouSabendoVaga,comfirmaSenha,senha,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,pis', 'nome,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais', 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', false, false, false, '1.73.3', false, false, false, false, false, NULL, 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', NULL, false, NULL, true, NULL, NULL, 0, false, NULL);
 
 
 ALTER TABLE public.parametrosdosistema ENABLE TRIGGER ALL;
@@ -33668,6 +33696,22 @@ INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (2, 757);
 INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 759);
 INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 758);
 INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 761);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 793);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 794);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 795);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 796);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 797);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 798);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 799);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 800);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 801);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 802);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 803);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 804);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 805);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 806);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 807);
+INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 808);
 
 
 ALTER TABLE public.perfil_papel ENABLE TRIGGER ALL;

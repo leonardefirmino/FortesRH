@@ -3,6 +3,7 @@ import * as util from '../../../support/util'
 const url = '/pesquisa/pesquisa/list.action'
 const inserir = '#btnInserir'
 const gravar = '#btnGravar'
+const gravarParcialmente = '#btnGravarParcialmente'
 const nome_pesquisa = '#titulo'
 const label_monitoramento = '.text'
 const dataIni = '#dataInicio'
@@ -43,6 +44,17 @@ export class PesquisaPage {
         cy.get(avancar).click()
         cy.get('.title').should('have.text', 'Parte 1 de 9')
         cy.get(gravar).click()
+    }
+
+    incluirColaboradorPesquisaResponderParcial(pesquisa) {
+        util.acao_old('Talentos', pesquisa.Nome)
+        cy.get(inserir).click()
+        cy.get(exibirFiltro).click()
+        cy.get(pesquisar).click()
+        cy.get(inserirselecionado).click()
+        cy.visit('/pesquisa/colaboradorResposta/prepareResponderQuestionarioPesquisa.action?questionario.id=1&colaborador.id=1&tela=index&validarFormulario=true')
+        util.confirmarDialogMessage('Continuar')
+        cy.get(gravarParcialmente).click()
     }
 
     navigate() {
