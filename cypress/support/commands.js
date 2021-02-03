@@ -167,7 +167,7 @@ Cypress.Commands.add('ativaPaginacaoPesquisa', () => {
 })
 
 Cypress.Commands.add("PesquisaLiberadaCom50Perguntas", () => {
-    cy.exec_sql("insert into questionario values (nextval('questionario_sequence'), 'Pesquisa Clima', null, '01/10/2020', '30/10/2020', true, false, false, 2, (select id from empresa where nome = 'Empresa Padrão'), false, false)")
+    cy.exec_sql("insert into questionario values (nextval('questionario_sequence'), 'Pesquisa Clima', null, '01/01/2021', '31/12/2021', true, false, false, 2, (select id from empresa where nome = 'Empresa Padrão'), false, false)")
     cy.exec_sql("insert into pesquisa values (nextval('pesquisa_sequence'), (select id from questionario where titulo = 'Pesquisa Clima'), false, false, false, false)")
     var i = 1
     var num = 50
@@ -211,7 +211,7 @@ Cypress.Commands.add("insereColaboradorComCompetencias", (colaborador_nome) => {
     cy.exec_sql("insert into cargo_habilidade  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from habilidade where nome = 'Windows'))")
     cy.exec_sql("insert into cargo_atitude  values ((select id from cargo where nome = 'Encarregado Departamento Pessoal'), (select id from atitude where nome = 'Organizado'))")
     cy.exec_sql("insert into nivelcompetencia values (nextval('nivelcompetencia_sequence'), 'Básico', (select id from empresa where nome = 'Empresa Padrão'))")
-    cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, '" + colaborador_nome + "', '" + colaborador_nome + "', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'samuelpinheiroce@gmail.com', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
+    cy.exec_sql("insert into colaborador values (nextval('colaborador_sequence'), null, '" + colaborador_nome + "', '" + colaborador_nome + "', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'samuelpinheiroce@gmail.com', 'E', null, null, null, false, 1, 1, 946, 3, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)")
     cy.exec_sql("insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = '" + colaborador_nome + "'), (select id from areaorganizacional where nome = 'Suporte'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where cargo_id = (select id from cargo where nome = 'Encarregado Departamento Pessoal')), null, 1, null, null)")
 })
 

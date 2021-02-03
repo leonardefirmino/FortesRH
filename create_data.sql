@@ -2,8 +2,13 @@
 -- PostgreSQL database dump
 --
 
+<<<<<<< HEAD
+-- Dumped from database version 9.6.17
+-- Dumped by pg_dump version 9.6.17
+=======
 -- Dumped from database version 9.5.23
 -- Dumped by pg_dump version 12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)
+>>>>>>> master
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -11,7 +16,9 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Data for Name: certificado; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31510,6 +31517,12 @@ INSERT INTO public.migrations (name) VALUES ('20201210161404');
 INSERT INTO public.migrations (name) VALUES ('20201222101625');
 INSERT INTO public.migrations (name) VALUES ('20201229145628');
 INSERT INTO public.migrations (name) VALUES ('20210111113535');
+<<<<<<< HEAD
+INSERT INTO public.migrations (name) VALUES ('20210118105757');
+INSERT INTO public.migrations (name) VALUES ('20210125110349');
+INSERT INTO public.migrations (name) VALUES ('20210126145128');
+=======
+>>>>>>> master
 
 
 ALTER TABLE public.migrations ENABLE TRIGGER ALL;
@@ -32035,6 +32048,16 @@ INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelma
 ALTER TABLE public.papel ENABLE TRIGGER ALL;
 
 --
+<<<<<<< HEAD
+-- Name: papel_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.papel_sequence', 809, false);
+
+
+--
+=======
+>>>>>>> master
 -- Data for Name: perfil; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -32052,7 +32075,11 @@ ALTER TABLE public.perfil ENABLE TRIGGER ALL;
 
 ALTER TABLE public.parametrosdosistema DISABLE TRIGGER ALL;
 
+<<<<<<< HEAD
+INSERT INTO public.parametrosdosistema (id, appurl, appcontext, appversao, emailsmtp, emailport, emailuser, emailpass, atualizadorpath, servidorremprot, enviaremail, atualizadosucesso, perfilpadrao_id, acversaowebservicecompativel, uppercase, emaildosuportetecnico, codempresasuporte, codclientesuporte, camposcandidatoexternovisivel, camposcandidatoexternoobrigatorio, camposcandidatoexternotabs, compartilharcolaboradores, compartilharcandidatos, proximaversao, autenticacao, tls, sessiontimeout, emailremetente, caminhobackup, compartilharcursos, telainicialmoduloexterno, horariosbackup, inibirgerarrelatoriopesquisaanonima, quantidadecolaboradoresrelatoriopesquisaanonima, quantidadeconstraints, tamanhomaximoupload, modulospermitidossomatorio, versaoacademica, camposcandidatovisivel, camposcandidatoobrigatorio, camposcandidatotabs, camposcolaboradorvisivel, camposcolaboradorobrigatorio, camposcolaboradortabs, autorizacaogestornasolicitacaopessoal, smtpremetente, utilizarcaptchanologin, versaoimportador, utilizarcaptchanomoduloexterno, utilizarqualificacaocadastral, exibiralteracaoprimeiroacesso, considerardatafimafastamento, novanomenclaturacha, cnpjremprot, camposcolaboradoratualizarmeusdadosvisivel, camposcolaboradoratualizarmeusdadosobrigatorio, camposcolaboradoratualizarmeusdadostabs, tokenelore, paginacaopesquisa, qtdperguntaporpaginapesquisa, exibiriconecontatos, endpointchatpro, tokenchatpro, mensagemcolaboresequence, colaboreutilizarhomologacao, tokensolides) VALUES (1, 'http://localhost:8080/fortesrh', '/fortesrh', '1.2.27.0', NULL, 25, NULL, NULL, NULL, '', true, NULL, 2, '1.1.77.1', false, NULL, '0002', NULL, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,cartairaHabilitacao,tituloEleitoral,certificadoMilitar,ctps', 'nome,cpf,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais,abaCurriculo', true, true, '2014-01-01', true, false, 600, NULL, NULL, false, 'L', '2', false, 1, 495, NULL, 63, false, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,comoFicouSabendoVaga,comfirmaSenha,senha,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,pis', 'nome,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais', 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', false, false, false, '1.73.3', false, false, false, false, false, NULL, 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', NULL, false, NULL, true, NULL, NULL, 0, false, NULL);
+=======
 INSERT INTO public.parametrosdosistema (id, appurl, appcontext, appversao, emailsmtp, emailport, emailuser, emailpass, atualizadorpath, servidorremprot, enviaremail, atualizadosucesso, perfilpadrao_id, acversaowebservicecompativel, uppercase, emaildosuportetecnico, codempresasuporte, codclientesuporte, camposcandidatoexternovisivel, camposcandidatoexternoobrigatorio, camposcandidatoexternotabs, compartilharcolaboradores, compartilharcandidatos, proximaversao, autenticacao, tls, sessiontimeout, emailremetente, caminhobackup, compartilharcursos, telainicialmoduloexterno, horariosbackup, inibirgerarrelatoriopesquisaanonima, quantidadecolaboradoresrelatoriopesquisaanonima, quantidadeconstraints, tamanhomaximoupload, modulospermitidossomatorio, versaoacademica, camposcandidatovisivel, camposcandidatoobrigatorio, camposcandidatotabs, camposcolaboradorvisivel, camposcolaboradorobrigatorio, camposcolaboradortabs, autorizacaogestornasolicitacaopessoal, smtpremetente, utilizarcaptchanologin, versaoimportador, utilizarcaptchanomoduloexterno, utilizarqualificacaocadastral, exibiralteracaoprimeiroacesso, considerardatafimafastamento, novanomenclaturacha, cnpjremprot, camposcolaboradoratualizarmeusdadosvisivel, camposcolaboradoratualizarmeusdadosobrigatorio, camposcolaboradoratualizarmeusdadostabs, tokenelore, paginacaopesquisa, qtdperguntaporpaginapesquisa, exibiriconecontatos, endpointchatpro, tokenchatpro, mensagemcolaboresequence, colaboreutilizarhomologacao, tokensolides) VALUES (1, 'http://localhost:8080/fortesrh', '/fortesrh', '1.3.0.0', NULL, 25, NULL, NULL, NULL, '', true, NULL, 2, '1.1.77.1', false, NULL, '0002', NULL, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,cartairaHabilitacao,tituloEleitoral,certificadoMilitar,ctps', 'nome,cpf,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais,abaCurriculo', true, true, '2014-01-01', true, false, 600, NULL, NULL, false, 'L', '2', false, 1, 495, NULL, 63, false, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,comoFicouSabendoVaga,comfirmaSenha,senha,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,pis', 'nome,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais', 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', false, false, false, '1.73.2', false, false, false, false, false, NULL, 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', NULL, false, NULL, true, NULL, NULL, 0, false, NULL);
+>>>>>>> master
 
 
 ALTER TABLE public.parametrosdosistema ENABLE TRIGGER ALL;

@@ -8,7 +8,7 @@ describe('Funcionalidade Pesquisa', () => {
     const pesquisaPage = new PesquisaPage()
 
     const monitoramento = { Nome: 'Pesquisa de Monitoramento', DataIni: '01/10/2020', DataFim: '31/10/2020', Monitoramento: 'Sim' }
-    const pesquisa = { Nome: 'Pesquisa Clima', DataIni: '01/10/2020', DataFim: '31/10/2020', Monitoramento: 'Não' }
+    const pesquisa = { Nome: 'Pesquisa Clima', DataIni: '01/01/2021', DataFim: '31/12/2021', Monitoramento: 'Não' }
 
     beforeEach('', () => {
         cy.insereReajustePorColaborador('Reajuste Desenvolvimento', true)
@@ -39,6 +39,15 @@ describe('Funcionalidade Pesquisa', () => {
         cy.reload()
         util.validaTitulo('Pesquisas')
         pesquisaPage.incluirColaboradorPesquisaResponder(pesquisa)
+        util.infoMsg('Respostas gravadas com sucesso.')
+    })
+
+    it('Responder Pesquisa Parcialmente', () => {
+        cy.ativaPaginacaoPesquisa()
+        cy.PesquisaLiberadaCom50Perguntas()
+        cy.reload()
+        util.validaTitulo('Pesquisas')
+        pesquisaPage.incluirColaboradorPesquisaResponderParcial(pesquisa)
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
