@@ -275,6 +275,14 @@ Cypress.Commands.add("insereMotivoAfastamento", () => {
     cy.exec_sql("insert into afastamento values (nextval('afastamento_sequence'), false, 'Licença por motivo de doença', false, true)")
 })
 
+Cypress.Commands.add("inserirTamanhoEPI", (tamanhoEPI_nome) => {
+    cy.exec_sql("insert into tamanhoepi values (nextval('tamanhoepi_sequence'), '"+ tamanhoEPI_nome +"')")
+})
+
+Cypress.Commands.add("inserirCategoriaEPI", (categoriaEPI_nome) => {
+    cy.exec_sql("insert into tipoepi values (nextval('tipoepi_sequence'), '"+ categoriaEPI_nome +"', '1')")
+})
+
 
 // ***********************************************
 // This example commands.js shows you how to
