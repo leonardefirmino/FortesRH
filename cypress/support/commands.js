@@ -24,7 +24,7 @@ Cypress.Commands.add('clearcookies', () => {
 
 
 Cypress.Commands.add("reload_db", (callback) => {
-    cy.exec('node reload_db.js')
+    return cy.task('reloadDB');
 })
 
 Cypress.Commands.add("insereUsuario", (param) => {
