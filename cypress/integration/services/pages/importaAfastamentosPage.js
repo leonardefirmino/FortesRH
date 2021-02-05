@@ -4,7 +4,7 @@ const url = '/importacao/prepareImportarAfastamentos.action'
 const carregar = '#btnCarregar'
 const importar = '#btnImportar'
 const arquivo = '#arquivo'
-const afast = '#importarAfastamentos_afastamentos__Licen__a_por_motivo_de_doen__a__'
+const afast = '#importarAfastamentos_0'
 
 export class ImportaAfastamentoPage {
 

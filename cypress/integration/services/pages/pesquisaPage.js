@@ -28,7 +28,7 @@ const colaborador = '#colaborador'
 const resposta1 = '.opcaoResposta1'
 const resposta2 = '.opcaoResposta2'
 const imprimir = '#btnRelatorio'
-const selecionarTodos = '#mt'
+const selecionarTodos = '#md'
 const excluirRespostas = '#btnExcluirRespostas'
 const voltar = '#btnVoltar'
 
@@ -47,7 +47,7 @@ export class PesquisaPage {
     }
 
     incluirColaboradorPesquisaResponderParcial(pesquisa) {
-        util.acao_old('Talentos', pesquisa.Nome)
+        util.acao('Talentos', pesquisa.Nome)
         cy.get(inserir).click()
         cy.get(exibirFiltro).click()
         cy.get(pesquisar).click()
@@ -95,7 +95,6 @@ export class PesquisaPage {
 
     excluirTodasRespostas() {
         cy.get(voltar).click()
-        
         cy.get(exibirFiltro).click()
         cy.get(selecionarTodos).click()
         cy.get(excluirRespostas).click()

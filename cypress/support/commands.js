@@ -1,9 +1,9 @@
 import 'cypress-capybara/add-commands'
 
-Cypress.Commands.add('login', (user, pw) => {     
-    cy.get('#username').clear().type(user)
-    cy.get('#password').clear().type(pw)
-    cy.get('#entrar').click()
+Cypress.Commands.add('login', (user, pw) => {  
+    cy.get('input[placeholder = "Usuário"]').clear().type(user)   
+    cy.get('input[placeholder = "Senha"]').clear().type(pw) 
+    cy.get('#entrar').should('be.visible').click()
 
     switch (cy.get('.done').click({ multiple: true, force: true })) {
         case 0:
