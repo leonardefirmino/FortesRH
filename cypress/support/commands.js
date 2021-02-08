@@ -283,6 +283,14 @@ Cypress.Commands.add("inserirCategoriaEPI", (categoriaEPI_nome) => {
     cy.exec_sql("insert into tipoepi values (nextval('tipoepi_sequence'), '"+ categoriaEPI_nome +"', '1')")
 })
 
+Cypress.Commands.add("inserirMotivoSolicitacaoEPI", (motivoSolicitacaoEpi_nome) => {
+    cy.exec_sql("insert into motivosolicitacaoepi values (nextval('motivoSolicitacaoEpi_sequence'), '"+ motivoSolicitacaoEpi_nome +"')")
+})
+
+Cypress.Commands.add("inserirCurso", (curso_nome) => {
+    cy.exec_sql("insert into curso values (nextval('curso_sequence'), '"+ curso_nome +"', '', '1')")
+})
+
 
 // ***********************************************
 // This example commands.js shows you how to

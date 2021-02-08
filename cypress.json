@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
-    "baseUrl": "http://localhost:8080/fortesrh",
+    "baseUrl": "https://localhost:8443/fortesrh",
     "video": false,
     "viewportHeight": 960,
     "viewportWidth": 1536,

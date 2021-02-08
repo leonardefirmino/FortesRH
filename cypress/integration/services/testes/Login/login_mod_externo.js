@@ -31,8 +31,8 @@ describe('Tentativas de Login no Módulo Externo', () => {
 
     it('Acessar modulo externo - Exige Aceite LGPD', () => {
         cy.inserecandidato('Candidato 01')
-        cy.exec_sql("update parametrosdosistema set exigiraceitepsi = true")
-        cy.exec_sql("update parametrosdosistema set politicaseguranca = 'Teste'")
+        cy.exec_sql("update empresa set exigiraceitepsi = true")
+        cy.exec_sql("update empresa set politicaseguranca = 'Teste'")
         externoPage.loggedIn('06060722334', '1234')
         util.dialogMessageLGPD('Termo de Privacidade e Política de Segurança')
         util.continuarButton()
