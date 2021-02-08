@@ -29,7 +29,7 @@ describe('Tentativas de Login no Módulo Externo', () => {
         util.popUpMessage('Senha não confere.')
     })
 
-    it.only('Acessar modulo externo - Exige Aceite LGPD', () => {
+    it('Acessar modulo externo - Exige Aceite LGPD', () => {
         cy.inserecandidato('Candidato 01')
         cy.exec_sql("update empresa set exigiraceitepsi = true")
         cy.exec_sql("update empresa set politicaseguranca = 'Teste'")

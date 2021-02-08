@@ -3,24 +3,37 @@ import * as util from '../../../../support/util'
 
 import { LoginPage } from '../../pages/loginPage'
 import { TalentoCandidatoPage } from '../../pages/talentoCandidatoPage'
+import { ColaboradorCandidatoPage } from '../../pages/ColaboradorCandidatoPage'
 
 describe('Funcionalidade de Cadastro de Colaborador', () => {
     const loginPage = new LoginPage()
     const talentoPage = new TalentoCandidatoPage()
+    const colaboradorCandidato = new ColaboradorCandidatoPage()
 
     const dados = { ColaboradorAtivo: "Sophie Charlotte", ColaboradorAtivo2: "Carolina Dieckman", Colaborador: "Helena de Troia", EntrevistaDesligamento: "Entrevista de Desligamento" }
 
     beforeEach('', () => {
         cy.insereColaboradorDemitido(dados.Colaborador)
-        cy.insereColaborador(dados.ColaboradorAtivo)
+        cy.insereColaborador(dados.ColaboradorAtivo2)
         talentoPage.navigate_talentoPage()
         loginPage.loggedIn('homolog', '1234')
     })
+
     it('Responder Entrevista de Desligamento', () => {
         cy.insereEntrevistaDesligamento(dados.EntrevistaDesligamento)
         talentoPage.pesquisaTalento()
         talentoPage.respondeEntrevistaDesligamento(dados)
         util.infoMsg('Respostas gravadas com sucesso.')
+    })
+
+    it('Cadastro Colaborador', () => {
+        talentoPage.insereColaborador(dados)        
+        talentoPage.dadosFuncionais()
+        colaboradorCandidato.insereFormacao()
+        colaboradorCandidato.insereIdiomas()
+        colaboradorCandidato.insereDocumentos()
+        cy.get('#gravar').click()
+        cy.contains('Talento Sophie Charlotte cadastrado com sucesso.')
     })
 
     it('Tentativa de criar acesso ao sistema com empregado demitido', () => {

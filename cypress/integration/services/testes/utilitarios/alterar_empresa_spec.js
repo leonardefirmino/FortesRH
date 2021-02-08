@@ -6,20 +6,19 @@ import { LoginPage } from '../../pages/loginPage'
 describe('Funcionalidade Troca de Empresa', () => {
     const loginPage = new LoginPage()
 
-    const empresas = { RazaoSocial_1: 'Ente Tecnologia', RazaoSocial_2: 'Fortes Tecno'}
+    const empresas = { RazaoSocial_1: 'Fortes Tecno'}
 
     beforeEach('', () => {
         cy.insereEmpresa(empresas.RazaoSocial_1)
-        cy.insereEmpresa(empresas.RazaoSocial_2)
         loginPage.navigate()
         loginPage.loggedIn('homolog', '1234')
     })
 
     it('Alterar Empresa Fortes Tecno', () => {
-        cy.exec_sql("select * from empresa where nome = '"+ empresas.RazaoSocial_2 +"'").then(({ rows }) => rows[0].id).then(empresaId => {
+        cy.exec_sql("select * from empresa where nome = '"+ empresas.RazaoSocial_1 +"'").then(({ rows }) => rows[0].id).then(empresaId => {
             cy.visit('index.action?empresaId='+ empresaId)
             util.confirmarDialogMessage('Continuar')
-            cy.get('#userDiv').should('include.text', empresas.RazaoSocial_2)
+            cy.get('#userDiv').should('include.text', empresas.RazaoSocial_1)
         });
     })
 })

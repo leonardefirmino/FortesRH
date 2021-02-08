@@ -14,10 +14,15 @@ export class AlteraSenhaPage {
     }
 
     with(password, newPass, confPass) {
-        cy.get(senha).clear().type(password)
-        cy.get(novaSenha).clear().type(newPass)
-        cy.get(confSenha).clear().type(confPass)
-        cy.get(gravar).click()
+
+        if (password != '' || newPass != '' || confPass != '') {
+            cy.get(senha).clear().type(password)
+            cy.get(novaSenha).clear().type(newPass)
+            cy.get(confSenha).clear().type(confPass)
+            cy.get(gravar).click()
+        } else {
+            cy.get(gravar).click()
+        }
     }
 
     forgotPassword(cpf) {

@@ -12,8 +12,8 @@ Cypress.Commands.add('login', (user, pw) => {
     }
 })
 
-Cypress.Commands.add("exec_sql", (sql) => {
-    return cy.task('query', sql)
+Cypress.Commands.add("exec_sql", (...queries) => {
+    return cy.task('query', queries)
 })
 
 Cypress.Commands.add('clearcookies', () => {

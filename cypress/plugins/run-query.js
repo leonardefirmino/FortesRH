@@ -1,18 +1,27 @@
 const createPool = require('./pool');
 
-const runQuery = ({ env }) => query => {
-  return new Promise((resolve, reject) => {
-    const pool = createPool(env.db);
-    pool.query(query, (error, response) => {
-      pool.end();
-      if(error) {
-        console.log('Error executing query.');
-        reject(error);
-      }
-      console.log('Query executed successfully.')
-      resolve(response);
-    })
-  });
+const runQuery = ({ env }) => async ([ firstQuery, ...queries ]) => {
+  //console.debug('Creating pool');
+  const client = await createPool(env.db).connect();
+  try {
+    if ( !queries.length ) {
+      return await client.query(firstQuery);
+    }
+    const results = [];
+    await new Promise(
+      resolve => [firstQuery, ...queries].forEach(async(query, index) => {
+        results.push(await client.query(query));
+        if(index === queries.length) resolve();
+      })
+    );
+    return results;
+  } catch(ex) {
+    console.log(ex);
+    throw ex;
+  }finally {
+    //console.debug('Releasing pool');
+    client.release();
+  }
 }
 
 module.exports = runQuery;
