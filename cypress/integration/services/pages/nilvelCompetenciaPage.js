@@ -9,6 +9,7 @@ export class NivelCompetenciaPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(nivel) {

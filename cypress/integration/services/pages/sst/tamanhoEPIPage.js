@@ -8,6 +8,7 @@ const gravar = '#btnGravar'
 export class TamanhoEPIPage {
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(tamanhoEPI) {

@@ -1,11 +1,9 @@
 import 'cypress-capybara/add-commands'
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { EmpresaPage } from '../../pages/empresaPage'
 
 describe('Funcionalidade Cadastros de Empresas', () => {
-    const loginPage = new LoginPage()
     const empresaPage = new EmpresaPage()
 
     const empresa = { Nome: 'Fortes Tecnologia em Sistemas', Cnpj: '63542443', Uf: 'CE', Cidade: 'Fortaleza', Email: 'teste@gmail.com', Nome2: 'Ente Tecnologia' }
@@ -15,7 +13,6 @@ describe('Funcionalidade Cadastros de Empresas', () => {
         cy.insereEmpresaSemEstabelecimento('Fortes Tecno')
         cy.insereGrupoAC('Grupo AC Teste')
         empresaPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserir Empresa', () => {

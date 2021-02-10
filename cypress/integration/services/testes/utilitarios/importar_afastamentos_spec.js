@@ -1,16 +1,13 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { ImportaAfastamentoPage } from '../../pages/importaAfastamentosPage'
 
 describe('Improtação de Afastamentos do Ponto/TRU', () => {
-    const loginPage = new LoginPage()
     const importaAfastamentosPage = new ImportaAfastamentoPage()
 
     beforeEach('', () => {
         cy.insereMotivoAfastamento()
         importaAfastamentosPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Importa Afastamento Arquivo Inválido', () => {

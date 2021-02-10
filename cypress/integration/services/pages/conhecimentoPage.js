@@ -10,6 +10,7 @@ export class ConhecimentoPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(conhecimento) {

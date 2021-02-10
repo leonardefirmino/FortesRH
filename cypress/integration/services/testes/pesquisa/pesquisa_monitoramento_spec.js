@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { PesquisaPage } from '../../pages/pesquisaPage'
 
 describe('Funcionalidade Pesquisa', () => {
-    const loginPage = new LoginPage()
     const pesquisaPage = new PesquisaPage()
 
     const monitoramento = { Nome: 'Pesquisa de Monitoramento', DataIni: '01/10/2020', DataFim: '31/10/2020', Monitoramento: 'Sim' }
@@ -15,7 +13,6 @@ describe('Funcionalidade Pesquisa', () => {
         cy.insereReajustePorColaborador('Reajuste Suporte', false)
         cy.insereColaboradorComCompetencias('Helena de Troia')
         pesquisaPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Monitoramento de Saúde', () => {

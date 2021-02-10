@@ -1,17 +1,14 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { SolicitacaoPessoalPage } from '../../pages/solicitacaoPessoalPage'
 
 describe('Funcionalidade Solicitação de Pessoal', () => {
-    const loginPage = new LoginPage()
     const solicitacaopessoalPage = new SolicitacaoPessoalPage()
 
     beforeEach('', () => {
         cy.inserirSolicitacaoPessoal()
         cy.inserecandidato("Candidato 01")
         solicitacaopessoalPage.navigate()
-        loginPage.with('homolog', '1234')
     })
     
     it('Inserção de Solicitação de Pessoal', () => {

@@ -1,12 +1,10 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { ColaboradorCandidatoPage } from '../../pages/ColaboradorCandidatoPage'
 import { ModuloExternoPage } from '../../pages/moduloExternoPage'
 
 describe('Gerenciamento de Candidatos', () => {
     const candidatoPage = new ColaboradorCandidatoPage()
-    const loginPage = new LoginPage()
     const externoPage = new ModuloExternoPage()
 
     describe('Cadastros de Candidato no Módulo Externo', () => {
@@ -37,7 +35,6 @@ describe('Gerenciamento de Candidatos', () => {
         beforeEach('', () => {
             cy.inserecandidato("Candidato 01")
             candidatoPage.navigate_menu_candidatos()
-            loginPage.loggedIn('homolog', '1234')
         })
 
         context('Cadastro de Candidatos', () => {
@@ -128,7 +125,6 @@ describe('Gerenciamento de Candidatos', () => {
             cy.inserirSolicitacaoPessoal()
             cy.inserecandidato("Candidato 01")
             candidatoPage.navigate_menu_candidatos()
-            loginPage.loggedIn('homolog', '1234')
         })
 
         it('Anexar Documentos', () => {
@@ -138,7 +134,7 @@ describe('Gerenciamento de Candidatos', () => {
         it('Contratar Candidato', () => {
             candidatoPage.contrataCandidato("Candidato 01")
             util.dialogMessage('Contratar candidato')
-            util.confirmarDialogMessage()
+            cy.contains('Confirmar').click()
             util.validaTitulo('Inserir Talento')
         })
 

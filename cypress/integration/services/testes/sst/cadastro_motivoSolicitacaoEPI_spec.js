@@ -1,11 +1,9 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { MotivoSolicitacaoEPIPage } from '../../pages/sst/motivoSolicitacaoEPIPage'
 
 
-describe('Funcionalidade Categoria de EPI', () => {
-    const loginPage = new LoginPage()
+describe('Funcionalidade Motivo Solicitação EPI', () => {
     const motivoSolicitacaoEPIPage = new MotivoSolicitacaoEPIPage()
 
     const motivoSolicitacaoEPI = {Nome: "Motivo Aquisição de Material"}
@@ -14,7 +12,6 @@ describe('Funcionalidade Categoria de EPI', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirMotivoSolicitacaoEPI(motivoSolicitacaoEPI.Nome)
         motivoSolicitacaoEPIPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserção Motivo de Solicitação de EPI', () => {

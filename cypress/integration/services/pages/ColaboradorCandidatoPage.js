@@ -4,6 +4,7 @@ export class ColaboradorCandidatoPage {
 
     navigate_menu_candidatos() {
         cy.visit('/captacao/candidato/list.action')
+        util.continuarButton()
     }
 
     clicaInserir() {

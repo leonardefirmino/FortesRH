@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { AvaliacaoDesempenhoPage } from '../../pages/aval_desempenhoPage'
 
 describe('Avaliação de Desempenho', () => {
-    const loginPage = new LoginPage()
     const avalDesempenhoPage = new AvaliacaoDesempenhoPage()
 
     const avaliacao = {
@@ -14,7 +12,6 @@ describe('Avaliação de Desempenho', () => {
 
     beforeEach('', () => {
         avalDesempenhoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserir Avaliação de Desempenho', () => {

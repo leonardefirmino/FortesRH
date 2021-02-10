@@ -8,6 +8,7 @@ const gravar = '#btnGravar'
 export class CategoriaEPIPage {
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(categoriaEPI) {

@@ -59,6 +59,7 @@ export class PesquisaPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserirPesquisa(pesquisa) {

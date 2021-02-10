@@ -1,15 +1,12 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { RelacionarCandidatoTalentoPage } from '../../pages/relacionarCandidatoTalentoPage'
 
 describe('Relacionador de Candidado e Talento', () => {
-    const loginPage = new LoginPage()
     const relacionarCandidatoTalentoPage = new RelacionarCandidatoTalentoPage()
 
     beforeEach('', () => {
         relacionarCandidatoTalentoPage.navigate()
-        cy.login('homolog', '1234')
     })
 
     it('Relacionar Candidato e Colaborador', () => {

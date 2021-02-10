@@ -9,6 +9,7 @@ export class ImportaCadastroPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     importarCadastro(impCadastro) {

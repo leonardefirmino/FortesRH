@@ -1,12 +1,10 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
 
-import { LoginPage } from '../../pages/loginPage'
 import { TalentoCandidatoPage } from '../../pages/talentoCandidatoPage'
 import { ColaboradorCandidatoPage } from '../../pages/ColaboradorCandidatoPage'
 
 describe('Funcionalidade de Cadastro de Colaborador', () => {
-    const loginPage = new LoginPage()
     const talentoPage = new TalentoCandidatoPage()
     const colaboradorCandidato = new ColaboradorCandidatoPage()
 
@@ -14,9 +12,8 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
 
     beforeEach('', () => {
         cy.insereColaboradorDemitido(dados.Colaborador)
-        cy.insereColaborador(dados.ColaboradorAtivo2)
+        cy.insereColaborador(dados.ColaboradorAtivo)
         talentoPage.navigate_talentoPage()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Responder Entrevista de Desligamento', () => {
@@ -84,7 +81,6 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         cy.get('.checkNivelConhecimento').check()
         cy.get('#btnGravar').click()
         talentoPage.navigate_talentoPage()
-        cy.get(':nth-child(1) > .ui-button-text').click()
         util.acao('Competências', dados.ColaboradorAtivo2)
         cy.get('#btnInserir').click()
         cy.get('#avaliador').select('Anônimo')

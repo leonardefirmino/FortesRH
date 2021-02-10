@@ -16,6 +16,7 @@ export class ConfiguracaoPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     configuraParametros(param) {

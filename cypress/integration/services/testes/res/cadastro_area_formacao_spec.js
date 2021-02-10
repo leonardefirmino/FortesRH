@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { AreaFormacaoPage } from '../../pages/areaFormacaoPage'
 
 describe('Funcionalidade Area de Formação', () => {
-    const loginPage = new LoginPage()
     const areaformacaoPage = new AreaFormacaoPage()
 
     const area = { Nome: "Desenvolvimento de Software", Area: 'Área Administrativa' }
@@ -12,7 +10,6 @@ describe('Funcionalidade Area de Formação', () => {
     beforeEach('', () => {
         cy.insereAreaFormacao(area.Area)
         areaformacaoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
     
     it('Inserção de Area de Formação', () => {

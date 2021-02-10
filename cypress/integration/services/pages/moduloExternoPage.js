@@ -1,3 +1,5 @@
+import * as util from '../../../support/util'
+
 export class ModuloExternoPage {
 
     navigate() {

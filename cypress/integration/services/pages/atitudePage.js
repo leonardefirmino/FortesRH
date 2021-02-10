@@ -10,7 +10,7 @@ export class AtitudePage {
 
     navigate() {
         cy.visit(url)
-        util.confirmarDialogMessage('Continuar')
+        util.continuarButton()
     }
 
     inserir(atitude) {

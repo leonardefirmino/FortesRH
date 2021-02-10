@@ -12,7 +12,8 @@
             "database": "fortesrh",
             "hostname": "localhost",
             "port": 55432
-        }
+        },
+        "user_name": "homolog",
+        "user_password": "s3creT-p@ssw0rd"
     }
 }
-

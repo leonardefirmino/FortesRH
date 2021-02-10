@@ -19,6 +19,7 @@ export class RealinhamentoPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     cancelarReajuste(reajuste) {

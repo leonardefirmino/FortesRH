@@ -10,7 +10,7 @@ export class ImportaAfastamentoPage {
 
     navigate() {
         cy.visit(url)
-        //util.confirmarDialogMessage('Continuar')
+        util.continuarButton()
     }
 
     importarafastamento(afastamento) {

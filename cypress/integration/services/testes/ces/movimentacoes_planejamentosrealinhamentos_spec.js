@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { RealinhamentoPage } from '../../pages/realinhamentoPage'
 
 describe('Funcionalidade Cargos e Faixas', () => {
-    const loginPage = new LoginPage()
     const realinhamentoPage = new RealinhamentoPage()
 
     beforeEach('', () => {
@@ -12,7 +10,6 @@ describe('Funcionalidade Cargos e Faixas', () => {
         cy.insereReajustePorColaborador('Reajuste Suporte', false)
         cy.insereColaboradorComCompetencias('Helena de Troia')
         realinhamentoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Cancelar Realinhamentos Planejados', () => {

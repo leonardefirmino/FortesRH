@@ -1,11 +1,9 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { AvaliacaoDesempenhoPage } from '../../pages/aval_desempenhoPage'
 import { ResponderAvaliacaoDesempenhoPage } from '../../pages/responder_avaliacaoPage'
 
-describe('Avaliação de Desempenho', () => {
-    const loginPage = new LoginPage()    
+describe('Avaliação de Desempenho', () => { 
     const avalDesempenhoPage = new AvaliacaoDesempenhoPage()
     const responderavalDesempenhoPage = new ResponderAvaliacaoDesempenhoPage()
    
@@ -13,7 +11,6 @@ describe('Avaliação de Desempenho', () => {
 
     beforeEach('', () => {
         avalDesempenhoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Responder Avaliação de Desempenho', () => {

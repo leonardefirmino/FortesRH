@@ -10,7 +10,7 @@ export class HabilidadePage {
 
     navigate() {
         cy.visit(url)
-        util.confirmarDialogMessage('Continuar')
+        util.continuarButton()
     }
 
     inserir(habilidade) {

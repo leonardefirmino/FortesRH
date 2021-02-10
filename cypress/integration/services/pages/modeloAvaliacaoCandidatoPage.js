@@ -4,6 +4,7 @@ export class ModeloAvaliacaoCandidatoPage {
 
     navigate() {
         cy.visit('/avaliacao/modeloCandidato/list.action?modeloAvaliacao=S')
+        util.continuarButton()
     }
 
     clicaInserir() {

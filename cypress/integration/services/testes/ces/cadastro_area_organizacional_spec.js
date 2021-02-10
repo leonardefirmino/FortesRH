@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { AreaOrganizacionalPage } from '../../pages/areaOrganizacionalPage'
 
 describe('Funcionalidade Area Organizacional', () => {
-    const loginPage = new LoginPage()
     const areaOrganizacionalPage = new AreaOrganizacionalPage()
 
     const areaOrganizacional = { NomeArea: "Desenvolvimento", AreaOrg: 'Gestao de Pessoas'}
@@ -14,7 +12,6 @@ describe('Funcionalidade Area Organizacional', () => {
         cy.inserirSolicitacaoPessoal()
         cy.insereColaborador('Helena de Troia')
         areaOrganizacionalPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
     
     it('Inserção de Area Organizacional', () => {

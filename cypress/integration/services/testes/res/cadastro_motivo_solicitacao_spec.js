@@ -1,16 +1,13 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { MotivoSolicitacaoPage } from '../../pages/motivoSolicitacaoPage'
 
 describe('Funcionalidade Motivo de Solicitação Pessoal', () => {
-    const loginPage = new LoginPage()
     const motivoSolicitacaoPage = new MotivoSolicitacaoPage()
 
     beforeEach('', () => {
         cy.insereMotivoSolicitacao()
         motivoSolicitacaoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserção de Motivo de Solicitação Pessoal', () => {

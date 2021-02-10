@@ -1,16 +1,13 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { ModeloAvaliacaoCandidatoPage } from '../../pages/modeloAvaliacaoCandidatoPage'
 
 describe('Funcionalidade Modelo Avaliação Candidatos', () => {
-    const loginPage = new LoginPage()
     const modeloAvaliacaoCandidatoPage = new ModeloAvaliacaoCandidatoPage()
 
     beforeEach('', () => {
         cy.inseremodeloAvaliacaoCandidato('Avaliação Teste')
         modeloAvaliacaoCandidatoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
     
     it('Inserção de Modelo Avaliação Candidatos', () => {

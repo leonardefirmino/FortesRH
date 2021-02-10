@@ -10,6 +10,7 @@ export class AreaInteressePage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(areaInteresse) {

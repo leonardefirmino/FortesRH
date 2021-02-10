@@ -1,11 +1,9 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { AlteraSenhaPage } from '../../pages/alteraSenhaPage'
 import { ModuloExternoPage } from '../../pages/moduloExternoPage'
 
 describe('Recuperação de Senha', () => {
-    const loginPage = new LoginPage()
     const alteraSenhaPage = new AlteraSenhaPage()
     const externoPage = new ModuloExternoPage()
 
@@ -13,7 +11,7 @@ describe('Recuperação de Senha', () => {
     context('Fortes RH', () => {
 
         beforeEach('', () => {
-            loginPage.navigate()
+            cy.logout()
         })
 
         it('Colaborador com usuário sem senha', () => {
@@ -42,7 +40,7 @@ describe('Recuperação de Senha', () => {
             util.infoMsg('Candidato não localizado!')
         })
 
-        it('Colaborador com usuário válido', () => {
+        it('Colaborador com usuário válido - Externo', () => {
             cy.inserecandidato("Candidato 01")
             externoPage.navigate()
             alteraSenhaPage.forgotPasswordExterno('39210359372')

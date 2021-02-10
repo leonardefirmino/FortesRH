@@ -16,10 +16,10 @@ export class ModeloEntrevistaDesligamentoPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
   
     inserir(modeloEntrevista) {
-        util.entendiButton()
         cy.get(inserir).click()
         cy.get(titulo).clear().type(modeloEntrevista.Titulo)        
         cy.get(avancar).click()   
@@ -28,7 +28,6 @@ export class ModeloEntrevistaDesligamentoPage {
         cy.get(tipo).select(modeloEntrevista.Tipo)        
         cy.get(gravar).click()    
         cy.get(voltar).click() 
-        cy.wait(2000) 
         cy.get(cancelar).click() 
     }
 }

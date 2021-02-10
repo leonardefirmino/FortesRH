@@ -11,6 +11,7 @@ export class HistoricoNivelCompetenciaPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     clicaInserir() {
