@@ -43,13 +43,13 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         cy.reload()
         talentoPage.excluir(dados)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Talento excluído com sucesso.')
+        cy.validaMensagemSucesso('Talento excluído com sucesso.')
     })
 
     it('Editar Colaborador', () => {
         cy.reload()
         talentoPage.editar(dados)
-        util.successMsg('Talento Sophie Charlotte alterado com sucesso.')
+        cy.validaMensagemSucesso('Talento Sophie Charlotte alterado com sucesso.')
     })
 
     it('Progressão Colaborador', () => {
@@ -87,6 +87,6 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         cy.get('#checkAllCompetencia').check()
         cy.get('.checkNivel').check()
         cy.get('#btnGravar').click()
-        util.successMsg('salvos com sucesso.')
+        cy.validaMensagemSucesso('salvos com sucesso.')
     })
 })

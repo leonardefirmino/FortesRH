@@ -61,7 +61,7 @@ describe('Tentativas de Login', () => {
             cy.exec_sql("update parametrosdosistema set exibiralteracaoprimeiroacesso = true")
             loginPage.with('usu_teste', '1234')
             loginPage.changePassword('123456')
-            util.successMsg('A senha foi alterada com sucesso!')
+            cy.validaMensagemSucesso('A senha foi alterada com sucesso!')
         })
     })
 })

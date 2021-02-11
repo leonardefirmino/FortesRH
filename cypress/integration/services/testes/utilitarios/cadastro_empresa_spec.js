@@ -17,12 +17,12 @@ describe('Funcionalidade Cadastros de Empresas', () => {
 
     it('Inserir Empresa', () => {
         empresaPage.inserir(empresa)
-        util.successMsg('Empresa cadastrada com sucesso.')
+        cy.validaMensagemSucesso('Empresa cadastrada com sucesso.')
     })
 
     it('Editar Empresa', () => {
         empresaPage.editar(empresa)
-        util.successMsg('Empresa atualizada com sucesso')
+        cy.validaMensagemSucesso('Empresa atualizada com sucesso')
     })
 
     it('Excluir Empresa Logada', () => {
@@ -34,31 +34,31 @@ describe('Funcionalidade Cadastros de Empresas', () => {
     it('Excluir Empresa', () => {
         empresaPage.excluir('Fortes Tecno')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Empresa excluída com sucesso.')
+        cy.validaMensagemSucesso('Empresa excluída com sucesso.')
     })
 
     it('Cadastrar Cartão de Aniversário', () => {
         const cartao = { Nome: 'Ente Tecnologia', Tipo: 'Aniversário', Mensagem: 'Feliz Aniversário' }
         empresaPage.inserirCartao(cartao)
-        util.successMsg('Cartão cadastrado com sucesso.')
+        cy.validaMensagemSucesso('Cartão cadastrado com sucesso.')
     })
 
     it('Cadastrar Cartão de Reconhecimento', () => {
         const cartao = { Nome: 'Ente Tecnologia', Tipo: 'Reconhecimento', Mensagem: 'Obrigado por fazer parte do nosso time' }
         empresaPage.inserirCartao(cartao)
-        util.successMsg('Cartão cadastrado com sucesso.')
+        cy.validaMensagemSucesso('Cartão cadastrado com sucesso.')
     })
 
     it('Cadastrar Cartão de Ano de empresa', () => {
         const cartao = { Nome: 'Ente Tecnologia', Tipo: 'Ano de empresa', Mensagem: 'Obrigado por fazer parte do nosso time' }
         empresaPage.inserirCartao(cartao)
-        util.successMsg('Cartão cadastrado com sucesso.')
+        cy.validaMensagemSucesso('Cartão cadastrado com sucesso.')
     })
 
     it('Cadastrar Cartão de Boas-Vindas', () => {
         const cartao = { Nome: 'Ente Tecnologia', Tipo: 'Boas-Vindas', Mensagem: 'Seja bem vindo a nossa empresa' }
         empresaPage.inserirCartao(cartao)
-        util.successMsg('Cartão cadastrado com sucesso.')
+        cy.validaMensagemSucesso('Cartão cadastrado com sucesso.')
     })
 
     it('Excluir Cartão', () => {
@@ -66,6 +66,6 @@ describe('Funcionalidade Cadastros de Empresas', () => {
         const cartao = { Nome: 'Empresa Padrão' }
         empresaPage.excluirCartao(cartao)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Cartão excluído com sucesso.')
+        cy.validaMensagemSucesso('Cartão excluído com sucesso.')
     })
 })

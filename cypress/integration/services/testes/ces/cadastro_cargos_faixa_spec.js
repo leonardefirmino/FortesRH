@@ -15,18 +15,18 @@ describe('Funcionalidade Cargos e Faixas', () => {
 
     it('Inserção de Cargos', () => {
         cargosFaixaPage.inserir(cargo.Nome)
-        util.successMsg('Faixa gravada com sucesso.')
+        cy.validaMensagemSucesso('Faixa gravada com sucesso.')
     })
 
     it('Edição de Cargos', () => {
         cargosFaixaPage.editar(cargo)
-        util.successMsg('Cargo Atualizado com Sucesso!')
+        cy.validaMensagemSucesso('Cargo Atualizado com Sucesso!')
     })
 
     it('Exclusão de Cargos com Sucesso', () => {
         cargosFaixaPage.excluir('QA')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Cargo excluído com sucesso.')
+        cy.validaMensagemSucesso('Cargo excluído com sucesso.')
     })
 
     it('Exclusão sem Sucesso', () => {
@@ -44,7 +44,7 @@ describe('Funcionalidade Cargos e Faixas', () => {
     it('Exclusão de Faixa com Sucesso', () => {
         cargosFaixaPage.excluirfaixa('QA')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Faixa salarial excluída com sucesso.')
+        cy.validaMensagemSucesso('Faixa salarial excluída com sucesso.')
     })
 
     it('Inclusão de Nível de COmpetencia no cargo -Sem competencia cadastrada', () => {

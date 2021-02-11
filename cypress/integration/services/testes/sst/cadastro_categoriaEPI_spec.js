@@ -21,7 +21,7 @@ describe('Funcionalidade Categoria de EPI', () => {
 
     it('Edição Categoria de EPI', () => {
         categoriaEPIPage.editar(categoriaEPI)
-        util.successMsg('Categoria atualizada com sucesso!')        
+        cy.validaMensagemSucesso('Categoria atualizada com sucesso!')        
     });
 
     it('Exclusão Categoria de EPI', () => {

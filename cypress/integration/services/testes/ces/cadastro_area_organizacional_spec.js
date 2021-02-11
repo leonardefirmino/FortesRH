@@ -16,13 +16,13 @@ describe('Funcionalidade Area Organizacional', () => {
     
     it('Inserção de Area Organizacional', () => {
         areaOrganizacionalPage.inserir(areaOrganizacional)
-        util.successMsg('Área organizacional inserida com sucesso')
+        cy.validaMensagemSucesso('Área organizacional inserida com sucesso')
     })
     
     it('Inserção de Area Organizacional - Com Area Mãe', () => {
         const areaOrganizacional = { NomeArea: "Desenvolvimento", AreaOrg: 'Desenvolvimento'}
         areaOrganizacionalPage.inserirComAreaMae(areaOrganizacional)
-        util.successMsg('Área organizacional inserida com sucesso')
+        cy.validaMensagemSucesso('Área organizacional inserida com sucesso')
     })
     
     it('Inserção de Area Organizacional - Com Area Mãe vinculada a um talento', () => {
@@ -32,13 +32,13 @@ describe('Funcionalidade Area Organizacional', () => {
 
     it('Edição de Area Organizacional', () => {
         areaOrganizacionalPage.editar(areaOrganizacional)
-        util.successMsg('Área organizacional atualizada com sucesso')
+        cy.validaMensagemSucesso('Área organizacional atualizada com sucesso')
     })
 
     it('Exclusão de Area Organizacional', () => {
         areaOrganizacionalPage.excluir(areaOrganizacional)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Área organizacional excluída com sucesso.')
+        cy.validaMensagemSucesso('Área organizacional excluída com sucesso.')
     })
 
     it('Exclusão de Area Organizacional - Associada a movimentações', () => {

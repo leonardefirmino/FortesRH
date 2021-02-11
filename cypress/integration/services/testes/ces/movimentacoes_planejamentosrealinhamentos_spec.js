@@ -15,7 +15,7 @@ describe('Funcionalidade Cargos e Faixas', () => {
     it('Cancelar Realinhamentos Planejados', () => {
         realinhamentoPage.cancelarReajuste('Reajuste Desenvolvimento')
         util.popUpMessage('Tem certeza que deseja desfazer os realinhamentos?')
-        util.successMsg('Cancelamento efetuado com sucesso.')
+        cy.validaMensagemSucesso('Cancelamento efetuado com sucesso.')
     })
 
     it('Inserir Planejamento de Realinhamento', () => {

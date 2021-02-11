@@ -12,7 +12,7 @@ describe('Configuração de Campos Extras', () => {
     it('Configura Campo Extra de Talento e Candidato', () => {
         camposExtrasPage.configuraCampsExtras()  
         util.popUpMessage('Essas configurações serão aplicadas para todas as empresas!') 
-        util.successMsg('Configurações gravadas com sucesso.')   
+        cy.validaMensagemSucesso('Configurações gravadas com sucesso.')   
         camposExtrasPage.validaAbaExtraExibidaCandidato()
         camposExtrasPage.validaAbaExtraExibidaTalento()
     })

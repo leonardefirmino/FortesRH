@@ -27,6 +27,6 @@ describe('Funcionalidade Cursos/Treinamentos', () => {
     it('Exclusão Curso', () => {
         cursoPage.excluir(curso)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Curso excluído com sucesso.')
+        cy.validaMensagemSucesso('Curso excluído com sucesso.')
     });
 })

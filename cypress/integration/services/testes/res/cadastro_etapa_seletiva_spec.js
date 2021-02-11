@@ -26,7 +26,7 @@ describe('Funcionalidade Etapas Seletivas', () => {
     it('Exclusão de Etapa Seletiva', () => {
         etapaPage.excluir(etapaSeletiva)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Etapa Seletiva excluída com sucesso.')
+        cy.validaMensagemSucesso('Etapa Seletiva excluída com sucesso.')
     })
 
 })

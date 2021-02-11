@@ -15,7 +15,7 @@ describe('Funcionalidade Habilidade', () => {
 
     it('Inserção de Habilidade', () => {
         habilidadePage.inserir(habilidade.Nome)
-        util.successMsg('Habilidade inserida com sucesso')
+        cy.validaMensagemSucesso('Habilidade inserida com sucesso')
     })
 
     it('Inserção de Habilidade - Já cadastrado', () => {
@@ -25,7 +25,7 @@ describe('Funcionalidade Habilidade', () => {
 
     it('Edição', () => {
         habilidadePage.editar('Ruby')
-        util.successMsg('Habilidade atualizada com sucesso')
+        cy.validaMensagemSucesso('Habilidade atualizada com sucesso')
     })
 
     it('Exclusão', () => {

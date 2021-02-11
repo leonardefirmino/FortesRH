@@ -25,7 +25,7 @@ describe('Funcionalidade Area de Formação', () => {
     it('Exclusão de Area de Formação', () => {
         areaformacaoPage.excluir(area.Area)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Área de Formação excluída com sucesso.')
+        cy.validaMensagemSucesso('Área de Formação excluída com sucesso.')
     })
 
 })

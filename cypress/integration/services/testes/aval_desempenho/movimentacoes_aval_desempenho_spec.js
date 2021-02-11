@@ -17,7 +17,7 @@ describe('Avaliação de Desempenho', () => {
     it('Inserir Avaliação de Desempenho', () => {
         cy.insereColaborador('Helena de Troia')
         avalDesempenhoPage.cadastraAvaloiacaoDesempenho(avaliacao)
-        util.successMsg('Gravado com sucesso.')
+        cy.validaMensagemSucesso('Gravado com sucesso.')
     })
 
     it('Inserir Talentos na Avaliação de Desempenho - Acima do limite', () => {
@@ -52,7 +52,7 @@ describe('Avaliação de Desempenho', () => {
         cy.reload()
         avalDesempenhoPage.excluir(avaliacao)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Avaliação de desempenho excluída com sucesso.')
+        cy.validaMensagemSucesso('Avaliação de desempenho excluída com sucesso.')
     })
 
     it('Liberar Avaliação de Desempenho em Lote', () => {

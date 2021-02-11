@@ -23,7 +23,7 @@ describe('Funcionalidade Motivo de Solicitação Pessoal', () => {
     it('Exclusão de Motivo de Solicitação Pessoal', () => {
         motivoSolicitacaoPage.excluirMotivo('Excluir', 'Solicitação de Pessoal')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Motivo de solicitação excluído com sucesso.')
+        cy.validaMensagemSucesso('Motivo de solicitação excluído com sucesso.')
     })
 
     it('Exclusão de Motivo de Solicitação Pessoal - Associado a uma Solicitação de Pessoal', () => {

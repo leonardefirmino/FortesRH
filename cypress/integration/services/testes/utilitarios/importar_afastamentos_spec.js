@@ -20,6 +20,6 @@ describe('Improtação de Afastamentos do Ponto/TRU', () => {
         cy.insereColaborador('Helena de Troia')
         const arquivoAfastamento = { Arquivo: 'ArquivoAfastamentoValido.csv' }
         importaAfastamentosPage.importar(arquivoAfastamento)
-        util.successMsg('Importação concluída.')
+        cy.validaMensagemSucesso('Importação concluída.')
     })
 }) 

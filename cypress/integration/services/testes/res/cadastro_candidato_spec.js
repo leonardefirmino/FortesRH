@@ -43,14 +43,14 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.exec_sql("update empresa set exigiraceitepsi = true")
                 cy.exec_sql("update empresa set politicaseguranca = 'Teste'")
                 candidatoPage.inserirCandidatoColaborador()
-                util.successMsg('Operação efetuada com sucesso')
+                cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })            
 
             it('Inserção de Candidatos - Associar Candidato ao Colaborador Contratado', () => {
                 cy.insereColaborador('Helena de Troia')
                 candidatoPage.inserirCandidatoColaborador()
                 util.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
-                util.successMsg('Operação efetuada com sucesso')
+                cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })
 
             it('Valida Parentesco', () => {
@@ -74,7 +74,7 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.reload()
 
                 candidatoPage.inserirCandidatoColaborador('Feminino')
-                util.successMsg('Operação efetuada com sucesso')
+                cy.validaMensagemSucesso('Operação efetuada com sucesso')
             });
 
             it('Valida Homonimos', () => {
@@ -102,7 +102,7 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.reload()
                 candidatoPage.excluirCandidatoColaborador('Candidato 01')
                 util.popUpMessage('Deseja realmente excluir o candidato Candidato 01?')
-                util.successMsg('Candidato excluído com sucesso.')
+                cy.validaMensagemSucesso('Candidato excluído com sucesso.')
             });
 
             it('Exclusão de Cadastro de Candidatos em Lote', () => {

@@ -13,14 +13,14 @@ describe('Funcionalidade Menus Extras', () => {
 
     it('Inserir Novo Menu', () => {
         menuExtraPage.insereNovoMenu('Redes Sociais')
-        util.successMsg('Menu Extra adicionado com sucesso.')
+        cy.validaMensagemSucesso('Menu Extra adicionado com sucesso.')
         util.infoMsg('O usuário deverá sair e realizar novo login no sistema para refletir as alterações do Menu.')
     })
 
     it('Inserir Novo Item Menu', () => {
         menuExtraPage.insereNovoMenu('Redes Sociais')
         menuExtraPage.insereDadosMenu()
-        util.successMsg('Link adicionado com sucesso.')
+        cy.validaMensagemSucesso('Link adicionado com sucesso.')
         util.infoMsg('O usuário deverá sair e realizar novo login no sistema para refletir as alterações do Menu.')
     })
 })
