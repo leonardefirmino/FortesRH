@@ -186,7 +186,7 @@ export class ColaboradorCandidatoPage {
     }
 
     contrataCandidato(candidato) {     
-        util.acao('Contratar Candidato', candidato)
+        util.acao('Contratar', candidato)
     }
 
     insereCurriculoEscaneado(candidato) {
@@ -223,16 +223,14 @@ export class ColaboradorCandidatoPage {
         cy.get('#btnGravar').click()
     }
 
-
-
-
-
-
-
-
-
-
-
+    inserirCandidatoDemitidoSolicitacao(){
+        this.inserirCandidatoColaborador()
+        util.confirmarDialogMessage('Sim')
+        cy.get('#btnVoltar').click()
+        this.inserirEmSolicitacao('Amy Winehouse')
+        this.contrataCandidato('Amy Winehouse')
+        util.confirmarDialogMessage('Contratar')
+    }
 
 
 }
