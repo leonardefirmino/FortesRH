@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { ConhecimentoPage } from '../../pages/conhecimentoPage'
 
 describe('Funcionalidade Conhecimentos', () => {
-    const loginPage = new LoginPage()
     const conhecimentoPage = new ConhecimentoPage()
 
     const conhecimento = { Nome: "Cypress" }
@@ -13,7 +11,6 @@ describe('Funcionalidade Conhecimentos', () => {
         cy.insereConhecimento('Ruby')
         cy.insereColaboradorComCompetencias('Helena de Troia')
         conhecimentoPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserção de Conhecimento', () => {

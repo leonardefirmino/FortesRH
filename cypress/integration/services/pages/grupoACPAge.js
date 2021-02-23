@@ -15,6 +15,7 @@ export class GrupoAcPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
  
     insereGrupoAC(grupoAc) {

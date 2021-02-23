@@ -8,6 +8,7 @@ const gravar = '#btnGravar'
 export class MotivoSolicitacaoEPIPage {
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(motivoSolicitacaoEPI) {

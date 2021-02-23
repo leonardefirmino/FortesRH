@@ -12,6 +12,7 @@ export class IndicePage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
     
     insereIndice(indice) {

@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { MessagePage } from '../../pages/mensagemPage'
 
 describe('Funcionalidade de Envio de Mensagens para Usuários', () => {
-    const loginPage = new LoginPage()
     const mensagemPage = new MessagePage()
 
     const mensagem = 'Mensagem Teste'
@@ -12,8 +10,6 @@ describe('Funcionalidade de Envio de Mensagens para Usuários', () => {
 
 
     beforeEach('', () => {
-        loginPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
         mensagemPage.navigate()
     })
 

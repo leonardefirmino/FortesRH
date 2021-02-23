@@ -12,6 +12,7 @@ export class CamposExtrasPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     configuraCampsExtras() {

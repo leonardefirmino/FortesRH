@@ -4,6 +4,7 @@ export class MotivoSolicitacaoPage {
 
     navigate() {
         cy.visit('/captacao/motivoSolicitacao/list.action')
+        util.continuarButton()
     }
 
     clicaInserir() {

@@ -4,10 +4,10 @@ export class SolicitacaoPessoalPage {
 
     navigate() {
         cy.visit('/captacao/solicitacao/list.action')
+        util.continuarButton()
     }
 
     clicaInserir() {
-        cy.get('.done').click()
         cy.get('#btnInserir').click()
     }
 
@@ -97,7 +97,7 @@ export class SolicitacaoPessoalPage {
     editaSolicitação(nome_Solicitação) {
 
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().find('.icon-awesome[title="Editar"]').click({ force: true })
-        cy.get('.done').click({ force: true })
+        //cy.get('.done').click({ force: true })
         this.motivoSolicitacao()
         this.statusAprovado()
         this.clicaGravar()
@@ -109,7 +109,7 @@ export class SolicitacaoPessoalPage {
 
     anexaDocumentos(nome_Solicitação) {
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().parent().parent().find('.icon-awesome[title="Documentos da Solicitação de Pessoal"]').click({ force: true })
-        cy.get('.done').click({ force: true })
+       // cy.get('.done').click({ force: true })
         cy.get('#btnInserir').click()
         this.descricao()
         cy.get('#data').clear().type('05/10/2020')
@@ -119,14 +119,14 @@ export class SolicitacaoPessoalPage {
 
     anunciarSolicitacao(nome_Solicitação) {
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().parent().parent().find('.icon-awesome[title="Anunciar"]').click({ force: true })
-        cy.get('.done').click({ force: true })
+        //cy.get('.done').click({ force: true })
         this.preencheAnuncio()
         this.clicaGravar()
     }
 
     anunciarSolicitacaoPorEmail(nome_Solicitação) {
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().parent().parent().find('.icon-awesome[title="Anunciar"]').click({ force: true })
-        cy.get('.done').click({ force: true })
+        //cy.get('.done').click({ force: true })
         this.preencheAnuncio()
         this.anunciaPorEmail()
     }
@@ -156,7 +156,7 @@ export class SolicitacaoPessoalPage {
 
     inserirCandidatosSolicitacao(nome_Solicitação) {
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
-        cy.get('.done').click({ force: true })  
+        //cy.get('.done').click({ force: true })  
         cy.get('#btnTriagem').click() 
         cy.get('#flat').click() 
         cy.get('#md').click()
@@ -165,7 +165,7 @@ export class SolicitacaoPessoalPage {
     
     inserirCandidatosExternoSolicitacao(nome_Solicitação) {
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
-        cy.get('.done').click({ force: true })  
+        //cy.get('.done').click({ force: true })  
         cy.get('#btnTriagemModuloExterno').click() 
         cy.get('#md').click()
         cy.get('#btnInserirSelecionados').click()
@@ -190,7 +190,7 @@ export class SolicitacaoPessoalPage {
 
     clonarSolicitacao(nome_Solicitação) {
         cy.get('#solicitacao').find(`td:contains("${nome_Solicitação}")`).parent().parent().parent().parent().find('.icon-awesome[title="Clonar"]').click({ force: true })
-        cy.get('.done').click({ force: true })        
+        //cy.get('.done').click({ force: true })        
         this.dataSolicitacao()
         this.descricao()
         this.horario()

@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { AtitudePage } from '../../pages/atitudePage'
 
 describe('Funcionalidade Atitude', () => {
-    const loginPage = new LoginPage()
     const atitudePage = new AtitudePage()
 
     const atitude = { Nome: "Programar" }
@@ -12,8 +10,6 @@ describe('Funcionalidade Atitude', () => {
     beforeEach('', () => {
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cy.insereAtitude('Ruby')
-        loginPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
         atitudePage.navigate()
     })
 

@@ -17,6 +17,7 @@ export class CargoFaixaPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(cargo) {

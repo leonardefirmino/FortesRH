@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { HabilidadePage } from '../../pages/habilidadePage'
 
 describe('Funcionalidade Habilidade', () => {
-    const loginPage = new LoginPage()
     const habilidadePage = new HabilidadePage()
 
     const habilidade = { Nome: "Programar" }
@@ -12,8 +10,6 @@ describe('Funcionalidade Habilidade', () => {
     beforeEach('', () => {
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cy.insereHabilidade('Ruby')
-        loginPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
         habilidadePage.navigate()
     })
 

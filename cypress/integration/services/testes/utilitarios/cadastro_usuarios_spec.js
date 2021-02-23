@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { UsuarioPage } from '../../pages/usuariosPage'
 
 describe('Funcionalidade Cadastros de Usuários', () => {
-    const loginPage = new LoginPage()
     const usuariosPage = new UsuarioPage()
     
     
@@ -12,7 +10,6 @@ describe('Funcionalidade Cadastros de Usuários', () => {
     beforeEach('', () => {
         cy.insereUsuario('usu_teste')
         usuariosPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserir Usuário Automaticamente - Sem Colaboradores Cadastrado', () => {    

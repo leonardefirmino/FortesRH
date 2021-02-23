@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { CargoFaixaPage } from '../../pages/cargosFaixaPage'
 
 describe('Funcionalidade Cargos e Faixas', () => {
-    const loginPage = new LoginPage()
     const cargosFaixaPage = new CargoFaixaPage()
 
     const cargo = { Nome: "Programador", Cargo2: "Desenvolvedor", Cargo: "Encarregado Departamento Pessoal"}
@@ -13,7 +11,6 @@ describe('Funcionalidade Cargos e Faixas', () => {
         cy.insereCargo('QA')
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cargosFaixaPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserção de Cargos', () => {

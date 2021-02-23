@@ -1,11 +1,9 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { EtapaSeletivaPage } from '../../pages/etapaSeletivaPage'
 
 
 describe('Funcionalidade Etapas Seletivas', () => {
-    const loginPage = new LoginPage()
     const etapaPage = new EtapaSeletivaPage()
 
     const etapaSeletiva = { Descricao: "Entrevista com Gestor", Descricao2: "Dinamica de Grupo" }
@@ -13,7 +11,6 @@ describe('Funcionalidade Etapas Seletivas', () => {
     beforeEach('', () => {
         cy.insereEtapaSeletiva(etapaSeletiva.Descricao)
         etapaPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserção de Etapa Seletiva', () => {

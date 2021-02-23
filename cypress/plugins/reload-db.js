@@ -14,7 +14,6 @@ const selectTableNames = async (client) => {
 }
 
 const cleanDatabase = async (client, database) => {
-  console.log("Limpando banco de dados, apagando todos os registros.");
   await client.query(`select alter_trigger(table_name, 'DISABLE') FROM information_schema.constraint_column_usage  where table_schema='public'  and table_catalog='${database}' group by table_name;`)
   const tables = await selectTableNames(client);
   await client.query(
@@ -28,11 +27,9 @@ const cleanDatabase = async (client, database) => {
   await client.query(
     `select alter_trigger(table_name, 'ENABLE') FROM information_schema.constraint_column_usage  where table_schema='public'  and table_catalog='${database}' group by table_name;`
   );
-  console.log('Limpeza do banco de dados realizada com sucesso!');
 }
 
 const populateDatabase = async (client) => {
-  console.log('Populando banco de dados');
   const interface = createInterface('create_data.sql');
   let i = 0;
   const sql = [];
@@ -62,11 +59,9 @@ const populateDatabase = async (client) => {
     }
   }
   await client.query(sql.join(' '));
-  console.log("Banco de dados populado com sucesso.");
 }
 
 const setupSOSAccess = async (client) => {
-  console.log("Atualizando configurações para ambiente de desenvolvimento.");
   const proximaVersao = `${new Date().getFullYear()+10}-01-01`;
   [
     "SELECT pg_catalog.set_config('search_path', 'public', false);",
@@ -75,13 +70,12 @@ const setupSOSAccess = async (client) => {
     "drop function insert_papel_perfil_administrador();",
     "delete from cartao",
     `update parametrosdosistema set proximaversao = '${proximaVersao}'`,
-    "update parametrosdosistema set servidorremprot = 'FORTESAG'",
+    "update parametrosdosistema set servidorremprot = '10.1.254.2'",
     "update parametrosdosistema set appurl = 'http://localhost:8080/fortesrh'",
     "update parametrosdosistema set appcontext = '/fortesrh'",
-    "insert into usuario values (nextval('usuario_sequence'),'homolog', 'homolog', 'MTIzNA==', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)",
+    "insert into usuario values (nextval('usuario_sequence'),'homolog', 'homolog', 'czNjcmVULXBAc3N3MHJk', true, null, false, (select caixasmensagens from usuario where nome = 'SOS'), null)",
     "insert into usuarioempresa values (nextval('usuarioempresa_sequence'), (select id from usuario where nome = 'homolog'), 1, 1)"
   ].forEach( async(query) => client.query(query) );
-  console.log("Configurações atualizadas com sucesso.");
 }
 
 const reloadDB = ({ env }) => async () => {

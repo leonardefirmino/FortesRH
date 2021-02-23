@@ -13,6 +13,7 @@ export class EtapaSeletivaPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(etapaSeletiva) {

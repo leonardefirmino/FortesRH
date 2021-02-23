@@ -10,6 +10,7 @@ export class AreaOrganizacionalPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(area) {

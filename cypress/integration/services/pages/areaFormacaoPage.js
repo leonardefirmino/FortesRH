@@ -9,6 +9,7 @@ export class AreaFormacaoPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(area) {

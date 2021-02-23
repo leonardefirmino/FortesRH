@@ -38,6 +38,10 @@ export function dialogContentMessage(text) {
     cy.get('.ui-dialog-content').should('contain', text)
 }
 
+export function confirma() {
+    cy.get('[aria-labelledby="ui-dialog-title-contrataDialog"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > :nth-child(1) > .ui-button-text')
+}
+
 export function confirmarDialogMessage(text) {
     if (text == null) {
         cy.get(':nth-child(1) > .ui-button-text').should('contain', 'Confirmar').click()
@@ -56,7 +60,11 @@ export function dialogMessageMesmoCPF(text) {
 }
 
 export function continuarButton() {
-    cy.get('.ui-button-text').click()
+    cy.get('.ui-state-focus > .ui-button-text').should('contain', 'Continuar').click()
+}
+
+export function continua() {
+    cy.get('.ui-button-text').should('contain', 'Continuar').click()
 }
 
 export function validaTitulo(text) {

@@ -1,17 +1,14 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { NivelCompetenciaPage } from '../../pages/nilvelCompetenciaPage'
 
 describe('Funcionalidade Nivel de Competencia', () => {
-    const loginPage = new LoginPage()
     const nilvelCompetenciaPage = new NivelCompetenciaPage()
 
     const nivel = { Descricao: 'Regular' }
 
     beforeEach('', () => {
         nilvelCompetenciaPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     }) 
  
     it('Inserção Nível de Competencia', () => {

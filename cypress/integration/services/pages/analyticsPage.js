@@ -1,3 +1,5 @@
+import * as util from '../../../support/util'
+
 const url_res = '/indicador/duracaoPreenchimentoVaga/painel.action'
 const url_ces = '/cargosalario/historicoColaborador/painelIndicadoresCargoSalario.action'
 const abaInfoGerais = '#aba1'
@@ -15,6 +17,7 @@ export class AnalyticsPage {
     //R&S
     navigateAnalyticsReS() {
         cy.visit(url_res)
+        util.continuarButton()
     }
 
     validaQuadroVagasDisponiveis(dados) {
@@ -34,6 +37,7 @@ export class AnalyticsPage {
     //C&S
     navigateAnalyticsCeS() {
         cy.visit(url_ces)
+        util.continuarButton()
     }
 
     validaSalario(dados) {

@@ -30,6 +30,7 @@ export class TalentoCandidatoPage {
 
     navigate_talentoPage() {
         cy.visit(url_talentos)
+        util.continuarButton()
     }
 
     insereColaborador(dados) {

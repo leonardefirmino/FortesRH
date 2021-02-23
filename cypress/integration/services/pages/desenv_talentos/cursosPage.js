@@ -16,6 +16,7 @@ const inserirSelecionados = '#btnInserirSelecionados'
 export class CursoPage {
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(curso) {

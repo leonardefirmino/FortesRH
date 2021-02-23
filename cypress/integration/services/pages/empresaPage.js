@@ -30,6 +30,7 @@ const gravar_old = '.btnGravar'
 export class EmpresaPage {
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     inserir(empresa) {
@@ -86,6 +87,7 @@ export class EmpresaPage {
 export class EstabelecimentoPage {
     navigate() {
         cy.visit(url_estabelecimento)
+        util.continuarButton()
     }
 
     inserir() {

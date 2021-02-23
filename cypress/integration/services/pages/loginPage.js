@@ -1,4 +1,5 @@
 import * as util from '../../../support/util'
+import '../../../../cypress.json'
 
 const url = '/login.action?'
 const usuario = '#username'
@@ -12,6 +13,7 @@ const alteraSenhaButton = '#alterarSenha'
 export class LoginPage {
 
   navigate() {
+    cy.visit('/logout.action')
     cy.visit(url)
   }
 
@@ -21,9 +23,10 @@ export class LoginPage {
     cy.get(entrar).click()
   }
 
-  loggedIn(user, password) {
-    this.with(user, password)
-    util.entendiButton()
+  loggedIn() {
+    cy.get(usuario).clear().type(Cypress.env('user_name'))
+    cy.get(senha).clear().type(Cypress.env('user_password'))
+    cy.get(entrar).click()
   }
 
   changePassword(password) {

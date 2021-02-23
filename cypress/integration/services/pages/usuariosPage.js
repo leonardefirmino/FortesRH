@@ -16,6 +16,7 @@ export class UsuarioPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     insereUsuarioAutomaticamente(){

@@ -1,11 +1,9 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { CategoriaEPIPage } from '../../pages/sst/categoriaEPIPage'
 
 
 describe('Funcionalidade Categoria de EPI', () => {
-    const loginPage = new LoginPage()
     const categoriaEPIPage = new CategoriaEPIPage()
 
     const categoriaEPI = {Nome: "Categoria III"}
@@ -14,7 +12,6 @@ describe('Funcionalidade Categoria de EPI', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirCategoriaEPI(categoriaEPI.Nome)
         categoriaEPIPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Inserção Categoria de EPI', () => {

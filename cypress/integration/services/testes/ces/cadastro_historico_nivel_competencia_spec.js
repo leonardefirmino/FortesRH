@@ -1,10 +1,8 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { HistoricoNivelCompetenciaPage } from '../../pages/historicoNivelCompetenciaPage'
 
 describe('Funcionalidade Histórico Nivel de Competencia', () => {
-    const loginPage = new LoginPage()
     const historicoNivelCompetenciaPage = new HistoricoNivelCompetenciaPage()
 
     const nivel = { Descricao: 'Regular' }
@@ -12,7 +10,6 @@ describe('Funcionalidade Histórico Nivel de Competencia', () => {
     beforeEach('', () => {
         cy.insereNivelCompetencia('Excelente')
         historicoNivelCompetenciaPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     }) 
  
     it('Inserção Histórico Nível de Competencia', () => {

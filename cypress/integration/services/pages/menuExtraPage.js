@@ -12,6 +12,7 @@ export class MenuExtraPage {
 
     navigate() {
         cy.visit(url)
+        util.continuarButton()
     }
 
     insereNovoMenu(menu) {

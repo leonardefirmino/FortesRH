@@ -1,11 +1,9 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { IntegraElorePage } from '../../pages/elorePage'
 import { ExportaElorePage } from '../../pages/elorePage'
 
 describe('Funcionalidade Integração Elore', () => {
-    const loginPage = new LoginPage()
     const elorePage = new IntegraElorePage()
     const elorePagaExporta = new ExportaElorePage
     
@@ -15,7 +13,6 @@ describe('Funcionalidade Integração Elore', () => {
 
     beforeEach('', () => {
         elorePage.navigate()
-        loginPage.loggedIn('homolog', '1234')
     })
 
     it('Integra com token válido', () => {        

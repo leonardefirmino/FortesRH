@@ -1,15 +1,11 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { ImportaEpiPage } from '../../pages/importaEpiPage'
 
 describe('Improtação de Epis', () => {
-    const loginPage = new LoginPage()
     const importaEpiPage = new ImportaEpiPage()
 
     beforeEach('', () => {
-        loginPage.navigate()
-        loginPage.loggedIn('homolog', '1234')
         importaEpiPage.navigate()
     })
 

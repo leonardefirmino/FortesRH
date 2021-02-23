@@ -17,8 +17,8 @@ describe('Tentativas de Login', () => {
         })
 
         it('Valida Remprot', () => {
-            cy.exec_sql("update parametrosdosistema set proximaversao = '2014-01-01'")
-            loginPage.with('SOS', '1234')
+            cy.exec_sql("update parametrosdosistema set proximaversao = '2021-01-01'")
+            loginPage.with('homolog', 's3creT-p@ssw0rd')
             util.welcomeMessage('Bem-vindo(a)')
         })
     })
@@ -46,19 +46,20 @@ describe('Tentativas de Login', () => {
     context('Outras Validações de Login', () => {
         it('Usuario Expirado', () => {
             cy.exec_sql("update usuario set expiracao = '01/01/2000' where login = 'homolog'")
-            loginPage.with('homolog', '1234')
+            loginPage.with('homolog', 's3creT-p@ssw0rd')
             util.errorMessageLogin('Usuário sem permissão de acesso')
         })
 
         it('Sessão Expirada', () => {
             cy.exec_sql("update parametrosdosistema set sessiontimeout = 1")
-            loginPage.with('homolog', '1234')
+            loginPage.with('homolog', 's3creT-p@ssw0rd')
             util.popUpMessage('Sua sessão expirou.')
         })
 
         it('Primeiro Acesso', () => {
+            cy.insereUsuario('usu_teste')
             cy.exec_sql("update parametrosdosistema set exibiralteracaoprimeiroacesso = true")
-            loginPage.with('homolog', '1234')
+            loginPage.with('usu_teste', '1234')
             loginPage.changePassword('123456')
             util.successMsg('A senha foi alterada com sucesso!')
         })

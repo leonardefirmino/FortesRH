@@ -16,6 +16,7 @@ export class IntegraElorePage {
 
     navigate() {
         cy.visit(url_parametrosSistema)
+        util.continuarButton()
     }
 
     integraElore(token) {
@@ -33,7 +34,7 @@ export class ExportaElorePage {
 
     navigate_exporta() {
         cy.visit(url_exporta)
-        util.confirmarDialogMessage('Continuar')
+        util.continuarButton()
     }
 
     exporta(elore) { 

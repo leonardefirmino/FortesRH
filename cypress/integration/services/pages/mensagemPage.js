@@ -10,7 +10,7 @@ export class MessagePage {
 
     navigate() {
         cy.visit(url)
-        util.confirmarDialogMessage('Continuar')
+        util.continuarButton()
     }
 
     enviaMensagem(message) {

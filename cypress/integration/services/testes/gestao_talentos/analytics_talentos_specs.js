@@ -1,17 +1,15 @@
 import '../../../../../cypress.json'
 import * as util from '../../../../support/util'
-import { LoginPage } from '../../pages/loginPage'
 import { AnalyticsGestaoTalentosPage } from '../../pages/analyticsGestaoTalentoPage'
 
 describe('Analitics Gestão de Talentos', () => {
-    const loginPage = new LoginPage()
     const analyticsGestaoTalentoPage = new AnalyticsGestaoTalentosPage()
 
-    const dados = { DataFolha: "Valor total da folha em 25/10/2020: R$ 2.000,00" }
-
     beforeEach('', () => {
+        cy.insereMetaTurnover(5)
+        cy.insereMetaAbsenteísmo(6)
         analyticsGestaoTalentoPage.navigate()
-        loginPage.with('homolog', '1234')
+        
     })
     
     it('Valida Dispensa contratação Aprendiz', () => {        
@@ -26,5 +24,19 @@ describe('Analitics Gestão de Talentos', () => {
         util.entendiButton()
         analyticsGestaoTalentoPage.validaCotasAprendiz()
         cy.contains('Cota de Aprendizagem (Lei nº 10.097, de 19 de Dezembro de 2000)')
+    })
+    
+    it('Cota de deficientes não atingida', () => {
+        util.entendiButton()
+        cy.insere_X_Colaborador(105)
+        cy.reload() 
+        analyticsGestaoTalentoPage.validaCotaDeficienteNaoAtingida()
+    })
+    
+    it('Cota de deficientes atingida', () => {
+        util.entendiButton()
+        cy.insere_X_Colaborador(40)
+        cy.reload() 
+        analyticsGestaoTalentoPage.validaCotaDeficiente()
     })
 })

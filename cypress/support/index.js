@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './data-base_commands'
 import 'cypress-file-upload'
 require('cypress-plugin-tab')
 require('cypress-xpath')
@@ -30,6 +31,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 beforeEach('', () => {
     cy.reload_db()
+    cy.login()
 })
 
 afterEach('', () => {    

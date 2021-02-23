@@ -8,7 +8,7 @@ export class ImportaEpiPage {
 
     navigate() {
         cy.visit(url)
-        util.confirmarDialogMessage('Continuar')
+        util.continuarButton()
     }
 
     importarEpi(epi) {
