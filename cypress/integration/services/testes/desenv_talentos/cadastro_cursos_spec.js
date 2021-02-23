@@ -9,6 +9,7 @@ describe('Funcionalidade Cursos/Treinamentos', () => {
     const cursoPage = new CursoPage()
 
     const curso = {Nome: "Curso Cypress"}
+    const turma = {Nome: "Turma 1", Custo: "100,00", Instrutor: "Professor", DataIni: "01/01/2021", DataFim: "29/01/2021"}
 
     beforeEach('', () => {
         cy.insereColaborador('Helena de Troia')
@@ -31,5 +32,10 @@ describe('Funcionalidade Cursos/Treinamentos', () => {
         cursoPage.excluir(curso)
         util.popUpMessage('Confirma exclusão?')
         util.successMsg('Curso excluído com sucesso.')
+    });
+
+    it('Inserir Turma e Alunos', () => {
+        cursoPage.inserirTurmaEAluno(turma, curso)
+        util.infoMsg('Talento(s) incluído(s) com sucesso!')
     });
 })
