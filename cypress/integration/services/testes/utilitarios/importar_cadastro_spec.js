@@ -13,11 +13,11 @@ describe('Funcionalidade Importação de Cadastros', () => {
         importarCadastrosPage.navigate()
     })
 
-    it.only('Importa Cadastros Empresas', () => {        
+    it('Importa Cadastros Empresas', () => {        
         importarCadastrosPage.importarCadastro(empresa)
         util.dialogContentMessage('Cuidado ao importar o cadastro entre empresas, pois o mesmo poderá ficar duplicado caso aconteça mais de uma importação.')
         cy.contains('Sim').click()
-        util.successMsg('Cadastros importados com sucesso.')
+        cy.validaMensagemSucesso('Cadastros importados com sucesso.')
     })
 
     it('Importa Cadastros Mesma Empresa', () => {        

@@ -15,35 +15,35 @@ describe('Funcionalidade Indices', () => {
  
     it('Inserção de Índice', () => {
         indicePage.insereIndice(indice)
-        util.successMsg('Índice Gravado com Sucesso!')
+        cy.validaMensagemSucesso('Índice Gravado com Sucesso!')
     })
 
     it('Edição de de Índice', () => {
         indicePage.editar(indice)
-        util.successMsg('Índice Atualizado com Sucesso!')
+        cy.validaMensagemSucesso('Índice Atualizado com Sucesso!')
     })
 
     it('Insere Histórico de Índice', () => {
         indicePage.preencheHistoricoIndice(indice)
-        util.successMsg('Índice Atualizado com Sucesso!')
+        cy.validaMensagemSucesso('Índice Atualizado com Sucesso!')
     })
 
     it('Exclusão de Índice', () => {
         indicePage.excluir(indice.Descricao2)
-        util.popUpMessage('Confirma exclusão?')
+        cy.popUpMessage('Confirma exclusão?')
         util.infoMsg('Índice excluído com sucesso.')
     })
 
     it('Exclusão de Índice - com Histórico', () => {
         indicePage.excluir(indice.Descricao3)
-        util.popUpMessage('Confirma exclusão?')
+        cy.popUpMessage('Confirma exclusão?')
         util.infoMsg('Índice excluído com sucesso.')
     })
 
     it('Inserir Indice Integrado como Pessoal', () => {
         cy.integraFortesPessoal()
         cy.logout()   
-        cy.login_Sem_Entendi()
+        cy.login()
         indicePage.navigate()
         util.infoMsg('A manutenção do Cadastro de Índices deve ser realizada no Fortes Pessoal.')
     })

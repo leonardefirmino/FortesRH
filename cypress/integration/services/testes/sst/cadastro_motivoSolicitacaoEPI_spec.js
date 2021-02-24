@@ -16,17 +16,17 @@ describe('Funcionalidade Motivo Solicitação EPI', () => {
 
     it('Inserção Motivo de Solicitação de EPI', () => {
         motivoSolicitacaoEPIPage.inserir(motivoSolicitacaoEPI)
-        util.successMsg('Motivo da solicitação do EPI cadastrado com sucesso.')
+        cy.validaMensagemSucesso('Motivo da solicitação do EPI cadastrado com sucesso.')
     });
 
     it('Edição Motivo de Solicitação de EPI', () => {
         motivoSolicitacaoEPIPage.editar(motivoSolicitacaoEPI)
-        util.successMsg('Motivo da solicitação do EPI atualizado com sucesso.')        
+        cy.validaMensagemSucesso('Motivo da solicitação do EPI atualizado com sucesso.')        
     });
 
     it('Exclusão Motivo de Solicitação de EPI', () => {
         motivoSolicitacaoEPIPage.excluir(motivoSolicitacaoEPI)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Motivo da solicitação do EPI excluído com sucesso.')
+        cy.validaMensagemSucesso('Motivo da solicitação do EPI excluído com sucesso.')
     });
 })

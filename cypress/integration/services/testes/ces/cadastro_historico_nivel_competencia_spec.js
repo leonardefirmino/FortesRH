@@ -20,7 +20,7 @@ describe('Funcionalidade Histórico Nivel de Competencia', () => {
  
     it('Inserção Histórico Nível de Competencia', () => {
         historicoNivelCompetenciaPage.inserir()
-        util.successMsg('Histórico de níveis de competência salvo com sucesso.')
+        cy.validaMensagemSucesso('Histórico de níveis de competência salvo com sucesso.')
     })
  
     it('Inserção Histórico Nível de Competencia na mesma data', () => {

@@ -17,10 +17,10 @@ describe('Avaliação de Desempenho', () => {
     it('Inserir Avaliação de Desempenho', () => {
         cy.insereColaborador('Helena de Troia')
         avalDesempenhoPage.cadastraAvaloiacaoDesempenho(avaliacao)
-        util.successMsg('Gravado com sucesso.')
+        cy.validaMensagemSucesso('Gravado com sucesso.')
     })
 
-    it('Inserir Talentos na Avaliação de Desempenho - Acima do limite', () => {
+    it.only('Inserir Talentos na Avaliação de Desempenho - Acima do limite', () => {
         const avaliacao = { Titulo: 'Avaliação de Desempenho' }
         cy.insere_X_Colaborador(51)
         cy.inseremodeloAvaliacaoDesempenho('Avaliação Teste')
@@ -52,7 +52,7 @@ describe('Avaliação de Desempenho', () => {
         cy.reload()
         avalDesempenhoPage.excluir(avaliacao)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Avaliação de desempenho excluída com sucesso.')
+        cy.validaMensagemSucesso('Avaliação de desempenho excluída com sucesso.')
     })
 
     it('Liberar Avaliação de Desempenho em Lote', () => {
@@ -62,6 +62,6 @@ describe('Avaliação de Desempenho', () => {
         cy.insereAvaliacaoDesempenho_NaoPermiteAutoAvaliacao()
         cy.reload()
         avalDesempenhoPage.liberarEmLote(avaliacao)
-        util.warningMsg('Existem avaliações com número insuficiente de participantes ou avaliação que não permite a autoavaliação com apenas um participante.')
+        cy.validaMensagemAlerta("Não foi possível realizar a operação 'Liberar avaliações em lote': Existem avaliações com número insuficiente de participantes ou avaliação que não permite a autoavaliação com apenas um participante.")
     })
 }) 

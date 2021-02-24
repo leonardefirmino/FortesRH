@@ -26,7 +26,7 @@ describe('Funcionalidade Area de Interesse', () => {
     it('Exclusão de Area de Interesse', () => {
         areaInteressePage.excluir(areaInteresse)
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Área de Interesse excluída com sucesso.')
+        cy.validaMensagemSucesso('Área de Interesse excluída com sucesso.')
     })
 
 })

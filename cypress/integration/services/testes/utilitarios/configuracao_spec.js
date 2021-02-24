@@ -14,6 +14,6 @@ describe('Configuração do Sistema', () => {
 
     it('Envio de Mensagem', () => {
         configuracaoPage.configuraParametros(parametros)
-        util.successMsg('Configurações do sistema atualizadas com sucesso.')
+        cy.validaMensagemSucesso('Configurações do sistema atualizadas com sucesso.')
     })
 })

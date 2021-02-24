@@ -26,7 +26,7 @@ describe('Funcionalidade Solicitação de Pessoal', () => {
     it('Exclusão de Solicitação de Pessoal', () => {
         solicitacaopessoalPage.excluiSolicitação('Solicitação')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Solicitação excluída com sucesso.')
+        cy.validaMensagemSucesso('Solicitação excluída com sucesso.')
     })
     
     it('Anexar Documentos à Solicitação de Pessoal', () => {
@@ -74,7 +74,7 @@ describe('Funcionalidade Solicitação de Pessoal', () => {
     it('Inserir Candidatos Modulo Externo na Solicitação de Pessoal', () => {        
         cy.insereCandidatoExterno("Candidato Mod Externo")
         solicitacaopessoalPage.inserirCandidatosExternoSolicitacao('Solicitação')
-        util.successMsg('Candidato(s) inserido(s) no processo selectivo com sucesso.')
+        cy.validaMensagemSucesso('Candidato(s) inserido(s) no processo selectivo com sucesso.')
     })    
     
     it('Contratar Candidatos na Solicitação de Pessoal', () => {

@@ -15,7 +15,7 @@ describe('Funcionalidade Conhecimentos', () => {
 
     it('Inserção de Conhecimento', () => {
         conhecimentoPage.inserir(conhecimento.Nome)
-        util.successMsg('Conhecimento cadastrado com sucesso.')
+        cy.validaMensagemSucesso('Conhecimento cadastrado com sucesso.')
     })
 
     it('Inserção de Conhecimento - Já cadastrado', () => {
@@ -25,7 +25,7 @@ describe('Funcionalidade Conhecimentos', () => {
 
     it('Edição', () => {
         conhecimentoPage.editar('Java')
-        util.successMsg('Conhecimento atualizado com sucesso.')
+        cy.validaMensagemSucesso('Conhecimento atualizado com sucesso.')
     })
 
     it('Exclusão - Associado a movimentações', () => {
@@ -37,7 +37,7 @@ describe('Funcionalidade Conhecimentos', () => {
     it('Exclusão', () => {
         conhecimentoPage.excluir('Ruby')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Conhecimento excluído com sucesso.')
+        cy.validaMensagemSucesso('Conhecimento excluído com sucesso.')
     })
 
 })

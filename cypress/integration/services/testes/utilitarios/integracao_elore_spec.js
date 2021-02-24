@@ -55,6 +55,6 @@ describe('Funcionalidade Integração Elore', () => {
 
         elorePagaExporta.navigate_exporta()       
         elorePagaExporta.exporta(elore)
-        util.successMsg('Cadastros exportados com sucesso.')
+        cy.validaMensagemSucesso('Cadastros exportados com sucesso.')
     })
 })

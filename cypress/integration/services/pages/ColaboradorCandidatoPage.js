@@ -125,7 +125,7 @@ export class ColaboradorCandidatoPage {
     }
 
     inserirCandidatoColaborador(sexo) {
-        this.clicaInserir()
+        cy.contains('Inserir')
         this.preencheNome()
         this.preencheNascimento()
         this.preencheNaturalidade()

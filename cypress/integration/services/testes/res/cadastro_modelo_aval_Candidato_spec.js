@@ -12,7 +12,7 @@ describe('Funcionalidade Modelo Avaliação Candidatos', () => {
     
     it('Inserção de Modelo Avaliação Candidatos', () => {
         modeloAvaliacaoCandidatoPage.insereModeloAvaliacao()
-        util.successMsg('Pergunta gravada com sucesso')
+        cy.validaMensagemSucesso('Pergunta gravada com sucesso')
     })
 
     it('Edição de Modelo Avaliação Candidatos', () => {
@@ -23,7 +23,7 @@ describe('Funcionalidade Modelo Avaliação Candidatos', () => {
     it('Exclusão de Modelo Avaliação Candidatos', () => {
         modeloAvaliacaoCandidatoPage.excluirMotivo('Excluir', 'Avaliação Teste')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Modelo de avaliação excluído com sucesso.')
+        cy.validaMensagemSucesso('Modelo de avaliação excluído com sucesso.')
     })
 
     it('Visualizar Perguntas de Modelo Avaliação Candidatos', () => {

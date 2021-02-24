@@ -15,7 +15,7 @@ describe('Funcionalidade Atitude', () => {
 
     it('Inserção de Habilidade', () => {
         atitudePage.inserir(atitude.Nome)
-        util.successMsg('Atitude Gravada com Sucesso!')
+        cy.validaMensagemSucesso('Atitude Gravada com Sucesso!')
     })
 
     it('Inserção de Habilidade - Já cadastrado', () => {
@@ -25,13 +25,13 @@ describe('Funcionalidade Atitude', () => {
 
     it('Edição', () => {
         atitudePage.editar('Ruby')
-        util.successMsg('Atitude atualizada com sucesso')
+        cy.validaMensagemSucesso('Atitude atualizada com sucesso')
     })
 
     it('Exclusão', () => {
         atitudePage.excluir('Ruby')
         util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Atitude excluída com sucesso.')
+        cy.validaMensagemSucesso('Atitude excluída com sucesso.')
     })
 
     it('Exclusão sem sucesso', () => {

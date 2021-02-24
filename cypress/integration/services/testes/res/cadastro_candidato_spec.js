@@ -1,4 +1,7 @@
+const faker = require('faker')
+
 import '../../../../../cypress.json'
+
 import * as util from '../../../../support/util'
 import { ColaboradorCandidatoPage } from '../../pages/ColaboradorCandidatoPage'
 import { ModuloExternoPage } from '../../pages/moduloExternoPage'
@@ -6,6 +9,13 @@ import { ModuloExternoPage } from '../../pages/moduloExternoPage'
 describe('Gerenciamento de Candidatos', () => {
     const candidatoPage = new ColaboradorCandidatoPage()
     const externoPage = new ModuloExternoPage()
+
+    const candidato = {
+        nome: faker.fake("{{name.firstName}} {{name.lastName}}"),
+        naturalidade: faker.address.city(),
+        sexo: 'Feminino'
+    }
+
 
     describe('Cadastros de Candidato no Módulo Externo', () => {
         beforeEach('', () => {
@@ -42,15 +52,24 @@ describe('Gerenciamento de Candidatos', () => {
             it('Inserção de Candidatos', () => {
                 cy.exec_sql("update empresa set exigiraceitepsi = true")
                 cy.exec_sql("update empresa set politicaseguranca = 'Teste'")
+
+                cy.inserirCandidato(candidato)
                 candidatoPage.inserirCandidatoColaborador()
-                util.successMsg('Operação efetuada com sucesso')
+                cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })
 
             it('Inserção de Candidatos - Associar Candidato ao Colaborador Contratado', () => {
                 cy.insereColaborador('Helena de Troia')
                 candidatoPage.inserirCandidatoColaborador()
                 util.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
-                util.successMsg('Operação efetuada com sucesso')
+                cy.validaMensagemSucesso('Operação efetuada com sucesso')
+            })
+
+            it('Inserção de Candidatos - mesmo CPF empregado demitido', () => {
+                cy.insereColaboradorDemitido('Helena de Troia')
+                candidatoPage.inserirCandidatoColaborador()
+                util.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
+                cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })
 
             it('Valida Parentesco', () => {
@@ -74,7 +93,7 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.reload()
 
                 candidatoPage.inserirCandidatoColaborador('Feminino')
-                util.successMsg('Operação efetuada com sucesso')
+                cy.validaMensagemSucesso('Operação efetuada com sucesso')
             });
 
             it('Valida Homonimos', () => {
@@ -102,7 +121,7 @@ describe('Gerenciamento de Candidatos', () => {
                 cy.reload()
                 candidatoPage.excluirCandidatoColaborador('Candidato 01')
                 util.popUpMessage('Deseja realmente excluir o candidato Candidato 01?')
-                util.successMsg('Candidato excluído com sucesso.')
+                cy.validaMensagemSucesso('Candidato excluído com sucesso.')
             });
 
             it('Exclusão de Cadastro de Candidatos em Lote', () => {

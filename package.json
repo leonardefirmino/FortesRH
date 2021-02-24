@@ -17,7 +17,8 @@
     "cypress-dark": "^1.7.14",
     "cypress-file-upload": "^4.1.1",
     "cypress-plugin-tab": "^1.0.5",
-    "cypress-xpath": "^1.6.0"
+    "cypress-xpath": "^1.6.0",
+    "faker": "^4.1.0"
   },
   "dependencies": {
     "capybara": "^0.1.2",
