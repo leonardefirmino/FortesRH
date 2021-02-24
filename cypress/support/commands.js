@@ -1,5 +1,3 @@
-import 'cypress-capybara/add-commands'
-
 Cypress.Commands.add("exec_sql", (...queries) => {
     return cy.task('query', queries)
 })

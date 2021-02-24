@@ -23,6 +23,6 @@ describe('Funcionalidade de Envio de Mensagens para Usuários', () => {
 
     it('Tentativa de Envio de Mensagem Vazia', () => {
         mensagemPage.enviaMensagem(mensagemVazia)
-        util.popUpMessage('Preencha os campos indicados.')
+        cy.popUpMessage('Preencha os campos indicados.')
     })
 })

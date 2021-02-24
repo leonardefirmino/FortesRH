@@ -13,7 +13,7 @@ describe('Funcionalidade Indices', () => {
         indicePage.navigate()
     }) 
  
-    it.only('Inserção de Índice', () => {
+    it('Inserção de Índice', () => {
         indicePage.insereIndice(indice)
         cy.validaMensagemSucesso('Índice Gravado com Sucesso!')
     })
@@ -30,13 +30,13 @@ describe('Funcionalidade Indices', () => {
 
     it('Exclusão de Índice', () => {
         indicePage.excluir(indice.Descricao2)
-        util.popUpMessage('Confirma exclusão?')
+        cy.popUpMessage('Confirma exclusão?')
         util.infoMsg('Índice excluído com sucesso.')
     })
 
     it('Exclusão de Índice - com Histórico', () => {
         indicePage.excluir(indice.Descricao3)
-        util.popUpMessage('Confirma exclusão?')
+        cy.popUpMessage('Confirma exclusão?')
         util.infoMsg('Índice excluído com sucesso.')
     })
 
