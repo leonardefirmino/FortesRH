@@ -289,6 +289,8 @@ Cypress.Commands.add("inserirCurso", (curso_nome) => {
 })
 
 Cypress.Commands.add("inserirCategoriaCurso", (categoriaCurso_nome) => {
-    cy.exec_sql("insert into categoriacurso values (nextval('categoriaCurso_sequence'), '"+ categoriaCurso_nome +"')")
-    cy.exec_sql("insert into metascategoriacurso values (nextval('metascategoriacurso_sequence'), '2021-01-01', '100', '1')")
+    cy.exec_sql(
+        "insert into categoriacurso values (nextval('categoriaCurso_sequence'), '"+ categoriaCurso_nome +"')",
+        "insert into metascategoriacurso values (nextval('metascategoriacurso_sequence'), '2021-01-01', '100', '1')"
+    )
 })

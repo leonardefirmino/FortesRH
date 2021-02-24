@@ -20,14 +20,14 @@ describe('Avaliação de Desempenho', () => {
         cy.validaMensagemSucesso('Gravado com sucesso.')
     })
 
-    it.only('Inserir Talentos na Avaliação de Desempenho - Acima do limite', () => {
+    it('Inserir Talentos na Avaliação de Desempenho - Acima do limite', () => {
         const avaliacao = { Titulo: 'Avaliação de Desempenho' }
         cy.insere_X_Colaborador(51)
         cy.inseremodeloAvaliacaoDesempenho('Avaliação Teste')
         cy.insereAvaliacaoDesempenho()
         cy.reload()
         avalDesempenhoPage.insereParticipantes(avaliacao)
-        cy.contains('Não é possível realizar esse procedimento, pois serão vinculados 51 avaliados com 51 avaliadores, gerando 2601 registros a serem gravados. Isso poderia causar uma inconsistência.')
+        cy.get('.ui-dialog-content').should('contain', 'Não é possível realizar esse procedimento, pois serão vinculados 51 avaliados com 51 avaliadores, gerando 2601 registros a serem gravados. Isso poderia causar uma inconsistência.')
     })
 
     it('Inserir Talentos na Avaliação de Desempenho - Não Aceita Auto Avaliação', () => {
