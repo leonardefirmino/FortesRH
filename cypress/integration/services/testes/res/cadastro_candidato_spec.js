@@ -80,7 +80,7 @@ describe('Gerenciamento de Candidatos', () => {
                 util.dialogMessage('Verificação de Parentesco')
             });
 
-            it('Valida Obrigatoriedade do preenchimento do Certficado Militar para sexo Masculino', () => {
+            it('Valida Obrigatoriedade do preenchimento do Certificado Militar para sexo Masculino', () => {
                 cy.exec_sql("update parametrosdosistema set camposcandidatoobrigatorio = 'nome,sexo,escolaridade,ende,num,cidade,uf,fone,ddd,certificadoMilitar,certMilTipo,certMilSerie'")
                 cy.reload()
 
@@ -169,6 +169,12 @@ describe('Gerenciamento de Candidatos', () => {
             candidatoPage.inserirEmSolicitacao("Candidato 01")
             util.validaTitulo('Candidatos da Seleção')
         })
+
+        it('Inserção de Candidato Demitido na Solicitação', () => {
+            cy.insereColaboradorDemitido('Candidato Demitido')
+            candidatoPage.inserirCandidatoDemitidoSolicitacao()
+            util.validaTitulo('Inserir Talento')
+        });
 
         it('Triagem de Candidatos', () => {
             candidatoPage.triagemCandidato()
