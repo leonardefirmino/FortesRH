@@ -275,3 +275,8 @@ Cypress.Commands.add("inserirMotivoSolicitacaoEPI", (motivoSolicitacaoEpi_nome) 
 Cypress.Commands.add("inserirCurso", (curso_nome) => {
     cy.exec_sql("insert into curso values (nextval('curso_sequence'), '"+ curso_nome +"', '', '1')")
 })
+
+Cypress.Commands.add("inserirCategoriaCurso", (categoriaCurso_nome) => {
+    cy.exec_sql("insert into categoriacurso values (nextval('categoriaCurso_sequence'), '"+ categoriaCurso_nome +"')")
+    cy.exec_sql("insert into metascategoriacurso values (nextval('metascategoriacurso_sequence'), '2021-01-01', '100', '1')")
+})

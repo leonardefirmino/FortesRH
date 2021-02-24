@@ -114,3 +114,36 @@ export function welcomeExterno(text) {
 export function validaCaptchaSistemaVisivel() {
     cy.get('iframe').should('be.visible')
 }
+
+// ---------------------- App Actions ----------------------
+
+Cypress.Commands.add('acao', (acao, text) => {
+    cy.get(`td:contains("${text}")`).parent().find(`i[title="${acao}"]`).click()
+})
+
+Cypress.Commands.add('popUpMessage', (text) => {
+    cy.get('#popup_message').then(($popup) => {
+        if ($popup.text().includes(text)) {
+            cy.get('#popup_ok').click()
+        } else {
+            console.log('erro')
+        }
+    })
+    cy.get('#popup_message').should('not.exist')
+})
+
+Cypress.Commands.add('validaTitulo', (text) => {
+    cy.get('#waDivTitulo').should('include.text', text)
+})
+
+Cypress.Commands.add('successMsg', (text) => {
+    cy.get('#successMsg').should('include.text', text)
+})
+
+Cypress.Commands.add('infoMsg', (text) => {
+    cy.get('#infoMsg').should('contain', text)
+})
+
+Cypress.Commands.add('continuarButton', () => {
+    cy.get('.ui-state-focus > .ui-button-text').should('contain', 'Continuar').click()
+})

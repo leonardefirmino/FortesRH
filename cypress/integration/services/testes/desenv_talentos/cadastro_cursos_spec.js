@@ -1,5 +1,4 @@
 import '../../../../../cypress.json'
-import * as util from '../../../../support/util'
 import { CursoPage } from '../../pages/desenv_talentos/cursosPage'
 
 
@@ -16,23 +15,46 @@ describe('Funcionalidade Cursos/Treinamentos', () => {
     })
 
     it('Inserção Curso', () => {
-        cursoPage.inserir(curso)
-        util.validaTitulo('Cursos')
+        // cursoPage.inserir(curso)
+        cy.inserir(curso)
+        cy.validaTitulo('Cursos')
     });
 
     it('Edição Curso', () => {
-        cursoPage.editar(curso)
-        util.validaTitulo('Cursos')        
+        cy.editar(curso)
+        cy.validaTitulo('Cursos')        
     });
 
     it('Exclusão Curso', () => {
-        cursoPage.excluir(curso)
-        util.popUpMessage('Confirma exclusão?')
-        util.successMsg('Curso excluído com sucesso.')
+        cy.excluir(curso)
+        cy.successMsg('Curso excluído com sucesso.')
     });
 
     it('Inserir Turma e Alunos', () => {
-        cursoPage.inserirTurmaEAluno(turma, curso)
-        util.infoMsg('Talento(s) incluído(s) com sucesso!')
+        cy.inserirTurmaEAluno(turma, curso)
+        cy.infoMsg('Talento(s) incluído(s) com sucesso!')
     });
+})
+
+describe.only('Categorias do Curso', () => {
+    const categoria = {Nome: "Categoria", DataIni: '01/2021', Meta: '100'}
+    const turma = {Nome: "Turma 1", Custo: "100,00", Instrutor: "Professor", DataIni: "01/01/2021", DataFim: "29/01/2021"}
+
+    beforeEach('', () => {
+        cy.insereColaborador('Helena de Troia')
+        cy.inserirCategoriaCurso(categoria.Nome)
+        cy.visit('/desenvolvimento/categoriaCurso/list.action')
+        cy.continuarButton()
+    })
+
+    it('Inserir Categoria do Curso', () => {
+        cy.inserirCategoria(categoria)
+        cy.get('.odd > :nth-child(2)').should('contain', categoria.Nome)
+    });
+
+    it('Edita Categoria do Curso', () => {
+        cy.editar(categoria)
+        cy.get('.odd > :nth-child(2)').should('contain', 'Categoria 2')
+    });
+
 })
