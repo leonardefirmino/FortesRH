@@ -12,6 +12,7 @@ describe('Funcionalidade Integração Elore', () => {
     
 
     beforeEach('', () => {
+        cy.loginByApi()
         elorePage.navigate()
     })
 

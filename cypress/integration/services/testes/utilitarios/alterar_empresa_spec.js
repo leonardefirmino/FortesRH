@@ -7,6 +7,7 @@ describe('Funcionalidade Troca de Empresa', () => {
 
     beforeEach('', () => {
         cy.insereEmpresa(empresas.RazaoSocial_1)
+        cy.loginByApi()
     })
 
     it('Alterar Empresa Fortes Tecno', () => {

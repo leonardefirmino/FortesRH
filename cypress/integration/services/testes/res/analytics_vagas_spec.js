@@ -9,6 +9,7 @@ describe('Analitics Recrutamento e Seleção', () => {
 
     beforeEach('', () => {
         cy.inserirSolicitacaoPessoal()
+        cy.loginByApi()
         analyticsPage.navigateAnalyticsReS()
     })
     

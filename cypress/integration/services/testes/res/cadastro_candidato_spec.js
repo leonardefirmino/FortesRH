@@ -13,7 +13,17 @@ describe('Gerenciamento de Candidatos', () => {
     const candidato = {
         nome: faker.fake("{{name.firstName}} {{name.lastName}}"),
         naturalidade: faker.address.city(),
+        fone: faker.phone.phoneNumber(),
+        senha: faker.random.number(9999),
         sexo: 'Feminino'
+    }
+
+    const candidato2 = {
+        nome: faker.fake("{{name.firstName}} {{name.lastName}}"),
+        naturalidade: faker.address.city(),
+        fone: faker.phone.phoneNumber(),
+        senha: faker.random.number(9999),
+        sexo: 'Masculino'
     }
 
 
@@ -44,57 +54,50 @@ describe('Gerenciamento de Candidatos', () => {
     describe('Cadastro de Candidato no Fortes RH', () => {
         beforeEach('', () => {
             cy.inserecandidato("Candidato 01")
+            cy.loginByApi()
             candidatoPage.navigate_menu_candidatos()
         })
 
         context('Cadastro de Candidatos', () => {
 
             it('Inserção de Candidatos', () => {
+                cy.exec_sql("update parametrosdosistema set camposcandidatoobrigatorio = 'nome,sexo,escolaridade,ende,num,cidade,uf,fone,ddd,certificadoMilitar,certMilTipo,certMilSerie'")
                 cy.exec_sql("update empresa set exigiraceitepsi = true")
                 cy.exec_sql("update empresa set politicaseguranca = 'Teste'")
-
                 cy.inserirCandidato(candidato)
-                candidatoPage.inserirCandidatoColaborador()
                 cy.validaMensagemSucesso('Operação efetuada com sucesso')
+                cy.clicaBotao('Voltar')
+                cy.contains(candidato.nome)
+                cy.validaURL('/captacao/candidato/list.action')
             })
 
             it('Inserção de Candidatos - Associar Candidato ao Colaborador Contratado', () => {
                 cy.insereColaborador('Helena de Troia')
-                candidatoPage.inserirCandidatoColaborador()
-                util.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
+                cy.inserirCandidato(candidato)
+                cy.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
                 cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })
 
             it('Inserção de Candidatos - mesmo CPF empregado demitido', () => {
                 cy.insereColaboradorDemitido('Helena de Troia')
-                candidatoPage.inserirCandidatoColaborador()
-                util.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
+                cy.inserirCandidato(candidato)
+                cy.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
                 cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })
 
             it('Valida Parentesco', () => {
                 cy.insereColaborador('Helena de Troia')
                 cy.exec_sql("update empresa set verificaparentesco = 'T'")
-                candidatoPage.clicaInserir()
-                candidatoPage.preencheNomePai()
-                util.dialogMessage('Verificação de Parentesco')
+                cy.validaParentesco()
+                cy.dialogMessage('Verificação de Parentesco')
             });
 
             it('Valida Obrigatoriedade do preenchimento do Certificado Militar para sexo Masculino', () => {
                 cy.exec_sql("update parametrosdosistema set camposcandidatoobrigatorio = 'nome,sexo,escolaridade,ende,num,cidade,uf,fone,ddd,certificadoMilitar,certMilTipo,certMilSerie'")
-                cy.reload()
-
-                candidatoPage.inserirCandidatoColaborador('Masculino')
-                util.popUpMessage('Preencha os campos indicados:')
-            });
-
-            it('Valida Não Obrigatoriedade do preenchimento do Certficado Militar para sexo Feminino', () => {
-                cy.exec_sql("update parametrosdosistema set camposcandidatoobrigatorio = 'nome,sexo,escolaridade,ende,num,cidade,uf,fone,ddd,certificadoMilitar,certMilTipo,certMilSerie'")
-                cy.reload()
-
-                candidatoPage.inserirCandidatoColaborador('Feminino')
-                cy.validaMensagemSucesso('Operação efetuada com sucesso')
-            });
+                cy.reload()                
+                cy.inserirCandidato(candidato2)
+                cy.popUpMessage('Preencha os campos indicados:Número, Tipo, Série')
+            })
 
             it('Valida Homonimos', () => {
                 cy.inserecandidato("Amy Winehouse")
@@ -143,6 +146,7 @@ describe('Gerenciamento de Candidatos', () => {
         beforeEach('', () => {
             cy.inserirSolicitacaoPessoal()
             cy.inserecandidato("Candidato 01")
+            cy.loginByApi()
             candidatoPage.navigate_menu_candidatos()
         })
 
@@ -151,7 +155,7 @@ describe('Gerenciamento de Candidatos', () => {
         })
 
         it('Contratar Candidato', () => {
-            candidatoPage.contrataCandidato("Candidato 01")
+            candidatoPage.contratar("Candidato 01")
             util.dialogMessage('Contratar candidato')
             cy.contains('Confirmar').click()
             util.validaTitulo('Inserir Talento')

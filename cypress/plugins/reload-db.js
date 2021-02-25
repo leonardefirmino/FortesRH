@@ -62,7 +62,7 @@ const populateDatabase = async (client) => {
 }
 
 const setupSOSAccess = async (client) => {
-  const proximaVersao = `${new Date().getFullYear()+10}-01-01`;
+  const proximaVersao = `${new Date().getFullYear()+20}-01-01`;
   [
     "SELECT pg_catalog.set_config('search_path', 'public', false);",
     "CREATE OR REPLACE FUNCTION insert_papel_perfil_administrador() RETURNS integer AS $$ DECLARE     mviews RECORD; BEGIN     FOR mviews IN       select p.id as papelId from papel p where p.id not in (select papeis_id from perfil_papel where perfil_id = 1)     LOOP         INSERT INTO perfil_papel (perfil_id, papeis_id) VALUES (1, mviews.papelId);      END LOOP;     RETURN 1; END; $$ LANGUAGE plpgsql;",

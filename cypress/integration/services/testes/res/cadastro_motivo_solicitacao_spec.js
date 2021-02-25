@@ -7,6 +7,7 @@ describe('Funcionalidade Motivo de Solicitação Pessoal', () => {
 
     beforeEach('', () => {
         cy.insereMotivoSolicitacao()
+        cy.loginByApi()
         motivoSolicitacaoPage.navigate()
     })
 

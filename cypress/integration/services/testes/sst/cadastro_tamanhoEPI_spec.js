@@ -11,6 +11,7 @@ describe('Funcionalidade Tamanho de EPI', () => {
     beforeEach('', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirTamanhoEPI(tamanhoEPI.Nome)
+        cy.loginByApi()
         tamanhoEPIPage.navigate()
     })
 

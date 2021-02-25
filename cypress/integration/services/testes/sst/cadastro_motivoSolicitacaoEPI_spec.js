@@ -11,6 +11,7 @@ describe('Funcionalidade Motivo Solicitação EPI', () => {
     beforeEach('', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirMotivoSolicitacaoEPI(motivoSolicitacaoEPI.Nome)
+        cy.loginByApi()
         motivoSolicitacaoEPIPage.navigate()
     })
 

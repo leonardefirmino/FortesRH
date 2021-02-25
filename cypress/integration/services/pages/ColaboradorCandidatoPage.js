@@ -125,7 +125,7 @@ export class ColaboradorCandidatoPage {
     }
 
     inserirCandidatoColaborador(sexo) {
-        cy.contains('Inserir')
+        cy.contains('Inserir').click()
         this.preencheNome()
         this.preencheNascimento()
         this.preencheNaturalidade()
@@ -188,6 +188,11 @@ export class ColaboradorCandidatoPage {
 
     contrataCandidato(candidato) {     
         util.acao('Contratar', candidato)
+    }
+    
+
+    contratar(candidato) {     
+        util.acao('Contratar Candidato', candidato)
     }
 
     insereCurriculoEscaneado(candidato) {

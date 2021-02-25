@@ -10,6 +10,7 @@ describe('Funcionalidade Conhecimentos', () => {
     beforeEach('', () => {
         cy.insereConhecimento('Ruby')
         cy.insereColaboradorComCompetencias('Helena de Troia')
+        cy.loginByApi()
         conhecimentoPage.navigate()
     })
 

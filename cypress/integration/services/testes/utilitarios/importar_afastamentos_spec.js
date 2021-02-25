@@ -7,6 +7,7 @@ describe('Improtação de Afastamentos do Ponto/TRU', () => {
 
     beforeEach('', () => {
         cy.insereMotivoAfastamento()
+        cy.loginByApi()
         importaAfastamentosPage.navigate()
     })
 

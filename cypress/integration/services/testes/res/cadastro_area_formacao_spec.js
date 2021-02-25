@@ -9,6 +9,7 @@ describe('Funcionalidade Area de Formação', () => {
 
     beforeEach('', () => {
         cy.insereAreaFormacao(area.Area)
+        cy.loginByApi()
         areaformacaoPage.navigate()
     })
     

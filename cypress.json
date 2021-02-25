@@ -6,6 +6,10 @@
     "viewportWidth": 1536,
     "watchForFileChanges": false,
     "screenshotOnRunFailure": false,
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    },
     "env": {
         "db": {
             "username": "fortesrh",
@@ -15,6 +19,7 @@
         },
         "user_name": "homolog",
         "user_password": "s3creT-p@ssw0rd",
-        "company": "Empresa Padrão"
+        "company": "Empresa Padrão",
+        "company_id": 1
     }
 }

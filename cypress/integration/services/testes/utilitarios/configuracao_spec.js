@@ -9,6 +9,7 @@ describe('Configuração do Sistema', () => {
 
 
     beforeEach('', () => {
+        cy.loginByApi()
         configuracaoPage.navigate()
     })
 

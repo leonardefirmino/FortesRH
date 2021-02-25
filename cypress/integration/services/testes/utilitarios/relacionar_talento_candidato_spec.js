@@ -3,6 +3,7 @@ import '../../../../../cypress.json'
 describe('Relacionador de Candidado e Talento', () => {
 
     beforeEach('', () => {
+        cy.loginByApi()
         cy.visit('/geral/colaborador/prepareRelacionaColaboradorCandidato.action')
         cy.clicaBotaoContinuar()
     });

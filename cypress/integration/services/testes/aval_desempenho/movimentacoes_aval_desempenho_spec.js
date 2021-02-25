@@ -11,6 +11,7 @@ describe('Avaliação de Desempenho', () => {
     }
 
     beforeEach('', () => {
+        cy.loginByApi()
         avalDesempenhoPage.navigate()
     })
 

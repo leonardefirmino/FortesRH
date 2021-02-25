@@ -11,6 +11,7 @@ describe('Funcionalidade Area Organizacional', () => {
         cy.inserirAreaOrganizacional(areaOrganizacional.NomeArea)
         cy.inserirSolicitacaoPessoal()
         cy.insereColaborador('Helena de Troia')
+        cy.loginByApi()
         areaOrganizacionalPage.navigate()
     })
     

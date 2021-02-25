@@ -9,6 +9,7 @@ describe('Analitics Recrutamento e Seleção', () => {
 
     beforeEach('', () => {
         cy.insereColaboradorComCompetencias('Helena de Troia')
+        cy.loginByApi()
         analyticsPage.navigateAnalyticsCeS()
     })
     

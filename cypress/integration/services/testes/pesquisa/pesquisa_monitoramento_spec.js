@@ -12,6 +12,7 @@ describe('Funcionalidade Pesquisa', () => {
         cy.insereReajustePorColaborador('Reajuste Desenvolvimento', true)
         cy.insereReajustePorColaborador('Reajuste Suporte', false)
         cy.insereColaboradorComCompetencias('Helena de Troia')
+        cy.loginByApi()
         pesquisaPage.navigate()
     })
 

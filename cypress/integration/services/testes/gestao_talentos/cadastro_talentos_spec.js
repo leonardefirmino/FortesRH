@@ -13,6 +13,7 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
     beforeEach('', () => {
         cy.insereColaboradorDemitido(dados.Colaborador)
         cy.insereColaborador(dados.ColaboradorAtivo)
+        cy.loginByApi()
         talentoPage.navigate_talentoPage()
     })
 

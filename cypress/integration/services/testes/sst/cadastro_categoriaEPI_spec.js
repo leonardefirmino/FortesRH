@@ -11,6 +11,7 @@ describe('Funcionalidade Categoria de EPI', () => {
     beforeEach('', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirCategoriaEPI(categoriaEPI.Nome)
+        cy.loginByApi()
         categoriaEPIPage.navigate()
     })
 

@@ -7,6 +7,7 @@ describe('Funcionalidade Modelo Avaliação Candidatos', () => {
 
     beforeEach('', () => {
         cy.inseremodeloAvaliacaoCandidato('Avaliação Teste')
+        cy.loginByApi()
         modeloAvaliacaoCandidatoPage.navigate()
     })
     

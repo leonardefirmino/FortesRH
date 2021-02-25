@@ -10,6 +10,7 @@ describe('Funcionalidade de Envio de Mensagens para Usuários', () => {
 
 
     beforeEach('', () => {
+        cy.loginByApi()
         mensagemPage.navigate()
     })
 

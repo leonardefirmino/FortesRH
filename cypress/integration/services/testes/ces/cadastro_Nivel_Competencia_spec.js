@@ -8,6 +8,7 @@ describe('Funcionalidade Nivel de Competencia', () => {
     const nivel = { Descricao: 'Regular' }
 
     beforeEach('', () => {
+        cy.loginByApi()
         nilvelCompetenciaPage.navigate()
     }) 
  

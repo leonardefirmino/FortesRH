@@ -11,6 +11,7 @@ describe('Funcionalidade Cursos/Treinamentos', () => {
     beforeEach('', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirCurso(curso.Nome)
+        cy.loginByApi()
         cursoPage.navigate()
     })
 
