@@ -10,6 +10,7 @@ describe('Funcionalidade Area de Interesse', () => {
     beforeEach('', () => {
         cy.insereAreaInteresse(areaInteresse.Nome)
         cy.inserirSolicitacaoPessoal()
+        cy.loginByApi()
         areaInteressePage.navigate()
     })
      

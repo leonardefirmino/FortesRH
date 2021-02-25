@@ -8,6 +8,7 @@ describe('Funcionalidade Menus Extras', () => {
 
 
     beforeEach('', () => {
+        cy.loginByApi()
         menuExtraPage.navigate()
     })
 

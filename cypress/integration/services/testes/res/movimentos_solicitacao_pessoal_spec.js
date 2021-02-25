@@ -8,6 +8,7 @@ describe('Funcionalidade Solicitação de Pessoal', () => {
     beforeEach('', () => {
         cy.inserirSolicitacaoPessoal()
         cy.inserecandidato("Candidato 01")
+        cy.loginByApi()
         solicitacaopessoalPage.navigate()
     })
     

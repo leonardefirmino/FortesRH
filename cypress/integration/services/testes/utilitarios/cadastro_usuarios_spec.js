@@ -9,6 +9,7 @@ describe('Funcionalidade Cadastros de Usuários', () => {
 
     beforeEach('', () => {
         cy.insereUsuario('usu_teste')
+        cy.loginByApi()
         usuariosPage.navigate()
     })
 

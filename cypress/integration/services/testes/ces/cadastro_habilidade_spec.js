@@ -10,6 +10,7 @@ describe('Funcionalidade Habilidade', () => {
     beforeEach('', () => {
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cy.insereHabilidade('Ruby')
+        cy.loginByApi()
         habilidadePage.navigate()
     })
 

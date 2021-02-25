@@ -8,6 +8,7 @@ describe('Analitics Gestão de Talentos', () => {
     beforeEach('', () => {
         cy.insereMetaTurnover(5)
         cy.insereMetaAbsenteísmo(6)
+        cy.loginByApi()
         analyticsGestaoTalentoPage.navigate()
         
     })

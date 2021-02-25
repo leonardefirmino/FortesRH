@@ -10,6 +10,7 @@ describe('Funcionalidade Etapas Seletivas', () => {
 
     beforeEach('', () => {
         cy.insereEtapaSeletiva(etapaSeletiva.Descricao)
+        cy.loginByApi()
         etapaPage.navigate()
     })
 

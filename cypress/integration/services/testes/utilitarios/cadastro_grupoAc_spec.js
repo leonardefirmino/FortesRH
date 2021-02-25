@@ -9,6 +9,7 @@ describe('Funcionalidade Grupo AC', () => {
 
     beforeEach('', () => {
         cy.insereGrupoAC('Grupo AC Teste')
+        cy.loginByApi()
         grupoACPAge.navigate()
     })
 

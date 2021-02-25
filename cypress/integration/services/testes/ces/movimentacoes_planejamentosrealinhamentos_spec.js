@@ -9,6 +9,7 @@ describe('Funcionalidade Cargos e Faixas', () => {
         cy.insereReajustePorColaborador('Reajuste Desenvolvimento', true)
         cy.insereReajustePorColaborador('Reajuste Suporte', false)
         cy.insereColaboradorComCompetencias('Helena de Troia')
+        cy.loginByApi()
         realinhamentoPage.navigate()
     })
 

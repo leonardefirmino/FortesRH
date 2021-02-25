@@ -12,6 +12,7 @@ describe('Funcionalidade Cadastros de Empresas', () => {
         cy.insereEmpresa('Ente Tecnologia')
         cy.insereEmpresaSemEstabelecimento('Fortes Tecno')
         cy.insereGrupoAC('Grupo AC Teste')
+        cy.loginByApi()
         empresaPage.navigate()
     })
 

@@ -9,7 +9,7 @@ describe('Tentativas de Login', () => {
     context('Login com Sucesso', () => {
 
         it('Válido', () => {
-            cy.loginWith('SOS', '1234')
+            cy.loginByApi()
             cy.validaMensagemBoasVindas('Bem-vindo(a)')
         })
 

@@ -10,6 +10,7 @@ describe('Funcionalidade Atitude', () => {
     beforeEach('', () => {
         cy.insereColaboradorComCompetencias('Helena de Troia')
         cy.insereAtitude('Ruby')
+        cy.loginByApi()
         atitudePage.navigate()
     })
 

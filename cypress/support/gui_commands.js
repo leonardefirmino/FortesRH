@@ -1,23 +1,27 @@
-// Cypress.Commands.add("loginByApi", (username = Cypress.env('user_name'), password = Cypress.env('user_password')) => {
-//     return cy.request("POST", `${Cypress.env("baseUrl")}/login.action?`, {
-//       username,
-//       password,
-//     });
-//   });
+const faker = require('faker')
 
 Cypress.Commands.add('loginByApi', () => {
-    const formData = new FormData();
-    formData.append("username", 'SOS');
-    formData.append("password", '1234');
-    formData.append("j_empresa", "1");
-    cy.request({
-        url: 'http://localhost:8080/fortesrh/login.action?',
+    return cy.request({
+        url: 'http://localhost:8080/fortesrh/login',
+        method: 'post',
+        headers: {
+            "content-type": "application/x-www-form-urlencoded",
+        },
+        referrer: "http://localhost:8080/fortesrh/login.action",
+        referrerPolicy: "no-referrer-when-downgrade",
+        body: `username=${Cypress.env('user_name')}&password=${Cypress.env('user_password')}&j_empresa=${Cypress.env('company_id')}`,
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        form: true,
-        failOnStatusCode: false,
-        body: formData
+        mode: "cors",
+        credentials: "include",
+    }).then(() => {
+        cy.visit('http://localhost:8080/fortesrh/index.action')
+        cy.clicaBotaoContinuar()
+        cy.clicaBotaoEntendi()
     })
+})
+
+Cypress.Commands.add('validaURL', (url) => {
+    cy.url().should('be.equal', `${Cypress.config("baseUrl")}` + url)
 })
 
 Cypress.Commands.add('login', () => {
@@ -26,9 +30,7 @@ Cypress.Commands.add('login', () => {
     cy.get('input[placeholder = "Senha"]').should('be.enabled').clear().type(Cypress.env('user_password'))
     cy.get('#empresa').should('be.visible').select(Cypress.env('company'))
     cy.get('#entrar').should('be.visible').click()
-
-    cy.url().should('be.equal', `${Cypress.config("baseUrl")}/index.action`)
-
+    cy.validaURL('/index.action')
     cy.get('.nomeUsuario').should('be.visible').and('include.text', Cypress.env('user_name'))
 })
 
@@ -36,6 +38,7 @@ Cypress.Commands.add('loginWith', (user, pass) => {
     cy.get('input[placeholder = "Usuário"]').should('be.enabled').clear().type(user)
     cy.get('input[placeholder = "Senha"]').should('be.enabled').clear().type(pass)
     cy.get('#entrar').should('be.visible').click()
+    cy.clicaBotaoEntendi()
 })
 
 Cypress.Commands.add('clicaBotaoEntendi', () => {
@@ -48,7 +51,7 @@ Cypress.Commands.add('clicaBotaoEntendi', () => {
 })
 
 Cypress.Commands.add("clicaBotao", (id) => {
-    cy.get('#btn' + id).click()
+    cy.get('#btn' + id).should('be.visible').click()
 })
 
 Cypress.Commands.add('popUpMessage', (text) => {
@@ -66,7 +69,7 @@ Cypress.Commands.add('validaDialog', (text) => {
     cy.get('.ui-dialog-content').should('contain', text)
     cy.get('.ui-dialog-buttonpane').within(($form) => {
         cy.contains('Confirmar').click()
-    }) 
+    })
 
 })
 
@@ -133,20 +136,25 @@ Cypress.Commands.add('alterarSenhaPrimeiroAcesso', (password) => {
 
 Cypress.Commands.add('preencheDadosCandidato', candidato => {
 
-    cy.get('#nome').clear().should('be.enabled').type(candidato.nome)
-    cy.get('#nascimento').clear().type('14/06/2012')
-    cy.get('#naturalidade').clear().type(candidato.naturalidade)
+    cy.get('#nome').clear().should('be.enabled').clear().type(candidato.nome)
+    cy.get('#nascimento').should('be.enabled').clear().type('14/06/2012')
+    cy.get('#naturalidade').should('be.enabled').clear().type(candidato.naturalidade)
     cy.get('#sexo').select(candidato.sexo)
-    cy.get('#cpf').clear().type('34425164555')
+    cy.get('#cpf').should('be.enabled').clear().type('34425164555')
     cy.get('#escolaridade').select('Ensino Médio completo')
-    cy.get('#cep').clear().type('60822285')
-    cy.get('#num').clear().type('249')
+    cy.get('#cep').should('be.enabled').clear().type('60822285')
+    cy.get('#num').should('be.enabled').clear().type('249')
     cy.get('#uf').select('CE')
     cy.get('#cidade').select('Fortaleza')
-    cy.get('#ddd').clear().type('85')
-    cy.get('#fone').clear().type('40051111')
-    cy.get('#senha').clear().type('1234')
-    cy.get('#comfirmaSenha').clear().type('1234')
+    cy.get('#ddd').should('be.enabled').clear().type('85')
+    cy.get('#fone').should('be.enabled').clear().type(candidato.fone)
+    cy.get('#senha').should('be.enabled').clear().type(candidato.senha)
+    cy.get('#comfirmaSenha').should('be.enabled').clear().type(candidato.senha)
+})
+Cypress.Commands.add('validaParentesco', () => {
+    cy.clicaBotao('Inserir')
+    cy.get('#nomePai').clear().type('João Paulo')
+    cy.get('#profPai').focus()
 })
 
 Cypress.Commands.add('inserirCandidato', (candidato) => {
@@ -154,9 +162,49 @@ Cypress.Commands.add('inserirCandidato', (candidato) => {
     cy.clicaBotaoContinuar()
     cy.clicaBotao('Inserir')
     cy.preencheDadosCandidato(candidato)
+    cy.insereFormacao()
+    cy.insereIdiomas()
+    cy.insereDocumentos()
+    cy.clicaBotao('Gravar')
 
+})
+
+Cypress.Commands.add('insereFormacao', () => {
+    cy.get('.abaFormacaoEscolar').click()
+    cy.get('#inserirFormacao').click()
+    cy.get('#formacaoArea').select('Administrativa')
+    cy.get('#formacaoCurso').should('be.enabled').clear().type('ADS')
+    cy.get('#formacaoLocal').should('be.enabled').clear().type('Unifor')
+    cy.get('#formacaoTipo').select('Graduação')
+    cy.get('#formacaoSituacao').select('Concluído')
+    cy.get('#formacaoConclusao').should('be.enabled').clear().type('2020')
+    cy.get('ul > #frmFormacao').click()
+})
+
+Cypress.Commands.add('insereIdiomas', () => {
+    cy.get('#inserirIdioma').click()
+    cy.get('#idiomaSelec').select('Inglês')
+    cy.get('#nivelSelec').select('Avançado')
+    cy.get('#gravarIdioma').click()
+
+    cy.get('#desCursos').should('be.enabled').clear().type(faker.lorem.sentence())
+})
+
+Cypress.Commands.add('insereDocumentos', () => {
+    cy.get('#aba5 > a').click()
+    cy.get('#pis').should('be.enabled').clear().type('12345678919')
 })
 
 Cypress.Commands.add('relacionarCandidato', () => {
     cy.get('#relacionaAcao0').click()
+})
+
+Cypress.Commands.add('dialogMessageMesmoCPF', (text) => {
+    cy.get('#talentoMesmoCpfDialog').should('include.text', text)
+    cy.get(':nth-child(1) > .ui-button-text').click()
+})
+
+Cypress.Commands.add('dialogMessage', (text) => {
+    cy.get('#ui-dialog-title-parentesDialog').should('contain', text)
+    cy.contains('Fechar').click()
 })

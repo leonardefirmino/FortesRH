@@ -10,6 +10,7 @@ describe('Funcionalidade Importação de Cadastros', () => {
 
     beforeEach('', () => {
         cy.insereEmpresa(empresa.Destino)
+        cy.loginByApi()
         importarCadastrosPage.navigate()
     })
 

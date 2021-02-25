@@ -8,6 +8,7 @@ describe('Modelo Ent Desligamento', () => {
     const entrevista = { Titulo: "Entrevista Desligamento", Pergunta: "Pergunta Teste", Tipo: "Nota" }
 
     beforeEach('', () => {
+        cy.loginByApi()
         modeloEntrevistaDesligamentoPage.navigate()
     })
     

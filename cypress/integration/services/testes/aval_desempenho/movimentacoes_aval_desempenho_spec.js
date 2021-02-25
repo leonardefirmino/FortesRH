@@ -11,6 +11,7 @@ describe('Avaliação de Desempenho', () => {
     }
 
     beforeEach('', () => {
+        cy.loginByApi()
         avalDesempenhoPage.navigate()
     })
 
@@ -20,7 +21,7 @@ describe('Avaliação de Desempenho', () => {
         cy.validaMensagemSucesso('Gravado com sucesso.')
     })
 
-    it.only('Inserir Talentos na Avaliação de Desempenho - Acima do limite', () => {
+    it('Inserir Talentos na Avaliação de Desempenho - Acima do limite', () => {
         const avaliacao = { Titulo: 'Avaliação de Desempenho' }
         cy.insere_X_Colaborador(51)
         cy.inseremodeloAvaliacaoDesempenho('Avaliação Teste')

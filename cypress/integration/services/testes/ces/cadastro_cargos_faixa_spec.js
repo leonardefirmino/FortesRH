@@ -10,6 +10,7 @@ describe('Funcionalidade Cargos e Faixas', () => {
     beforeEach('', () => {
         cy.insereCargo('QA')
         cy.insereColaboradorComCompetencias('Helena de Troia')
+        cy.loginByApi()
         cargosFaixaPage.navigate()
     })
 

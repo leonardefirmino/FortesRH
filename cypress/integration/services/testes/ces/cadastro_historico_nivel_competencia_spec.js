@@ -9,6 +9,7 @@ describe('Funcionalidade Histórico Nivel de Competencia', () => {
 
     beforeEach('', () => {
         cy.insereNivelCompetencia('Excelente')
+        cy.loginByApi()
         historicoNivelCompetenciaPage.navigate()
     }) 
  

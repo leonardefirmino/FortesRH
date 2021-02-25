@@ -10,6 +10,7 @@ describe('Funcionalidade Indices', () => {
     beforeEach('', () => {
         cy.insereIndices(indice.Descricao2)
         cy.insereIndicesComHistorico(indice.Descricao3)
+        cy.loginByApi()
         indicePage.navigate()
     }) 
  
