@@ -54,14 +54,28 @@ Cypress.Commands.add('inserirCategoria', categoria => {
     cy.get('#btnGravar').click()
 })
 
+Cypress.Commands.add('inserirHistoricoCategoria', (categoria, data) => {
+    cy.acao('Editar', categoria.Nome)
+    if (data) {
+        cy.get('[style="width: 435px;text-align: center;padding: 1px 15px;"] > #wwgrp_data > #wwlbl_data > div > .mascaraMesAno')
+            .clear().type(data)
+    } else {
+        cy.get('[style="width: 435px;text-align: center;padding: 1px 15px;"] > #wwgrp_data > #wwlbl_data > div > .mascaraMesAno')
+            .clear().type(categoria.NovaData)
+    }    
+    cy.get('[style="width: 435px;text-align: center;padding: 1px 15px;"] > #wwgrp_meta > #wwlbl_meta > #wwctrl_meta > .metas')
+        .clear().type(categoria.Meta)
+    cy.get('#btnGravar').click()
+}) 
+
 Cypress.Commands.add('editar', curso => {
     cy.acao('Editar', curso.Nome)
     cy.get('#nome').clear().type(curso.Nome + " 2")
     cy.get('#btnGravar').click()
 })
 
-Cypress.Commands.add('excluir', curso => {
-    cy.acao('Excluir', curso.Nome)
+Cypress.Commands.add('excluir', item => {
+    cy.acao('Excluir', item.Nome)
     cy.popUpMessage('Confirma exclusão?')
 })
 
@@ -78,7 +92,24 @@ Cypress.Commands.add('inserirTurmaEAluno', (turma, curso) => {
     cy.get('#btnInserirSelecionados').click();
 })
 
+Cypress.Commands.add('excluirCategoriaAssociadaCurso', categoria => {
+    cy.inserirCategoriaCursoComDependencia(categoria.Nome)
+    cy.acao('Excluir', categoria.Nome)
+    cy.get(':nth-child(1) > .ui-button-text').should('contain', 'Remover categoria curso e vínculo com cursos').click()
+})
+
+Cypress.Commands.add('excluirMetaCategoria', categoria => {
+    cy.acao('Editar', categoria.Nome)
+    cy.get('[style="width: 435px;text-align: center;padding: 1px 15px;background-color: #F9F9F9"] > #wwgrp_data > #wwlbl_data > [onclick="javascript:removerMeta($(this))"] > .fa')
+        .click()
+    cy.popUpMessage('Confirma exclusão?')
+})
+
 // -------------------------- Geral --------------------------
+
+Cypress.Commands.add('acao', (acao, text) => {
+    cy.get(`td:contains("${text}")`).parent().find(`i[title="${acao}"]`).click()
+})
 
 Cypress.Commands.add("exec_sql", (...queries) => {
     return cy.task('query', queries)

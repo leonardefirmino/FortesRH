@@ -327,3 +327,11 @@ Cypress.Commands.add("inserirCategoriaCurso", (categoriaCurso_nome) => {
         "insert into metascategoriacurso values (nextval('metascategoriacurso_sequence'), '2021-01-01', '100', '1')"
     )
 })
+
+Cypress.Commands.add("inserirCategoriaCursoComDependencia", (categoriaCurso_nome) => {
+    cy.exec_sql(
+        "insert into categoriacurso values (nextval('categoriaCurso_sequence'), '"+ categoriaCurso_nome +"')",
+        "insert into metascategoriacurso values (nextval('metascategoriacurso_sequence'), '2021-01-01', '100', '1')",
+        "insert into curso values (nextval('curso_sequence'), 'Curso', '', '1', null, null, '', '', '0', null, '-1', '1' )"
+    )
+})

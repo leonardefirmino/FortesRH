@@ -111,6 +111,10 @@ Cypress.Commands.add('validaMensagemErroLogin', (message) => {
     cy.get('.txtErro').should('contain', message)
 })
 
+Cypress.Commands.add('validaItemNaGrade', (item) => {
+    cy.get('.odd > :nth-child(2)').should('contain', item);
+})
+
 Cypress.Commands.add('alterarSenhaPagina', () => {
     cy.visit('/acesso/usuario/prepareUpdateSenhaUsuario.action')
     cy.clicaBotaoContinuar()
