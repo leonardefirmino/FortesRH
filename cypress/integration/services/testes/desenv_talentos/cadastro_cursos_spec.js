@@ -8,11 +8,10 @@ describe('Funcionalidade Cursos/Treinamentos', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirCurso(curso.Nome)
         cy.loginByApi()
-        cy.visit('/desenvolvimento/curso/list.action')
+        cy.navigate('/desenvolvimento/curso/list.action')
     })
 
     it('Inserção Curso', () => {
-        // cursoPage.inserir(curso)
         cy.inserir(curso)
         cy.validaItemNaGrade(curso.Nome)
     });

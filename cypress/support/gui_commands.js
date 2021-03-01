@@ -38,7 +38,6 @@ Cypress.Commands.add('loginWith', (user, pass) => {
     cy.get('input[placeholder = "Usuário"]').should('be.enabled').clear().type(user)
     cy.get('input[placeholder = "Senha"]').should('be.enabled').clear().type(pass)
     cy.get('#entrar').should('be.visible').click()
-    cy.clicaBotaoEntendi()
 })
 
 Cypress.Commands.add('clicaBotaoEntendi', () => {

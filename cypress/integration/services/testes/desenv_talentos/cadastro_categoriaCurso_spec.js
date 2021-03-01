@@ -1,4 +1,5 @@
 import '../../../../../cypress.json'
+
 describe('Categorias do Curso', () => {
     const categoria = {Nome: "Categoria", NomeEditado: 'Categoria 2', DataIni: '01/2021', NovaData: '02/2021', Meta: '100'}
 
@@ -6,8 +7,7 @@ describe('Categorias do Curso', () => {
         cy.insereColaborador('Helena de Troia')
         cy.inserirCategoriaCurso(categoria.Nome)
         cy.loginByApi()
-        cy.visit('/desenvolvimento/categoriaCurso/list.action')
-        cy.continuarButton()
+        cy.navigate('/desenvolvimento/categoriaCurso/list.action')  
     })
 
     it('Inserir Categoria do Curso', () => {
