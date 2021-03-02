@@ -38,7 +38,6 @@ Cypress.Commands.add('loginWith', (user, pass) => {
     cy.get('input[placeholder = "Usuário"]').should('be.enabled').clear().type(user)
     cy.get('input[placeholder = "Senha"]').should('be.enabled').clear().type(pass)
     cy.get('#entrar').should('be.visible').click()
-    cy.clicaBotaoEntendi()
 })
 
 Cypress.Commands.add('clicaBotaoEntendi', () => {
@@ -109,6 +108,10 @@ Cypress.Commands.add('validaMensagemBoasVindas', (message) => {
 
 Cypress.Commands.add('validaMensagemErroLogin', (message) => {
     cy.get('.txtErro').should('contain', message)
+})
+
+Cypress.Commands.add('validaItemNaGrade', (item) => {
+    cy.get('.odd > :nth-child(2)').should('contain', item);
 })
 
 Cypress.Commands.add('alterarSenhaPagina', () => {

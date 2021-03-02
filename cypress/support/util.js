@@ -114,3 +114,13 @@ export function welcomeExterno(text) {
 export function validaCaptchaSistemaVisivel() {
     cy.get('iframe').should('be.visible')
 }
+
+// ---------------------- App Actions ----------------------
+
+Cypress.Commands.add('validaTitulo', (text) => {
+    cy.get('#waDivTitulo').should('include.text', text)
+})
+
+Cypress.Commands.add('continuarButton', () => {
+    cy.get('.ui-state-focus > .ui-button-text').should('contain', 'Continuar').click()
+})
