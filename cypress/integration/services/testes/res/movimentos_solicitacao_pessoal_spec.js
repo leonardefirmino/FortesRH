@@ -72,7 +72,7 @@ describe('Funcionalidade Solicitação de Pessoal', () => {
         cy.contains('Candidato 01')
     })
     
-    it('Inserir Candidatos Modulo Externo na Solicitação de Pessoal', () => {        
+    it.only('Inserir Candidatos Modulo Externo na Solicitação de Pessoal', () => {        
         cy.insereCandidatoExterno("Candidato Mod Externo")
         solicitacaopessoalPage.inserirCandidatosExternoSolicitacao('Solicitação')
         cy.validaMensagemSucesso('Candidato(s) inserido(s) no processo selectivo com sucesso.')

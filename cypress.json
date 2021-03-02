@@ -6,10 +6,6 @@
     "viewportWidth": 1536,
     "watchForFileChanges": false,
     "screenshotOnRunFailure": false,
-    "reporter": "cypress-multi-reporters",
-    "reporterOptions": {
-        "configFile": "reporter-config.json"
-    },
     "env": {
         "db": {
             "username": "fortesrh",

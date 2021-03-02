@@ -35,10 +35,11 @@ Cypress.Commands.add('login', () => {
 })
 
 Cypress.Commands.add('loginWith', (user, pass) => {
-    cy.get('input[placeholder = "Usuário"]').should('be.enabled').clear().type(user)
+    cy.get('input[placeholder = "Usuário"]').should('be.enabled').clear().type(user).should('not.be')
     cy.get('input[placeholder = "Senha"]').should('be.enabled').clear().type(pass)
+    cy.get('#empresa').should('be.visible').select(Cypress.env('company'))
     cy.get('#entrar').should('be.visible').click()
-    cy.clicaBotaoEntendi()
+    cy.validaURL('/index.action')
 })
 
 Cypress.Commands.add('clicaBotaoEntendi', () => {
@@ -151,6 +152,7 @@ Cypress.Commands.add('preencheDadosCandidato', candidato => {
     cy.get('#senha').should('be.enabled').clear().type(candidato.senha)
     cy.get('#comfirmaSenha').should('be.enabled').clear().type(candidato.senha)
 })
+
 Cypress.Commands.add('validaParentesco', () => {
     cy.clicaBotao('Inserir')
     cy.get('#nomePai').clear().type('João Paulo')

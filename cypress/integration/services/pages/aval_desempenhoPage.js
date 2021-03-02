@@ -31,7 +31,7 @@ export class AvaliacaoDesempenhoPage {
 
     navigate() {
         cy.visit(url)
-        util.continuarButton()
+        cy.clicaBotaoContinuar()
     }
 
     cadastraAvaloiacaoDesempenho(avaliacao) {
