@@ -12,7 +12,7 @@
   "author": "Georgem Arruda",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.4.0",
+    "cypress": "^6.6.0",
     "cypress-capybara": "0.0.2",
     "cypress-dark": "^1.7.14",
     "cypress-file-upload": "^4.1.1",
