@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:41:08.428Z",
+    "end": "2021-03-03T13:41:26.398Z",
+    "duration": 17970,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "db8dce11-97ad-48df-b560-d7cd5c945785",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\ces\\cadastro_historico_nivel_competencia_spec.js",
+      "file": "cypress\\integration\\services\\testes\\ces\\cadastro_historico_nivel_competencia_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "be9589f9-077e-4b0f-98f1-cb90d60cf025",
+          "title": "Funcionalidade Histórico Nivel de Competencia",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Inserção Histórico Nível de Competencia",
+              "fullTitle": "Funcionalidade Histórico Nivel de Competencia Inserção Histórico Nível de Competencia",
+              "timedOut": null,
+              "duration": 5168,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.exec_sql(\"delete from nivelcompetencia\");\nhistoricoNivelCompetenciaPage.clicaInserir();\nutil.infoMsg('Não existe cadastro de competência a ser configurada.');",
+              "err": {},
+              "uuid": "48826b75-cb64-41d6-a75c-e87e2e3c700b",
+              "parentUUID": "be9589f9-077e-4b0f-98f1-cb90d60cf025",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserção Histórico Nível de Competencia",
+              "fullTitle": "Funcionalidade Histórico Nivel de Competencia Inserção Histórico Nível de Competencia",
+              "timedOut": null,
+              "duration": 6959,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "historicoNivelCompetenciaPage.inserir();\ncy.validaMensagemSucesso('Histórico de níveis de competência salvo com sucesso.');",
+              "err": {},
+              "uuid": "d44d5f1a-2d14-47b4-be34-5cad2b3041af",
+              "parentUUID": "be9589f9-077e-4b0f-98f1-cb90d60cf025",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserção Histórico Nível de Competencia na mesma data",
+              "fullTitle": "Funcionalidade Histórico Nivel de Competencia Inserção Histórico Nível de Competencia na mesma data",
+              "timedOut": null,
+              "duration": 5739,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "historicoNivelCompetenciaPage.inserir();\nhistoricoNivelCompetenciaPage.inserir();\nutil.warningMsg('Já existe um histórico de níveis de competência cadastrado nesta data');",
+              "err": {},
+              "uuid": "c7e41d26-9e4d-4118-abe4-76451b746fba",
+              "parentUUID": "be9589f9-077e-4b0f-98f1-cb90d60cf025",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "48826b75-cb64-41d6-a75c-e87e2e3c700b",
+            "d44d5f1a-2d14-47b4-be34-5cad2b3041af",
+            "c7e41d26-9e4d-4118-abe4-76451b746fba"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17866,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

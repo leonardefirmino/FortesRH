@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:57:09.167Z",
+    "end": "2021-03-03T13:57:41.448Z",
+    "duration": 32281,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cfb8c1ce-a747-43e8-ae47-1cc58fe03f32",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\utilitarios\\cadastro_grupoAc_spec.js",
+      "file": "cypress\\integration\\services\\testes\\utilitarios\\cadastro_grupoAc_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "431fd170-ae84-4e4b-bd61-81552443b682",
+          "title": "Funcionalidade Grupo AC",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Inserir Grupo AC - Código já cadastrado",
+              "fullTitle": "Funcionalidade Grupo AC Inserir Grupo AC - Código já cadastrado",
+              "timedOut": null,
+              "duration": 8396,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "grupoACPAge.insereGrupoAC(grupoAc);\nutil.errorMsg(\"Não é permitido cadastrar Grupo com o mesmo código.\");",
+              "err": {},
+              "uuid": "22bc45c0-0905-40ac-8cd7-45553b6d33bf",
+              "parentUUID": "431fd170-ae84-4e4b-bd61-81552443b682",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserir Grupo AC",
+              "fullTitle": "Funcionalidade Grupo AC Inserir Grupo AC",
+              "timedOut": null,
+              "duration": 8099,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var grupoAC = {\n  Descricao: \"Grupo AC\",\n  Codigo: \"002\",\n  Usuario: \"ADMIN\",\n  Senha: \"1234\",\n  Soap: \"http://localhost:1024/soap/IAcPessoal\",\n  Wdsl: \"http://localhost:1024/wsdl/IAcPessoal\"\n};\ngrupoACPAge.insereGrupoAC(grupoAC);\nutil.validaTitulo(\"Grupo AC (Utilizado no Fortes Pessoal)\");",
+              "err": {},
+              "uuid": "b154861d-63bf-46c2-bf13-c7128495769d",
+              "parentUUID": "431fd170-ae84-4e4b-bd61-81552443b682",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editar Grupo AC",
+              "fullTitle": "Funcionalidade Grupo AC Editar Grupo AC",
+              "timedOut": null,
+              "duration": 6714,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "grupoACPAge.editar(grupoAc);\nutil.validaTitulo(\"Grupo AC (Utilizado no Fortes Pessoal)\");",
+              "err": {},
+              "uuid": "674a9fbd-f76f-434f-96b5-23dcb5b2932d",
+              "parentUUID": "431fd170-ae84-4e4b-bd61-81552443b682",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Excluir Grupo AC",
+              "fullTitle": "Funcionalidade Grupo AC Excluir Grupo AC",
+              "timedOut": null,
+              "duration": 4267,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "grupoACPAge.excluir(grupoAc.Descricao);\nutil.popUpMessage('Confirma exclusão?');\nutil.infoMsg('Grupo AC excluído com sucesso.');",
+              "err": {},
+              "uuid": "54611e2c-ea38-4253-a8ea-1bec68924d3a",
+              "parentUUID": "431fd170-ae84-4e4b-bd61-81552443b682",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Excluir Grupo AC - associado ao cadastroo de empresa",
+              "fullTitle": "Funcionalidade Grupo AC Excluir Grupo AC - associado ao cadastroo de empresa",
+              "timedOut": null,
+              "duration": 4624,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.integraFortesPessoal();\ngrupoACPAge.excluir(grupoAc.Codigo);\nutil.popUpMessage('Confirma exclusão?');\nutil.errorMsg('Não foi possível excluir este Grupo AC.');",
+              "err": {},
+              "uuid": "38337f64-cc31-4ed3-b774-f21787d5dc2a",
+              "parentUUID": "431fd170-ae84-4e4b-bd61-81552443b682",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "22bc45c0-0905-40ac-8cd7-45553b6d33bf",
+            "b154861d-63bf-46c2-bf13-c7128495769d",
+            "674a9fbd-f76f-434f-96b5-23dcb5b2932d",
+            "54611e2c-ea38-4253-a8ea-1bec68924d3a",
+            "38337f64-cc31-4ed3-b774-f21787d5dc2a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32100,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

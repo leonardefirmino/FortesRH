@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:51:42.896Z",
+    "end": "2021-03-03T13:51:58.035Z",
+    "duration": 15139,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "de2e528b-c5c0-4a7e-970e-1baf338e2098",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\res\\cadastro_etapa_seletiva_spec.js",
+      "file": "cypress\\integration\\services\\testes\\res\\cadastro_etapa_seletiva_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6eff98f-c147-4c5d-9adb-e35e9c537a53",
+          "title": "Funcionalidade Etapas Seletivas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Inserção de Etapa Seletiva",
+              "fullTitle": "Funcionalidade Etapas Seletivas Inserção de Etapa Seletiva",
+              "timedOut": null,
+              "duration": 5944,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "etapaPage.inserir(etapaSeletiva);\nutil.validaTitulo('Etapas Seletivas');",
+              "err": {},
+              "uuid": "a65c1300-f82d-484e-8880-53509f7b0dc6",
+              "parentUUID": "e6eff98f-c147-4c5d-9adb-e35e9c537a53",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edição de Etapa Seletiva",
+              "fullTitle": "Funcionalidade Etapas Seletivas Edição de Etapa Seletiva",
+              "timedOut": null,
+              "duration": 4812,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "etapaPage.editar(etapaSeletiva);\nutil.validaTitulo('Etapas Seletivas');",
+              "err": {},
+              "uuid": "1dc8f6d7-120a-4640-96a0-a48cf5eee330",
+              "parentUUID": "e6eff98f-c147-4c5d-9adb-e35e9c537a53",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exclusão de Etapa Seletiva",
+              "fullTitle": "Funcionalidade Etapas Seletivas Exclusão de Etapa Seletiva",
+              "timedOut": null,
+              "duration": 4281,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "etapaPage.excluir(etapaSeletiva);\nutil.popUpMessage('Confirma exclusão?');\ncy.validaMensagemSucesso('Etapa Seletiva excluída com sucesso.');",
+              "err": {},
+              "uuid": "5acd9468-3989-44e1-9433-9fe8670bd8c4",
+              "parentUUID": "e6eff98f-c147-4c5d-9adb-e35e9c537a53",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a65c1300-f82d-484e-8880-53509f7b0dc6",
+            "1dc8f6d7-120a-4640-96a0-a48cf5eee330",
+            "5acd9468-3989-44e1-9433-9fe8670bd8c4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15037,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

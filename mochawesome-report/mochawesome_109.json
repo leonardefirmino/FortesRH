@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:59:21.857Z",
+    "end": "2021-03-03T13:59:30.295Z",
+    "duration": 8438,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "24ea65cb-709d-44a6-98cb-5d908ce22e84",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\utilitarios\\importar_epi_spec.js",
+      "file": "cypress\\integration\\services\\testes\\utilitarios\\importar_epi_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "67ca4f59-b4fe-4459-8b0e-2ee0f879a2d8",
+          "title": "Improtação de Epis",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Importa Epi Arquivo Vazio",
+              "fullTitle": "Improtação de Epis Importa Epi Arquivo Vazio",
+              "timedOut": null,
+              "duration": 4557,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var arquivoEpi = {\n  Arquivo: 'ArquivoVazio.txt'\n};\nimportaEpiPage.importarEpi(arquivoEpi);\nutil.errorMsg('Erro ao executar a importação.');",
+              "err": {},
+              "uuid": "3144609b-f63d-47be-a8b4-00a28f7de7b0",
+              "parentUUID": "67ca4f59-b4fe-4459-8b0e-2ee0f879a2d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Importa Epi Arquivo Inválido",
+              "fullTitle": "Improtação de Epis Importa Epi Arquivo Inválido",
+              "timedOut": null,
+              "duration": 3846,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var arquivoEpi = {\n  Arquivo: 'ArquivoInvalido.txt'\n};\nimportaEpiPage.importarEpi(arquivoEpi);\nutil.warningMsg('Não foram encontradas linhas com dados de EPI válidos. Verifique o arquivo.');",
+              "err": {},
+              "uuid": "1d13b088-f256-4448-96ae-828f08e4a34f",
+              "parentUUID": "67ca4f59-b4fe-4459-8b0e-2ee0f879a2d8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3144609b-f63d-47be-a8b4-00a28f7de7b0",
+            "1d13b088-f256-4448-96ae-828f08e4a34f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8403,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

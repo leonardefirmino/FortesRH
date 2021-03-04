@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:59:04.336Z",
+    "end": "2021-03-03T13:59:19.383Z",
+    "duration": 15047,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1691809c-580d-47d9-a987-80a1e14966d5",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\utilitarios\\importar_cadastro_spec.js",
+      "file": "cypress\\integration\\services\\testes\\utilitarios\\importar_cadastro_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60f37852-1419-4b17-a0e4-cd773f9b90b9",
+          "title": "Funcionalidade Importação de Cadastros",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Importa Cadastros Empresas",
+              "fullTitle": "Funcionalidade Importação de Cadastros Importa Cadastros Empresas",
+              "timedOut": null,
+              "duration": 5463,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "importarCadastrosPage.importarCadastro(empresa);\nutil.dialogContentMessage('Cuidado ao importar o cadastro entre empresas, pois o mesmo poderá ficar duplicado caso aconteça mais de uma importação.');\ncy.contains('Sim').click();\ncy.validaMensagemSucesso('Cadastros importados com sucesso.');",
+              "err": {},
+              "uuid": "6058ea40-c267-49df-9b0f-97e0c84f4774",
+              "parentUUID": "60f37852-1419-4b17-a0e4-cd773f9b90b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Importa Cadastros Mesma Empresa",
+              "fullTitle": "Funcionalidade Importação de Cadastros Importa Cadastros Mesma Empresa",
+              "timedOut": null,
+              "duration": 4391,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "importarCadastrosPage.importarCadastroMesmaEmpresa(empresa);\nutil.popUpMessage('Selecione empresas Origem e Destino diferentes.');",
+              "err": {},
+              "uuid": "b4919916-bc24-4b30-87c5-56dff2e21c2d",
+              "parentUUID": "60f37852-1419-4b17-a0e4-cd773f9b90b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Importa Cadastros - Dados Vazios",
+              "fullTitle": "Funcionalidade Importação de Cadastros Importa Cadastros - Dados Vazios",
+              "timedOut": null,
+              "duration": 5091,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "importarCadastrosPage.importar();\nutil.popUpMessage('Preencha os campos indicados.');",
+              "err": {},
+              "uuid": "15ee48f0-c108-4273-b4d6-e83832d2865f",
+              "parentUUID": "60f37852-1419-4b17-a0e4-cd773f9b90b9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6058ea40-c267-49df-9b0f-97e0c84f4774",
+            "b4919916-bc24-4b30-87c5-56dff2e21c2d",
+            "15ee48f0-c108-4273-b4d6-e83832d2865f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14945,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

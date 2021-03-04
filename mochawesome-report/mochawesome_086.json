@@ -1,0 +1,299 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:45:50.673Z",
+    "end": "2021-03-03T13:46:30.128Z",
+    "duration": 39455,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1b1be53e-4e3c-4702-b21b-b65824e92f27",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\Login\\login_spec.js",
+      "file": "cypress\\integration\\services\\testes\\Login\\login_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5eb0690c-9166-40ce-be16-dca4169b5104",
+          "title": "Tentativas de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "bfc4600e-51ed-4f63-9711-e6d909e9f758",
+              "title": "Login com Sucesso",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Válido",
+                  "fullTitle": "Tentativas de Login Login com Sucesso Válido",
+                  "timedOut": null,
+                  "duration": 4289,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.loginByApi();\ncy.validaMensagemBoasVindas('Bem-vindo(a)');",
+                  "err": {},
+                  "uuid": "1a345e51-885c-48fc-b662-61ed939a63a1",
+                  "parentUUID": "bfc4600e-51ed-4f63-9711-e6d909e9f758",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Valida Remprot",
+                  "fullTitle": "Tentativas de Login Login com Sucesso Valida Remprot",
+                  "timedOut": null,
+                  "duration": 5193,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.exec_sql(\"update parametrosdosistema set proximaversao = '2021-01-01'\");\ncy.loginWith(Cypress.env('user_name'), Cypress.env('user_password'));\ncy.validaMensagemBoasVindas('Bem-vindo(a)');",
+                  "err": {},
+                  "uuid": "979b360f-35be-4127-b226-2aa446cd31df",
+                  "parentUUID": "bfc4600e-51ed-4f63-9711-e6d909e9f758",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "1a345e51-885c-48fc-b662-61ed939a63a1",
+                "979b360f-35be-4127-b226-2aa446cd31df"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 9482,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "33abcc1f-fc4a-4bbf-bc18-f777d95084dc",
+              "title": "Login Sem Sucesso",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Senha inválida",
+                  "fullTitle": "Tentativas de Login Login Sem Sucesso Senha inválida",
+                  "timedOut": null,
+                  "duration": 4524,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.loginWith('SOS', '12534');\ncy.validaMensagemErroLogin('Usuário sem permissão de acesso');",
+                  "err": {},
+                  "uuid": "c312c556-984b-4772-8c12-9bb9f39e2ea7",
+                  "parentUUID": "33abcc1f-fc4a-4bbf-bc18-f777d95084dc",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Usuário inválido",
+                  "fullTitle": "Tentativas de Login Login Sem Sucesso Usuário inválido",
+                  "timedOut": null,
+                  "duration": 3894,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.loginWith('---', '12534');\ncy.validaMensagemErroLogin('Usuário sem permissão de acesso');",
+                  "err": {},
+                  "uuid": "771261cb-c6f8-4632-ad99-53718da11d9a",
+                  "parentUUID": "33abcc1f-fc4a-4bbf-bc18-f777d95084dc",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Captcha Ativo",
+                  "fullTitle": "Tentativas de Login Login Sem Sucesso Captcha Ativo",
+                  "timedOut": null,
+                  "duration": 5032,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.exec_sql('update parametrosdosistema set utilizarcaptchanologin = true;');\ncy.loginWith('usuarioteste', '1234');\ncy.validaMensagemErroLogin('Usuário sem permissão de acesso');",
+                  "err": {},
+                  "uuid": "8255e052-c697-4c29-9d29-dbc520a538d0",
+                  "parentUUID": "33abcc1f-fc4a-4bbf-bc18-f777d95084dc",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c312c556-984b-4772-8c12-9bb9f39e2ea7",
+                "771261cb-c6f8-4632-ad99-53718da11d9a",
+                "8255e052-c697-4c29-9d29-dbc520a538d0"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 13450,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "40482668-95c8-4250-b9fc-1954f5efa725",
+              "title": "Outras Validações de Login",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Usuario Expirado",
+                  "fullTitle": "Tentativas de Login Outras Validações de Login Usuario Expirado",
+                  "timedOut": null,
+                  "duration": 5271,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.exec_sql(\"update usuario set expiracao = '01/01/2000' where login = 'homolog'\");\ncy.loginWith(Cypress.env('user_name'), Cypress.env('user_password'));\ncy.validaMensagemErroLogin('Usuário sem permissão de acesso');",
+                  "err": {},
+                  "uuid": "e085b4d6-59dd-40e4-b050-e5b1d7336332",
+                  "parentUUID": "40482668-95c8-4250-b9fc-1954f5efa725",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Sessão Expirada",
+                  "fullTitle": "Tentativas de Login Outras Validações de Login Sessão Expirada",
+                  "timedOut": null,
+                  "duration": 5848,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.exec_sql(\"update parametrosdosistema set sessiontimeout = 1\");\ncy.loginWith(Cypress.env('user_name'), Cypress.env('user_password'));\ncy.popUpMessage('Sua sessão expirou.');",
+                  "err": {},
+                  "uuid": "a1eb89ec-7318-4cb8-8011-a9cd82bc0902",
+                  "parentUUID": "40482668-95c8-4250-b9fc-1954f5efa725",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Primeiro Acesso",
+                  "fullTitle": "Tentativas de Login Outras Validações de Login Primeiro Acesso",
+                  "timedOut": null,
+                  "duration": 5139,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.insereUsuario('usu_teste');\ncy.exec_sql(\"update parametrosdosistema set exibiralteracaoprimeiroacesso = true\");\ncy.loginWith('usu_teste', '1234');\ncy.alterarSenhaPrimeiroAcesso('123456');\ncy.validaMensagemSucesso('A senha foi alterada com sucesso!');",
+                  "err": {},
+                  "uuid": "ea87e485-0382-46a6-a358-878b47f61008",
+                  "parentUUID": "40482668-95c8-4250-b9fc-1954f5efa725",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e085b4d6-59dd-40e4-b050-e5b1d7336332",
+                "a1eb89ec-7318-4cb8-8011-a9cd82bc0902",
+                "ea87e485-0382-46a6-a358-878b47f61008"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 16258,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

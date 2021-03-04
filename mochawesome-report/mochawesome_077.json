@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:41:28.641Z",
+    "end": "2021-03-03T13:42:05.737Z",
+    "duration": 37096,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d3242871-449e-4341-b0c1-ced2bd228130",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\ces\\cadastro_indice_spec.js",
+      "file": "cypress\\integration\\services\\testes\\ces\\cadastro_indice_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "923a34ba-46c9-47ca-bc39-07bc1e09e9f8",
+          "title": "Funcionalidade Indices",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Inserção de Índice",
+              "fullTitle": "Funcionalidade Indices Inserção de Índice",
+              "timedOut": null,
+              "duration": 6834,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "indicePage.insereIndice(indice);\ncy.validaMensagemSucesso('Índice Gravado com Sucesso!');",
+              "err": {},
+              "uuid": "21732a88-4bb1-4b59-be68-96a9c43a2ec0",
+              "parentUUID": "923a34ba-46c9-47ca-bc39-07bc1e09e9f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edição de de Índice",
+              "fullTitle": "Funcionalidade Indices Edição de de Índice",
+              "timedOut": null,
+              "duration": 5017,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "indicePage.editar(indice);\ncy.validaMensagemSucesso('Índice Atualizado com Sucesso!');",
+              "err": {},
+              "uuid": "7793b556-fc55-4e7a-94e7-1ff9b641612d",
+              "parentUUID": "923a34ba-46c9-47ca-bc39-07bc1e09e9f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Insere Histórico de Índice",
+              "fullTitle": "Funcionalidade Indices Insere Histórico de Índice",
+              "timedOut": null,
+              "duration": 5945,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "indicePage.preencheHistoricoIndice(indice);\ncy.validaMensagemSucesso('Índice Atualizado com Sucesso!');",
+              "err": {},
+              "uuid": "5325a110-2d91-43df-b822-b97de36522d7",
+              "parentUUID": "923a34ba-46c9-47ca-bc39-07bc1e09e9f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exclusão de Índice",
+              "fullTitle": "Funcionalidade Indices Exclusão de Índice",
+              "timedOut": null,
+              "duration": 4281,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "indicePage.excluir(indice.Descricao2);\ncy.popUpMessage('Confirma exclusão?');\nutil.infoMsg('Índice excluído com sucesso.');",
+              "err": {},
+              "uuid": "d9eeae4f-ed55-493c-a697-38f86c856d14",
+              "parentUUID": "923a34ba-46c9-47ca-bc39-07bc1e09e9f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exclusão de Índice - com Histórico",
+              "fullTitle": "Funcionalidade Indices Exclusão de Índice - com Histórico",
+              "timedOut": null,
+              "duration": 4214,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "indicePage.excluir(indice.Descricao3);\ncy.popUpMessage('Confirma exclusão?');\nutil.infoMsg('Índice excluído com sucesso.');",
+              "err": {},
+              "uuid": "70eef7ed-8f63-40fd-855e-1c210771edf1",
+              "parentUUID": "923a34ba-46c9-47ca-bc39-07bc1e09e9f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserir Indice Integrado como Pessoal",
+              "fullTitle": "Funcionalidade Indices Inserir Indice Integrado como Pessoal",
+              "timedOut": null,
+              "duration": 10573,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.integraFortesPessoal();\ncy.logout();\ncy.login_Sem_Entendi();\nindicePage.navigate();\nutil.infoMsg('A manutenção do Cadastro de Índices deve ser realizada no Fortes Pessoal.');",
+              "err": {},
+              "uuid": "207f581f-3094-4e58-97d5-8acc817567bb",
+              "parentUUID": "923a34ba-46c9-47ca-bc39-07bc1e09e9f8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "21732a88-4bb1-4b59-be68-96a9c43a2ec0",
+            "7793b556-fc55-4e7a-94e7-1ff9b641612d",
+            "5325a110-2d91-43df-b822-b97de36522d7",
+            "d9eeae4f-ed55-493c-a697-38f86c856d14",
+            "70eef7ed-8f63-40fd-855e-1c210771edf1",
+            "207f581f-3094-4e58-97d5-8acc817567bb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36864,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

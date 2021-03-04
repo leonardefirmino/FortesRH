@@ -43,8 +43,8 @@ describe('Funcionalidade Indices', () => {
 
     it('Inserir Indice Integrado como Pessoal', () => {
         cy.integraFortesPessoal()
-        cy.logout()   
-        cy.login()
+        cy.logout()
+        cy.login_Sem_Entendi()
         indicePage.navigate()
         util.infoMsg('A manutenção do Cadastro de Índices deve ser realizada no Fortes Pessoal.')
     })

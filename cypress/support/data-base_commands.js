@@ -204,15 +204,16 @@ Cypress.Commands.add("insere_X_Colaborador", (qtd_colaborador) => {
         "insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Auxiliar Departamento Pessoal'), (select id from areaorganizacional where nome = 'Gestao de Pessoas'))",
     )
 
-    var i = 0
     var num = parseInt(qtd_colaborador)
-    do {
-        cy.exec_sql(
-            "insert into colaborador values (nextval('colaborador_sequence'), null, 'Colaborador Teste " + i + "', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false)",
-            "insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = 'Colaborador Teste " + i + "'), (select id from areaorganizacional where nome = 'Gestao de Pessoas'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where id = 1), null, 1, null, null)",
-        )
-        i++
-    } while (i < num);
+
+    var query = []
+    for (let i = 0; i < num; i++) {
+        var query1 = "insert into colaborador values (nextval('colaborador_sequence'), null, 'Colaborador Teste " + i + "', 'colaborador teste', false, null, null, '01/01/2020', 'Rua A', '111', null, 'Cambeba', '60822285', '34425164555', '12345678919', null, null, 'João Paulo', null, null, null, null, null, false, null, 0, 'M', '01/01/1980', '03', '03', '85', '40051111', null, 'teste@teste.com.br', 'E', null, null, null, false, 1, 1, 946, null, null, null, '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null,null, null, null, null, null, null, '25/09/2020', null, null, null, null, null, null, null, null, null, null, null, null, false);"
+        var query2 = "insert into historicocolaborador values (nextval('historicocolaborador_sequence'), 2000, '01/05/2020', 'C', null, (select id from colaborador where nome = 'Colaborador Teste " + i + "'), (select id from areaorganizacional where nome = 'Gestao de Pessoas'), null, null, null, (select id from estabelecimento where nome = 'Estabelecimento Padrão'), 3, null, 0, (select id from faixasalarial where id = 1), null, 1, null, null);"
+        query.push(query1, query2)
+    } 
+    
+    cy.exec_sql(query.join(';').toString())
 })
 
 Cypress.Commands.add("dispensaContratacaoAprendiz", () => {

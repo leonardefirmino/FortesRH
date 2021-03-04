@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:47:49.941Z",
+    "end": "2021-03-03T13:47:57.083Z",
+    "duration": 7142,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f4a96328-a830-4726-a8ed-630fbadd99da",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\res\\analytics_vagas_spec.js",
+      "file": "cypress\\integration\\services\\testes\\res\\analytics_vagas_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aedee727-dbae-4113-b23d-1e46a9ce47fb",
+          "title": "Analitics Recrutamento e Seleção",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Vagas Disponíveis",
+              "fullTitle": "Analitics Recrutamento e Seleção Vagas Disponíveis",
+              "timedOut": null,
+              "duration": 7045,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "util.entendiButton();\nanalyticsPage.validaQuadroVagasDisponiveis(dados);",
+              "err": {},
+              "uuid": "85ee472f-7f8e-4d39-9da7-1579337de4df",
+              "parentUUID": "aedee727-dbae-4113-b23d-1e46a9ce47fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "85ee472f-7f8e-4d39-9da7-1579337de4df"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7045,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

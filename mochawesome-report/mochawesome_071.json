@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:38:31.664Z",
+    "end": "2021-03-03T13:39:02.912Z",
+    "duration": 31248,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1b906acd-fdca-4fcd-b5af-c37a7b2dfc1f",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\ces\\cadastro_area_organizacional_spec.js",
+      "file": "cypress\\integration\\services\\testes\\ces\\cadastro_area_organizacional_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "224fff85-0244-4288-bdd5-c31e701f1dd9",
+          "title": "Funcionalidade Area Organizacional",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Inserção de Area Organizacional",
+              "fullTitle": "Funcionalidade Area Organizacional Inserção de Area Organizacional",
+              "timedOut": null,
+              "duration": 6103,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "areaOrganizacionalPage.inserir(areaOrganizacional);\ncy.validaMensagemSucesso('Área organizacional inserida com sucesso');",
+              "err": {},
+              "uuid": "d263128b-9c1f-4181-b44e-5df93cce358a",
+              "parentUUID": "224fff85-0244-4288-bdd5-c31e701f1dd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserção de Area Organizacional - Com Area Mãe",
+              "fullTitle": "Funcionalidade Area Organizacional Inserção de Area Organizacional - Com Area Mãe",
+              "timedOut": null,
+              "duration": 5265,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var areaOrganizacional = {\n  NomeArea: \"Desenvolvimento\",\n  AreaOrg: 'Desenvolvimento'\n};\nareaOrganizacionalPage.inserirComAreaMae(areaOrganizacional);\ncy.validaMensagemSucesso('Área organizacional inserida com sucesso');",
+              "err": {},
+              "uuid": "b4c14352-7332-409a-b8d3-ad8cfb6397d6",
+              "parentUUID": "224fff85-0244-4288-bdd5-c31e701f1dd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserção de Area Organizacional - Com Area Mãe vinculada a um talento",
+              "fullTitle": "Funcionalidade Area Organizacional Inserção de Area Organizacional - Com Area Mãe vinculada a um talento",
+              "timedOut": null,
+              "duration": 5056,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "areaOrganizacionalPage.inserirComAreaMae(areaOrganizacional);\nareaOrganizacionalPage.validaPopUpVinculoAreaMae('A área organizacional mãe selecionada, possui talentos vinculados.');",
+              "err": {},
+              "uuid": "2ca214e3-134c-42e4-8593-b59b5f7d5f8f",
+              "parentUUID": "224fff85-0244-4288-bdd5-c31e701f1dd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edição de Area Organizacional",
+              "fullTitle": "Funcionalidade Area Organizacional Edição de Area Organizacional",
+              "timedOut": null,
+              "duration": 5317,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "areaOrganizacionalPage.editar(areaOrganizacional);\ncy.validaMensagemSucesso('Área organizacional atualizada com sucesso');",
+              "err": {},
+              "uuid": "51310344-2879-49ee-90a9-35437dc3d0c3",
+              "parentUUID": "224fff85-0244-4288-bdd5-c31e701f1dd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exclusão de Area Organizacional",
+              "fullTitle": "Funcionalidade Area Organizacional Exclusão de Area Organizacional",
+              "timedOut": null,
+              "duration": 4473,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "areaOrganizacionalPage.excluir(areaOrganizacional);\nutil.popUpMessage('Confirma exclusão?');\ncy.validaMensagemSucesso('Área organizacional excluída com sucesso.');",
+              "err": {},
+              "uuid": "4c5546ab-4136-4b9d-a51a-acd04df9002d",
+              "parentUUID": "224fff85-0244-4288-bdd5-c31e701f1dd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exclusão de Area Organizacional - Associada a movimentações",
+              "fullTitle": "Funcionalidade Area Organizacional Exclusão de Area Organizacional - Associada a movimentações",
+              "timedOut": null,
+              "duration": 4839,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var areaOrganizacional = {\n  NomeArea: \"Área Teste\"\n};\nareaOrganizacionalPage.excluir(areaOrganizacional);\nutil.popUpMessage('Confirma exclusão?');\nutil.warningMsg('Não foi possível excluir a Área Organizacional.');",
+              "err": {},
+              "uuid": "e25959bc-3f04-4464-a502-04be44b29470",
+              "parentUUID": "224fff85-0244-4288-bdd5-c31e701f1dd9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d263128b-9c1f-4181-b44e-5df93cce358a",
+            "b4c14352-7332-409a-b8d3-ad8cfb6397d6",
+            "2ca214e3-134c-42e4-8593-b59b5f7d5f8f",
+            "51310344-2879-49ee-90a9-35437dc3d0c3",
+            "4c5546ab-4136-4b9d-a51a-acd04df9002d",
+            "e25959bc-3f04-4464-a502-04be44b29470"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31053,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:58:32.529Z",
+    "end": "2021-03-03T13:58:40.040Z",
+    "duration": 7511,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a4cedee3-4764-4801-9bb0-88447a0570d1",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\utilitarios\\campos_extras_spec.js",
+      "file": "cypress\\integration\\services\\testes\\utilitarios\\campos_extras_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "66d7d612-5abb-4601-aff0-753c0a4e8c35",
+          "title": "Configuração de Campos Extras",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Configura Campo Extra de Talento e Candidato",
+              "fullTitle": "Configuração de Campos Extras Configura Campo Extra de Talento e Candidato",
+              "timedOut": null,
+              "duration": 7437,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "camposExtrasPage.configuraCampsExtras();\nutil.popUpMessage('Essas configurações serão aplicadas para todas as empresas!');\ncy.validaMensagemSucesso('Configurações gravadas com sucesso.');\ncamposExtrasPage.validaAbaExtraExibidaCandidato();\ncamposExtrasPage.validaAbaExtraExibidaTalento();",
+              "err": {},
+              "uuid": "f2875e70-0349-41d0-b23a-4c4eac508c59",
+              "parentUUID": "66d7d612-5abb-4601-aff0-753c0a4e8c35",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f2875e70-0349-41d0-b23a-4c4eac508c59"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7437,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

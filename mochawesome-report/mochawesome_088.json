@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:46:54.846Z",
+    "end": "2021-03-03T13:47:47.665Z",
+    "duration": 52819,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a12c3e61-d337-4492-8a8b-26768767c41d",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\pesquisa\\pesquisa_monitoramento_spec.js",
+      "file": "cypress\\integration\\services\\testes\\pesquisa\\pesquisa_monitoramento_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce475d4f-616d-4eaf-af4b-138e09d38e5d",
+          "title": "Funcionalidade Pesquisa",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Monitoramento de Saúde",
+              "fullTitle": "Funcionalidade Pesquisa Monitoramento de Saúde",
+              "timedOut": null,
+              "duration": 10138,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "pesquisaPage.inserirPesquisa(monitoramento);\npesquisaPage.inserirPerguntaObrigatória();\npesquisaPage.finalizaCadastro();\ncy.contains('Monitoramento de Saúde');",
+              "err": {},
+              "uuid": "5cb561a2-2066-442e-93dc-dfbe08231a22",
+              "parentUUID": "ce475d4f-616d-4eaf-af4b-138e09d38e5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Pesquisa",
+              "fullTitle": "Funcionalidade Pesquisa Pesquisa",
+              "timedOut": null,
+              "duration": 9839,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "pesquisaPage.inserirPesquisa(pesquisa);\npesquisaPage.inserirPerguntaObrigatória();\npesquisaPage.inserirPerguntaNaoObrigatória();\npesquisaPage.finalizaCadastro();\nutil.validaTitulo('Pesquisas');",
+              "err": {},
+              "uuid": "49be96f1-056a-4912-bf23-552035bb85c8",
+              "parentUUID": "ce475d4f-616d-4eaf-af4b-138e09d38e5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Responder Pesquisa",
+              "fullTitle": "Funcionalidade Pesquisa Responder Pesquisa",
+              "timedOut": null,
+              "duration": 11168,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.ativaPaginacaoPesquisa();\ncy.PesquisaLiberadaCom50Perguntas();\ncy.reload();\nutil.validaTitulo('Pesquisas');\npesquisaPage.incluirColaboradorPesquisaResponder(pesquisa);\nutil.infoMsg('Respostas gravadas com sucesso.');",
+              "err": {},
+              "uuid": "8804ce9e-90f7-4ba5-8011-92fbd03bb872",
+              "parentUUID": "ce475d4f-616d-4eaf-af4b-138e09d38e5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Responder Pesquisa Parcialmente",
+              "fullTitle": "Funcionalidade Pesquisa Responder Pesquisa Parcialmente",
+              "timedOut": null,
+              "duration": 9932,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.ativaPaginacaoPesquisa();\ncy.PesquisaLiberadaCom50Perguntas();\ncy.reload();\nutil.validaTitulo('Pesquisas');\npesquisaPage.incluirColaboradorPesquisaResponderParcial(pesquisa);\nutil.infoMsg('Respostas gravadas com sucesso.');",
+              "err": {},
+              "uuid": "541dcf4f-68a0-433d-a12d-422b940b765d",
+              "parentUUID": "ce475d4f-616d-4eaf-af4b-138e09d38e5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exclusão de respostas em lote",
+              "fullTitle": "Funcionalidade Pesquisa Exclusão de respostas em lote",
+              "timedOut": null,
+              "duration": 11477,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.ativaPaginacaoPesquisa();\ncy.PesquisaLiberadaCom50Perguntas();\ncy.reload();\npesquisaPage.incluirColaboradorPesquisaResponder(pesquisa);\npesquisaPage.excluirTodasRespostas();\nutil.popUpMessage('Confirma remoção das respostas selecionadas?');\nutil.infoMsg('Respostas dos talentos selecionados removidas com sucesso.');",
+              "err": {},
+              "uuid": "4b62e8e3-8e38-428c-a8b6-df3d8c595c77",
+              "parentUUID": "ce475d4f-616d-4eaf-af4b-138e09d38e5d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5cb561a2-2066-442e-93dc-dfbe08231a22",
+            "49be96f1-056a-4912-bf23-552035bb85c8",
+            "8804ce9e-90f7-4ba5-8011-92fbd03bb872",
+            "541dcf4f-68a0-433d-a12d-422b940b765d",
+            "4b62e8e3-8e38-428c-a8b6-df3d8c595c77"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 52554,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

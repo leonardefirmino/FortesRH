@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:37:18.410Z",
+    "end": "2021-03-03T13:38:05.769Z",
+    "duration": 47359,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c4268438-65b2-4792-b0c4-2d47badb0e99",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\aval_desempenho\\movimentacoes_aval_desempenho_spec.js",
+      "file": "cypress\\integration\\services\\testes\\aval_desempenho\\movimentacoes_aval_desempenho_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "194781f3-5b6f-4813-9534-b960a178be86",
+          "title": "Avaliação de Desempenho",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Inserir Avaliação de Desempenho",
+              "fullTitle": "Avaliação de Desempenho Inserir Avaliação de Desempenho",
+              "timedOut": null,
+              "duration": 20199,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.insereColaborador('Helena de Troia');\navalDesempenhoPage.cadastraAvaloiacaoDesempenho(avaliacao);\ncy.validaMensagemSucesso('Gravado com sucesso.');",
+              "err": {},
+              "uuid": "25f24d35-33e8-498c-9264-97f8b7318522",
+              "parentUUID": "194781f3-5b6f-4813-9534-b960a178be86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserir Talentos na Avaliação de Desempenho - Acima do limite",
+              "fullTitle": "Avaliação de Desempenho Inserir Talentos na Avaliação de Desempenho - Acima do limite",
+              "timedOut": null,
+              "duration": 10183,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var avaliacao = {\n  Titulo: 'Avaliação de Desempenho'\n};\ncy.insere_X_Colaborador(51);\ncy.inseremodeloAvaliacaoDesempenho('Avaliação Teste');\ncy.insereAvaliacaoDesempenho();\ncy.reload();\navalDesempenhoPage.insereParticipantes(avaliacao);\ncy.get('.ui-dialog-content').should('contain', 'Não é possível realizar esse procedimento, pois serão vinculados 51 avaliados com 51 avaliadores, gerando 2601 registros a serem gravados. Isso poderia causar uma inconsistência.');",
+              "err": {},
+              "uuid": "6eff558e-43b7-4d0f-a501-7313f9b7c820",
+              "parentUUID": "194781f3-5b6f-4813-9534-b960a178be86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inserir Talentos na Avaliação de Desempenho - Não Aceita Auto Avaliação",
+              "fullTitle": "Avaliação de Desempenho Inserir Talentos na Avaliação de Desempenho - Não Aceita Auto Avaliação",
+              "timedOut": null,
+              "duration": 7245,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var avaliacao = {\n  Titulo: 'Avaliação de Desempenho',\n  PeriodoInicial: '01/08/2020',\n  PeriodoFinal: '31/08/2020',\n  ModeloAvaliacao: 'Não',\n  PermiteAutoavaliacao: 'Não',\n  Anonima: 'Não',\n  Colaborador: 'Helena de Troia'\n};\ncy.insereColaborador('Helena de Troia');\ncy.inseremodeloAvaliacaoDesempenho('Avaliação Teste');\ncy.insereAvaliacaoDesempenho_NaoPermiteAutoAvaliacao();\ncy.reload();\navalDesempenhoPage.insereParticipantes(avaliacao);\ncy.contains('A avaliação não permite autoavaliação');",
+              "err": {},
+              "uuid": "76cbf147-f073-4584-8f4b-82da2693b38f",
+              "parentUUID": "194781f3-5b6f-4813-9534-b960a178be86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Excluir Avaliação de Desempenho",
+              "fullTitle": "Avaliação de Desempenho Excluir Avaliação de Desempenho",
+              "timedOut": null,
+              "duration": 4706,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var avaliacao = {\n  Titulo: 'Avaliação de Desempenho'\n};\ncy.inseremodeloAvaliacaoDesempenho('Avaliação Teste');\ncy.insereAvaliacaoDesempenho_NaoPermiteAutoAvaliacao();\ncy.reload();\navalDesempenhoPage.excluir(avaliacao);\nutil.popUpMessage('Confirma exclusão?');\ncy.validaMensagemSucesso('Avaliação de desempenho excluída com sucesso.');",
+              "err": {},
+              "uuid": "6e6a9bef-e958-48e8-acde-aeebacb84a29",
+              "parentUUID": "194781f3-5b6f-4813-9534-b960a178be86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Liberar Avaliação de Desempenho em Lote",
+              "fullTitle": "Avaliação de Desempenho Liberar Avaliação de Desempenho em Lote",
+              "timedOut": null,
+              "duration": 4836,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var avaliacao = {\n  Titulo: 'Avaliação de Desempenho'\n};\ncy.inseremodeloAvaliacaoDesempenho('Avaliação Teste');\ncy.insereAvaliacaoDesempenho_NaoPermiteAutoAvaliacao();\ncy.reload();\navalDesempenhoPage.liberarEmLote(avaliacao);\ncy.validaMensagemAlerta(\"Não foi possível realizar a operação 'Liberar avaliações em lote': Existem avaliações com número insuficiente de participantes ou avaliação que não permite a autoavaliação com apenas um participante.\");",
+              "err": {},
+              "uuid": "f436bdcc-4184-4440-a137-83111b935689",
+              "parentUUID": "194781f3-5b6f-4813-9534-b960a178be86",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "25f24d35-33e8-498c-9264-97f8b7318522",
+            "6eff558e-43b7-4d0f-a501-7313f9b7c820",
+            "76cbf147-f073-4584-8f4b-82da2693b38f",
+            "6e6a9bef-e958-48e8-acde-aeebacb84a29",
+            "f436bdcc-4184-4440-a137-83111b935689"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 47169,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

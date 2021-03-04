@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-03T13:58:52.182Z",
+    "end": "2021-03-03T13:59:02.104Z",
+    "duration": 9922,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2d7b08e1-16b4-4f8e-8fb0-e5b061b66e31",
+      "title": "",
+      "fullFile": "cypress\\integration\\services\\testes\\utilitarios\\importar_afastamentos_spec.js",
+      "file": "cypress\\integration\\services\\testes\\utilitarios\\importar_afastamentos_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ca0300ff-18c6-4b7c-81c8-3d86a7ebac2e",
+          "title": "Improtação de Afastamentos do Ponto/TRU",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Importa Afastamento Arquivo Inválido",
+              "fullTitle": "Improtação de Afastamentos do Ponto/TRU Importa Afastamento Arquivo Inválido",
+              "timedOut": null,
+              "duration": 5404,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var arquivoAfastamento = {\n  Arquivo: 'ArquivoAfastamentoInvalido.csv'\n};\nimportaAfastamentosPage.importar(arquivoAfastamento);\nutil.warningMsg('Não foram encontrados afastamentos a serem importados para os talentos desta empresa neste arquivo.');",
+              "err": {},
+              "uuid": "4239a04f-89d2-4b59-83f1-86251b0b2a88",
+              "parentUUID": "ca0300ff-18c6-4b7c-81c8-3d86a7ebac2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Importa Afastamento Arquivo Válido",
+              "fullTitle": "Improtação de Afastamentos do Ponto/TRU Importa Afastamento Arquivo Válido",
+              "timedOut": null,
+              "duration": 4455,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.insereColaborador('Helena de Troia');\nvar arquivoAfastamento = {\n  Arquivo: 'ArquivoAfastamentoValido.csv'\n};\nimportaAfastamentosPage.importar(arquivoAfastamento);\ncy.validaMensagemSucesso('Importação concluída.');",
+              "err": {},
+              "uuid": "162f17a2-ea3a-4b70-a35f-473f0ce31f56",
+              "parentUUID": "ca0300ff-18c6-4b7c-81c8-3d86a7ebac2e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4239a04f-89d2-4b59-83f1-86251b0b2a88",
+            "162f17a2-ea3a-4b70-a35f-473f0ce31f56"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9859,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
