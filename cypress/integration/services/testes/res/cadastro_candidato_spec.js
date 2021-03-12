@@ -74,14 +74,14 @@ describe('Gerenciamento de Candidatos', () => {
             it('Inserção de Candidatos - Associar Candidato ao Colaborador Contratado', () => {
                 cy.insereColaborador('Helena de Troia')
                 cy.inserirCandidato(candidato)
-                cy.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
+                cy.dialogMessageMesmoCPF('Existem talentos que já foram contratados com esse CPF')
                 cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })
 
             it('Inserção de Candidatos - mesmo CPF empregado demitido', () => {
                 cy.insereColaboradorDemitido('Helena de Troia')
                 cy.inserirCandidato(candidato)
-                cy.dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
+                cy.dialogMessageMesmoCPF('Existem talentos que já foram contratados com esse CPF')
                 cy.validaMensagemSucesso('Operação efetuada com sucesso')
             })
 
