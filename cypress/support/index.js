@@ -32,6 +32,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 beforeEach('', () => {
     cy.reload_db()
+    cy.logout()
 })
 
 afterEach('', () => {    

@@ -85,7 +85,6 @@ export class AvaliacaoDesempenhoPage {
         cy.get(insere_avaliado).click()
         cy.get(pesquisar).click()
         cy.get('#wwgrp_colaboradorsCheck').within(($form) => {
-            cy.wait(1500)
             cy.get(marcarTodos).click()
         })
         
@@ -100,7 +99,6 @@ export class AvaliacaoDesempenhoPage {
         cy.get(insere_avaliador).click()
         cy.get(pesquisar).click()
         cy.get('#wwgrp_colaboradorsCheck').within(($form) => {
-            cy.wait(1500)
             cy.get(marcarTodos).click()
         })
 

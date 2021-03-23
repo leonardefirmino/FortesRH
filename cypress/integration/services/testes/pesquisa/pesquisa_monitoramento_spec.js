@@ -40,7 +40,7 @@ describe('Funcionalidade Pesquisa', () => {
         util.infoMsg('Respostas gravadas com sucesso.')
     })
 
-    it('Responder Pesquisa Parcialmente', () => {
+    it.only('Responder Pesquisa Parcialmente', () => {
         cy.ativaPaginacaoPesquisa()
         cy.PesquisaLiberadaCom50Perguntas()
         cy.reload()
