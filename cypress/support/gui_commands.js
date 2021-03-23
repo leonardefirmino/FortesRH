@@ -1,5 +1,4 @@
 Cypress.Commands.add('loginByApi', () => {
-    cy.log('Tentando logar com: ' + Cypress.config('user_name') + ' e senha: ' + Cypress.config('user_password'))
     cy.visit('/logout')
     return cy.request({
         url: `${Cypress.config("baseUrl")}` + '/login',
