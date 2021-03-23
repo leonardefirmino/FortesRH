@@ -14,12 +14,13 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import '../../cypress.json'
 import './commands'
 import './gui_commands'
 import './data-base_commands'
+import './util_commands'
 import 'cypress-file-upload'
-require('cypress-plugin-tab')
-require('cypress-xpath')
+import { Chance } from 'chance';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -31,10 +32,12 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 beforeEach('', () => {
-    cy.reload_db()
-    cy.logout()
+    const chance= new Chance()
+    cy
+        .reload_db()
+        .loginByApi()
 })
 
-afterEach('', () => {    
+afterEach('', () => {
     cy.clearcookies()
 })
