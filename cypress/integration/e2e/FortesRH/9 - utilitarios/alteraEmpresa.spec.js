@@ -1,7 +1,7 @@
 describe('Funcionalidade Troca de Empresa', () => {
 
     const empresas = {
-        razaoSocial_1: chance.name({ words: 1 })
+        razaoSocial_1: chance.word({ syllables: 1 })
     }
 
     beforeEach('', () => {

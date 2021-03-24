@@ -689,3 +689,21 @@ Cypress.Commands.add('cadastrarNovaSituação', () => {
     cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
     cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
 })
+
+Cypress.Commands.add('cadastrarCategoriaEPI', (categoria) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#nome').should('be.enabled').and('be.visible').type(categoria.categoriaEpi)
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('cadastrarTamanhoEPI', (tamanhoEpi) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#descricao').should('be.enabled').and('be.visible').type(tamanhoEpi.tamanhoEPI)
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('cadastrarMotivoSolicitacaoEpi', (dados) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#descricao').should('be.enabled').and('be.visible').type(dados.motivoSolicitacao)
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+})

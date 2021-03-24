@@ -1,10 +1,8 @@
-import { Chance } from 'chance';
-
 describe('Tentativas de Login', () => {
-    const chance = new Chance()
 
     const user = {
         nome: chance.name(),
+        senha: '1234',
         newsenha: chance.word({ length: 5 }),
     }
 
@@ -59,7 +57,7 @@ describe('Tentativas de Login', () => {
         cy
             .insereUsuario(user.nome)
             .exec_sql("update parametrosdosistema set exibiralteracaoprimeiroacesso = true")
-            .login(user.nome, '1234')
+            .login(user.nome, user.senha)
             .alterarSenhaPrimeiroAcesso(user.newsenha)
             .successMsg('A senha foi alterada com sucesso!')
     });
