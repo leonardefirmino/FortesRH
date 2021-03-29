@@ -38,6 +38,10 @@ Cypress.Commands.add('infoMsg', (text) => {
     cy.get('#infoMsg').should('include.text', text).and('be.visible')
 })
 
+Cypress.Commands.add('errorMsg', (text) => {
+    cy.get('#errorMsg').should('include.text', text).and('be.visible')
+})
+
 Cypress.Commands.add('clicaBotaoContinuar', () => {
     cy
     .get(':nth-child(1) > .ui-button-text').should('exist').click()

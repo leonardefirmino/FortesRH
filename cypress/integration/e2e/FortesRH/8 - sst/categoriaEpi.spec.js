@@ -16,7 +16,6 @@ describe('Funcionalidade Categoria de EPI', () => {
     it('Inserção Categoria de EPI', () => {
         cy
             .cadastrarCategoriaEPI(dados)
-        cy.contains(dados.categoriaEpi).should('be.visible')
     });
 
     it('Edição Categoria de EPI', () => {

@@ -5,7 +5,8 @@ describe('Área Organizacional', () => {
 
     const areaOrganizacional = {
         area_nome: chance.name(),
-        area_nome2: chance.name()
+        area_nome2: chance.name(),
+        colaboradorNome: chance.name()
     }
     const areaOrg = {
         area_nome: chance.name(),
@@ -18,7 +19,7 @@ describe('Área Organizacional', () => {
         cy
             .inserirAreaOrganizacional(areaOrganizacional.area_nome2)
             .inserirSolicitacaoPessoal()
-            .insereColaborador('Helena de Troia')
+            .insereColaborador(areaOrganizacional.colaboradorNome)
             .navigate('/geral/areaOrganizacional/list.action')
 
     });

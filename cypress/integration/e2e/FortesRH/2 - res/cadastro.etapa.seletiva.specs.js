@@ -17,9 +17,7 @@ describe('Etapas Seletivas', () => {
     beforeEach('', () => {
         cy
             .insereEtapaSeletiva(etapa.nome2)
-            .visit('/captacao/etapaSeletiva/list.action')
-            .clicaBotaoContinuar()
-            .clicaBotaoEntendi()
+            .navigate('/captacao/etapaSeletiva/list.action')
     });
 
     it('Inserir Etapa Seletiva', () => {

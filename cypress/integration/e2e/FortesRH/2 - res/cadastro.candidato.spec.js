@@ -24,9 +24,7 @@ describe('Gerenciamento de Candidatos', () => {
 
     beforeEach('', () => {
         cy
-            .visit('/captacao/candidato/list.action')
-            .clicaBotaoContinuar()
-            .clicaBotaoEntendi()
+            .navigate('/captacao/candidato/list.action')
     });
     
     it('Inserir Candidato', () => {

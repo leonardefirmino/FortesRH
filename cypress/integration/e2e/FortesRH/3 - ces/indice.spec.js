@@ -27,10 +27,10 @@ describe('Indices', () => {
     });
 
     it('Inserir Indice Integrado com o Fortes Pessoal', () => {
-        cy.integraFortesPessoal()
-        cy.loginByApi()
-            .visit('/cargosalario/indice/list.action')
         cy
+            .integraFortesPessoal()
+            .loginByApi(Cypress.config('user_name'), Cypress.config('user_password'))
+            .visit('/cargosalario/indice/list.action')
             .infoMsg('A manutenção do Cadastro de Índices deve ser realizada no Fortes Pessoal.')
     });
 
@@ -56,4 +56,4 @@ describe('Indices', () => {
             .infoMsg('Índice excluído com sucesso.')
         cy.contains(dados.indice_nome2).should('not.exist')
     });
-})    
+})

@@ -180,8 +180,8 @@ Cypress.Commands.add("insereIndicesComHistorico", (indice_nome) => {
     )
 })
 
-Cypress.Commands.add("insereGrupoAC", (grupoAc_nome) => {
-    cy.exec_sql("insert into grupoac values (nextval('grupoac_sequence'), '999', '" + grupoAc_nome + "', null, null, null, null)")
+Cypress.Commands.add("insereGrupoAC", (grupoAc) => {
+    cy.exec_sql("insert into grupoac values (nextval('grupoac_sequence'), '" + grupoAc.codigo + "', '" + grupoAc.descricao + "', null, null, null, null)")
 })
 
 Cypress.Commands.add('insereReajustePorColaborador', (nome_reajuste, status) => {

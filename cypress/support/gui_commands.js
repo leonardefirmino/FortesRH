@@ -1,4 +1,4 @@
-Cypress.Commands.add('loginByApi', () => {
+Cypress.Commands.add('loginByApi', (user, senha) => {
     cy.visit('/logout')
     return cy.request({
         url: `${Cypress.config("baseUrl")}` + '/login',
@@ -8,7 +8,7 @@ Cypress.Commands.add('loginByApi', () => {
         },
         referrer: `${Cypress.config("baseUrl")}` + '/login.action',
         referrerPolicy: "no-referrer-when-downgrade",
-        body: `username=${Cypress.config('user_name')}&password=${Cypress.config('user_password')}&j_empresa=${Cypress.config('company_id')}`,
+        body: `username=${user}&password=${senha}&j_empresa=${Cypress.config('company_id')}`,
         method: "POST",
         mode: "cors",
         credentials: "include",
@@ -114,8 +114,8 @@ Cypress.Commands.add('preencheDadosCandidato', candidato => {
     if (candidato.senha == null) {
         cy.log('Ignora')
     } else {
-        
-    cy.get('#naturalidade').should('be.enabled').clear().type(candidato.naturalidade)
+
+        cy.get('#naturalidade').should('be.enabled').clear().type(candidato.naturalidade)
         cy.get('#senha').should('be.enabled').clear().type(candidato.senha)
         cy.get('#comfirmaSenha').should('be.enabled').clear().type(candidato.senha)
     }
@@ -705,5 +705,75 @@ Cypress.Commands.add('cadastrarTamanhoEPI', (tamanhoEpi) => {
 Cypress.Commands.add('cadastrarMotivoSolicitacaoEpi', (dados) => {
     cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
     cy.get('#descricao').should('be.enabled').and('be.visible').type(dados.motivoSolicitacao)
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('alterarSenhaUsuario', (senha, newSenha, confSenha) => {
+
+    if (senha != '' || newSenha != '' || confSenha != '') {
+        cy.get('#senha').should('be.enabled').and('be.visible').type(senha)
+        cy.get('#novaSenha').should('be.enabled').and('be.visible').type(newSenha)
+        cy.get('#confSenha').should('be.enabled').and('be.visible').type(confSenha)
+        cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+    } else {
+        cy.get('#btnGravar').click()
+    }
+})
+
+Cypress.Commands.add('cadastrarEmpresa', (empresa) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.preencheEmpresa(empresa)
+})
+
+Cypress.Commands.add('preencheEmpresa', (empresa) => {
+    cy.get('#nome').clear().should('be.enabled').and('be.visible').type(empresa.companyName)
+    cy.get('#razao').should('be.enabled').and('be.visible').type(empresa.companyName)
+    cy.get('#uf').select(empresa.uf)
+    cy.get('#cidade').select(empresa.cidade)
+    cy.get('#cnpj').should('be.enabled').and('be.visible').type(empresa.cnpj)
+    cy.get('#remetente').should('be.enabled').and('be.visible').type(empresa.email)
+    cy.get('#respSetorPessoal').should('be.enabled').and('be.visible').type(empresa.email)
+    cy.get('#respRH').should('be.enabled').and('be.visible').type(empresa.email)
+    cy.get('#formulaTurnover').select('[(Admissões + Demissões / 2) / Ativos no final do mês anterior] * 100')
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('cadastrarCartao', (cartao) => {
+    cy.acao('Cartões', cartao.company)
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#tipoCartao').select(cartao.Tipo)
+    cy.get('#insert_cartao_ativo').select('Sim')
+    if (cartao.Tipo === 'Reconhecimento') {
+        cy.get('#anos').clear().type('10')
+    }
+
+    cy.get('#mensagem').clear().should('be.enabled').and('be.visible').type(cartao.Mensagem)
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('cadastrarGrupoAc', (grupoAc) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#descricao').clear().should('be.enabled').and('be.visible').type(grupoAc.descricao)
+    cy.get('#codigo').clear().should('be.enabled').and('be.visible').type(grupoAc.codigo)
+    cy.get('#acUsuario').clear().should('be.enabled').and('be.visible').type(grupoAc.usuario)
+    cy.get('#acSenha').clear().should('be.enabled').and('be.visible').type(grupoAc.senha)
+    cy.get('#acUrlSoap').clear().should('be.enabled').and('be.visible').type(grupoAc.soap)
+    cy.get('#acUrlWdsl').clear().should('be.enabled').and('be.visible').type(grupoAc.wdsl)
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('cadastrarUsuarioAutomatico', (usu) => {
+    cy.get('#btnCriarUsuariosAuto').should('be.enabled').and('be.visible').click()
+    cy.get('#senhaPadrao').clear().should('be.enabled').and('be.visible').type(usu.senha)
+    cy.get('#confirmaSenha').clear().should('be.enabled').and('be.visible').type(usu.senha)
+    cy.get('#btnCriarUsuarios').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('cadastrarUsuario', (usu) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#nome').clear().should('be.enabled').and('be.visible').type(usu.usu_nome)
+    cy.get('#login').clear().should('be.enabled').and('be.visible').type(usu.usu_nome)
+    cy.get('#senha').clear().should('be.enabled').and('be.visible').type(usu.senha)
+    cy.get('#confNovaSenha').clear().should('be.enabled').and('be.visible').type(usu.senha)
     cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
 })

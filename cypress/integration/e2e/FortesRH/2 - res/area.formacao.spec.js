@@ -11,7 +11,6 @@ describe('Funcionalidade Area de Formação', () => {
     beforeEach('', () => {
         cy
             .insereAreaFormacao(areaFormacao.nome)
-            .loginByApi()
             .navigate('/geral/areaFormacao/list.action')
     })
 

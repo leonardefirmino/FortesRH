@@ -28,9 +28,7 @@ describe('Analitycs de Recrutamento & Seleção', () => {
 
     beforeEach('', () => {
         cy
-            .visit('/indicador/duracaoPreenchimentoVaga/painel.action')
-            .clicaBotaoContinuar()
-            .clicaBotaoEntendi()
+            .navigate('/indicador/duracaoPreenchimentoVaga/painel.action')
     });
 
     it('Vagas Disponíveis', () => {

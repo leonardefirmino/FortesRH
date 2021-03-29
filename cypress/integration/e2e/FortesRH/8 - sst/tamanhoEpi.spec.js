@@ -16,14 +16,12 @@ describe('Funcionalidade Tamanho de EPI', () => {
     it('Inserção Tamanho de EPI', () => {
         cy
             .cadastrarTamanhoEPI(dados)
-        cy.contains(dados.tamanhoEPI).should('be.visible')
     });
 
     it('Edição Tamanho de EPI', () => {
         cy
             .acao('Editar', dados.tamanhoEPI2)
             .clicaBotao('Gravar')
-        cy.contains(dados.tamanhoEPI2).should('be.visible')
     });
 
     it('Exclusão Tamanho de EPI', () => {

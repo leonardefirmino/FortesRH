@@ -19,7 +19,7 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
             .navigate('/geral/colaborador/list.action')
     });
 
-    it('Desligar Talento', () => {
+    it.only('Desligar Talento', () => {
         cy.log('Passei por aqui')
         // .acao('Desligar talento', dados.colaboradorAtivo)
         //VERIFICAR PQ ESTÀ QUEBRANDO

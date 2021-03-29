@@ -35,7 +35,7 @@ beforeEach('', () => {
     const chance= new Chance()
     cy
         .reload_db()
-        .loginByApi()
+        .loginByApi(Cypress.config('user_name'), Cypress.config('user_password'))
 })
 
 afterEach('', () => {
