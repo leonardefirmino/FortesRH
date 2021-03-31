@@ -777,3 +777,55 @@ Cypress.Commands.add('cadastrarUsuario', (usu) => {
     cy.get('#confNovaSenha').clear().should('be.enabled').and('be.visible').type(usu.senha)
     cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
 })
+
+Cypress.Commands.add('desligarTalento', (talento) => {
+    cy.get('.fa-user-times').should('be.visible')
+    cy.exec_sql("select * from colaborador where nome = '" + talento.nome + "'").then(({ rows }) => rows[0].id).then(colaboradorId => {
+        cy.visit('/geral/colaborador/prepareDesliga.action?colaborador.id=' + colaboradorId + '&nomeBusca=&cpfBusc=')
+    });
+    cy.clicaBotaoContinuar()
+    cy.contains(talento.nome).should('be.visible')
+    cy.get('#data_button > .fa').trigger('mouseouver').click()
+    cy.contains('Hoje').should('be.visible').trigger('mouseouver').click()
+    cy.get('#motivoId').select('Justa Causa')
+    cy.get('#btnDesligarColaborador').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('importarEpi', (arquivo) => {
+    cy.get('#arquivo').should('be.visible').attachFile(arquivo.arquivo, { allowEmpty: true })
+    cy.get('#btnImportar').click()
+})
+
+Cypress.Commands.add('integraElore', (token) => {
+    if (token != null) {
+        cy.get('#tokenElore').clear().should('be.enabled').and('be.visible').type(token)
+    }
+    cy.get('#btnTestarConexao').should('be.enabled').and('be.visible').click()
+})
+
+Cypress.Commands.add('exportarParaColabore', (elore) => {
+    if (elore.areaMarcada === 'Não') {
+        cy.get('#btnPesquisar').click()
+    } else if (elore.areaMarcada === 'Sim' && elore.selecionaColaborador === 'Não') {
+        cy.get('#checkGroupareaIds1').check()
+        cy.get('#btnPesquisar').click()
+        cy.get('#exportarSelecionados').click()
+    } else {
+        cy.get('#checkGroupareaIds1').check()
+        cy.get('#statusExportacao').select(elore.status)
+        cy.get('#btnPesquisar').click()
+        cy.get('#checkExportacao').check()
+        cy.get('#exportarSelecionados').click()
+    }
+})
+
+Cypress.Commands.add('relacionarCandidato', () => {
+    cy.get('#relacionaAcao0').click()
+})
+
+Cypress.Commands.add('loggedIn', (user, password) => {
+    cy.get('#cpfRH').clear().should('be.enabled').and('be.visible').type(user)
+    cy.get('#senhaRH').clear().should('be.enabled').and('be.visible').type(password)
+    cy.get('#empresa').should('not.be.null')
+    cy.get('.btnEntrar').click()
+})

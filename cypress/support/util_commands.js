@@ -22,6 +22,14 @@ Cypress.Commands.add('clicaBotaoEntendi', () => {
     cy.get('.done').should('not.exist')
 })
 
+Cypress.Commands.add('warningMsgExterno', (text) => {
+    cy.get('#warnings').should('be.visible').and('contain', text)
+})
+
+Cypress.Commands.add('welcomeExterno', (text) => {
+    cy.get('#topDiv').should('be.visible').and('contain.text', text)
+})
+
 Cypress.Commands.add('errorMessageLogin', (text) => {
     cy.get('.txtErro').should('contain', text).and('be.visible')
 })
@@ -44,7 +52,7 @@ Cypress.Commands.add('errorMsg', (text) => {
 
 Cypress.Commands.add('clicaBotaoContinuar', () => {
     cy
-    .get(':nth-child(1) > .ui-button-text').should('exist').click()
+        .get(':nth-child(1) > .ui-button-text').should('exist').click()
 })
 
 Cypress.Commands.add('dialogMessageMesmoCPF', (text) => {

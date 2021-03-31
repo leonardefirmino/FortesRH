@@ -19,11 +19,12 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
             .navigate('/geral/colaborador/list.action')
     });
 
-    it.only('Desligar Talento', () => {
-        cy.log('Passei por aqui')
-        // .acao('Desligar talento', dados.colaboradorAtivo)
-        //VERIFICAR PQ ESTÀ QUEBRANDO
-
+    it('Desligar Talento', () => {
+        cy
+            .desligarTalento(dados)
+            .popUpMessage('Confirma desligamento?')
+            .successMsg('Talento desligado com sucesso.')
+        cy.contains(dados.nome).should('not.exist')
     });
 
     it('Cadastrar Talento', () => {
@@ -36,7 +37,7 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
     it('Tentativa de criar acesso ao sistema com empregado demitido', () => {
         cy
             .criarAcessoEmpregadoDemitido(dados)
-            cy.contains(`* O usuário tem referência com o talento ${dados.colaboradorDemitido}, que está desligado(a).`).should('be.visible')
+        cy.contains(`* O usuário tem referência com o talento ${dados.colaboradorDemitido}, que está desligado(a).`).should('be.visible')
 
     });
 
