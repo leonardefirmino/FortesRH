@@ -40,7 +40,7 @@ describe('Gerenciamento de Candidatos', () => {
         cy
             .insereColaborador('Helena de Troia')
             .cadastraCandidato(candidato)
-            .dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
+            .dialogMessageMesmoCPF(`Existem talentos que já foram contratados com esse CPF ${candidato.cpf}`)
             .successMsg('Operação efetuada com sucesso')
     });
 
@@ -48,7 +48,7 @@ describe('Gerenciamento de Candidatos', () => {
         cy
             .insereColaboradorDemitido('Helena de Troia')
             .cadastraCandidato(candidato)
-            .dialogMessageMesmoCPF('Existem talentos contratados com esse CPF')
+            .dialogMessageMesmoCPF(`Existem talentos que já foram contratados com esse CPF ${candidato.cpf}`)
             .successMsg('Operação efetuada com sucesso')
     });
 

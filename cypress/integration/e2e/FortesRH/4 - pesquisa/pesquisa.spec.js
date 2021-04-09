@@ -51,7 +51,7 @@ describe('Pesquisas', () => {
         cy.contains('1 colaboradores/registros. Respondeu Pesquisa: 1.0 (100,00 %). Não Respondeu: 0.0 (0,00 %)').should('be.visible')
     });
 
-    it('Responder Pesquisa Parcial-', () => {
+    it('Responder Pesquisa Parcial', () => {
         cy
             .ativaPaginacaoPesquisa()
             .PesquisaLiberadaCom50Perguntas(pesquisas.nome)

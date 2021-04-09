@@ -21,5 +21,6 @@
     "user_name": "homolog",
     "user_password": "s3creT-p@ssw0rd",
     "company": "Empresa Padrão",
-    "company_id": 1
+    "company_id": 1,
+    "experimentalStudio": true
 }

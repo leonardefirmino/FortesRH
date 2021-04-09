@@ -124,7 +124,7 @@ describe('Solicitação de Pessoal', () => {
     it('Contratar Candidatos na Solicitação de Pessoal', () => {
         cy
             .contrataCandidatoDaSolicitacao(solicitacao)
-        cy.contains('Deseja realmente contratar ' + solicitacao.candidato_name + ' ?').should('exist')
+        cy.contains(`Deseja realmente contratar ${solicitacao.candidato_name} ?`).should('exist')
         cy.confirmarDialogMessage('Contratar')
         cy.contains('Inserir Talento').should('exist')
     });

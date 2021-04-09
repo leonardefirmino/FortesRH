@@ -383,3 +383,18 @@ Cypress.Commands.add("inserirHistorico", (nome_etapa) => {
     cy.get('#apto').should('be.enabled').and('be.visible').select('Sim')
     cy.get('#btnGravar').should('be.visible').click()
 })
+
+Cypress.Commands.add("inserirEpi", (epi) => {
+    cy.exec_sql(
+        "insert into tipoepi values (nextval('tipoepi_sequence'), 'Teste', 1)",        
+        "insert into epi values (nextval('epi_sequence'), '" + epi.nome + "', 1, 1, false, true, null, null, false)",
+        "insert into epihistorico values (nextval('epihistorico_sequence'), '20', '31/12/2050', 30, '123456789', '01/01/2021', (select id from epi where nome = '" + epi.nome + "'), 'Nome', 'descriçã0', 'fabricante')",
+    )
+})
+
+Cypress.Commands.add("inserirSolicitacaoEpi", (epi) => {
+    cy.exec_sql(
+        "insert into solicitacaoepi values (nextval('solicitacaoepi_sequence'), '01/01/2021', (select id from colaborador where nome = '" + epi.nomeColaborador + "'), 1, 1,1)",
+        "insert into solicitacaoepi_item values (nextval('solicitacaoepi_item_sequence'), 1, 1, 10, null, null)"
+    )
+})

@@ -4,7 +4,7 @@ describe('Acompanhamento do Período de Experiencia', () => {
     const chance = new Chance()
 
     const colaborador = {
-        avaliacao: chance.sentence({words: 4}),
+        avaliacao: chance.sentence({ words: 4 }),
         nome: chance.name()
     }
 
@@ -16,8 +16,8 @@ describe('Acompanhamento do Período de Experiencia', () => {
 
     it('Inserir Acompanhamento do Período de Experiencia', () => {
         cy
-        .inseremodeloAvaliacaoPeriodoExperiencia(colaborador.avaliacao)
-        .responderAcompanhamentoPeriosoExperiencia(colaborador)
+            .inseremodeloAvaliacaoPeriodoExperiencia(colaborador.avaliacao)
+            .responderAcompanhamentoPeriosoExperiencia(colaborador)
         cy.contains('80%').should('be.visible')
     });
 });

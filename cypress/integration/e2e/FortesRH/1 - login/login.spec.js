@@ -11,15 +11,6 @@ describe('Tentativas de Login', () => {
             .visit('/logout.action')
     });
 
-    it('Login válido & Validação de Licença de uso (Remprot)', () => {
-        cy
-            .exec_sql("update parametrosdosistema set proximaversao = '2021-01-01'")
-            .login(Cypress.config('user_name'), Cypress.config('user_password'))
-            .validaURL('/index.action')
-            .validaEmpresaLogada(Cypress.config('company'))
-            .validaUsuarioLogado(Cypress.config('user_name'))
-    });
-
     it('Login usuário inválido', () => {
         cy
             .login(' ', Cypress.config('user_password'))
@@ -60,5 +51,14 @@ describe('Tentativas de Login', () => {
             .login(user.nome, user.senha)
             .alterarSenhaPrimeiroAcesso(user.newsenha)
             .successMsg('A senha foi alterada com sucesso!')
+    });
+
+    it('Login válido & Validação de Licença de uso (Remprot)', () => {
+        cy
+            .exec_sql("update parametrosdosistema set proximaversao = '2021-01-01'")
+            .login(Cypress.config('user_name'), Cypress.config('user_password'))
+            .validaURL('/index.action')
+            .validaEmpresaLogada(Cypress.config('company'))
+            .validaUsuarioLogado(Cypress.config('user_name'))
     });
 });

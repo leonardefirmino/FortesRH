@@ -21,14 +21,14 @@ Cypress.Commands.add('loginByApi', (user, senha) => {
 Cypress.Commands.add('login', (user, pass) => {
     cy.get('input[placeholder = "Usuário"]')
         .should('be.enabled').and('be.visible')
-        .clear().type(user)
+        .clear().type(user, { force: true })
 
     cy.get('input[placeholder = "Usuário"]')
         .should('not.be.null')
 
     cy.get('input[placeholder = "Senha"]')
         .should('be.enabled').and('be.visible')
-        .clear().type(pass)
+        .clear().type(pass, { force: true })
 
     cy.get('input[placeholder = "Senha"]')
         .should('not.be.null')
@@ -828,4 +828,56 @@ Cypress.Commands.add('loggedIn', (user, password) => {
     cy.get('#senhaRH').clear().should('be.enabled').and('be.visible').type(password)
     cy.get('#empresa').should('not.be.null')
     cy.get('.btnEntrar').click()
+})
+
+
+Cypress.Commands.add('solicitarEpi', (epi) => {
+    cy.contains('Inserir').click()
+    cy.contains('Pesquisar').click()
+    cy.get('#colaborador').select(epi.nomeColaborador + ' - 344.251.645-55')
+    cy.get('#data_button > .fa').trigger('mouseouver').click()
+    cy.contains('Hoje').should('be.visible').trigger('mouseouver').click()
+    cy.get('#check1').check()
+    cy.get('#selectQtdSolicitado_1').clear().should('be.enabled').and('be.visible').type('10')
+    cy.contains('Gravar').click()
+})
+
+Cypress.Commands.add('entregarEpi', (epi, epi2) => {
+    cy.acao('Entregar/Devolver', epi.nomeColaborador)
+    cy.get('.odd > :nth-child(3) > a').click()
+    cy.get('#dataEntrega').clear().type('06/04/2021')
+    cy.get('#qtdEntregue').clear().type(epi2)
+    cy.get('#epiHistoricoId').select('01/01/2021 - 123456789 - 30')
+    cy.get('#btnGravar').click()
+})
+
+Cypress.Commands.add('inserePdi', (dados) => {
+    cy
+        .acao('Inserir novo PDI', dados.nome)
+        .get('#dataPDI').clear().type(dados.data)
+        .get(':nth-child(1) > .ui-button-text').click()
+        .get('.title').click()
+        .get('#form-competencias > #wwgrp_competenciasCheck > #wwctrl_competenciasCheck > .listCheckBoxContainer > .listCheckBoxBarra > #mt').click()
+        .get('[aria-labelledby="ui-dialog-title-dialog-competencias"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > :nth-child(1) > .ui-button-text').click()
+        .get('[for="box-closed-1-C"] > .title > .fa').click()
+        .get('.outras').click()
+        .get('[aria-labelledby="ui-dialog-title-dialog-acao"] > #dialog-acao > #form-acao > #wwgrp_descricao > #wwctrl_descricao > #descricao').type('Descrição')
+        .get('[aria-labelledby="ui-dialog-title-dialog-acao"] > #dialog-acao > #form-acao > #wwgrp_peso > #wwctrl_peso > #peso').type('2')
+        .get('#inicio_0').clear().type(dados.data)
+        .get('[aria-labelledby="ui-dialog-title-dialog-acao"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > :nth-child(1) > .ui-button-text').click()
+        .get('[onclick="submit(2);"]').click()
+        .acao('Gerenciar', dados.data)
+        .get('[onclick="submit(1);"]').click()
+        .acao('Acompanhar', dados.data)
+        .get('.title > .fa').click()
+})
+
+Cypress.Commands.add('reajustePorTalento', (dados) => {
+    cy.get('#tabelaReajuste').select(dados.nome)
+    cy.get('#wwctrl_areasCheck > .listCheckBoxContainer > .listCheckBoxBarra > #mt').click()
+    cy.get('#wwctrl_estabelecimentosCheck > .listCheckBoxContainer > .listCheckBoxBarra > #mt').click()
+    cy.get('#valorDissidio').clear().type(dados.percentual)
+    cy.get('#btnGravar').click()
+    cy.successMsg('Solicitação de realinhamento gravado com sucesso.')
+    cy.get('#btnAplicar').click()
 })
