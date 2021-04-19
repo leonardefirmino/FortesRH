@@ -224,6 +224,35 @@ Cypress.Commands.add('inserirCandidatosSolicitacao', (solicitacao) => {
     cy.get('#btnInserirSelecionados').click()
 })
 
+Cypress.Commands.add('transferirCandidatoDaSolicitacao', (solicitacao) => {
+    cy.get('#labelLink').click()
+    cy.get('#codigoBusca').type('1')
+    cy.get('#btnPesquisar').click()
+    cy.get('#labelLink').click()
+
+    cy.get('#solicitacao').find(`td:contains("Analista de QA")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
+    cy.get('.odd > :nth-child(2)').then(($nomeCandidato) => {
+        const nomeCandidato = $nomeCandidato.text()
+        cy.get('#btnTransferirCandidatos').click()
+        cy.get('#md').click()
+        cy.get('#sol > tbody > .odd > [style="width: 30px; text-align: center;"] > input').click()
+        cy.get('#btnGravar').click()
+        
+        cy.successMsg('Candidatos+transferidos+com+sucesso.')
+        cy.contains(nomeCandidato).should('not.exist')
+
+        
+        cy.get('#btnVoltar').click()
+        cy.get('#labelLink').click()
+        cy.get('#codigoBusca').clear().type('2')
+        cy.get('#btnPesquisar').click()
+        cy.get('#labelLink').click()
+
+        cy.get('#solicitacao').find(`td:contains("Analista de Teste")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
+        cy.contains(nomeCandidato).should('exist')
+    })
+})
+
 Cypress.Commands.add('anunciarSolicitacao', (solicitacao) => {
     cy.get('#labelLink').click()
     cy.get('#descricaoBusca').type(solicitacao.descricao)

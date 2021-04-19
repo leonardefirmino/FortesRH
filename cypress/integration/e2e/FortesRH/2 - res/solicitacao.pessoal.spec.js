@@ -1,6 +1,6 @@
 import { Chance } from 'chance';
 
-describe('Solicitação de Pessoal', () => {
+describe.only('Solicitação de Pessoal', () => {
     const chance = new Chance()
 
     const solicitacao = {
@@ -150,5 +150,10 @@ describe('Solicitação de Pessoal', () => {
             .click()
         cy.contains('Em análise')
             .should('exist')
+    });
+
+    it.only('Transferir Candidatos Entre Solicitações', () => {
+        cy
+            .transferirCandidatoDaSolicitacao(solicitacao)
     });
 });
