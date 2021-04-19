@@ -155,5 +155,6 @@ describe.only('Solicitação de Pessoal', () => {
     it.only('Transferir Candidatos Entre Solicitações', () => {
         cy
             .transferirCandidatoDaSolicitacao(solicitacao)
+        cy.contains(solicitacao.candidato_name).should('exist')
     });
 });

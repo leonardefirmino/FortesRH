@@ -231,15 +231,16 @@ Cypress.Commands.add('transferirCandidatoDaSolicitacao', (solicitacao) => {
     cy.get('#labelLink').click()
 
     cy.get('#solicitacao').find(`td:contains("Analista de QA")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
-    cy.get('.odd > :nth-child(2)').then(($nomeCandidato) => {
-        const nomeCandidato = $nomeCandidato.text()
+    // cy.get('.odd > :nth-child(2)').then(($nomeCandidato) => {// como tava antes?
+
+    //     const nomeCandidato = $nomeCandidato.text() //esse é o pro , ai eu crio uma variavel pra guardar o nome do cara sem alterar e depois fazer a validação
         cy.get('#btnTransferirCandidatos').click()
         cy.get('#md').click()
         cy.get('#sol > tbody > .odd > [style="width: 30px; text-align: center;"] > input').click()
         cy.get('#btnGravar').click()
         
         cy.successMsg('Candidatos+transferidos+com+sucesso.')
-        cy.contains(nomeCandidato).should('not.exist')
+        cy.contains(solicitacao.candidato_name).should('not.exist') // só que assim ele gera outro nome diferente do que é criado no before do spec
 
         
         cy.get('#btnVoltar').click()
@@ -249,8 +250,7 @@ Cypress.Commands.add('transferirCandidatoDaSolicitacao', (solicitacao) => {
         cy.get('#labelLink').click()
 
         cy.get('#solicitacao').find(`td:contains("Analista de Teste")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
-        cy.contains(nomeCandidato).should('exist')
-    })
+        cy.contains(solicitacao.candidato_name).should('exist')
 })
 
 Cypress.Commands.add('anunciarSolicitacao', (solicitacao) => {
