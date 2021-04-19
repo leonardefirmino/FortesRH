@@ -4,6 +4,7 @@ describe('Tentativas de Login', () => {
         nome: chance.name(),
         senha: '1234',
         newsenha: chance.word({ length: 5 }),
+        mensagem: 'Usuário sem permissão de acesso'
     }
 
     beforeEach('', () => {
@@ -14,27 +15,27 @@ describe('Tentativas de Login', () => {
     it('Login usuário inválido', () => {
         cy
             .login(' ', Cypress.config('user_password'))
-            .errorMessageLogin('Usuário sem permissão de acesso')
+            .errorMessageLogin(user.mensagem)
     });
 
     it('Login senha inválida', () => {
         cy
             .login(Cypress.config('user_name'), ' ')
-            .errorMessageLogin('Usuário sem permissão de acesso')
+            .errorMessageLogin(user.mensagem)
     });
 
     it('valida Captcha', () => {
         cy
             .exec_sql('update parametrosdosistema set utilizarcaptchanologin = true;')
             .login(Cypress.config('user_name'), Cypress.config('user_password'))
-            .errorMessageLogin('Usuário sem permissão de acesso')
+            .errorMessageLogin(user.mensagem)
     });
 
     it('Usuario Expirado', () => {
         cy
             .exec_sql("update usuario set expiracao = '01/01/2000' where login = '" + Cypress.config('user_name') + "'")
             .login(Cypress.config('user_name'), Cypress.config('user_password'))
-            .errorMessageLogin('Usuário sem permissão de acesso')
+            .errorMessageLogin(user.mensagem)
     });
 
     it('Sessão Expirada', () => {

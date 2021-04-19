@@ -19,11 +19,12 @@ Cypress.Commands.add('loginByApi', (user, senha) => {
 })
 
 Cypress.Commands.add('login', (user, pass) => {
-    cy.get('input[placeholder = "Usuário"]')
+    cy.get('#username')
         .should('be.enabled').and('be.visible')
+        .and('have.attr', 'placeholder', 'Usuário')
         .clear().type(user, { force: true })
 
-    cy.get('input[placeholder = "Usuário"]')
+        cy.get('#username')
         .should('not.be.null')
 
     cy.get('input[placeholder = "Senha"]')
@@ -119,7 +120,12 @@ Cypress.Commands.add('preencheDadosCandidato', candidato => {
         cy.get('#senha').should('be.enabled').clear().type(candidato.senha)
         cy.get('#comfirmaSenha').should('be.enabled').clear().type(candidato.senha)
     }
+})
 
+Cypress.Commands.add('atualizarDados', () => {
+    cy
+        .insereFormacao()
+    cy.get('#gravar').click()
 })
 
 Cypress.Commands.add('insereFormacao', () => {
