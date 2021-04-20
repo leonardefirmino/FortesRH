@@ -151,4 +151,9 @@ describe('Solicitação de Pessoal', () => {
         cy.contains('Em análise')
             .should('exist')
     });
+
+    it('Transferir Candidatos Entre Solicitações', () => {
+        cy
+            .transferirCandidatoDaSolicitacao(solicitacao)
+    });
 });
