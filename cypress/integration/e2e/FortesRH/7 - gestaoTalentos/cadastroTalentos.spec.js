@@ -34,7 +34,7 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
 
     });
 
-    it.only('Tentativa de criar acesso ao sistema com empregado demitido', () => {
+    it('Tentativa de criar acesso ao sistema com empregado demitido', () => {
         cy
             .criarAcessoEmpregadoDemitido(dados)
         cy.contains(`* O usuário tem referência com o talento ${dados.colaboradorDemitido}, que está desligado(a).`).should('be.visible')

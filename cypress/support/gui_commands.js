@@ -226,31 +226,26 @@ Cypress.Commands.add('inserirCandidatosSolicitacao', (solicitacao) => {
 
 Cypress.Commands.add('transferirCandidatoDaSolicitacao', (solicitacao) => {
     cy.get('#labelLink').click()
-    cy.get('#codigoBusca').type('1')
-    cy.get('#btnPesquisar').click()
+    cy.get('#codigoBusca').clear().should('be.enabled').and('be.visible').type('1')
+    cy.get('#btnPesquisar').should('be.enabled').and('be.visible').click()
     cy.get('#labelLink').click()
 
     cy.get('#solicitacao').find(`td:contains("Analista de QA")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
-    // cy.get('.odd > :nth-child(2)').then(($nomeCandidato) => {// como tava antes?
+    cy.get('#btnTransferirCandidatos').should('be.enabled').and('be.visible').click()
+    cy.get('#md').click()
+    cy.get('#sol > tbody > .odd > [style="width: 30px; text-align: center;"] > input').click()
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
 
-    //     const nomeCandidato = $nomeCandidato.text() //esse é o pro , ai eu crio uma variavel pra guardar o nome do cara sem alterar e depois fazer a validação
-        cy.get('#btnTransferirCandidatos').click()
-        cy.get('#md').click()
-        cy.get('#sol > tbody > .odd > [style="width: 30px; text-align: center;"] > input').click()
-        cy.get('#btnGravar').click()
-        
-        cy.successMsg('Candidatos+transferidos+com+sucesso.')
-        cy.contains(solicitacao.candidato_name).should('not.exist') // só que assim ele gera outro nome diferente do que é criado no before do spec
+    cy.successMsg('Candidatos transferidos com sucesso.')
+    cy.contains(solicitacao.candidato_externo).should('not.exist')
 
-        
-        cy.get('#btnVoltar').click()
-        cy.get('#labelLink').click()
-        cy.get('#codigoBusca').clear().type('2')
-        cy.get('#btnPesquisar').click()
-        cy.get('#labelLink').click()
+    cy.get('#btnVoltar').should('be.enabled').and('be.visible').click()
+    cy.get('#labelLink').click()
+    cy.get('#codigoBusca').clear().should('be.enabled').and('be.visible').type('2')
+    cy.get('#btnPesquisar').should('be.enabled').and('be.visible').click()
 
-        cy.get('#solicitacao').find(`td:contains("Analista de Teste")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
-        cy.contains(solicitacao.candidato_name).should('exist')
+    cy.get('#solicitacao').find(`td:contains("Analista de Teste")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
+    cy.contains(solicitacao.candidato_externo).should('exist')
 })
 
 Cypress.Commands.add('anunciarSolicitacao', (solicitacao) => {
