@@ -1,5 +1,3 @@
-import { Chance } from 'chance';
-
 describe('Funcionalidade Area de Formação', () => {
     const chance = new Chance()
 

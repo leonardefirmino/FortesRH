@@ -1,5 +1,4 @@
 describe('Funcionalidade Tamanho de EPI', () => {
-
     const dados = {
         tamanhoEPI: chance.letter(),
         tamanhoEPI2: chance.letter(),

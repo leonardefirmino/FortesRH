@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Cadastros de Nível de Competencia', () => {
-    const chance = new Chance()
-
     const nivel = {
         nome: chance.sentence({ words: 5 }),
         historico_peso: chance.integer({ min: 50, max: 100 }),

@@ -398,3 +398,11 @@ Cypress.Commands.add("inserirSolicitacaoEpi", (epi) => {
         "insert into solicitacaoepi_item values (nextval('solicitacaoepi_item_sequence'), 1, 1, 10, null, null)"
     )
 })
+
+Cypress.Commands.add("insereOcorrencia", (ocorrencia) => {
+    cy.exec_sql("insert into ocorrencia values (nextval('ocorrencia_sequence'), '" + ocorrencia + "', 0, null, false, (select id from empresa where nome = 'Empresa Padrão'), false, true)")
+})
+
+Cypress.Commands.add("insereOcorrenciaColaborador", (ocorrencia) => {
+    cy.exec_sql("insert into colaboradorocorrencia values (nextval('colaboradorocorrencia_sequence'), '01/01/2021', '01/01/2021', null, (select id from colaborador where nome = '"+ ocorrencia.colaborador_nome + "'), (select id from ocorrencia where descricao = '"+ ocorrencia.nome + "'), null)")
+})

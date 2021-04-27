@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Solicitação de Pessoal', () => {
-    const chance = new Chance()
-
     const solicitacao = {
         candidato_name: chance.name(),
         candidato_externo: chance.name(),

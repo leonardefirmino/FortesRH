@@ -69,6 +69,5 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         cy
             .acao('Visualizar Progressão', dados.nome)
             .cadastrarNovaSituação()
-
     });
 });

@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Pesquisas', () => {
-    const chance = new Chance()
-
     const pesquisas = {
         nome: chance.sentence({ words: 3 }),
         data_inicial: '01/10/2020',

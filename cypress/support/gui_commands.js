@@ -29,7 +29,7 @@ Cypress.Commands.add('login', (user, pass) => {
 
     cy.get('input[placeholder = "Senha"]')
         .should('be.enabled').and('be.visible')
-        .clear().type(pass, { force: true })
+        .clear().type(pass, { force: true }, {log: false})
 
     cy.get('input[placeholder = "Senha"]')
         .should('not.be.null')
@@ -910,4 +910,18 @@ Cypress.Commands.add('reajustePorTalento', (dados) => {
     cy.get('#btnGravar').click()
     cy.successMsg('Solicitação de realinhamento gravado com sucesso.')
     cy.get('#btnAplicar').click()
+})
+
+Cypress.Commands.add('cadastrarOcorrenciaNova', (ocorrencia) => {
+    cy.get('#btnPesquisar').should('be.visible').and('be.enabled').click()
+    cy.cadastrarOcorrencia(ocorrencia)
+})
+
+Cypress.Commands.add('cadastrarOcorrencia', (ocorrencia) => {
+    cy.get('#colab').select(ocorrencia.colaborador_nome)
+    cy.get('#btnInserir').should('be.visible').and('be.enabled').click()
+    cy.get('#ocorrencia').select(ocorrencia.name)
+    cy.get('#dataIni').should('be.visible').and('be.enabled').clear().type(ocorrencia.data)
+    cy.get('#dataFim').should('be.visible').and('be.enabled').clear().type(ocorrencia.data)
+    cy.get('#btnGravar').should('be.visible').and('be.enabled').click()
 })

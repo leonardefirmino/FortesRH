@@ -1,7 +1,6 @@
-import { Chance } from 'chance';
+
 
 describe('Analitycs de Recrutamento & Seleção', () => {
-    const chance = new Chance()
 
     const dados = {
         etapaSeletiva: chance.name(),

@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 9.5.23
--- Dumped by pg_dump version 9.5.23
+-- Dumped by pg_dump version 12.6 (Ubuntu 12.6-0ubuntu0.20.04.1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -6009,13 +6009,6 @@ ALTER TABLE public.acaopdi DISABLE TRIGGER ALL;
 ALTER TABLE public.acaopdi ENABLE TRIGGER ALL;
 
 --
--- Name: acaopdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.acaopdi_sequence', 1, false);
-
-
---
 -- Data for Name: acintegraaudita; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6036,13 +6029,6 @@ ALTER TABLE public.acompanhamentoacaopdi DISABLE TRIGGER ALL;
 ALTER TABLE public.acompanhamentoacaopdi ENABLE TRIGGER ALL;
 
 --
--- Name: acompanhamentoacaopdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.acompanhamentoacaopdi_sequence', 1, false);
-
-
---
 -- Data for Name: acompanhamentopdi; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6053,13 +6039,6 @@ ALTER TABLE public.acompanhamentopdi DISABLE TRIGGER ALL;
 ALTER TABLE public.acompanhamentopdi ENABLE TRIGGER ALL;
 
 --
--- Name: acompanhamentopdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.acompanhamentopdi_sequence', 1, false);
-
-
---
 -- Data for Name: afastamento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6068,13 +6047,6 @@ ALTER TABLE public.afastamento DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.afastamento ENABLE TRIGGER ALL;
-
---
--- Name: afastamento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.afastamento_sequence', 1, false);
-
 
 --
 -- Data for Name: evento; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6095,13 +6067,6 @@ ALTER TABLE public.agenda DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.agenda ENABLE TRIGGER ALL;
-
---
--- Name: agenda_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.agenda_sequence', 1, false);
-
 
 --
 -- Data for Name: agentecausadoracidentetrabalho; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6362,20 +6327,6 @@ INSERT INTO public.agentecausadoracidentetrabalho (id, codigo, descricao) VALUES
 ALTER TABLE public.agentecausadoracidentetrabalho ENABLE TRIGGER ALL;
 
 --
--- Name: agentecausadoracidentetrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.agentecausadoracidentetrabalho_sequence', 248, true);
-
-
---
--- Name: ambiente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.ambiente_sequence', 1, false);
-
-
---
 -- Data for Name: anexo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6384,13 +6335,6 @@ ALTER TABLE public.anexo DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.anexo ENABLE TRIGGER ALL;
-
---
--- Name: anexo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.anexo_sequence', 1, false);
-
 
 --
 -- Data for Name: anuncio; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6403,13 +6347,6 @@ ALTER TABLE public.anuncio DISABLE TRIGGER ALL;
 ALTER TABLE public.anuncio ENABLE TRIGGER ALL;
 
 --
--- Name: anuncio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.anuncio_sequence', 1, false);
-
-
---
 -- Data for Name: aproveitamentoavaliacaocurso; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6418,13 +6355,6 @@ ALTER TABLE public.aproveitamentoavaliacaocurso DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.aproveitamentoavaliacaocurso ENABLE TRIGGER ALL;
-
---
--- Name: aproveitamentoavaliacaocurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.aproveitamentoavaliacaocurso_sequence', 1, false);
-
 
 --
 -- Data for Name: areaformacao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6511,13 +6441,6 @@ INSERT INTO public.areaformacao (id, nome) VALUES (74, 'Zootecnia');
 ALTER TABLE public.areaformacao ENABLE TRIGGER ALL;
 
 --
--- Name: areaformacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.areaformacao_sequence', 75, false);
-
-
---
 -- Data for Name: areainteresse; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6536,13 +6459,6 @@ ALTER TABLE public.areainteresse_areaorganizacional DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.areainteresse_areaorganizacional ENABLE TRIGGER ALL;
-
---
--- Name: areainteresse_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.areainteresse_sequence', 1, false);
-
 
 --
 -- Data for Name: areaorganizacional_coresponsavel; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6565,13 +6481,6 @@ ALTER TABLE public.areaorganizacional_responsavel DISABLE TRIGGER ALL;
 ALTER TABLE public.areaorganizacional_responsavel ENABLE TRIGGER ALL;
 
 --
--- Name: areaorganizacional_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.areaorganizacional_sequence', 1, false);
-
-
---
 -- Data for Name: areavivencia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6580,13 +6489,6 @@ ALTER TABLE public.areavivencia DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.areavivencia ENABLE TRIGGER ALL;
-
---
--- Name: areavivencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.areavivencia_sequence', 1, false);
-
 
 --
 -- Data for Name: obra; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6619,13 +6521,6 @@ ALTER TABLE public.areavivenciapcmat DISABLE TRIGGER ALL;
 ALTER TABLE public.areavivenciapcmat ENABLE TRIGGER ALL;
 
 --
--- Name: areavivenciapcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.areavivenciapcmat_sequence', 1, false);
-
-
---
 -- Data for Name: aspecto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6634,13 +6529,6 @@ ALTER TABLE public.aspecto DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.aspecto ENABLE TRIGGER ALL;
-
---
--- Name: aspecto_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.aspecto_sequence', 1, false);
-
 
 --
 -- Data for Name: atitude; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6673,13 +6561,6 @@ ALTER TABLE public.atitude_curso DISABLE TRIGGER ALL;
 ALTER TABLE public.atitude_curso ENABLE TRIGGER ALL;
 
 --
--- Name: atitude_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.atitude_sequence', 1, false);
-
-
---
 -- Data for Name: atividadesegurancapcmat; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6688,13 +6569,6 @@ ALTER TABLE public.atividadesegurancapcmat DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.atividadesegurancapcmat ENABLE TRIGGER ALL;
-
---
--- Name: atividadesegurancapcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.atividadesegurancapcmat_sequence', 1, false);
-
 
 --
 -- Data for Name: auditoria; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6707,27 +6581,6 @@ ALTER TABLE public.auditoria DISABLE TRIGGER ALL;
 ALTER TABLE public.auditoria ENABLE TRIGGER ALL;
 
 --
--- Name: auditoria_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.auditoria_sequence', 1, false);
-
-
---
--- Name: avaliacaocurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.avaliacaocurso_sequence', 1, false);
-
-
---
--- Name: avaliacaodesempenho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.avaliacaodesempenho_sequence', 1, false);
-
-
---
 -- Data for Name: avaliacaopratica; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6736,13 +6589,6 @@ ALTER TABLE public.avaliacaopratica DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.avaliacaopratica ENABLE TRIGGER ALL;
-
---
--- Name: avaliacaopratica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.avaliacaopratica_sequence', 1, false);
-
 
 --
 -- Data for Name: avaliacaoturma; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6755,13 +6601,6 @@ ALTER TABLE public.avaliacaoturma DISABLE TRIGGER ALL;
 ALTER TABLE public.avaliacaoturma ENABLE TRIGGER ALL;
 
 --
--- Name: avaliacaoturma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.avaliacaoturma_sequence', 1, false);
-
-
---
 -- Data for Name: bairro; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6772,13 +6611,6 @@ ALTER TABLE public.bairro DISABLE TRIGGER ALL;
 ALTER TABLE public.bairro ENABLE TRIGGER ALL;
 
 --
--- Name: bairro_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.bairro_sequence', 1, false);
-
-
---
 -- Data for Name: beneficio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6787,20 +6619,6 @@ ALTER TABLE public.beneficio DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.beneficio ENABLE TRIGGER ALL;
-
---
--- Name: beneficio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.beneficio_sequence', 1, false);
-
-
---
--- Name: camposextras_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.camposextras_sequence', 1, false);
-
 
 --
 -- Data for Name: candidato_areainteresse; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6843,13 +6661,6 @@ ALTER TABLE public.candidato_conhecimento DISABLE TRIGGER ALL;
 ALTER TABLE public.candidato_conhecimento ENABLE TRIGGER ALL;
 
 --
--- Name: candidato_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.candidato_sequence', 1, false);
-
-
---
 -- Data for Name: candidatocurriculo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6858,13 +6669,6 @@ ALTER TABLE public.candidatocurriculo DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.candidatocurriculo ENABLE TRIGGER ALL;
-
---
--- Name: candidatocurriculo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.candidatocurriculo_sequence', 1, false);
-
 
 --
 -- Data for Name: eleicao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6885,13 +6689,6 @@ ALTER TABLE public.candidatoeleicao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.candidatoeleicao ENABLE TRIGGER ALL;
-
---
--- Name: candidatoeleicao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.candidatoeleicao_sequence', 1, false);
-
 
 --
 -- Data for Name: idioma; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -6919,13 +6716,6 @@ ALTER TABLE public.candidatoidioma DISABLE TRIGGER ALL;
 ALTER TABLE public.candidatoidioma ENABLE TRIGGER ALL;
 
 --
--- Name: candidatoidioma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.candidatoidioma_sequence', 1, false);
-
-
---
 -- Data for Name: candidatosolicitacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -6934,13 +6724,6 @@ ALTER TABLE public.candidatosolicitacao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.candidatosolicitacao ENABLE TRIGGER ALL;
-
---
--- Name: candidatosolicitacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.candidatosolicitacao_sequence', 1, false);
-
 
 --
 -- Data for Name: cargo_areaformacao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -7023,13 +6806,6 @@ ALTER TABLE public.cargo_habilidade DISABLE TRIGGER ALL;
 ALTER TABLE public.cargo_habilidade ENABLE TRIGGER ALL;
 
 --
--- Name: cargo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.cargo_sequence', 1, false);
-
-
---
 -- Data for Name: cartao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -7039,13 +6815,6 @@ INSERT INTO public.cartao (id, imgurl, mensagem, tipocartao, empresa_id, anos, n
 
 
 ALTER TABLE public.cartao ENABLE TRIGGER ALL;
-
---
--- Name: cartao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.cartao_sequence', 1, true);
-
 
 --
 -- Data for Name: codificacaoacidentetrabalho; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -7682,13 +7451,6 @@ ALTER TABLE public.cat_parteatingida DISABLE TRIGGER ALL;
 ALTER TABLE public.cat_parteatingida ENABLE TRIGGER ALL;
 
 --
--- Name: cat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.cat_sequence', 1, false);
-
-
---
 -- Data for Name: cat_situacaogeradoradoencaprofissional; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -7697,13 +7459,6 @@ ALTER TABLE public.cat_situacaogeradoradoencaprofissional DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.cat_situacaogeradoradoencaprofissional ENABLE TRIGGER ALL;
-
---
--- Name: categoriacurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.categoriacurso_sequence', 1, false);
-
 
 --
 -- Data for Name: certificacao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -7726,13 +7481,6 @@ ALTER TABLE public.certificacao_avaliacaopratica DISABLE TRIGGER ALL;
 ALTER TABLE public.certificacao_avaliacaopratica ENABLE TRIGGER ALL;
 
 --
--- Name: certificacao_avaliacaopratica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.certificacao_avaliacaopratica_sequence', 1, false);
-
-
---
 -- Data for Name: certificacao_curso; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -7741,20 +7489,6 @@ ALTER TABLE public.certificacao_curso DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.certificacao_curso ENABLE TRIGGER ALL;
-
---
--- Name: certificacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.certificacao_sequence', 1, false);
-
-
---
--- Name: certificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.certificado_sequence', 1, false);
-
 
 --
 -- Data for Name: cid; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -22000,13 +21734,6 @@ INSERT INTO public.cid (codigo, descricao) VALUES ('U99', 'CID 10ª Revisão nã
 ALTER TABLE public.cid ENABLE TRIGGER ALL;
 
 --
--- Name: cidade_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.cidade_sequence', 5508, true);
-
-
---
 -- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -22015,13 +21742,6 @@ ALTER TABLE public.cliente DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.cliente ENABLE TRIGGER ALL;
-
---
--- Name: cliente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.cliente_sequence', 1, false);
-
 
 --
 -- Data for Name: clinicaautorizada; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -23488,20 +23208,6 @@ ALTER TABLE public.clinicaautorizada_exame DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.clinicaautorizada_exame ENABLE TRIGGER ALL;
-
---
--- Name: clinicaautorizada_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.clinicaautorizada_sequence', 1, false);
-
-
---
--- Name: codificacaoacidentetrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.codificacaoacidentetrabalho_sequence', 22, true);
-
 
 --
 -- Data for Name: codigocbo; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28515,13 +28221,6 @@ INSERT INTO public.codigocbo2009 (codigo, descricao, efeitocalculoaprendiz) VALU
 ALTER TABLE public.codigocbo2009 ENABLE TRIGGER ALL;
 
 --
--- Name: colaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaborador_sequence', 1, false);
-
-
---
 -- Data for Name: colaboradorafastamento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28530,13 +28229,6 @@ ALTER TABLE public.colaboradorafastamento DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.colaboradorafastamento ENABLE TRIGGER ALL;
-
---
--- Name: colaboradorafastamento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorafastamento_sequence', 1, false);
-
 
 --
 -- Data for Name: colaboradorcertificacao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28559,13 +28251,6 @@ ALTER TABLE public.colaboradoravaliacaopratica DISABLE TRIGGER ALL;
 ALTER TABLE public.colaboradoravaliacaopratica ENABLE TRIGGER ALL;
 
 --
--- Name: colaboradoravaliacaopratica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradoravaliacaopratica_sequence', 1, false);
-
-
---
 -- Data for Name: colaboradorcertificacao_colaboradorturma; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28576,13 +28261,6 @@ ALTER TABLE public.colaboradorcertificacao_colaboradorturma DISABLE TRIGGER ALL;
 ALTER TABLE public.colaboradorcertificacao_colaboradorturma ENABLE TRIGGER ALL;
 
 --
--- Name: colaboradorcertificacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorcertificacao_sequence', 1, false);
-
-
---
 -- Data for Name: colaboradoridioma; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28591,13 +28269,6 @@ ALTER TABLE public.colaboradoridioma DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.colaboradoridioma ENABLE TRIGGER ALL;
-
---
--- Name: colaboradoridioma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradoridioma_sequence', 1, false);
-
 
 --
 -- Data for Name: ocorrencia; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28630,13 +28301,6 @@ ALTER TABLE public.colaboradorocorrencia DISABLE TRIGGER ALL;
 ALTER TABLE public.colaboradorocorrencia ENABLE TRIGGER ALL;
 
 --
--- Name: colaboradorocorrencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorocorrencia_sequence', 1, false);
-
-
---
 -- Data for Name: colaboradorperiodoexperienciaavaliacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28645,13 +28309,6 @@ ALTER TABLE public.colaboradorperiodoexperienciaavaliacao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.colaboradorperiodoexperienciaavaliacao ENABLE TRIGGER ALL;
-
---
--- Name: colaboradorperiodoexperienciaavaliacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorperiodoexperienciaavaliacao_sequence', 1, false);
-
 
 --
 -- Data for Name: diaturma; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28672,20 +28329,6 @@ ALTER TABLE public.colaboradorpresenca DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.colaboradorpresenca ENABLE TRIGGER ALL;
-
---
--- Name: colaboradorpresenca_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorpresenca_sequence', 1, false);
-
-
---
--- Name: colaboradorquestionario_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorquestionario_sequence', 1, false);
-
 
 --
 -- Data for Name: pergunta; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28718,20 +28361,6 @@ ALTER TABLE public.colaboradorresposta DISABLE TRIGGER ALL;
 ALTER TABLE public.colaboradorresposta ENABLE TRIGGER ALL;
 
 --
--- Name: colaboradorresposta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorresposta_sequence', 1, false);
-
-
---
--- Name: colaboradorturma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.colaboradorturma_sequence', 1, false);
-
-
---
 -- Data for Name: comissao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28742,13 +28371,6 @@ ALTER TABLE public.comissao DISABLE TRIGGER ALL;
 ALTER TABLE public.comissao ENABLE TRIGGER ALL;
 
 --
--- Name: comissao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comissao_sequence', 1, false);
-
-
---
 -- Data for Name: comissaoeleicao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28757,13 +28379,6 @@ ALTER TABLE public.comissaoeleicao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.comissaoeleicao ENABLE TRIGGER ALL;
-
---
--- Name: comissaoeleicao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comissaoeleicao_sequence', 1, false);
-
 
 --
 -- Data for Name: comissaoperiodo; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28786,20 +28401,6 @@ ALTER TABLE public.comissaomembro DISABLE TRIGGER ALL;
 ALTER TABLE public.comissaomembro ENABLE TRIGGER ALL;
 
 --
--- Name: comissaomembro_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comissaomembro_sequence', 1, false);
-
-
---
--- Name: comissaoperiodo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comissaoperiodo_sequence', 1, false);
-
-
---
 -- Data for Name: comissaoplanotrabalho; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28808,13 +28409,6 @@ ALTER TABLE public.comissaoplanotrabalho DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.comissaoplanotrabalho ENABLE TRIGGER ALL;
-
---
--- Name: comissaoplanotrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comissaoplanotrabalho_sequence', 1, false);
-
 
 --
 -- Data for Name: comissaoreuniao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28827,13 +28421,6 @@ ALTER TABLE public.comissaoreuniao DISABLE TRIGGER ALL;
 ALTER TABLE public.comissaoreuniao ENABLE TRIGGER ALL;
 
 --
--- Name: comissaoreuniao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comissaoreuniao_sequence', 1, false);
-
-
---
 -- Data for Name: comissaoreuniaopresenca; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28844,27 +28431,6 @@ ALTER TABLE public.comissaoreuniaopresenca DISABLE TRIGGER ALL;
 ALTER TABLE public.comissaoreuniaopresenca ENABLE TRIGGER ALL;
 
 --
--- Name: comissaoreuniaopresenca_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comissaoreuniaopresenca_sequence', 1, false);
-
-
---
--- Name: comoficousabendovaga_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.comoficousabendovaga_sequence', 2, false);
-
-
---
--- Name: competenciapdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.competenciapdi_sequence', 1, false);
-
-
---
 -- Data for Name: composicaosesmt; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28873,20 +28439,6 @@ ALTER TABLE public.composicaosesmt DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.composicaosesmt ENABLE TRIGGER ALL;
-
---
--- Name: composicaosesmt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.composicaosesmt_sequence', 1, false);
-
-
---
--- Name: confighistoriconivel_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.confighistoriconivel_sequence', 1, false);
-
 
 --
 -- Data for Name: configuracaocampoextra; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28931,13 +28483,6 @@ INSERT INTO public.configuracaocampoextra (id, ativocolaborador, ativocandidato,
 ALTER TABLE public.configuracaocampoextra ENABLE TRIGGER ALL;
 
 --
--- Name: configuracaocampoextra_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaocampoextra_sequence', 33, false);
-
-
---
 -- Data for Name: configuracaocampoextravisivelobrigadotorio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28946,13 +28491,6 @@ ALTER TABLE public.configuracaocampoextravisivelobrigadotorio DISABLE TRIGGER AL
 
 
 ALTER TABLE public.configuracaocampoextravisivelobrigadotorio ENABLE TRIGGER ALL;
-
---
--- Name: configuracaocampoextravisivelobrigadotorio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaocampoextravisivelobrigadotorio_sequence', 1, false);
-
 
 --
 -- Data for Name: configuracaocompetenciaavaliacaodesempenho; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28965,13 +28503,6 @@ ALTER TABLE public.configuracaocompetenciaavaliacaodesempenho DISABLE TRIGGER AL
 ALTER TABLE public.configuracaocompetenciaavaliacaodesempenho ENABLE TRIGGER ALL;
 
 --
--- Name: configuracaocompetenciaavaliacaodesempenho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaocompetenciaavaliacaodesempenho_sequence', 1, false);
-
-
---
 -- Data for Name: configuracaoimpressaocurriculo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -28980,13 +28511,6 @@ ALTER TABLE public.configuracaoimpressaocurriculo DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.configuracaoimpressaocurriculo ENABLE TRIGGER ALL;
-
---
--- Name: configuracaoimpressaocurriculo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaoimpressaocurriculo_sequence', 1, false);
-
 
 --
 -- Data for Name: configuracaolimitecolaborador; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -28999,34 +28523,6 @@ ALTER TABLE public.configuracaolimitecolaborador DISABLE TRIGGER ALL;
 ALTER TABLE public.configuracaolimitecolaborador ENABLE TRIGGER ALL;
 
 --
--- Name: configuracaolimitecolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaolimitecolaborador_sequence', 1, false);
-
-
---
--- Name: configuracaonivelcompetencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaonivelcompetencia_sequence', 1, false);
-
-
---
--- Name: configuracaonivelcompetenciacandidato_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaonivelcompetenciacandidato_sequence', 1, false);
-
-
---
--- Name: configuracaonivelcompetenciacolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaonivelcompetenciacolaborador_sequence', 1, false);
-
-
---
 -- Data for Name: configuracaonivelcompetenciacriterio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29035,20 +28531,6 @@ ALTER TABLE public.configuracaonivelcompetenciacriterio DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.configuracaonivelcompetenciacriterio ENABLE TRIGGER ALL;
-
---
--- Name: configuracaonivelcompetenciacriterio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaonivelcompetenciacriterio_sequence', 1, false);
-
-
---
--- Name: configuracaonivelcompetenciafaixasalarial_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaonivelcompetenciafaixasalarial_sequence', 1, false);
-
 
 --
 -- Data for Name: configuracaoperformance; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29061,13 +28543,6 @@ ALTER TABLE public.configuracaoperformance DISABLE TRIGGER ALL;
 ALTER TABLE public.configuracaoperformance ENABLE TRIGGER ALL;
 
 --
--- Name: configuracaoperformance_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaoperformance_sequence', 1, false);
-
-
---
 -- Data for Name: configuracaorelatoriodinamico; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29076,13 +28551,6 @@ ALTER TABLE public.configuracaorelatoriodinamico DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.configuracaorelatoriodinamico ENABLE TRIGGER ALL;
-
---
--- Name: configuracaorelatoriodinamico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.configuracaorelatoriodinamico_sequence', 1, false);
-
 
 --
 -- Data for Name: conhecimento_areaorganizacional; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29103,13 +28571,6 @@ ALTER TABLE public.conhecimento_curso DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.conhecimento_curso ENABLE TRIGGER ALL;
-
---
--- Name: conhecimento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.conhecimento_sequence', 1, false);
-
 
 --
 -- Data for Name: contratoprofissionalsst; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29142,13 +28603,6 @@ ALTER TABLE public.contratoprofissionalsst_exame DISABLE TRIGGER ALL;
 ALTER TABLE public.contratoprofissionalsst_exame ENABLE TRIGGER ALL;
 
 --
--- Name: contratoprofissionalsst_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.contratoprofissionalsst_sequence', 1, false);
-
-
---
 -- Data for Name: criterioavaliacaocompetencia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29157,13 +28611,6 @@ ALTER TABLE public.criterioavaliacaocompetencia DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.criterioavaliacaocompetencia ENABLE TRIGGER ALL;
-
---
--- Name: criterioavaliacaocompetencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.criterioavaliacaocompetencia_sequence', 1, false);
-
 
 --
 -- Data for Name: curso_avaliacaocurso; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29184,20 +28631,6 @@ ALTER TABLE public.curso_empresa DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.curso_empresa ENABLE TRIGGER ALL;
-
---
--- Name: curso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.curso_sequence', 1, false);
-
-
---
--- Name: cursolnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.cursolnt_sequence', 1, false);
-
 
 --
 -- Data for Name: delete_empresa; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29651,13 +29084,6 @@ INSERT INTO public.delete_empresa (id, tabela, comando_sql) VALUES (459, 'areaor
 ALTER TABLE public.delete_empresa ENABLE TRIGGER ALL;
 
 --
--- Name: delete_empresa_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.delete_empresa_id_seq', 459, true);
-
-
---
 -- Data for Name: dependente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29666,34 +29092,6 @@ ALTER TABLE public.dependente DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.dependente ENABLE TRIGGER ALL;
-
---
--- Name: dependente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.dependente_sequence', 1, false);
-
-
---
--- Name: descricaonaturezalesao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.descricaonaturezalesao_sequence', 29, true);
-
-
---
--- Name: diaturma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.diaturma_sequence', 1, false);
-
-
---
--- Name: dnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.dnt_sequence', 1, false);
-
 
 --
 -- Data for Name: tipodocumento; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29716,27 +29114,6 @@ ALTER TABLE public.documentoanexo DISABLE TRIGGER ALL;
 ALTER TABLE public.documentoanexo ENABLE TRIGGER ALL;
 
 --
--- Name: documentoanexo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.documentoanexo_sequence', 1, false);
-
-
---
--- Name: eleicao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.eleicao_sequence', 1, false);
-
-
---
--- Name: empresa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.empresa_sequence', 2, false);
-
-
---
 -- Data for Name: empresabds; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29745,13 +29122,6 @@ ALTER TABLE public.empresabds DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.empresabds ENABLE TRIGGER ALL;
-
---
--- Name: empresabds_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.empresabds_sequence', 1, false);
-
 
 --
 -- Data for Name: entrevista; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29764,13 +29134,6 @@ ALTER TABLE public.entrevista DISABLE TRIGGER ALL;
 ALTER TABLE public.entrevista ENABLE TRIGGER ALL;
 
 --
--- Name: entrevista_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.entrevista_sequence', 1, false);
-
-
---
 -- Data for Name: epc; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29779,13 +29142,6 @@ ALTER TABLE public.epc DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.epc ENABLE TRIGGER ALL;
-
---
--- Name: epc_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.epc_sequence', 1, false);
-
 
 --
 -- Data for Name: epcpcmat; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29798,20 +29154,6 @@ ALTER TABLE public.epcpcmat DISABLE TRIGGER ALL;
 ALTER TABLE public.epcpcmat ENABLE TRIGGER ALL;
 
 --
--- Name: epcpcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.epcpcmat_sequence', 1, false);
-
-
---
--- Name: epi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.epi_sequence', 1, false);
-
-
---
 -- Data for Name: epihistorico; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29820,13 +29162,6 @@ ALTER TABLE public.epihistorico DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.epihistorico ENABLE TRIGGER ALL;
-
---
--- Name: epihistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.epihistorico_sequence', 1, false);
-
 
 --
 -- Data for Name: epipcmat; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29839,41 +29174,6 @@ ALTER TABLE public.epipcmat DISABLE TRIGGER ALL;
 ALTER TABLE public.epipcmat ENABLE TRIGGER ALL;
 
 --
--- Name: epipcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.epipcmat_sequence', 1, false);
-
-
---
--- Name: esocialeevento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.esocialeevento_sequence', 1, false);
-
-
---
--- Name: esocialocorrenciaeevento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.esocialocorrenciaeevento_sequence', 1, false);
-
-
---
--- Name: estabelecimento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.estabelecimento_sequence', 2, false);
-
-
---
--- Name: estado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.estado_sequence', 27, true);
-
-
---
 -- Data for Name: etapaprocessoeleitoral; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29882,41 +29182,6 @@ ALTER TABLE public.etapaprocessoeleitoral DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.etapaprocessoeleitoral ENABLE TRIGGER ALL;
-
---
--- Name: etapaprocessoeleitoral_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.etapaprocessoeleitoral_sequence', 1, false);
-
-
---
--- Name: etapaseletiva_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.etapaseletiva_sequence', 1, false);
-
-
---
--- Name: evento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.evento_sequence', 1, false);
-
-
---
--- Name: exame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.exame_sequence', 3, true);
-
-
---
--- Name: exameprocedimento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.exameprocedimento_sequence', 1424, true);
-
 
 --
 -- Data for Name: solicitacaoexame; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -29939,13 +29204,6 @@ ALTER TABLE public.examesolicitacaoexame DISABLE TRIGGER ALL;
 ALTER TABLE public.examesolicitacaoexame ENABLE TRIGGER ALL;
 
 --
--- Name: examesolicitacaoexame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.examesolicitacaoexame_sequence', 1, false);
-
-
---
 -- Data for Name: experiencia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29956,13 +29214,6 @@ ALTER TABLE public.experiencia DISABLE TRIGGER ALL;
 ALTER TABLE public.experiencia ENABLE TRIGGER ALL;
 
 --
--- Name: experiencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.experiencia_sequence', 1, false);
-
-
---
 -- Data for Name: extintor; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -29971,13 +29222,6 @@ ALTER TABLE public.extintor DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.extintor ENABLE TRIGGER ALL;
-
---
--- Name: extintor_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.extintor_sequence', 1, false);
-
 
 --
 -- Data for Name: extintorinspecao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -30021,20 +29265,6 @@ ALTER TABLE public.extintorinspecao_extintorinspecaoitem DISABLE TRIGGER ALL;
 ALTER TABLE public.extintorinspecao_extintorinspecaoitem ENABLE TRIGGER ALL;
 
 --
--- Name: extintorinspecao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.extintorinspecao_sequence', 1, false);
-
-
---
--- Name: extintorinspecaoitem_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.extintorinspecaoitem_sequence', 12, false);
-
-
---
 -- Data for Name: extintormanutencao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -30075,20 +29305,6 @@ ALTER TABLE public.extintormanutencao_extintormanutencaoservico DISABLE TRIGGER 
 ALTER TABLE public.extintormanutencao_extintormanutencaoservico ENABLE TRIGGER ALL;
 
 --
--- Name: extintormanutencao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.extintormanutencao_sequence', 1, false);
-
-
---
--- Name: extintormanutencaoservico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.extintormanutencaoservico_sequence', 11, false);
-
-
---
 -- Data for Name: faixasalarial_certificacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -30097,13 +29313,6 @@ ALTER TABLE public.faixasalarial_certificacao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.faixasalarial_certificacao ENABLE TRIGGER ALL;
-
---
--- Name: faixasalarial_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.faixasalarial_sequence', 1, false);
-
 
 --
 -- Data for Name: indice; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -30146,13 +29355,6 @@ ALTER TABLE public.faixasalarialhistorico DISABLE TRIGGER ALL;
 ALTER TABLE public.faixasalarialhistorico ENABLE TRIGGER ALL;
 
 --
--- Name: faixasalarialhistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.faixasalarialhistorico_sequence', 1, false);
-
-
---
 -- Data for Name: fase; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -30163,13 +29365,6 @@ ALTER TABLE public.fase DISABLE TRIGGER ALL;
 ALTER TABLE public.fase ENABLE TRIGGER ALL;
 
 --
--- Name: fase_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.fase_sequence', 1, false);
-
-
---
 -- Data for Name: fasepcmat; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -30178,13 +29373,6 @@ ALTER TABLE public.fasepcmat DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.fasepcmat ENABLE TRIGGER ALL;
-
---
--- Name: fasepcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.fasepcmat_sequence', 1, false);
-
 
 --
 -- Data for Name: fatorderisco; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31071,13 +30259,6 @@ INSERT INTO public.fatorderisco (id, codigo, descricao) VALUES (874, '09.01.001'
 ALTER TABLE public.fatorderisco ENABLE TRIGGER ALL;
 
 --
--- Name: fatorderisco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.fatorderisco_sequence', 1054, true);
-
-
---
 -- Data for Name: faturamentomensal; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31086,13 +30267,6 @@ ALTER TABLE public.faturamentomensal DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.faturamentomensal ENABLE TRIGGER ALL;
-
---
--- Name: faturamentomensal_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.faturamentomensal_sequence', 1, false);
-
 
 --
 -- Data for Name: fichamedica; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31105,13 +30279,6 @@ ALTER TABLE public.fichamedica DISABLE TRIGGER ALL;
 ALTER TABLE public.fichamedica ENABLE TRIGGER ALL;
 
 --
--- Name: fichamedica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.fichamedica_sequence', 1, false);
-
-
---
 -- Data for Name: formacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31122,20 +30289,6 @@ ALTER TABLE public.formacao DISABLE TRIGGER ALL;
 ALTER TABLE public.formacao ENABLE TRIGGER ALL;
 
 --
--- Name: formacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.formacao_sequence', 1, false);
-
-
---
--- Name: funcao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.funcao_sequence', 1, false);
-
-
---
 -- Data for Name: funcaodataintegracao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31144,13 +30297,6 @@ ALTER TABLE public.funcaodataintegracao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.funcaodataintegracao ENABLE TRIGGER ALL;
-
---
--- Name: funcaodataintegracao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.funcaodataintegracao_sequence', 1, false);
-
 
 --
 -- Data for Name: geracao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31167,20 +30313,6 @@ INSERT INTO public.geracao (id, nome, descricao, anoinicial, anofinal) VALUES (6
 
 
 ALTER TABLE public.geracao ENABLE TRIGGER ALL;
-
---
--- Name: geracao_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.geracao_id_seq', 6, true);
-
-
---
--- Name: geracao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.geracao_sequence', 7, false);
-
 
 --
 -- Data for Name: gerenciadorcomunicacao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31219,13 +30351,6 @@ INSERT INTO public.gerenciadorcomunicacao (id, operacao, meiocomunicacao, enviar
 ALTER TABLE public.gerenciadorcomunicacao ENABLE TRIGGER ALL;
 
 --
--- Name: gerenciadorcomunicacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.gerenciadorcomunicacao_sequence', 27, true);
-
-
---
 -- Data for Name: gerenciadorcomunicacao_usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31234,20 +30359,6 @@ ALTER TABLE public.gerenciadorcomunicacao_usuario DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.gerenciadorcomunicacao_usuario ENABLE TRIGGER ALL;
-
---
--- Name: grupoac_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.grupoac_sequence', 2, false);
-
-
---
--- Name: grupoocupacional_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.grupoocupacional_sequence', 1, false);
-
 
 --
 -- Data for Name: habilidade_areaorganizacional; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31268,13 +30379,6 @@ ALTER TABLE public.habilidade_curso DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.habilidade_curso ENABLE TRIGGER ALL;
-
---
--- Name: habilidade_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.habilidade_sequence', 1, false);
-
 
 --
 -- Data for Name: tipolotacaotributaria; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31331,13 +30435,6 @@ ALTER TABLE public.historicoambiente_epc DISABLE TRIGGER ALL;
 ALTER TABLE public.historicoambiente_epc ENABLE TRIGGER ALL;
 
 --
--- Name: historicoambiente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicoambiente_sequence', 1, false);
-
-
---
 -- Data for Name: historicobeneficio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31348,13 +30445,6 @@ ALTER TABLE public.historicobeneficio DISABLE TRIGGER ALL;
 ALTER TABLE public.historicobeneficio ENABLE TRIGGER ALL;
 
 --
--- Name: historicobeneficio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicobeneficio_sequence', 1, false);
-
-
---
 -- Data for Name: historicocandidato; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31363,13 +30453,6 @@ ALTER TABLE public.historicocandidato DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.historicocandidato ENABLE TRIGGER ALL;
-
---
--- Name: historicocandidato_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicocandidato_sequence', 1, false);
-
 
 --
 -- Data for Name: reajustecolaborador; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31392,13 +30475,6 @@ ALTER TABLE public.historicocolaborador DISABLE TRIGGER ALL;
 ALTER TABLE public.historicocolaborador ENABLE TRIGGER ALL;
 
 --
--- Name: historicocolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicocolaborador_sequence', 1, false);
-
-
---
 -- Data for Name: historicocolaboradorbeneficio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31419,13 +30495,6 @@ ALTER TABLE public.historicocolaboradorbeneficio_beneficio DISABLE TRIGGER ALL;
 ALTER TABLE public.historicocolaboradorbeneficio_beneficio ENABLE TRIGGER ALL;
 
 --
--- Name: historicocolaboradorbeneficio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicocolaboradorbeneficio_sequence', 1, false);
-
-
---
 -- Data for Name: historicoextintor; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31436,13 +30505,6 @@ ALTER TABLE public.historicoextintor DISABLE TRIGGER ALL;
 ALTER TABLE public.historicoextintor ENABLE TRIGGER ALL;
 
 --
--- Name: historicoextintor_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicoextintor_sequence', 1, false);
-
-
---
 -- Data for Name: historicofuncao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31451,13 +30513,6 @@ ALTER TABLE public.historicofuncao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.historicofuncao ENABLE TRIGGER ALL;
-
---
--- Name: historicofuncao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicofuncao_sequence', 1, false);
-
 
 --
 -- Data for Name: historicogerencialfuncao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31500,27 +30555,6 @@ ALTER TABLE public.historicogerencialfuncao_exame DISABLE TRIGGER ALL;
 ALTER TABLE public.historicogerencialfuncao_exame ENABLE TRIGGER ALL;
 
 --
--- Name: historicogerencialfuncao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.historicogerencialfuncao_sequence', 1, false);
-
-
---
--- Name: idioma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.idioma_sequence', 6, false);
-
-
---
--- Name: indice_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.indice_sequence', 1, false);
-
-
---
 -- Data for Name: reajusteindice; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31539,13 +30573,6 @@ ALTER TABLE public.indicehistorico DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.indicehistorico ENABLE TRIGGER ALL;
-
---
--- Name: indicehistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.indicehistorico_sequence', 1, false);
-
 
 --
 -- Data for Name: lnt_areaorganizacional; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31568,13 +30595,6 @@ ALTER TABLE public.lnt_empresa DISABLE TRIGGER ALL;
 ALTER TABLE public.lnt_empresa ENABLE TRIGGER ALL;
 
 --
--- Name: lnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.lnt_sequence', 1, false);
-
-
---
 -- Data for Name: logocertificado; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31583,13 +30603,6 @@ ALTER TABLE public.logocertificado DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.logocertificado ENABLE TRIGGER ALL;
-
---
--- Name: logocertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.logocertificado_sequence', 1, false);
-
 
 --
 -- Data for Name: logschatpro; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31602,20 +30615,6 @@ ALTER TABLE public.logschatpro DISABLE TRIGGER ALL;
 ALTER TABLE public.logschatpro ENABLE TRIGGER ALL;
 
 --
--- Name: logschatpro_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.logschatpro_sequence', 1, false);
-
-
---
--- Name: lotacaotributaria_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.lotacaotributaria_sequence', 1, false);
-
-
---
 -- Data for Name: medicaorisco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31624,13 +30623,6 @@ ALTER TABLE public.medicaorisco DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.medicaorisco ENABLE TRIGGER ALL;
-
---
--- Name: medicaorisco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.medicaorisco_sequence', 1, false);
-
 
 --
 -- Data for Name: medidaseguranca; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31673,20 +30665,6 @@ ALTER TABLE public.medidariscofasepcmat DISABLE TRIGGER ALL;
 ALTER TABLE public.medidariscofasepcmat ENABLE TRIGGER ALL;
 
 --
--- Name: medidariscofasepcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.medidariscofasepcmat_sequence', 1, false);
-
-
---
--- Name: medidaseguranca_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.medidaseguranca_sequence', 1, false);
-
-
---
 -- Data for Name: mensagem; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31695,13 +30673,6 @@ ALTER TABLE public.mensagem DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.mensagem ENABLE TRIGGER ALL;
-
---
--- Name: mensagem_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.mensagem_sequence', 1, false);
-
 
 --
 -- Data for Name: menuextra; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31714,13 +30685,6 @@ ALTER TABLE public.menuextra DISABLE TRIGGER ALL;
 ALTER TABLE public.menuextra ENABLE TRIGGER ALL;
 
 --
--- Name: menuextra_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.menuextra_sequence', 1, false);
-
-
---
 -- Data for Name: menuextralink; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31729,13 +30693,6 @@ ALTER TABLE public.menuextralink DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.menuextralink ENABLE TRIGGER ALL;
-
---
--- Name: menuextralink_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.menuextralink_sequence', 1, false);
-
 
 --
 -- Data for Name: metaabsenteismo; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -31748,13 +30705,6 @@ ALTER TABLE public.metaabsenteismo DISABLE TRIGGER ALL;
 ALTER TABLE public.metaabsenteismo ENABLE TRIGGER ALL;
 
 --
--- Name: metaabsenteismo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.metaabsenteismo_sequence', 1, false);
-
-
---
 -- Data for Name: metascategoriacurso; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31765,13 +30715,6 @@ ALTER TABLE public.metascategoriacurso DISABLE TRIGGER ALL;
 ALTER TABLE public.metascategoriacurso ENABLE TRIGGER ALL;
 
 --
--- Name: metascategoriacurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.metascategoriacurso_sequence', 1, false);
-
-
---
 -- Data for Name: metaturnover; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -31780,13 +30723,6 @@ ALTER TABLE public.metaturnover DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.metaturnover ENABLE TRIGGER ALL;
-
---
--- Name: metaturnover_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.metaturnover_sequence', 1, false);
-
 
 --
 -- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -32573,41 +31509,6 @@ ALTER TABLE public.modelo_logocertificado DISABLE TRIGGER ALL;
 ALTER TABLE public.modelo_logocertificado ENABLE TRIGGER ALL;
 
 --
--- Name: modelo_logocertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.modelo_logocertificado_sequence', 1, false);
-
-
---
--- Name: modelocertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.modelocertificado_sequence', 1, false);
-
-
---
--- Name: molduracertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.molduracertificado_sequence', 1, false);
-
-
---
--- Name: motivodemissao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.motivodemissao_sequence', 1, false);
-
-
---
--- Name: motivosolicitacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.motivosolicitacao_sequence', 1, false);
-
-
---
 -- Data for Name: motivosolicitacaoepi; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -32616,34 +31517,6 @@ ALTER TABLE public.motivosolicitacaoepi DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.motivosolicitacaoepi ENABLE TRIGGER ALL;
-
---
--- Name: motivosolicitacaoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.motivosolicitacaoepi_sequence', 1, false);
-
-
---
--- Name: naturezalesao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.naturezalesao_sequence', 1, false);
-
-
---
--- Name: nivelcompetencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.nivelcompetencia_sequence', 1, false);
-
-
---
--- Name: nivelcompetenciahistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.nivelcompetenciahistorico_sequence', 1, false);
-
 
 --
 -- Data for Name: noticia; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -32656,13 +31529,6 @@ ALTER TABLE public.noticia DISABLE TRIGGER ALL;
 ALTER TABLE public.noticia ENABLE TRIGGER ALL;
 
 --
--- Name: noticia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.noticia_sequence', 1, false);
-
-
---
 -- Data for Name: nps; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -32671,13 +31537,6 @@ ALTER TABLE public.nps DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.nps ENABLE TRIGGER ALL;
-
---
--- Name: nps_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.nps_sequence', 1, false);
-
 
 --
 -- Data for Name: npsresposta; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -32690,27 +31549,6 @@ ALTER TABLE public.npsresposta DISABLE TRIGGER ALL;
 ALTER TABLE public.npsresposta ENABLE TRIGGER ALL;
 
 --
--- Name: npsresposta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.npsresposta_sequence', 1, false);
-
-
---
--- Name: obra_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.obra_sequence', 1, false);
-
-
---
--- Name: ocorrencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.ocorrencia_sequence', 1, false);
-
-
---
 -- Data for Name: ordemdeservico; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -32719,20 +31557,6 @@ ALTER TABLE public.ordemdeservico DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.ordemdeservico ENABLE TRIGGER ALL;
-
---
--- Name: ordemdeservico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.ordemdeservico_sequence', 1, false);
-
-
---
--- Name: pais_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.pais_sequence', 261, true);
-
 
 --
 -- Data for Name: papel; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33194,13 +32018,6 @@ INSERT INTO public.papel (id, codigo, nome, url, ordem, menu, accesskey, papelma
 ALTER TABLE public.papel ENABLE TRIGGER ALL;
 
 --
--- Name: papel_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.papel_sequence', 812, false);
-
-
---
 -- Data for Name: perfil; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33218,31 +32035,10 @@ ALTER TABLE public.perfil ENABLE TRIGGER ALL;
 
 ALTER TABLE public.parametrosdosistema DISABLE TRIGGER ALL;
 
-INSERT INTO public.parametrosdosistema (id, appurl, appcontext, appversao, emailsmtp, emailport, emailuser, emailpass, atualizadorpath, servidorremprot, enviaremail, atualizadosucesso, perfilpadrao_id, acversaowebservicecompativel, uppercase, emaildosuportetecnico, codempresasuporte, codclientesuporte, camposcandidatoexternovisivel, camposcandidatoexternoobrigatorio, camposcandidatoexternotabs, compartilharcolaboradores, compartilharcandidatos, proximaversao, autenticacao, tls, sessiontimeout, emailremetente, caminhobackup, compartilharcursos, telainicialmoduloexterno, horariosbackup, inibirgerarrelatoriopesquisaanonima, quantidadecolaboradoresrelatoriopesquisaanonima, quantidadeconstraints, tamanhomaximoupload, modulospermitidossomatorio, versaoacademica, camposcandidatovisivel, camposcandidatoobrigatorio, camposcandidatotabs, camposcolaboradorvisivel, camposcolaboradorobrigatorio, camposcolaboradortabs, autorizacaogestornasolicitacaopessoal, smtpremetente, utilizarcaptchanologin, versaoimportador, utilizarcaptchanomoduloexterno, utilizarqualificacaocadastral, exibiralteracaoprimeiroacesso, considerardatafimafastamento, novanomenclaturacha, cnpjremprot, camposcolaboradoratualizarmeusdadosvisivel, camposcolaboradoratualizarmeusdadosobrigatorio, camposcolaboradoratualizarmeusdadostabs, tokenelore, paginacaopesquisa, qtdperguntaporpaginapesquisa, exibiriconecontatos, endpointchatpro, tokenchatpro, mensagemcolaboresequence, colaboreutilizarhomologacao, tokensolides, colaboresincronizacaomanual) VALUES (1, 'http://localhost:8080/fortesrh', '/fortesrh', '1.3.3.0', NULL, 25, NULL, NULL, NULL, '', true, NULL, 2, '1.1.77.1', false, NULL, '0002', NULL, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,cartairaHabilitacao,tituloEleitoral,certificadoMilitar,ctps', 'nome,cpf,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais,abaCurriculo', true, true, '2014-01-01', true, false, 600, NULL, NULL, false, 'L', '2', false, 1, 488, NULL, 63, false, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,comoFicouSabendoVaga,comfirmaSenha,senha,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,pis', 'nome,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais', 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', false, false, false, '2.2.0', false, false, false, false, false, NULL, 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', NULL, false, NULL, true, NULL, NULL, 0, false, NULL, true);
+INSERT INTO public.parametrosdosistema (id, appurl, appcontext, appversao, emailsmtp, emailport, emailuser, emailpass, atualizadorpath, servidorremprot, enviaremail, atualizadosucesso, perfilpadrao_id, acversaowebservicecompativel, uppercase, emaildosuportetecnico, codempresasuporte, codclientesuporte, camposcandidatoexternovisivel, camposcandidatoexternoobrigatorio, camposcandidatoexternotabs, compartilharcolaboradores, compartilharcandidatos, proximaversao, autenticacao, tls, sessiontimeout, emailremetente, caminhobackup, compartilharcursos, telainicialmoduloexterno, horariosbackup, inibirgerarrelatoriopesquisaanonima, quantidadecolaboradoresrelatoriopesquisaanonima, quantidadeconstraints, tamanhomaximoupload, modulospermitidossomatorio, versaoacademica, camposcandidatovisivel, camposcandidatoobrigatorio, camposcandidatotabs, camposcolaboradorvisivel, camposcolaboradorobrigatorio, camposcolaboradortabs, autorizacaogestornasolicitacaopessoal, smtpremetente, utilizarcaptchanologin, versaoimportador, utilizarcaptchanomoduloexterno, utilizarqualificacaocadastral, exibiralteracaoprimeiroacesso, considerardatafimafastamento, novanomenclaturacha, cnpjremprot, camposcolaboradoratualizarmeusdadosvisivel, camposcolaboradoratualizarmeusdadosobrigatorio, camposcolaboradoratualizarmeusdadostabs, tokenelore, paginacaopesquisa, qtdperguntaporpaginapesquisa, exibiriconecontatos, endpointchatpro, tokenchatpro, mensagemcolaboresequence, colaboreutilizarhomologacao, tokensolides, colaboresincronizacaomanual) VALUES (1, 'http://localhost:8080/fortesrh', '/fortesrh', '1.3.3.1', NULL, 25, NULL, NULL, NULL, '', true, NULL, 2, '1.1.77.1', false, NULL, '0002', NULL, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,cartairaHabilitacao,tituloEleitoral,certificadoMilitar,ctps', 'nome,cpf,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais,abaCurriculo', true, true, '2014-01-01', true, false, 600, NULL, NULL, false, 'L', '2', false, 1, 488, NULL, 63, false, 'nome,nascimento,naturalidade,sexo,cpf,escolaridade,endereco,email,fone,celular,nomeContato,parentes,estadoCivil,qtdFilhos,nomeConjuge,profConjuge,nomePai,profPai,nomeMae,profMae,pensao,possuiVeiculo,deficiencia,comoFicouSabendoVaga,comfirmaSenha,senha,formacao,idioma,desCursos,cargosCheck,areasCheck,conhecimentosCheck,colocacao,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,pis', 'nome,escolaridade,ende,num,cidade,uf,fone,ddd,sexo', 'abaDocumentos,abaExperiencias,abaPerfilProfissional,abaFormacaoEscolar,abaDadosPessoais', 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', false, false, false, '2.2.0', false, false, false, false, false, NULL, 'nome,nomeComercial,nascimento,sexo,cpf,escolaridade,endereco,email,fone,celular,estadoCivil,qtdFilhos,nomeConjuge,nomePai,nomeMae,deficiencia,matricula,dt_admissao,dt_encerramentoContrato,regimeRevezamento,formacao,idioma,desCursos,expProfissional,infoAdicionais,identidade,carteiraHabilitacao,tituloEleitoral,certificadoMilitar,ctps,modelosAvaliacao,pis,vinculo,codigoAcBanco,codigoAcAgencia,numeroConta,tipoConta', 'nome,nomeComercial,nascimento,cpf,escolaridade,ende,num,cidade,uf,email,fone,ddd,dt_admissao,vinculo,pis,sexo', 'abaDocumentos,abaExperiencias,abaDadosFuncionais,abaFormacaoEscolar,abaDadosPessoais,abaModelosAvaliacao', NULL, false, NULL, true, NULL, NULL, 0, false, NULL, true);
 
 
 ALTER TABLE public.parametrosdosistema ENABLE TRIGGER ALL;
-
---
--- Name: parametrosdosistema_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.parametrosdosistema_sequence', 2, false);
-
-
---
--- Name: parteatingida_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.parteatingida_sequence', 1, false);
-
-
---
--- Name: partecorpoatingida_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.partecorpoatingida_sequence', 45, true);
-
 
 --
 -- Data for Name: participanteavaliacaodesempenho; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33255,13 +32051,6 @@ ALTER TABLE public.participanteavaliacaodesempenho DISABLE TRIGGER ALL;
 ALTER TABLE public.participanteavaliacaodesempenho ENABLE TRIGGER ALL;
 
 --
--- Name: participanteavaliacaodesempenho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.participanteavaliacaodesempenho_sequence', 1, false);
-
-
---
 -- Data for Name: participantecursolnt; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33270,13 +32059,6 @@ ALTER TABLE public.participantecursolnt DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.participantecursolnt ENABLE TRIGGER ALL;
-
---
--- Name: participantecursolnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.participantecursolnt_sequence', 1, false);
-
 
 --
 -- Data for Name: pausapreenchimentovagas; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33289,20 +32071,6 @@ ALTER TABLE public.pausapreenchimentovagas DISABLE TRIGGER ALL;
 ALTER TABLE public.pausapreenchimentovagas ENABLE TRIGGER ALL;
 
 --
--- Name: pausapreenchimentovagas_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.pausapreenchimentovagas_sequence', 1, false);
-
-
---
--- Name: pcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.pcmat_sequence', 1, false);
-
-
---
 -- Data for Name: pdi_configuracaonivelcompetenciacolaborador; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33311,13 +32079,6 @@ ALTER TABLE public.pdi_configuracaonivelcompetenciacolaborador DISABLE TRIGGER A
 
 
 ALTER TABLE public.pdi_configuracaonivelcompetenciacolaborador ENABLE TRIGGER ALL;
-
---
--- Name: pdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.pdi_sequence', 1, false);
-
 
 --
 -- Data for Name: perfil_papel; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33676,27 +32437,6 @@ INSERT INTO public.perfil_papel (perfil_id, papeis_id) VALUES (1, 810);
 ALTER TABLE public.perfil_papel ENABLE TRIGGER ALL;
 
 --
--- Name: perfil_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.perfil_sequence', 3, false);
-
-
---
--- Name: pergunta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.pergunta_sequence', 1, false);
-
-
---
--- Name: periodoexperiencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.periodoexperiencia_sequence', 1, false);
-
-
---
 -- Data for Name: pesquisa; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33705,27 +32445,6 @@ ALTER TABLE public.pesquisa DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.pesquisa ENABLE TRIGGER ALL;
-
---
--- Name: pesquisa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.pesquisa_sequence', 1, false);
-
-
---
--- Name: prioridadetreinamento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.prioridadetreinamento_sequence', 1, false);
-
-
---
--- Name: profissionalsst_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.profissionalsst_sequence', 1, false);
-
 
 --
 -- Data for Name: prontuario; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33738,20 +32457,6 @@ ALTER TABLE public.prontuario DISABLE TRIGGER ALL;
 ALTER TABLE public.prontuario ENABLE TRIGGER ALL;
 
 --
--- Name: prontuario_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.prontuario_sequence', 1, false);
-
-
---
--- Name: providencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.providencia_sequence', 1, false);
-
-
---
 -- Data for Name: quantidadelimitecolaboradoresporcargo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33760,41 +32465,6 @@ ALTER TABLE public.quantidadelimitecolaboradoresporcargo DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.quantidadelimitecolaboradoresporcargo ENABLE TRIGGER ALL;
-
---
--- Name: quantidadelimitecolaboradoresporcargo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.quantidadelimitecolaboradoresporcargo_sequence', 1, false);
-
-
---
--- Name: questionario_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.questionario_sequence', 1, false);
-
-
---
--- Name: reajustecolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.reajustecolaborador_sequence', 1, false);
-
-
---
--- Name: reajustefaixasalarial_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.reajustefaixasalarial_sequence', 1, false);
-
-
---
--- Name: reajusteindice_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.reajusteindice_sequence', 1, false);
-
 
 --
 -- Data for Name: realizacaoexame; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33807,20 +32477,6 @@ ALTER TABLE public.realizacaoexame DISABLE TRIGGER ALL;
 ALTER TABLE public.realizacaoexame ENABLE TRIGGER ALL;
 
 --
--- Name: realizacaoexame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.realizacaoexame_sequence', 1, false);
-
-
---
--- Name: resposta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.resposta_sequence', 1, false);
-
-
---
 -- Data for Name: resultadoaso; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33829,13 +32485,6 @@ ALTER TABLE public.resultadoaso DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.resultadoaso ENABLE TRIGGER ALL;
-
---
--- Name: resultadoaso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.resultadoaso_sequence', 1, false);
-
 
 --
 -- Data for Name: risco_epi; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33848,13 +32497,6 @@ ALTER TABLE public.risco_epi DISABLE TRIGGER ALL;
 ALTER TABLE public.risco_epi ENABLE TRIGGER ALL;
 
 --
--- Name: risco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.risco_sequence', 1, false);
-
-
---
 -- Data for Name: riscoambiente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33863,20 +32505,6 @@ ALTER TABLE public.riscoambiente DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.riscoambiente ENABLE TRIGGER ALL;
-
---
--- Name: riscoambiente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.riscoambiente_sequence', 1, false);
-
-
---
--- Name: riscofasepcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.riscofasepcmat_sequence', 1, false);
-
 
 --
 -- Data for Name: riscofuncao; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33889,13 +32517,6 @@ ALTER TABLE public.riscofuncao DISABLE TRIGGER ALL;
 ALTER TABLE public.riscofuncao ENABLE TRIGGER ALL;
 
 --
--- Name: riscofuncao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.riscofuncao_sequence', 1, false);
-
-
---
 -- Data for Name: riscomedicaorisco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33904,13 +32525,6 @@ ALTER TABLE public.riscomedicaorisco DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.riscomedicaorisco ENABLE TRIGGER ALL;
-
---
--- Name: riscomedicaorisco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.riscomedicaorisco_sequence', 1, false);
-
 
 --
 -- Data for Name: sinalizacaopcmat; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33923,27 +32537,6 @@ ALTER TABLE public.sinalizacaopcmat DISABLE TRIGGER ALL;
 ALTER TABLE public.sinalizacaopcmat ENABLE TRIGGER ALL;
 
 --
--- Name: sinalizacaopcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.sinalizacaopcmat_sequence', 1, false);
-
-
---
--- Name: situacaogeradoraacidentetrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.situacaogeradoraacidentetrabalho_sequence', 59, true);
-
-
---
--- Name: situacaogeradoradoencaprofissional_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.situacaogeradoradoencaprofissional_sequence', 59, true);
-
-
---
 -- Data for Name: solicitacao_bairro; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33954,13 +32547,6 @@ ALTER TABLE public.solicitacao_bairro DISABLE TRIGGER ALL;
 ALTER TABLE public.solicitacao_bairro ENABLE TRIGGER ALL;
 
 --
--- Name: solicitacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacao_sequence', 1, false);
-
-
---
 -- Data for Name: solicitacaoavaliacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -33969,13 +32555,6 @@ ALTER TABLE public.solicitacaoavaliacao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.solicitacaoavaliacao ENABLE TRIGGER ALL;
-
---
--- Name: solicitacaoavaliacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacaoavaliacao_sequence', 1, false);
-
 
 --
 -- Data for Name: solicitacaobds; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -33996,13 +32575,6 @@ ALTER TABLE public.solicitacaobds_empresabds DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.solicitacaobds_empresabds ENABLE TRIGGER ALL;
-
---
--- Name: solicitacaobds_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacaobds_sequence', 1, false);
-
 
 --
 -- Data for Name: solicitacaoepi; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -34035,20 +32607,6 @@ ALTER TABLE public.solicitacaoepi_item DISABLE TRIGGER ALL;
 ALTER TABLE public.solicitacaoepi_item ENABLE TRIGGER ALL;
 
 --
--- Name: solicitacaoepi_item_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacaoepi_item_sequence', 1, false);
-
-
---
--- Name: solicitacaoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacaoepi_sequence', 1, false);
-
-
---
 -- Data for Name: solicitacaoepiitemdevolucao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -34057,13 +32615,6 @@ ALTER TABLE public.solicitacaoepiitemdevolucao DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.solicitacaoepiitemdevolucao ENABLE TRIGGER ALL;
-
---
--- Name: solicitacaoepiitemdevolucao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacaoepiitemdevolucao_sequence', 1, false);
-
 
 --
 -- Data for Name: solicitacaoepiitementrega; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -34076,41 +32627,6 @@ ALTER TABLE public.solicitacaoepiitementrega DISABLE TRIGGER ALL;
 ALTER TABLE public.solicitacaoepiitementrega ENABLE TRIGGER ALL;
 
 --
--- Name: solicitacaoepiitementrega_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacaoepiitementrega_sequence', 1, false);
-
-
---
--- Name: solicitacaoexame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.solicitacaoexame_sequence', 1, false);
-
-
---
--- Name: tabelareajustecolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.tabelareajustecolaborador_sequence', 1, false);
-
-
---
--- Name: tamanhoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.tamanhoepi_sequence', 1, false);
-
-
---
--- Name: testemunha_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.testemunha_sequence', 1, false);
-
-
---
 -- Data for Name: tipo_tamanhoepi; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -34121,13 +32637,6 @@ ALTER TABLE public.tipo_tamanhoepi DISABLE TRIGGER ALL;
 ALTER TABLE public.tipo_tamanhoepi ENABLE TRIGGER ALL;
 
 --
--- Name: tipo_tamanhoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.tipo_tamanhoepi_sequence', 1, false);
-
-
---
 -- Data for Name: tipodespesa; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -34136,27 +32645,6 @@ ALTER TABLE public.tipodespesa DISABLE TRIGGER ALL;
 
 
 ALTER TABLE public.tipodespesa ENABLE TRIGGER ALL;
-
---
--- Name: tipodespesa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.tipodespesa_sequence', 1, false);
-
-
---
--- Name: tipodocumento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.tipodocumento_sequence', 1, false);
-
-
---
--- Name: tipoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.tipoepi_sequence', 1, false);
-
 
 --
 -- Data for Name: tipologradouro; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -34349,6 +32837,1608 @@ INSERT INTO public.tipologradouro (id, codigo, descricao) VALUES (1054, 'ZIG', '
 ALTER TABLE public.tipologradouro ENABLE TRIGGER ALL;
 
 --
+-- Data for Name: token; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.token DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.token ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: turma_avaliacaocurso; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.turma_avaliacaocurso DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.turma_avaliacaocurso ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: turma_avaliacaoturma; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.turma_avaliacaoturma DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.turma_avaliacaoturma ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: turma_documentoanexo; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.turma_documentoanexo DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.turma_documentoanexo ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: turmatipodespesa; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.turmatipodespesa DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.turmatipodespesa ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: usuarioajudaesocial; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.usuarioajudaesocial DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.usuarioajudaesocial ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: usuarioempresa; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.usuarioempresa DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.usuarioempresa ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: usuariomensagem; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.usuariomensagem DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.usuariomensagem ENABLE TRIGGER ALL;
+
+--
+-- Data for Name: usuarionoticia; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.usuarionoticia DISABLE TRIGGER ALL;
+
+
+
+ALTER TABLE public.usuarionoticia ENABLE TRIGGER ALL;
+
+--
+-- Name: acaopdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.acaopdi_sequence', 1, false);
+
+
+--
+-- Name: acompanhamentoacaopdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.acompanhamentoacaopdi_sequence', 1, false);
+
+
+--
+-- Name: acompanhamentopdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.acompanhamentopdi_sequence', 1, false);
+
+
+--
+-- Name: afastamento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.afastamento_sequence', 1, false);
+
+
+--
+-- Name: agenda_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.agenda_sequence', 1, false);
+
+
+--
+-- Name: agentecausadoracidentetrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.agentecausadoracidentetrabalho_sequence', 248, true);
+
+
+--
+-- Name: ambiente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.ambiente_sequence', 1, false);
+
+
+--
+-- Name: anexo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.anexo_sequence', 1, false);
+
+
+--
+-- Name: anuncio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.anuncio_sequence', 1, false);
+
+
+--
+-- Name: aproveitamentoavaliacaocurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.aproveitamentoavaliacaocurso_sequence', 1, false);
+
+
+--
+-- Name: areaformacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.areaformacao_sequence', 75, false);
+
+
+--
+-- Name: areainteresse_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.areainteresse_sequence', 1, false);
+
+
+--
+-- Name: areaorganizacional_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.areaorganizacional_sequence', 1, false);
+
+
+--
+-- Name: areavivencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.areavivencia_sequence', 1, false);
+
+
+--
+-- Name: areavivenciapcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.areavivenciapcmat_sequence', 1, false);
+
+
+--
+-- Name: aspecto_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.aspecto_sequence', 1, false);
+
+
+--
+-- Name: atitude_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.atitude_sequence', 1, false);
+
+
+--
+-- Name: atividadesegurancapcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.atividadesegurancapcmat_sequence', 1, false);
+
+
+--
+-- Name: auditoria_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.auditoria_sequence', 1, false);
+
+
+--
+-- Name: avaliacaocurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.avaliacaocurso_sequence', 1, false);
+
+
+--
+-- Name: avaliacaodesempenho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.avaliacaodesempenho_sequence', 1, false);
+
+
+--
+-- Name: avaliacaopratica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.avaliacaopratica_sequence', 1, false);
+
+
+--
+-- Name: avaliacaoturma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.avaliacaoturma_sequence', 1, false);
+
+
+--
+-- Name: bairro_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.bairro_sequence', 1, false);
+
+
+--
+-- Name: beneficio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.beneficio_sequence', 1, false);
+
+
+--
+-- Name: camposextras_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.camposextras_sequence', 1, false);
+
+
+--
+-- Name: candidato_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.candidato_sequence', 1, false);
+
+
+--
+-- Name: candidatocurriculo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.candidatocurriculo_sequence', 1, false);
+
+
+--
+-- Name: candidatoeleicao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.candidatoeleicao_sequence', 1, false);
+
+
+--
+-- Name: candidatoidioma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.candidatoidioma_sequence', 1, false);
+
+
+--
+-- Name: candidatosolicitacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.candidatosolicitacao_sequence', 1, false);
+
+
+--
+-- Name: cargo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cargo_sequence', 1, false);
+
+
+--
+-- Name: cartao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cartao_sequence', 1, true);
+
+
+--
+-- Name: cat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cat_sequence', 1, false);
+
+
+--
+-- Name: categoriacurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.categoriacurso_sequence', 1, false);
+
+
+--
+-- Name: certificacao_avaliacaopratica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.certificacao_avaliacaopratica_sequence', 1, false);
+
+
+--
+-- Name: certificacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.certificacao_sequence', 1, false);
+
+
+--
+-- Name: certificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.certificado_sequence', 1, false);
+
+
+--
+-- Name: cidade_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cidade_sequence', 5508, true);
+
+
+--
+-- Name: cliente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cliente_sequence', 1, false);
+
+
+--
+-- Name: clinicaautorizada_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.clinicaautorizada_sequence', 1, false);
+
+
+--
+-- Name: codificacaoacidentetrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.codificacaoacidentetrabalho_sequence', 22, true);
+
+
+--
+-- Name: colaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaborador_sequence', 1, false);
+
+
+--
+-- Name: colaboradorafastamento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorafastamento_sequence', 1, false);
+
+
+--
+-- Name: colaboradoravaliacaopratica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradoravaliacaopratica_sequence', 1, false);
+
+
+--
+-- Name: colaboradorcertificacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorcertificacao_sequence', 1, false);
+
+
+--
+-- Name: colaboradoridioma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradoridioma_sequence', 1, false);
+
+
+--
+-- Name: colaboradorocorrencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorocorrencia_sequence', 1, false);
+
+
+--
+-- Name: colaboradorperiodoexperienciaavaliacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorperiodoexperienciaavaliacao_sequence', 1, false);
+
+
+--
+-- Name: colaboradorpresenca_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorpresenca_sequence', 1, false);
+
+
+--
+-- Name: colaboradorquestionario_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorquestionario_sequence', 1, false);
+
+
+--
+-- Name: colaboradorresposta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorresposta_sequence', 1, false);
+
+
+--
+-- Name: colaboradorturma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.colaboradorturma_sequence', 1, false);
+
+
+--
+-- Name: comissao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comissao_sequence', 1, false);
+
+
+--
+-- Name: comissaoeleicao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comissaoeleicao_sequence', 1, false);
+
+
+--
+-- Name: comissaomembro_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comissaomembro_sequence', 1, false);
+
+
+--
+-- Name: comissaoperiodo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comissaoperiodo_sequence', 1, false);
+
+
+--
+-- Name: comissaoplanotrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comissaoplanotrabalho_sequence', 1, false);
+
+
+--
+-- Name: comissaoreuniao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comissaoreuniao_sequence', 1, false);
+
+
+--
+-- Name: comissaoreuniaopresenca_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comissaoreuniaopresenca_sequence', 1, false);
+
+
+--
+-- Name: comoficousabendovaga_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comoficousabendovaga_sequence', 2, false);
+
+
+--
+-- Name: competenciapdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.competenciapdi_sequence', 1, false);
+
+
+--
+-- Name: composicaosesmt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.composicaosesmt_sequence', 1, false);
+
+
+--
+-- Name: confighistoriconivel_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.confighistoriconivel_sequence', 1, false);
+
+
+--
+-- Name: configuracaocampoextra_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaocampoextra_sequence', 33, false);
+
+
+--
+-- Name: configuracaocampoextravisivelobrigadotorio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaocampoextravisivelobrigadotorio_sequence', 1, false);
+
+
+--
+-- Name: configuracaocompetenciaavaliacaodesempenho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaocompetenciaavaliacaodesempenho_sequence', 1, false);
+
+
+--
+-- Name: configuracaoimpressaocurriculo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaoimpressaocurriculo_sequence', 1, false);
+
+
+--
+-- Name: configuracaolimitecolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaolimitecolaborador_sequence', 1, false);
+
+
+--
+-- Name: configuracaonivelcompetencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaonivelcompetencia_sequence', 1, false);
+
+
+--
+-- Name: configuracaonivelcompetenciacandidato_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaonivelcompetenciacandidato_sequence', 1, false);
+
+
+--
+-- Name: configuracaonivelcompetenciacolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaonivelcompetenciacolaborador_sequence', 1, false);
+
+
+--
+-- Name: configuracaonivelcompetenciacriterio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaonivelcompetenciacriterio_sequence', 1, false);
+
+
+--
+-- Name: configuracaonivelcompetenciafaixasalarial_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaonivelcompetenciafaixasalarial_sequence', 1, false);
+
+
+--
+-- Name: configuracaoperformance_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaoperformance_sequence', 1, false);
+
+
+--
+-- Name: configuracaorelatoriodinamico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.configuracaorelatoriodinamico_sequence', 1, false);
+
+
+--
+-- Name: conhecimento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.conhecimento_sequence', 1, false);
+
+
+--
+-- Name: contratoprofissionalsst_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.contratoprofissionalsst_sequence', 1, false);
+
+
+--
+-- Name: criterioavaliacaocompetencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.criterioavaliacaocompetencia_sequence', 1, false);
+
+
+--
+-- Name: curso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.curso_sequence', 1, false);
+
+
+--
+-- Name: cursolnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cursolnt_sequence', 1, false);
+
+
+--
+-- Name: delete_empresa_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.delete_empresa_id_seq', 459, true);
+
+
+--
+-- Name: dependente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.dependente_sequence', 1, false);
+
+
+--
+-- Name: descricaonaturezalesao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.descricaonaturezalesao_sequence', 29, true);
+
+
+--
+-- Name: diaturma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.diaturma_sequence', 1, false);
+
+
+--
+-- Name: dnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.dnt_sequence', 1, false);
+
+
+--
+-- Name: documentoanexo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.documentoanexo_sequence', 1, false);
+
+
+--
+-- Name: eleicao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.eleicao_sequence', 1, false);
+
+
+--
+-- Name: empresa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.empresa_sequence', 2, false);
+
+
+--
+-- Name: empresabds_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.empresabds_sequence', 1, false);
+
+
+--
+-- Name: entrevista_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.entrevista_sequence', 1, false);
+
+
+--
+-- Name: epc_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.epc_sequence', 1, false);
+
+
+--
+-- Name: epcpcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.epcpcmat_sequence', 1, false);
+
+
+--
+-- Name: epi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.epi_sequence', 1, false);
+
+
+--
+-- Name: epihistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.epihistorico_sequence', 1, false);
+
+
+--
+-- Name: epipcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.epipcmat_sequence', 1, false);
+
+
+--
+-- Name: esocialeevento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.esocialeevento_sequence', 1, false);
+
+
+--
+-- Name: esocialocorrenciaeevento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.esocialocorrenciaeevento_sequence', 1, false);
+
+
+--
+-- Name: estabelecimento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.estabelecimento_sequence', 2, false);
+
+
+--
+-- Name: estado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.estado_sequence', 27, true);
+
+
+--
+-- Name: etapaprocessoeleitoral_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.etapaprocessoeleitoral_sequence', 1, false);
+
+
+--
+-- Name: etapaseletiva_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.etapaseletiva_sequence', 1, false);
+
+
+--
+-- Name: evento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.evento_sequence', 1, false);
+
+
+--
+-- Name: exame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.exame_sequence', 3, true);
+
+
+--
+-- Name: exameprocedimento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.exameprocedimento_sequence', 1424, true);
+
+
+--
+-- Name: examesolicitacaoexame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.examesolicitacaoexame_sequence', 1, false);
+
+
+--
+-- Name: experiencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.experiencia_sequence', 1, false);
+
+
+--
+-- Name: extintor_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.extintor_sequence', 1, false);
+
+
+--
+-- Name: extintorinspecao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.extintorinspecao_sequence', 1, false);
+
+
+--
+-- Name: extintorinspecaoitem_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.extintorinspecaoitem_sequence', 12, false);
+
+
+--
+-- Name: extintormanutencao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.extintormanutencao_sequence', 1, false);
+
+
+--
+-- Name: extintormanutencaoservico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.extintormanutencaoservico_sequence', 11, false);
+
+
+--
+-- Name: faixasalarial_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.faixasalarial_sequence', 1, false);
+
+
+--
+-- Name: faixasalarialhistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.faixasalarialhistorico_sequence', 1, false);
+
+
+--
+-- Name: fase_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.fase_sequence', 1, false);
+
+
+--
+-- Name: fasepcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.fasepcmat_sequence', 1, false);
+
+
+--
+-- Name: fatorderisco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.fatorderisco_sequence', 1054, true);
+
+
+--
+-- Name: faturamentomensal_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.faturamentomensal_sequence', 1, false);
+
+
+--
+-- Name: fichamedica_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.fichamedica_sequence', 1, false);
+
+
+--
+-- Name: formacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.formacao_sequence', 1, false);
+
+
+--
+-- Name: funcao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.funcao_sequence', 1, false);
+
+
+--
+-- Name: funcaodataintegracao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.funcaodataintegracao_sequence', 1, false);
+
+
+--
+-- Name: geracao_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.geracao_id_seq', 6, true);
+
+
+--
+-- Name: geracao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.geracao_sequence', 7, false);
+
+
+--
+-- Name: gerenciadorcomunicacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.gerenciadorcomunicacao_sequence', 27, true);
+
+
+--
+-- Name: grupoac_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.grupoac_sequence', 2, false);
+
+
+--
+-- Name: grupoocupacional_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.grupoocupacional_sequence', 1, false);
+
+
+--
+-- Name: habilidade_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.habilidade_sequence', 1, false);
+
+
+--
+-- Name: historicoambiente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicoambiente_sequence', 1, false);
+
+
+--
+-- Name: historicobeneficio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicobeneficio_sequence', 1, false);
+
+
+--
+-- Name: historicocandidato_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicocandidato_sequence', 1, false);
+
+
+--
+-- Name: historicocolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicocolaborador_sequence', 1, false);
+
+
+--
+-- Name: historicocolaboradorbeneficio_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicocolaboradorbeneficio_sequence', 1, false);
+
+
+--
+-- Name: historicoextintor_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicoextintor_sequence', 1, false);
+
+
+--
+-- Name: historicofuncao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicofuncao_sequence', 1, false);
+
+
+--
+-- Name: historicogerencialfuncao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.historicogerencialfuncao_sequence', 1, false);
+
+
+--
+-- Name: idioma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.idioma_sequence', 6, false);
+
+
+--
+-- Name: indice_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.indice_sequence', 1, false);
+
+
+--
+-- Name: indicehistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.indicehistorico_sequence', 1, false);
+
+
+--
+-- Name: lnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.lnt_sequence', 1, false);
+
+
+--
+-- Name: logocertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.logocertificado_sequence', 1, false);
+
+
+--
+-- Name: logschatpro_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.logschatpro_sequence', 1, false);
+
+
+--
+-- Name: lotacaotributaria_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.lotacaotributaria_sequence', 1, false);
+
+
+--
+-- Name: medicaorisco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.medicaorisco_sequence', 1, false);
+
+
+--
+-- Name: medidariscofasepcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.medidariscofasepcmat_sequence', 1, false);
+
+
+--
+-- Name: medidaseguranca_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.medidaseguranca_sequence', 1, false);
+
+
+--
+-- Name: mensagem_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mensagem_sequence', 1, false);
+
+
+--
+-- Name: menuextra_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.menuextra_sequence', 1, false);
+
+
+--
+-- Name: menuextralink_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.menuextralink_sequence', 1, false);
+
+
+--
+-- Name: metaabsenteismo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.metaabsenteismo_sequence', 1, false);
+
+
+--
+-- Name: metascategoriacurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.metascategoriacurso_sequence', 1, false);
+
+
+--
+-- Name: metaturnover_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.metaturnover_sequence', 1, false);
+
+
+--
+-- Name: modelo_logocertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.modelo_logocertificado_sequence', 1, false);
+
+
+--
+-- Name: modelocertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.modelocertificado_sequence', 1, false);
+
+
+--
+-- Name: molduracertificado_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.molduracertificado_sequence', 1, false);
+
+
+--
+-- Name: motivodemissao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.motivodemissao_sequence', 1, false);
+
+
+--
+-- Name: motivosolicitacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.motivosolicitacao_sequence', 1, false);
+
+
+--
+-- Name: motivosolicitacaoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.motivosolicitacaoepi_sequence', 1, false);
+
+
+--
+-- Name: naturezalesao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.naturezalesao_sequence', 1, false);
+
+
+--
+-- Name: nivelcompetencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.nivelcompetencia_sequence', 1, false);
+
+
+--
+-- Name: nivelcompetenciahistorico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.nivelcompetenciahistorico_sequence', 1, false);
+
+
+--
+-- Name: noticia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.noticia_sequence', 1, false);
+
+
+--
+-- Name: nps_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.nps_sequence', 1, false);
+
+
+--
+-- Name: npsresposta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.npsresposta_sequence', 1, false);
+
+
+--
+-- Name: obra_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.obra_sequence', 1, false);
+
+
+--
+-- Name: ocorrencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.ocorrencia_sequence', 1, false);
+
+
+--
+-- Name: ordemdeservico_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.ordemdeservico_sequence', 1, false);
+
+
+--
+-- Name: pais_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.pais_sequence', 261, true);
+
+
+--
+-- Name: papel_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.papel_sequence', 812, false);
+
+
+--
+-- Name: parametrosdosistema_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.parametrosdosistema_sequence', 2, false);
+
+
+--
+-- Name: parteatingida_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.parteatingida_sequence', 1, false);
+
+
+--
+-- Name: partecorpoatingida_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.partecorpoatingida_sequence', 45, true);
+
+
+--
+-- Name: participanteavaliacaodesempenho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.participanteavaliacaodesempenho_sequence', 1, false);
+
+
+--
+-- Name: participantecursolnt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.participantecursolnt_sequence', 1, false);
+
+
+--
+-- Name: pausapreenchimentovagas_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.pausapreenchimentovagas_sequence', 1, false);
+
+
+--
+-- Name: pcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.pcmat_sequence', 1, false);
+
+
+--
+-- Name: pdi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.pdi_sequence', 1, false);
+
+
+--
+-- Name: perfil_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.perfil_sequence', 3, false);
+
+
+--
+-- Name: pergunta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.pergunta_sequence', 1, false);
+
+
+--
+-- Name: periodoexperiencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.periodoexperiencia_sequence', 1, false);
+
+
+--
+-- Name: pesquisa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.pesquisa_sequence', 1, false);
+
+
+--
+-- Name: prioridadetreinamento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.prioridadetreinamento_sequence', 1, false);
+
+
+--
+-- Name: profissionalsst_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.profissionalsst_sequence', 1, false);
+
+
+--
+-- Name: prontuario_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.prontuario_sequence', 1, false);
+
+
+--
+-- Name: providencia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.providencia_sequence', 1, false);
+
+
+--
+-- Name: quantidadelimitecolaboradoresporcargo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.quantidadelimitecolaboradoresporcargo_sequence', 1, false);
+
+
+--
+-- Name: questionario_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.questionario_sequence', 1, false);
+
+
+--
+-- Name: reajustecolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.reajustecolaborador_sequence', 1, false);
+
+
+--
+-- Name: reajustefaixasalarial_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.reajustefaixasalarial_sequence', 1, false);
+
+
+--
+-- Name: reajusteindice_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.reajusteindice_sequence', 1, false);
+
+
+--
+-- Name: realizacaoexame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.realizacaoexame_sequence', 1, false);
+
+
+--
+-- Name: resposta_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.resposta_sequence', 1, false);
+
+
+--
+-- Name: resultadoaso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.resultadoaso_sequence', 1, false);
+
+
+--
+-- Name: risco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.risco_sequence', 1, false);
+
+
+--
+-- Name: riscoambiente_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.riscoambiente_sequence', 1, false);
+
+
+--
+-- Name: riscofasepcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.riscofasepcmat_sequence', 1, false);
+
+
+--
+-- Name: riscofuncao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.riscofuncao_sequence', 1, false);
+
+
+--
+-- Name: riscomedicaorisco_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.riscomedicaorisco_sequence', 1, false);
+
+
+--
+-- Name: sinalizacaopcmat_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.sinalizacaopcmat_sequence', 1, false);
+
+
+--
+-- Name: situacaogeradoraacidentetrabalho_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.situacaogeradoraacidentetrabalho_sequence', 59, true);
+
+
+--
+-- Name: situacaogeradoradoencaprofissional_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.situacaogeradoradoencaprofissional_sequence', 59, true);
+
+
+--
+-- Name: solicitacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacao_sequence', 1, false);
+
+
+--
+-- Name: solicitacaoavaliacao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacaoavaliacao_sequence', 1, false);
+
+
+--
+-- Name: solicitacaobds_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacaobds_sequence', 1, false);
+
+
+--
+-- Name: solicitacaoepi_item_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacaoepi_item_sequence', 1, false);
+
+
+--
+-- Name: solicitacaoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacaoepi_sequence', 1, false);
+
+
+--
+-- Name: solicitacaoepiitemdevolucao_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacaoepiitemdevolucao_sequence', 1, false);
+
+
+--
+-- Name: solicitacaoepiitementrega_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacaoepiitementrega_sequence', 1, false);
+
+
+--
+-- Name: solicitacaoexame_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitacaoexame_sequence', 1, false);
+
+
+--
+-- Name: tabelareajustecolaborador_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tabelareajustecolaborador_sequence', 1, false);
+
+
+--
+-- Name: tamanhoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tamanhoepi_sequence', 1, false);
+
+
+--
+-- Name: testemunha_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.testemunha_sequence', 1, false);
+
+
+--
+-- Name: tipo_tamanhoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipo_tamanhoepi_sequence', 1, false);
+
+
+--
+-- Name: tipodespesa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipodespesa_sequence', 1, false);
+
+
+--
+-- Name: tipodocumento_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipodocumento_sequence', 1, false);
+
+
+--
+-- Name: tipoepi_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipoepi_sequence', 1, false);
+
+
+--
 -- Name: tipologradouro_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -34363,31 +34453,11 @@ SELECT pg_catalog.setval('public.tipolotacaotributaria_sequence', 14, true);
 
 
 --
--- Data for Name: token; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.token DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.token ENABLE TRIGGER ALL;
-
---
 -- Name: token_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.token_sequence', 1, false);
 
-
---
--- Data for Name: turma_avaliacaocurso; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.turma_avaliacaocurso DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.turma_avaliacaocurso ENABLE TRIGGER ALL;
 
 --
 -- Name: turma_avaliacaocurso_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
@@ -34397,31 +34467,11 @@ SELECT pg_catalog.setval('public.turma_avaliacaocurso_sequence', 1, false);
 
 
 --
--- Data for Name: turma_avaliacaoturma; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.turma_avaliacaoturma DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.turma_avaliacaoturma ENABLE TRIGGER ALL;
-
---
 -- Name: turma_avaliacaoturma_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.turma_avaliacaoturma_sequence', 1, false);
 
-
---
--- Data for Name: turma_documentoanexo; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.turma_documentoanexo DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.turma_documentoanexo ENABLE TRIGGER ALL;
 
 --
 -- Name: turma_documentoanexo_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
@@ -34438,16 +34488,6 @@ SELECT pg_catalog.setval('public.turma_sequence', 1, false);
 
 
 --
--- Data for Name: turmatipodespesa; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.turmatipodespesa DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.turmatipodespesa ENABLE TRIGGER ALL;
-
---
 -- Name: turmatipodespesa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -34462,31 +34502,11 @@ SELECT pg_catalog.setval('public.usuario_sequence', 2, true);
 
 
 --
--- Data for Name: usuarioajudaesocial; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.usuarioajudaesocial DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.usuarioajudaesocial ENABLE TRIGGER ALL;
-
---
 -- Name: usuarioajudaesocial_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.usuarioajudaesocial_sequence', 1, false);
 
-
---
--- Data for Name: usuarioempresa; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.usuarioempresa DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.usuarioempresa ENABLE TRIGGER ALL;
 
 --
 -- Name: usuarioempresa_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
@@ -34496,31 +34516,11 @@ SELECT pg_catalog.setval('public.usuarioempresa_sequence', 1, false);
 
 
 --
--- Data for Name: usuariomensagem; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.usuariomensagem DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.usuariomensagem ENABLE TRIGGER ALL;
-
---
 -- Name: usuariomensagem_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.usuariomensagem_sequence', 1, false);
 
-
---
--- Data for Name: usuarionoticia; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-ALTER TABLE public.usuarionoticia DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.usuarionoticia ENABLE TRIGGER ALL;
 
 --
 -- Name: usuarionoticia_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres

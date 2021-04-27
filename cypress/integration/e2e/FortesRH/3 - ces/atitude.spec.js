@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Atitude', () => {
-    const chance = new Chance()
-
     const dados = {
         atitude_nome: chance.word({length: 10}),
         atitude_nome2: chance.word({length: 10}),

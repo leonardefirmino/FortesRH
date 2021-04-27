@@ -1,9 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Gerenciamento de Candidatos', () => {
-    const chance = new Chance()
-
-
     const candidato = {
         nome: chance.name(),
         cpf: '34425164555',

@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Avaliação de Desempenho', () => {
-    const chance = new Chance()
-
     const aval = {
         Titulo: chance.sentence({ words: 3 }),
         PeriodoInicial: '01/08/2020',

@@ -1,5 +1,4 @@
 describe('Alteração de Senha de Usuário', () => {
-
     const dados = {
         nomeColaborador: chance.name(),
     }
@@ -12,7 +11,6 @@ describe('Alteração de Senha de Usuário', () => {
     it('Alterar Senha de Usuario não associado a empregado', () => {
         cy.login('SOS', '1234')
         cy.navigate('/acesso/usuario/prepareUpdateSenhaUsuario.action')
-        // .clicaBotaoEntendi()
         cy.warningMsg('Sua conta de usuário não está vinculada à um talento.')
     })
 

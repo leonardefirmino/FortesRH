@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Recuperação de Senha', () => {
-    const chance = new Chance()
-
     const user = {
         nome: chance.name(),
     }
