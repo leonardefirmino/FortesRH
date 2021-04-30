@@ -13,7 +13,7 @@ describe('Tentativas de Login no Módulo Externo', () => {
             .visit('/externo/prepareLogin.action?empresaId=1')
     })
 
-    it.only('Inserir candidato', () => {
+    it('Inserir candidato', () => {
         cy.contains('Quero me cadastrar').should('be.visible').click()
         cy
             .preencheDadosCandidato(candidato)

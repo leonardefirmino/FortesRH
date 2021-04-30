@@ -152,4 +152,11 @@ describe('Solicitação de Pessoal', () => {
         cy
             .transferirCandidatoDaSolicitacao(solicitacao)
     });
+
+    it('Edição de Solicitação que não existe', () => {
+        cy
+            .deletaSolicitacao(solicitacaoemAnalise.descricao)
+            .editarSolicitacao(solicitacaoemAnalise.descricao)
+            .warningMsg(`A solicitação com o código ${solicitacaoId} não foi encontrada.`)
+    });
 });
