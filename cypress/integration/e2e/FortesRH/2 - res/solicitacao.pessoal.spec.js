@@ -153,7 +153,7 @@ describe('Solicitação de Pessoal', () => {
             .transferirCandidatoDaSolicitacao(solicitacao)
     });
 
-    it('Edição de Solicitação que não existe', () => {
+    it.skip('Edição de Solicitação que não existe', () => {
         cy
             .deletaSolicitacao(solicitacaoemAnalise.descricao)
             .editarSolicitacao(solicitacaoemAnalise.descricao)
