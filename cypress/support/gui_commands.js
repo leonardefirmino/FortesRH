@@ -738,6 +738,25 @@ Cypress.Commands.add('cadastrarMotivoSolicitacaoEpi', (dados) => {
     cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
 })
 
+Cypress.Commands.add('cadastrarGrupoHomogeneoExposicao', (ghe) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#descricaoHomogeneo').clear().type(ghe.descricao)
+    cy.get('#checkGroupambientesCheck1').check()
+    cy.get('#data').clear().type(ghe.dataIni)
+    cy.get('#observacao').clear().type(ghe.descricaoAtividade)
+    cy.get('#checkGroupprofissionaisSSTCheck1').check()
+    cy.get('#btnGravar').click()
+    cy.get('#btnGravar').click()
+    cy.get(':nth-child(1) > .ui-button-text')
+})
+
+Cypress.Commands.add('cadastraHistoricoGHE', () => {
+    cy.get('#adicionaLinhaAgenteNocivo').click()
+    cy.get('#checkGroupativPerigInsalsCheck7').check()
+    cy.get(':nth-child(1) > .ui-button-text').click()
+    cy.get('.fa-caret-down').click()
+})
+
 Cypress.Commands.add('alterarSenhaUsuario', (senha, newSenha, confSenha) => {
 
     if (senha != '' || newSenha != '' || confSenha != '') {
@@ -925,3 +944,4 @@ Cypress.Commands.add('cadastrarOcorrencia', (ocorrencia) => {
     cy.get('#dataFim').should('be.visible').and('be.enabled').clear().type(ocorrencia.data)
     cy.get('#btnGravar').should('be.visible').and('be.enabled').click()
 })
+
