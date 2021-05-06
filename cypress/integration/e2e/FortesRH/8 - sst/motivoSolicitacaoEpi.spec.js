@@ -24,7 +24,7 @@ describe('Funcionalidade Motivo Solicitação EPI', () => {
             .acao('Editar', dados.motivoSolicitacao2)
             .clicaBotao('Gravar')
             .successMsg('Motivo da solicitação do EPI atualizado com sucesso.')
-        cy.contains(dados.motivoSolicitacao2).should('be.visible')
+        cy.get('.odd > :nth-child(2)').contains(dados.motivoSolicitacao2).should('be.visible')
     });
 
     it('Exclusão Motivo de Solicitação de EPI', () => {

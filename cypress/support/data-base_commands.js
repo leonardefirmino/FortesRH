@@ -354,6 +354,17 @@ Cypress.Commands.add("inserirMotivoSolicitacaoEPI", (motivoSolicitacaoEpi_nome) 
     cy.exec_sql("insert into motivosolicitacaoepi values (nextval('motivoSolicitacaoEpi_sequence'), '" + motivoSolicitacaoEpi_nome + "')")
 })
 
+Cypress.Commands.add("inserirAmbiente", (ambiente_nome) => {
+    cy.exec_sql(
+        "insert into ambiente values (nextval('ambiente_sequence'), '" + ambiente_nome +"', '0001')",
+        "insert into historicoambiente values (nextval('historicoambiente_sequence'), 'Descrição Histórico', '01/01/2021', null, '', '1', '" + ambiente_nome +"', '1', '1', '', null, null, null, null)"
+    )
+})
+
+Cypress.Commands.add("inserirProfissionalSaude", (profissional_nome) => {
+    cy.exec_sql("insert into profissionalsst values (nextval('profissionalsst_sequence'), '" + profissional_nome +"', '10708', '1', '1', '', '', '', '001', false, '')")
+})
+
 Cypress.Commands.add("inserirCategoriaCurso", (categoria_nome) => {
     cy.exec_sql(
         "insert into categoriacurso values (nextval('categoriaCurso_sequence'), '" + categoria_nome + "')",
