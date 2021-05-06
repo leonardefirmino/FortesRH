@@ -102,6 +102,13 @@ Cypress.Commands.add("inserirSolicitacaoPessoal", (descricao) => {
     )
 })
 
+Cypress.Commands.add("inserirSolicitacaoPessoalAnunciadaModuloExterno", (descricao) => {
+    cy.inserirSolicitacaoPessoal(descricao)
+    cy.exec_sql(
+        "insert into anuncio values (nextval('anuncio_sequence'), 'Vaga Anunciada', 'Vaga Anunciada', 'Informações', false, false, false, false, false, false, true, (select id from solicitacao where descricao = '" + descricao + "'), null, false)"
+    )
+})
+
 Cypress.Commands.add("insereSolicitacaoEmAnalise", (descricao) => {
     cy.exec_sql(
         "insert into cargo values (nextval('cargo_sequence'), 'Analista de QA', 'Analista de QA', null, null, null, null, null, null, null, null, null, (select id from empresa where nome = 'Empresa Padrão'), true, true, null, null)",
@@ -110,6 +117,13 @@ Cypress.Commands.add("insereSolicitacaoEmAnalise", (descricao) => {
         "insert into cargo_areaorganizacional values ((select id from cargo where nome = 'Analista de QA'), (select id from areaorganizacional where nome = 'Desenvolvimento'))",
         "insert into motivosolicitacao values (nextval('motivosolicitacao_sequence'), 'Substituição', false, false)",
         "insert into solicitacao values (nextval('solicitacao_sequence'), '01/02/2020', null, 1, 'E', '02', 1000, null, null, 'I', null, false, false, null, (select id from motivosolicitacao where descricao = 'Substituição'), (select id from areaorganizacional where nome = 'Desenvolvimento'), 1, 1, null, (select id from empresa where nome = 'Empresa Padrão'), (select id from cargo where nome = 'Analista de QA'), '" + descricao + "', 1, 'Horário', 'I', null, null, null, null, '01/01/2020', false, null, null)",
+    )
+})
+
+Cypress.Commands.add("deletaSolicitacao", (descricao) => {
+    cy.exec_sql(
+        "delete from candidatosolicitacao",
+        "delete from solicitacao where descricao = '" + descricao + "'",
     )
 })
 
@@ -397,4 +411,12 @@ Cypress.Commands.add("inserirSolicitacaoEpi", (epi) => {
         "insert into solicitacaoepi values (nextval('solicitacaoepi_sequence'), '01/01/2021', (select id from colaborador where nome = '" + epi.nomeColaborador + "'), 1, 1,1)",
         "insert into solicitacaoepi_item values (nextval('solicitacaoepi_item_sequence'), 1, 1, 10, null, null)"
     )
+})
+
+Cypress.Commands.add("insereOcorrencia", (ocorrencia) => {
+    cy.exec_sql("insert into ocorrencia values (nextval('ocorrencia_sequence'), '" + ocorrencia + "', 0, null, false, (select id from empresa where nome = 'Empresa Padrão'), false, true)")
+})
+
+Cypress.Commands.add("insereOcorrenciaColaborador", (ocorrencia) => {
+    cy.exec_sql("insert into colaboradorocorrencia values (nextval('colaboradorocorrencia_sequence'), '01/01/2021', '01/01/2021', null, (select id from colaborador where nome = '"+ ocorrencia.colaborador_nome + "'), (select id from ocorrencia where descricao = '"+ ocorrencia.nome + "'), null)")
 })

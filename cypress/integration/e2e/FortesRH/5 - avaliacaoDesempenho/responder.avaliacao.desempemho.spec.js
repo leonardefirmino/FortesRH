@@ -1,7 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Responder Avaliação de Desempenho', () => {
-
     const aval = {
         Titulo: chance.sentence({ words: 3 }),
         PeriodoInicial: '01/08/2020',

@@ -1,12 +1,8 @@
-import { Chance } from 'chance';
-
 describe('Cargos e Faixa', () => {
-    const chance = new Chance()
-
     const cargo = {
-        cargo_nome: chance.sentence({ words: 2 }),
-        cargo_nome2: chance.sentence({ words: 2 }),
-        cargo_nome3: chance.sentence({ words: 2 }),
+        cargo_nome: chance.profession(),
+        cargo_nome2: chance.profession(),
+        cargo_nome3: chance.profession(),
         colaborador_nome: chance.name(),
         faixa: chance.word({ length: 1 }),
         cbo: '252510',

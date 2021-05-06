@@ -1,9 +1,4 @@
-
-import { Chance } from 'chance';
-
 describe('Indices', () => {
-    const chance = new Chance()
-
     const dados = {
         indice_nome: chance.sentence({ words: 2 }),
         indice_nome2: chance.sentence({ words: 2 }),

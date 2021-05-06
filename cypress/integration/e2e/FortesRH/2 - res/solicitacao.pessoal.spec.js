@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Solicitação de Pessoal', () => {
-    const chance = new Chance()
-
     const solicitacao = {
         candidato_name: chance.name(),
         candidato_externo: chance.name(),
@@ -150,5 +146,17 @@ describe('Solicitação de Pessoal', () => {
             .click()
         cy.contains('Em análise')
             .should('exist')
+    });
+
+    it('Transferir Candidatos Entre Solicitações', () => {
+        cy
+            .transferirCandidatoDaSolicitacao(solicitacao)
+    });
+
+    it.skip('Edição de Solicitação que não existe', () => {
+        cy
+            .deletaSolicitacao(solicitacaoemAnalise.descricao)
+            .editarSolicitacao(solicitacaoemAnalise.descricao)
+            .warningMsg(`A solicitação com o código ${solicitacaoId} não foi encontrada.`)
     });
 });

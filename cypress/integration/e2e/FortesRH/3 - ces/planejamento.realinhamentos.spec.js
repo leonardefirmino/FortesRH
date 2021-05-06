@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Planejamento de Realinhamentos', () => {
-    const chance = new Chance()
-
     const reajuste = {
         nome: chance.word(),
         nome2: chance.word(),

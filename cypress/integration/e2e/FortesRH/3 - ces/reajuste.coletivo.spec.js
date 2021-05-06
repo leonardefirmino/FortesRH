@@ -22,5 +22,4 @@ describe('Reajustes', () => {
             .successMsg('Reajuste aplicado com sucesso.')
         });
     });
-
 });

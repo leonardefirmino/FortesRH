@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Etapas Seletivas', () => {
-    const chance = new Chance()
-
     const etapa = {
         nome: chance.word(),
         nome2: chance.word(),

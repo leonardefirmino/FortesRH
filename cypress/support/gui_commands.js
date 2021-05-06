@@ -29,7 +29,7 @@ Cypress.Commands.add('login', (user, pass) => {
 
     cy.get('input[placeholder = "Senha"]')
         .should('be.enabled').and('be.visible')
-        .clear().type(pass, { force: true })
+        .clear().type(pass, { force: true }, {log: false})
 
     cy.get('input[placeholder = "Senha"]')
         .should('not.be.null')
@@ -228,6 +228,30 @@ Cypress.Commands.add('inserirCandidatosSolicitacao', (solicitacao) => {
     cy.contains(solicitacao.candidato_name).should('exist')
     cy.get('#md').click()
     cy.get('#btnInserirSelecionados').click()
+})
+
+Cypress.Commands.add('transferirCandidatoDaSolicitacao', (solicitacao) => {
+    cy.get('#labelLink').click()
+    cy.get('#codigoBusca').clear().should('be.enabled').and('be.visible').type('1')
+    cy.get('#btnPesquisar').should('be.enabled').and('be.visible').click()
+    cy.get('#labelLink').click()
+
+    cy.get('#solicitacao').find(`td:contains("Analista de QA")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
+    cy.get('#btnTransferirCandidatos').should('be.enabled').and('be.visible').click()
+    cy.get('#md').click()
+    cy.get('#sol > tbody > .odd > [style="width: 30px; text-align: center;"] > input').click()
+    cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
+
+    cy.successMsg('Candidatos transferidos com sucesso.')
+    cy.contains(solicitacao.candidato_externo).should('not.exist')
+
+    cy.get('#btnVoltar').should('be.enabled').and('be.visible').click()
+    cy.get('#labelLink').click()
+    cy.get('#codigoBusca').clear().should('be.enabled').and('be.visible').type('2')
+    cy.get('#btnPesquisar').should('be.enabled').and('be.visible').click()
+
+    cy.get('#solicitacao').find(`td:contains("Analista de Teste")`).parent().parent().parent().parent().find('.icon-awesome[title="Candidatos da Seleção"]').click({ force: true })
+    cy.contains(solicitacao.candidato_externo).should('exist')
 })
 
 Cypress.Commands.add('anunciarSolicitacao', (solicitacao) => {
@@ -886,4 +910,18 @@ Cypress.Commands.add('reajustePorTalento', (dados) => {
     cy.get('#btnGravar').click()
     cy.successMsg('Solicitação de realinhamento gravado com sucesso.')
     cy.get('#btnAplicar').click()
+})
+
+Cypress.Commands.add('cadastrarOcorrenciaNova', (ocorrencia) => {
+    cy.get('#btnPesquisar').should('be.visible').and('be.enabled').click()
+    cy.cadastrarOcorrencia(ocorrencia)
+})
+
+Cypress.Commands.add('cadastrarOcorrencia', (ocorrencia) => {
+    cy.get('#colab').select(ocorrencia.colaborador_nome)
+    cy.get('#btnInserir').should('be.visible').and('be.enabled').click()
+    cy.get('#ocorrencia').select(ocorrencia.name)
+    cy.get('#dataIni').should('be.visible').and('be.enabled').clear().type(ocorrencia.data)
+    cy.get('#dataFim').should('be.visible').and('be.enabled').clear().type(ocorrencia.data)
+    cy.get('#btnGravar').should('be.visible').and('be.enabled').click()
 })

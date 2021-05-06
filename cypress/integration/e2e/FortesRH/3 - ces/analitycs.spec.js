@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Analitycs de Cargos & Salários', () => {
-    const chance = new Chance()
-
     const colaborador = chance.name()
 
     beforeEach('', () => {

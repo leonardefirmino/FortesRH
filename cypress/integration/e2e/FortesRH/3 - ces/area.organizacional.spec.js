@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Área Organizacional', () => {
-    const chance = new Chance()
-
     const areaOrganizacional = {
         area_nome: chance.name(),
         area_nome2: chance.name(),

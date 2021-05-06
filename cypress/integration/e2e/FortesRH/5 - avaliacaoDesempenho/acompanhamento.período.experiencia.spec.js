@@ -1,8 +1,4 @@
-import { Chance } from 'chance';
-
 describe('Acompanhamento do Período de Experiencia', () => {
-    const chance = new Chance()
-
     const colaborador = {
         avaliacao: chance.sentence({ words: 4 }),
         nome: chance.name()
