@@ -1,4 +1,4 @@
-describe('Funcionalidade Grupos Homogêneos de Exposição', () => {
+describe.skip('Funcionalidade Grupos Homogêneos de Exposição', () => {
     const ghe = {
         descricao: 'GHE',
         dataIni: '01/01/2021',

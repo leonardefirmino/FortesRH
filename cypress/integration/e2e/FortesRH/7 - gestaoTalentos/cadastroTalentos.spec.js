@@ -27,7 +27,7 @@ describe('Funcionalidade de Cadastro de Colaborador', () => {
         cy.contains(dados.nome).should('not.exist')
     });
 
-    it.only('Cadastrar Talento', () => {
+    it('Cadastrar Talento', () => {
         cy
             .cadastrarTalento(dados)
         cy.contains(`Talento ${dados.nome} cadastrado com sucesso.`).should('be.visible')

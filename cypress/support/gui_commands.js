@@ -757,6 +757,13 @@ Cypress.Commands.add('cadastraHistoricoGHE', () => {
     cy.get('.fa-caret-down').click()
 })
 
+Cypress.Commands.add('cadastraMedicaoRisco', (medicao) => {
+    cy.get('#btnInserir').should('be.enabled').and('be.visible').click()
+    cy.get('#data').clear().type(medicao.dataMedicao)
+    cy.get('#estabelecimento').select('1')
+    cy.get('#ambiente').select(medicao.nomeAmbiente)
+})
+
 Cypress.Commands.add('alterarSenhaUsuario', (senha, newSenha, confSenha) => {
 
     if (senha != '' || newSenha != '' || confSenha != '') {
