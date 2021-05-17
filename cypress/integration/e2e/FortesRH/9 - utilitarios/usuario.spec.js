@@ -59,4 +59,9 @@ describe('Funcionalidade Cadastros de Usuários', () => {
             .cadastrarUsuario(usuario)
         cy.contains(usuario.usu_nome)
     })
+
+    it('Validação de Empresa e Perfil do Usuário', () => {
+        cy.validaEmpresaPerfilUsuario()
+        cy.validaTitulo('Usuários')
+    })
 })

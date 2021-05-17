@@ -834,6 +834,16 @@ Cypress.Commands.add('cadastrarUsuario', (usu) => {
     cy.get('#btnGravar').should('be.enabled').and('be.visible').click()
 })
 
+Cypress.Commands.add('validaEmpresaPerfilUsuario', () => {
+    cy
+            .acao('Editar', 'homolog')
+            .get('[style="width: 30px; text-align: center;"] > input').uncheck()
+            .get('#selectPerfil_1').should('be.disabled')
+            .get('[style="width: 30px; text-align: center;"] > input').check()
+            .get('#selectPerfil_1').should('not.be.disabled')
+            .get('#btnGravar').click()
+})
+
 Cypress.Commands.add('desligarTalento', (talento) => {
     cy.get('.fa-user-times').should('be.visible')
     cy.exec_sql("select * from colaborador where nome = '" + talento.nome + "'").then(({ rows }) => rows[0].id).then(colaboradorId => {
@@ -850,6 +860,23 @@ Cypress.Commands.add('desligarTalento', (talento) => {
 Cypress.Commands.add('importarEpi', (arquivo) => {
     cy.get('#arquivo').should('be.visible').attachFile(arquivo.arquivo, { allowEmpty: true })
     cy.get('#btnImportar').click()
+})
+
+Cypress.Commands.add('cadastrarComissao', (comissao) => {
+    cy.get('#btnInserir').click()
+    cy.get('#dataIni').clear().type(comissao.dataIni)
+    cy.get('#dataFim').clear().type(comissao.dataFim)
+    cy.get('#eleicao').select(comissao.eleicao)
+    cy.get('#btnGravar').click()
+})
+
+Cypress.Commands.add('cadastrarReuniao', (comissao) => {
+    cy.get('[href="prepareUpdate.action?comissao.id=1"] > .i-container > .fa').click()
+    cy.get('.ativaReuniao').click()
+    cy.get('#btnInserir').click()
+    cy.get('#reuniaoData').clear().type(comissao.dataFim)
+    cy.get('#reuniaoHorario').clear().type('10:00')
+    cy.get('#btnGravar').click()
 })
 
 Cypress.Commands.add('integraElore', (token) => {

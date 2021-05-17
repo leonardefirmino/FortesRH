@@ -365,6 +365,14 @@ Cypress.Commands.add("inserirProfissionalSaude", (profissional_nome) => {
     cy.exec_sql("insert into profissionalsst values (nextval('profissionalsst_sequence'), '" + profissional_nome +"', '10708', '1', '1', '', '', '', '001', false, '')")
 })
 
+Cypress.Commands.add("inserirEleicao", () => {
+    cy.exec_sql("insert into eleicao values (nextval('eleicao_sequence'), '31/12/2021', null, null, '08:00', '18:00', '0', '0', null, null, '', '', '1', '', null, '08:00', '', 'Eleicao CIPA', null, '1', null, null, null, null)")
+})
+
+Cypress.Commands.add("inserirComissao", () => {
+    cy.exec_sql("insert into comissao values (nextval('comissao_sequence'), '01/01/2021', '31/12/2021', null, null, '1')")
+})
+
 Cypress.Commands.add("inserirCategoriaCurso", (categoria_nome) => {
     cy.exec_sql(
         "insert into categoriacurso values (nextval('categoriaCurso_sequence'), '" + categoria_nome + "')",
